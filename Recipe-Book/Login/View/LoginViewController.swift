@@ -8,8 +8,10 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var shiftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var errorShiftConstraint: NSLayoutConstraint!
     @IBOutlet weak var spaceConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainer: UIView!
     @IBOutlet weak var loginTextField: UITextField!
@@ -18,8 +20,21 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var lostPswdButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
     
+    var loginPresenter: LoginPresenter?
+    
+    init?(coder: NSCoder, presenter: LoginPresenter) {
+            self.loginPresenter = selectedUser
+            super.init(coder: coder)
+        }
+
+    required init?(coder: NSCoder) {
+        fatalError("You must create this view controller with a presenter.")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TODO внедрить зависимость от пользователя
+        self.loginPresenter = LoginPresenter(delegate: self)
         initScreen()
         
         registerForKeyboardNotifications()
@@ -27,6 +42,8 @@ class LoginViewController: UIViewController {
     
     private func initScreen() {
         loginButton.layer.cornerRadius = 15
+        errorLabel.layer.cornerRadius = 5
+        errorLabel.alpha = 0.0
     }
     
     private func registerForKeyboardNotifications() {
@@ -48,7 +65,6 @@ class LoginViewController: UIViewController {
         }
         let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
         let constant = -(keyboardSize?.height ?? 100) * 2 / 3
-        print(constant)
         animateShift(pos: constant, alpha: 0.0)
     }
     
@@ -68,7 +84,41 @@ class LoginViewController: UIViewController {
           })
     }
     
+    private func animateErrorAppear(alpha: CGFloat) {
+        UIView.animate(withDuration: 0.7, delay: 0, options: .curveLinear, animations: {
+            self.errorLabel.alpha = alpha
+            self.view.layoutIfNeeded()
+          }, completion: { finished in
+            print("Animation completed")
+          })
+    }
+    
+    @IBAction func loginButtonTouched(_ sender: Any) {
+        self.loginPresenter?.login(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
+    }
+    
     deinit {
         unregisterForKeyboardNotifications()
+    }
+}
+
+extension LoginViewController: LoginDelegate {
+    func showProgress() {
+        print("show progress")
+    }
+    
+    func hideProgress() {
+        print("hide progress")
+    }
+    
+    func loginDidSucceed() {
+        print("login succees")
+    }
+    
+    func loginDidFailed(message: String) {
+        errorLabel.text = message
+        if errorLabel.alpha != 1.0 {
+            animateErrorAppear(alpha: 1.0)
+        }
     }
 }

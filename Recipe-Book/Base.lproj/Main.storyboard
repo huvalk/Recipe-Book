@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -51,6 +52,9 @@
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P1H-gI-Imz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbN-vT-Shr">
                                         <rect key="frame" x="205" y="340" width="150" height="36"/>
@@ -65,6 +69,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA0-nV-gVz">
+                                        <rect key="frame" x="167.5" y="250" width="39.5" height="21"/>
+                                        <color key="backgroundColor" red="1" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -72,7 +83,9 @@
                                     <constraint firstItem="IBv-5g-pQc" firstAttribute="centerX" secondItem="xOA-9u-Ki8" secondAttribute="centerX" id="54r-46-WuN"/>
                                     <constraint firstItem="0cg-Mr-VNB" firstAttribute="top" secondItem="s6k-4Q-Gan" secondAttribute="bottom" constant="27" id="65j-pf-nJm"/>
                                     <constraint firstAttribute="trailing" secondItem="huf-00-rur" secondAttribute="trailing" constant="21" id="7Xg-0y-Ltf"/>
+                                    <constraint firstItem="fA0-nV-gVz" firstAttribute="centerX" secondItem="xOA-9u-Ki8" secondAttribute="centerX" id="B6N-WN-ie6"/>
                                     <constraint firstItem="huf-00-rur" firstAttribute="centerX" secondItem="xOA-9u-Ki8" secondAttribute="centerX" id="EDv-oa-iy7"/>
+                                    <constraint firstItem="fA0-nV-gVz" firstAttribute="top" secondItem="0cg-Mr-VNB" secondAttribute="bottom" constant="8" symbolic="YES" id="Imz-Gw-kXb"/>
                                     <constraint firstAttribute="trailing" secondItem="YbN-vT-Shr" secondAttribute="trailing" constant="19" id="Jvu-5J-mLr"/>
                                     <constraint firstAttribute="trailing" secondItem="s6k-4Q-Gan" secondAttribute="trailing" constant="21" id="QRW-jU-8Ea"/>
                                     <constraint firstItem="huf-00-rur" firstAttribute="leading" secondItem="xOA-9u-Ki8" secondAttribute="leading" constant="21" id="Xg2-so-ObO"/>
@@ -96,10 +109,11 @@
                             <constraint firstItem="xOA-9u-Ki8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P2o-rB-RZ7"/>
                             <constraint firstItem="xOA-9u-Ki8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TCE-ee-BU9"/>
                             <constraint firstItem="3lR-xl-w7g" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oB8-gZ-cMF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xOA-9u-Ki8" secondAttribute="trailing" constant="20" id="p37-E3-FSt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="fA0-nV-gVz" id="g6a-KJ-4Hf"/>
+                        <outlet property="errorShiftConstraint" destination="B6N-WN-ie6" id="oys-pZ-wfm"/>
                         <outlet property="inputContainer" destination="cBZ-es-LGz" id="uee-xG-ww8"/>
                         <outlet property="joinButton" destination="3lR-xl-w7g" id="bqa-ze-Aj8"/>
                         <outlet property="loginButton" destination="huf-00-rur" id="LIP-1h-GFO"/>
