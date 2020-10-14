@@ -33,8 +33,11 @@ class LoginViewController: UIViewController {
         //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
-
+    }
+    
+    private func unregisterForKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc private func keyboardWasShown(notification: Notification) {
@@ -44,24 +47,28 @@ class LoginViewController: UIViewController {
             return
         }
         let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        shiftConstraint.constant = -(keyboardSize?.height ?? 100) / 2
+        let constant = -(keyboardSize?.height ?? 100) * 2 / 3
+        
+        animateShift(pos: constant, alpha: 0)
     }
     
     @objc private func keyboardWillBeHidden(notification: Notification) {
         loginLabel.isHidden = false
-        shiftConstraint.constant = 0
+        
+        animateShift(pos: 0, alpha: 1)
     }
     
-    @objc private func rotated(notification: NSNotification) {
-        if UIDevice.current.orientation.isLandscape {
-            spaceConstraint.constant = 25
-        } else {
-            spaceConstraint.constant = 60
-        }
+    private func animateShift(pos: CGFloat, alpha: CGFloat) {
+        UIView.animate(withDuration: 0.7, delay: 0, options: .curveLinear, animations: {
+            self.loginLabel.alpha = alpha
+            self.shiftConstraint.constant = pos
+            self.view.layoutIfNeeded()
+          }, completion: { finished in
+            print("Animation completed")
+          })
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        unregisterForKeyboardNotifications()
     }
 }
