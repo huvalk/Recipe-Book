@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518BCCC2534BABA004DEA06 /* AppDelegate.swift */; };
 		7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */; };
-		7518BCD12534BABA004DEA06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518BCD02534BABA004DEA06 /* ViewController.swift */; };
 		7518BCD42534BABA004DEA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7518BCD22534BABA004DEA06 /* Main.storyboard */; };
 		7518BCD62534BABD004DEA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7518BCD52534BABD004DEA06 /* Assets.xcassets */; };
 		7518BCD92534BABD004DEA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7518BCD72534BABD004DEA06 /* LaunchScreen.storyboard */; };
+		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7518BCC92534BABA004DEA06 /* Recipe-Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7518BCCC2534BABA004DEA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7518BCD02534BABA004DEA06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7518BCD32534BABA004DEA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7518BCD52534BABD004DEA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7518BCD82534BABD004DEA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7518BCDA2534BABD004DEA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +58,11 @@
 			children = (
 				7518BCCC2534BABA004DEA06 /* AppDelegate.swift */,
 				7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */,
-				7518BCD02534BABA004DEA06 /* ViewController.swift */,
 				7518BCD22534BABA004DEA06 /* Main.storyboard */,
 				7518BCD52534BABD004DEA06 /* Assets.xcassets */,
 				7518BCD72534BABD004DEA06 /* LaunchScreen.storyboard */,
 				7518BCDA2534BABD004DEA06 /* Info.plist */,
+				75C430C52536C40B001C261E /* LoginViewController.swift */,
 			);
 			path = "Recipe-Book";
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7518BCD12534BABA004DEA06 /* ViewController.swift in Sources */,
+				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
 			);
