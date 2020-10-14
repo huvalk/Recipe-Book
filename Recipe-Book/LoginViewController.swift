@@ -48,14 +48,14 @@ class LoginViewController: UIViewController {
         }
         let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
         let constant = -(keyboardSize?.height ?? 100) * 2 / 3
-        
-        animateShift(pos: constant, alpha: 0)
+        print(constant)
+        animateShift(pos: constant, alpha: 0.0)
     }
     
     @objc private func keyboardWillBeHidden(notification: Notification) {
         loginLabel.isHidden = false
         
-        animateShift(pos: 0, alpha: 1)
+        animateShift(pos: 0, alpha: 1.0)
     }
     
     private func animateShift(pos: CGFloat, alpha: CGFloat) {
