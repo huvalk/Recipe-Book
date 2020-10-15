@@ -60,13 +60,9 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
+				7527F3FE253839E800567122 /* Common */,
+				7527F3FA2538393F00567122 /* App */,
 				7527F3F32537997600567122 /* Login */,
-				7518BCCC2534BABA004DEA06 /* AppDelegate.swift */,
-				7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */,
-				7518BCD22534BABA004DEA06 /* Main.storyboard */,
-				7518BCD52534BABD004DEA06 /* Assets.xcassets */,
-				7518BCD72534BABD004DEA06 /* LaunchScreen.storyboard */,
-				7518BCDA2534BABD004DEA06 /* Info.plist */,
 			);
 			path = "Recipe-Book";
 			sourceTree = "<group>";
@@ -75,8 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				7527F3F62537999200567122 /* Model */,
-				7527F3F52537998800567122 /* Presenter */,
 				7527F3F42537998100567122 /* View */,
+				7527F3F52537998800567122 /* Presenter */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -103,6 +99,50 @@
 				7527F3F7253799E500567122 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7527F3FA2538393F00567122 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7527F3FB2538394D00567122 /* Model */,
+				7527F3FD2538396000567122 /* View */,
+				7527F3FC2538395400567122 /* Presenter */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7527F3FB2538394D00567122 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7527F3FC2538395400567122 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7518BCCC2534BABA004DEA06 /* AppDelegate.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7527F3FD2538396000567122 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */,
+				7518BCD22534BABA004DEA06 /* Main.storyboard */,
+				7518BCD72534BABD004DEA06 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7527F3FE253839E800567122 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7518BCD52534BABD004DEA06 /* Assets.xcassets */,
+				7518BCDA2534BABD004DEA06 /* Info.plist */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +368,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DSM5M6VUK9;
-				INFOPLIST_FILE = "Recipe-Book/Info.plist";
+				INFOPLIST_FILE = "Recipe-Book/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -348,7 +388,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DSM5M6VUK9;
-				INFOPLIST_FILE = "Recipe-Book/Info.plist";
+				INFOPLIST_FILE = "Recipe-Book/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

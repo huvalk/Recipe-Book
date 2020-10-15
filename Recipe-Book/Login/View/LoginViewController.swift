@@ -22,14 +22,14 @@ class LoginViewController: UIViewController {
     
     var loginPresenter: LoginPresenter?
     
-    init?(coder: NSCoder, presenter: LoginPresenter) {
-            self.loginPresenter = selectedUser
-            super.init(coder: coder)
-        }
-
-    required init?(coder: NSCoder) {
-        fatalError("You must create this view controller with a presenter.")
-    }
+//    init?(coder: NSCoder, presenter: LoginPresenter) {
+//            self.loginPresenter = presenter
+//            super.init(coder: coder)
+//        }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("You must create this view controller with a presenter.")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class LoginViewController: UIViewController {
     private func initScreen() {
         loginButton.layer.cornerRadius = 15
         errorLabel.layer.cornerRadius = 5
+        errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
     }
     
@@ -89,7 +90,7 @@ class LoginViewController: UIViewController {
             self.errorLabel.alpha = alpha
             self.view.layoutIfNeeded()
           }, completion: { finished in
-            print("Animation completed")
+//            errorLabel.layer.cornerRadius = 5
           })
     }
     
