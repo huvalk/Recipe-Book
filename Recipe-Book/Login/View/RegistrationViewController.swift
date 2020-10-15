@@ -1,43 +1,40 @@
 //
-//  LoginViewController.swift
+//  RegistrationViewController.swift
 //  Recipe-Book
 //
-//  Created by Сергей Куклин on 14.10.2020.
+//  Created by Сергей Куклин on 15.10.2020.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var shiftConstraint: NSLayoutConstraint!
-    @IBOutlet weak var errorShiftConstraint: NSLayoutConstraint!
-    @IBOutlet weak var spaceConstraint: NSLayoutConstraint!
-    @IBOutlet weak var inputContainer: UIView!
+class RegistrationViewController: UIViewController {
+    @IBOutlet weak var registrationLabel: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var lostPswdButton: UIButton!
-    @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var shiftContainer: NSLayoutConstraint!
+    @IBOutlet weak var registerButton: UIButton!
     
-    var loginPresenter: LoginPresenter?
+    var registrationPresenter: RegistrationPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        self.loginPresenter = LoginPresenter(delegate: self)
+        self.registrationPresenter = RegistrationPresenter(delegate: self)
         initScreen()
         
         registerForKeyboardNotifications()
     }
     
+
     private func initScreen() {
-        loginButton.layer.cornerRadius = 15
+        registerButton.layer.cornerRadius = 15
         errorLabel.layer.cornerRadius = 5
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
     }
-    
+
     private func registerForKeyboardNotifications() {
         //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -50,26 +47,26 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func keyboardWasShown(notification: Notification) {
-        loginLabel.isHidden = true
+        registrationLabel.isHidden = true
         guard let info = notification.userInfo else {
-            shiftConstraint.constant = -100
+            shiftContainer.constant = -120
             return
         }
         let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let constant = -(keyboardSize?.height ?? 100) * 2 / 3
+        let constant = -(keyboardSize?.height ?? 120) * 2 / 3
         animateShift(pos: constant, alpha: 0.0)
     }
     
     @objc private func keyboardWillBeHidden(notification: Notification) {
-        loginLabel.isHidden = false
+        registrationLabel.isHidden = false
         
         animateShift(pos: 0, alpha: 1.0)
     }
     
     private func animateShift(pos: CGFloat, alpha: CGFloat) {
         UIView.animate(withDuration: 0.7, delay: 0, options: .curveLinear, animations: {
-            self.loginLabel.alpha = alpha
-            self.shiftConstraint.constant = pos
+            self.registrationLabel.alpha = alpha
+            self.shiftContainer.constant = pos
             self.view.layoutIfNeeded()
           }, completion: { finished in
             print("Animation shift completed")
@@ -85,18 +82,12 @@ class LoginViewController: UIViewController {
           })
     }
     
-    @IBAction func loginButtonTouched(_ sender: Any) {
-        self.loginPresenter?.login(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
-    }
-    
     @IBAction func registerButtonTouched(_ sender: Any) {
-        let registerViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
-        
-        self.present(registerViewController, animated: true)
+        self.registrationPresenter?.register(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", phone: phoneTextField.text ?? "")
     }
     
-    @IBAction func lostPswdButtonTouched(_ sender: Any) {
-        
+    @IBAction func loginButtonTouched(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     deinit {
@@ -104,7 +95,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: LoginDelegate {
+extension RegistrationViewController: RegistrationDelegate {
     func showProgress() {
         print("show progress")
     }
@@ -113,14 +104,14 @@ extension LoginViewController: LoginDelegate {
         print("hide progress")
     }
     
-    func loginDidSucceed() {
+    func registrationDidSucceed() {
         print("login succees")
     }
     
-    func loginDidFailed(message: String) {
-        errorLabel.text = message
-        if errorLabel.alpha != 1.0 {
-            animateErrorAppear(alpha: 1.0)
-        }
+    func registrationDidFailed(message: String) {
+//        errorLabel.text = message
+//        if errorLabel.alpha != 1.0 {
+//            animateErrorAppear(alpha: 1.0)
+//        }
     }
 }
