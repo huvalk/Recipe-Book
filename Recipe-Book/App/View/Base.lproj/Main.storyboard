@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5hr-FL-kRR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -289,6 +289,160 @@
             </objects>
             <point key="canvasLocation" x="1944.9275362318842" y="47.544642857142854"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wXl-uM-dbh">
+            <objects>
+                <tabBarController id="5hr-FL-kRR" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hwz-i7-rKA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OQd-vR-i3L" kind="relationship" relationship="viewControllers" id="nZm-75-cGB"/>
+                        <segue destination="c5v-x0-hYj" kind="relationship" relationship="viewControllers" id="lAs-Qf-vvq"/>
+                        <segue destination="K5B-hz-rBs" kind="relationship" relationship="viewControllers" id="hd7-57-lyk"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHL-Mu-8y2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2949" y="46"/>
+        </scene>
+        <!--Мои рецепты-->
+        <scene sceneID="C35-vB-LmG">
+            <objects>
+                <tableViewController id="hdJ-GI-9bn" customClass="RecipesViewContoller" customModule="Recipe_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ePX-6z-NnL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="UFL-fp-zSs" customClass="RecipeTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UFL-fp-zSs" id="kNT-p1-HJ4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DW9-7x-XeG">
+                                            <rect key="frame" x="16" y="1" width="100" height="97.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="XPT-Tz-kr7"/>
+                                                <constraint firstAttribute="height" constant="100" id="fK9-yY-L8C"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTF-Xl-ZUu">
+                                            <rect key="frame" x="124" y="11" width="125" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rC2-oZ-Qxc">
+                                            <rect key="frame" x="124" y="66.5" width="15" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="15" id="cgd-HR-EHt"/>
+                                                <constraint firstAttribute="height" constant="15" id="s0D-JC-HVo"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 ингридиентов" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUl-e6-UoR">
+                                            <rect key="frame" x="266" y="66.5" width="120" height="14.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="2tz-Ld-9J6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 мин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dl-zk-dAc">
+                                            <rect key="frame" x="143" y="66" width="100" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="MBx-ag-Dzh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1dl-zk-dAc" firstAttribute="leading" secondItem="rC2-oZ-Qxc" secondAttribute="trailing" constant="8" id="4yc-lL-c2o"/>
+                                        <constraint firstItem="DW9-7x-XeG" firstAttribute="leading" secondItem="kNT-p1-HJ4" secondAttribute="leading" constant="16" id="68P-fE-xDP"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1dl-zk-dAc" secondAttribute="bottom" constant="8" id="A4S-H3-EHv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rC2-oZ-Qxc" secondAttribute="bottom" constant="8" id="CUA-aJ-Ym2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="AUl-e6-UoR" secondAttribute="bottom" constant="8" id="OIT-UY-ZYk"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="AUl-e6-UoR" secondAttribute="trailing" constant="8" id="YiB-ZF-1Ju"/>
+                                        <constraint firstItem="DW9-7x-XeG" firstAttribute="leading" secondItem="kNT-p1-HJ4" secondAttribute="leading" constant="16" id="ein-02-JUy"/>
+                                        <constraint firstItem="rC2-oZ-Qxc" firstAttribute="leading" secondItem="DW9-7x-XeG" secondAttribute="trailing" constant="8" id="tX6-Wc-r6C"/>
+                                        <constraint firstItem="1dl-zk-dAc" firstAttribute="leading" secondItem="rC2-oZ-Qxc" secondAttribute="trailing" constant="4" id="zAh-b7-xD9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ingridientCount" destination="AUl-e6-UoR" id="dUN-Pq-hfs"/>
+                                    <outlet property="recipeName" destination="mTF-Xl-ZUu" id="pkH-n1-RZ3"/>
+                                    <outlet property="recipeTime" destination="1dl-zk-dAc" id="8kJ-D7-5Y0"/>
+                                    <segue destination="eGA-Jb-VgZ" kind="show" identifier="showDetail" id="IiK-8F-O1X"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hdJ-GI-9bn" id="fep-1F-ETc"/>
+                            <outlet property="delegate" destination="hdJ-GI-9bn" id="htu-Hz-qQJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Мои рецепты" leftItemsSupplementBackButton="YES" id="uJb-FQ-fzJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="ePX-6z-NnL" id="ooi-hY-Ube"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPW-Sw-Waz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5024.6376811594209" y="45.535714285714285"/>
+        </scene>
+        <!--Recipe View Controller-->
+        <scene sceneID="5VD-7a-PDw">
+            <objects>
+                <viewController id="eGA-Jb-VgZ" customClass="RecipeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aGb-NM-t0L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-bh-JHR">
+                                <rect key="frame" x="133" y="438" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QgJ-of-0qp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e5E-VS-u3T"/>
+                    <connections>
+                        <outlet property="recipeName" destination="n7U-bh-JHR" id="GXC-cb-r91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zwz-LY-5qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5875" y="46"/>
+        </scene>
+        <!--Мои рецепты-->
+        <scene sceneID="U7C-dV-NPt">
+            <objects>
+                <navigationController id="c5v-x0-hYj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Мои рецепты" image="heart" catalog="system" id="tKZ-sI-cao"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7mQ-Pr-A2k">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hdJ-GI-9bn" kind="relationship" relationship="rootViewController" id="UbD-MF-nB3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgZ-rt-Aq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4135" y="46"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="vSS-rY-75k">
             <objects>
@@ -307,8 +461,105 @@
             </objects>
             <point key="canvasLocation" x="1034.7826086956522" y="47.544642857142854"/>
         </scene>
+        <!--Поиск-->
+        <scene sceneID="jsN-rY-wub">
+            <objects>
+                <tableViewController id="fGU-Wz-oDf" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JBg-qd-LlO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qzl-3T-JeW">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzl-3T-JeW" id="ynD-to-wsk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fGU-Wz-oDf" id="gpP-jo-xNl"/>
+                            <outlet property="delegate" destination="fGU-Wz-oDf" id="unI-LT-enn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Поиск" id="GKK-X9-fyw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUX-Gr-m0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5025" y="-653"/>
+        </scene>
+        <!--Поиск-->
+        <scene sceneID="iLe-QW-U7X">
+            <objects>
+                <navigationController id="OQd-vR-i3L" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="mRt-aY-1EP"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lp8-f2-bQm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fGU-Wz-oDf" kind="relationship" relationship="rootViewController" id="EnE-oB-fC9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ero-Eu-SUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4135" y="-653"/>
+        </scene>
+        <!--Список покупок-->
+        <scene sceneID="H6Q-2r-L1x">
+            <objects>
+                <tableViewController id="YpU-BQ-aTu" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H5S-9v-FRv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="j4D-hC-DCn">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j4D-hC-DCn" id="m9h-KZ-XRO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YpU-BQ-aTu" id="JeI-jl-c6X"/>
+                            <outlet property="delegate" destination="YpU-BQ-aTu" id="tff-U4-Vsd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Список покупок" id="Fwx-4G-OjD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21C-o7-dbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5025" y="743"/>
+        </scene>
+        <!--Список покупок-->
+        <scene sceneID="Vha-Q3-XPG">
+            <objects>
+                <navigationController id="K5B-hz-rBs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Список покупок" image="cart" catalog="system" id="QFe-hL-uAL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rx8-W8-Ztl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YpU-BQ-aTu" kind="relationship" relationship="rootViewController" id="guC-91-dfn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3YO-Zs-f9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4135" y="743"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

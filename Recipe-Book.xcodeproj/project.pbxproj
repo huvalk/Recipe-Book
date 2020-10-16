@@ -25,6 +25,11 @@
 		7527F42725388C2300567122 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42625388C2300567122 /* RegisterUser.swift */; };
 		7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42F253A025900567122 /* RegistrationNetworkService.swift */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
+		CE458E4F2538CC59009B46A6 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */; };
+		CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */; };
+		CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E622539A849009B46A6 /* RecipesPresenter.swift */; };
+		CE458E662539A87B009B46A6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E652539A87B009B46A6 /* Recipe.swift */; };
+		CE458E6B2539D1B5009B46A6 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		7527F42625388C2300567122 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
 		7527F42F253A025900567122 /* RegistrationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNetworkService.swift; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		CE458E622539A849009B46A6 /* RecipesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
+		CE458E652539A87B009B46A6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				7527F42A253A01DA00567122 /* Registration */,
+				CE458E4A2538CC2C009B46A6 /* Recipes */,
+				7527F3FE253839E800567122 /* Common */,
 				7527F3FA2538393F00567122 /* App */,
 				7527F3F32537997600567122 /* Login */,
 				7527F3FE253839E800567122 /* Common */,
@@ -211,6 +223,20 @@
 			isa = PBXGroup;
 			children = (
 				7527F40F25385CD300567122 /* RegistrationPresenter.swift */,
+		CE458E4A2538CC2C009B46A6 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E4D2538CC43009B46A6 /* Model */,
+				CE458E4C2538CC3B009B46A6 /* View */,
+				CE458E4B2538CC33009B46A6 /* Presenter */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		CE458E4B2538CC33009B46A6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E622539A849009B46A6 /* RecipesPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -219,6 +245,12 @@
 			isa = PBXGroup;
 			children = (
 				7527F40C25385CBE00567122 /* RegistrationViewController.swift */,
+		CE458E4C2538CC3B009B46A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */,
+				CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */,
+				CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,6 +261,12 @@
 				7527F42F253A025900567122 /* RegistrationNetworkService.swift */,
 			);
 			path = RegistrationNetworkService;
+		CE458E4D2538CC43009B46A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E652539A87B009B46A6 /* Recipe.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +349,12 @@
 				7527F4062538540200567122 /* TestingViewController.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
+				CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */,
+				CE458E6B2539D1B5009B46A6 /* RecipeViewController.swift in Sources */,
+				CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */,
 				7527F3F8253799E500567122 /* User.swift in Sources */,
+				CE458E662539A87B009B46A6 /* Recipe.swift in Sources */,
+				CE458E4F2538CC59009B46A6 /* RecipesViewController.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
 				7527F421253884D000567122 /* UserResponse.swift in Sources */,
 				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,
