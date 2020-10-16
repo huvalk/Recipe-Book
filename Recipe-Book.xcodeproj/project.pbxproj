@@ -269,6 +269,8 @@
 				7527F42F253A025900567122 /* RegistrationNetworkService.swift */,
 			);
 			path = RegistrationNetworkService;
+			sourceTree = "<group>";
+		};
 		CE458E4D2538CC43009B46A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
