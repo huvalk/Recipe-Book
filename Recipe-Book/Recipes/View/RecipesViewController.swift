@@ -66,8 +66,8 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
             
             let recipe = recipes[indexPath.section][indexPath.item]
             
-            let recipeDetail = segue.destination as! RecipeViewController
-            recipeDetail.recipe = recipe
+            let destination = segue.destination as! RecipeViewController
+            destination.recipe = recipe
         }
     }
 }

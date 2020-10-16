@@ -379,12 +379,12 @@
         <!--Recipe View Controller-->
         <scene sceneID="5VD-7a-PDw">
             <objects>
-                <viewController id="eGA-Jb-VgZ" customClass="RecipeViewController" sceneMemberID="viewController">
+                <viewController id="eGA-Jb-VgZ" customClass="RecipeViewController" customModule="Recipe_Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aGb-NM-t0L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-bh-JHR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ho-dT-Wa2">
                                 <rect key="frame" x="133" y="438" width="148" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -397,12 +397,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="e5E-VS-u3T"/>
                     <connections>
-                        <outlet property="recipeName" destination="n7U-bh-JHR" id="GXC-cb-r91"/>
+                        <outlet property="recipeName" destination="8ho-dT-Wa2" id="mff-IA-ySS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwz-LY-5qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5875" y="46"/>
+            <point key="canvasLocation" x="5872.4637681159429" y="45.535714285714285"/>
         </scene>
         <!--Мои рецепты-->
         <scene sceneID="U7C-dV-NPt">
