@@ -9,6 +9,8 @@ import UIKit
 
 class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var tableView: UITableView!
+    
     var recipesPresenter: RecipesPresenter?
     
     var recipes: [RecipeList] = []
@@ -52,6 +54,21 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let recipe = recipes[indexPath.section][indexPath.item]
+            
+            let recipeDetail = segue.destination as! RecipeViewController
+            recipeDetail.recipe = recipe
+        }
     }
 }
 
