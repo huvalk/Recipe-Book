@@ -23,6 +23,7 @@
 		7527F421253884D000567122 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F420253884D000567122 /* UserResponse.swift */; };
 		7527F424253888CA00567122 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F423253888CA00567122 /* LoginUser.swift */; };
 		7527F42725388C2300567122 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42625388C2300567122 /* RegisterUser.swift */; };
+		7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42F253A025900567122 /* RegistrationNetworkService.swift */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		7527F420253884D000567122 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		7527F423253888CA00567122 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		7527F42625388C2300567122 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
+		7527F42F253A025900567122 /* RegistrationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNetworkService.swift; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
+				7527F42A253A01DA00567122 /* Registration */,
 				7527F3FA2538393F00567122 /* App */,
 				7527F3F32537997600567122 /* Login */,
 				7527F3FE253839E800567122 /* Common */,
@@ -101,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				75C430C52536C40B001C261E /* LoginViewController.swift */,
-				7527F40C25385CBE00567122 /* RegistrationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				7527F3F02537812800567122 /* LoginPresenter.swift */,
-				7527F40F25385CD300567122 /* RegistrationPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -121,7 +122,6 @@
 				7527F3F7253799E500567122 /* User.swift */,
 				7527F420253884D000567122 /* UserResponse.swift */,
 				7527F423253888CA00567122 /* LoginUser.swift */,
-				7527F42625388C2300567122 /* RegisterUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +186,49 @@
 				7527F41925386D6100567122 /* LoginNetworkService.swift */,
 			);
 			path = LoginNetworkService;
+			sourceTree = "<group>";
+		};
+		7527F42A253A01DA00567122 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				7527F42E253A022F00567122 /* RegistrationNetworkService */,
+				7527F42D253A01F300567122 /* View */,
+				7527F42C253A01EC00567122 /* Presenter */,
+				7527F42B253A01E500567122 /* Model */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		7527F42B253A01E500567122 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7527F42625388C2300567122 /* RegisterUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7527F42C253A01EC00567122 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7527F40F25385CD300567122 /* RegistrationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7527F42D253A01F300567122 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7527F40C25385CBE00567122 /* RegistrationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7527F42E253A022F00567122 /* RegistrationNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				7527F42F253A025900567122 /* RegistrationNetworkService.swift */,
+			);
+			path = RegistrationNetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +314,7 @@
 				7527F3F8253799E500567122 /* User.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
 				7527F421253884D000567122 /* UserResponse.swift in Sources */,
+				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,
 				7527F42725388C2300567122 /* RegisterUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

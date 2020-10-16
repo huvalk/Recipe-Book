@@ -37,7 +37,7 @@ class RegistrationPresenter {
         modelUser.password = password
         modelUser.phone = phone
         
-        LoginNetworkService.regiter(user: modelUser) { (statusCode) in
+        RegistrationNetworkService.regiter(user: modelUser) { (statusCode) in
             if (200...299) ~= statusCode {
                 self.delegate.registrationDidSucceed()
             } else {
