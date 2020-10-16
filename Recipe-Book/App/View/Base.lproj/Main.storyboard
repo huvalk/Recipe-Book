@@ -128,7 +128,7 @@
                         <outlet property="joinButton" destination="3lR-xl-w7g" id="bqa-ze-Aj8"/>
                         <outlet property="loginButton" destination="huf-00-rur" id="LIP-1h-GFO"/>
                         <outlet property="loginLabel" destination="IBv-5g-pQc" id="Na2-Xc-Q2Q"/>
-                        <outlet property="loginTextField" destination="0cg-Mr-VNB" id="W6z-lY-CCh"/>
+                        <outlet property="loginTextField" destination="s6k-4Q-Gan" id="9iB-a7-RcS"/>
                         <outlet property="lostPswdButton" destination="YbN-vT-Shr" id="3Eb-Lt-aBI"/>
                         <outlet property="passwordTextField" destination="0cg-Mr-VNB" id="CVo-c3-9mT"/>
                         <outlet property="shiftConstraint" destination="Fg7-3a-RhZ" id="wpX-6v-tzw"/>
