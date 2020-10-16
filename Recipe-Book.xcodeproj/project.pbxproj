@@ -223,6 +223,10 @@
 			isa = PBXGroup;
 			children = (
 				7527F40F25385CD300567122 /* RegistrationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		CE458E4A2538CC2C009B46A6 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +249,10 @@
 			isa = PBXGroup;
 			children = (
 				7527F40C25385CBE00567122 /* RegistrationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CE458E4C2538CC3B009B46A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
