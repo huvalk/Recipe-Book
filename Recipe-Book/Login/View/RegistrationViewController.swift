@@ -105,13 +105,13 @@ extension RegistrationViewController: RegistrationDelegate {
     }
     
     func registrationDidSucceed() {
-        print("login succees")
+        print("registration succees")
     }
     
     func registrationDidFailed(message: String) {
-//        errorLabel.text = message
-//        if errorLabel.alpha != 1.0 {
-//            animateErrorAppear(alpha: 1.0)
-//        }
+        errorLabel.text = message
+        if errorLabel.alpha != 1.0 {
+            animateErrorAppear(alpha: 1.0)
+        }
     }
 }

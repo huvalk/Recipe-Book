@@ -33,12 +33,14 @@ class LoginPresenter {
             self.delegate.loginDidFailed(message: "Логин или пароль не верны")
             return
         }
+        modelUser.login = login
+        modelUser.password = password
         
-        LoginNetworkService.login(user: modelUser) { (response) in
-            if response != nil {
+        LoginNetworkService.login(user: modelUser) { (response, statusCode) in
+            if response != nil && (200...299) ~= statusCode {
                 self.delegate.loginDidSucceed()
             } else {
-                self.delegate.loginDidFailed(message: "Something wrong in network")
+                self.delegate.loginDidFailed(message: "Something wrong. \(statusCode)")
             }
         }
     }

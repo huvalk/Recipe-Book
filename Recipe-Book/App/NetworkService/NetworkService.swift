@@ -9,7 +9,6 @@ import Foundation
 
 class NetworkService {
     let host: String = "https://ios.hahao.ru/api"
-    
     var currentUser: User?
     
     private init() {
@@ -18,7 +17,7 @@ class NetworkService {
     
     static let shared = NetworkService()
     
-    public func getRequest(rawUrl: String, completion: @escaping (Any) -> ()) {
+    public func getRequest(rawUrl: String, completion: @escaping (Any, Int) -> ()) {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }
         
@@ -36,15 +35,28 @@ class NetworkService {
                 return
             }
             
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-            } catch {
-                print(error)
+            var statusCode: Int
+            if let response = response as? HTTPURLResponse {
+                statusCode = response.statusCode
+            } else {
+                statusCode = 600
             }
+            
+            var json: Any = 0
+            do {
+                json = try JSONSerialization.jsonObject(with: data, options: [])
+            } catch {
+                statusCode = 600
+                print(error.localizedDescription)
+            }
+            DispatchQueue.main.async {
+                completion(json, statusCode)
+            }
+            
         }.resume()
     }
     
-    public func postRequest(rawUrl: String, data: [String: Any], completion: @escaping (Any) -> ()) {
+    public func postRequest(rawUrl: String, data: [String: Any], completion: @escaping (Any, Int) -> ()) {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }
         
@@ -60,7 +72,7 @@ class NetworkService {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -69,20 +81,28 @@ class NetworkService {
                 return
             }
             
+            var statusCode: Int
+            if let response = response as? HTTPURLResponse {
+                statusCode = response.statusCode
+            } else {
+                statusCode = 600
+            }
+            
+            var json: Any = 0
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                
-                DispatchQueue.main.async {
-                    completion(json)
-                }
+                json = try JSONSerialization.jsonObject(with: data, options: [])
             } catch {
+                statusCode = 600
                 print(error.localizedDescription)
+            }
+            DispatchQueue.main.async {
+                completion(json, statusCode)
             }
             
         }.resume()
     }
     
-    public func login(rawUrl: String, data: [String: Any], completion: @escaping (User?) -> ()) {
+    public func login(rawUrl: String, data: [String: Any], completion: @escaping (User?, Int) -> ()) {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }
         
@@ -104,20 +124,25 @@ class NetworkService {
                 print(error.localizedDescription)
                 return
             }
-            guard let data = data else { return }
+            guard let data = data else {
+                return
+            }
+            var statusCode: Int
+            if let response = response as? HTTPURLResponse {
+                statusCode = response.statusCode
+            } else {
+                statusCode = 600
+            }
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 self.currentUser = try User(json: json)
-                
-                DispatchQueue.main.async {
-                    completion(self.currentUser)
-                }
             } catch {
-                DispatchQueue.main.async {
-                    completion(nil)
-                }
+                statusCode = 600
                 print(error.localizedDescription)
+            }
+            DispatchQueue.main.async {
+                completion(self.currentUser, statusCode)
             }
             
             }.resume()

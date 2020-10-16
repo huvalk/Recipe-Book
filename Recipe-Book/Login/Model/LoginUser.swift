@@ -8,7 +8,7 @@
 import Foundation
 
 struct LoginUser {
-    let login: String?
-    let password: String?
-    let sessionID: String?
+    var login: String?
+    var password: String?
+    var sessionID: String?
 }

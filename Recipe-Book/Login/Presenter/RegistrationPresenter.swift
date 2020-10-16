@@ -33,9 +33,16 @@ class RegistrationPresenter {
             self.delegate.registrationDidFailed(message: "Логин или пароль не верны")
             return
         }
+        modelUser.login = login
+        modelUser.password = password
+        modelUser.phone = phone
         
-        LoginNetworkService.regiter(user: modelUser) { () in
-            print("aaa")
+        LoginNetworkService.regiter(user: modelUser) { (statusCode) in
+            if (200...299) ~= statusCode {
+                self.delegate.registrationDidSucceed()
+            } else {
+                self.delegate.registrationDidFailed(message: "Something wrong. \(statusCode)")
+            }
         }
     }
     
