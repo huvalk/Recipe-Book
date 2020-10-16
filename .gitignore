@@ -6,6 +6,7 @@
 *.lock
 profile
 *.a
+.idea/*
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
