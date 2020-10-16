@@ -15,6 +15,10 @@
 		7527F3F12537812800567122 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F3F02537812800567122 /* LoginPresenter.swift */; };
 		7527F3F8253799E500567122 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F3F7253799E500567122 /* User.swift */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
+		CE458E4F2538CC59009B46A6 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */; };
+		CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */; };
+		CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E622539A849009B46A6 /* RecipesPresenter.swift */; };
+		CE458E662539A87B009B46A6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E652539A87B009B46A6 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		7527F3F02537812800567122 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		7527F3F7253799E500567122 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		CE458E622539A849009B46A6 /* RecipesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
+		CE458E652539A87B009B46A6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
+				CE458E4A2538CC2C009B46A6 /* Recipes */,
 				7527F3FE253839E800567122 /* Common */,
 				7527F3FA2538393F00567122 /* App */,
 				7527F3F32537997600567122 /* Login */,
@@ -145,6 +154,41 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		CE458E4A2538CC2C009B46A6 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E4D2538CC43009B46A6 /* Model */,
+				CE458E4C2538CC3B009B46A6 /* View */,
+				CE458E4B2538CC33009B46A6 /* Presenter */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		CE458E4B2538CC33009B46A6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E622539A849009B46A6 /* RecipesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE458E4C2538CC3B009B46A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */,
+				CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE458E4D2538CC43009B46A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E652539A87B009B46A6 /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,7 +262,11 @@
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
+				CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */,
+				CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */,
 				7527F3F8253799E500567122 /* User.swift in Sources */,
+				CE458E662539A87B009B46A6 /* Recipe.swift in Sources */,
+				CE458E4F2538CC59009B46A6 /* RecipesViewController.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
