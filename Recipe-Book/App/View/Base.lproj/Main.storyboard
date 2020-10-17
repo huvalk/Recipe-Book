@@ -515,28 +515,6 @@
                                             <action selector="sendButtonTouched:" destination="Iw7-fx-frl" eventType="touchUpInside" id="BGA-gv-KsZ"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJN-cz-jqZ">
-                                        <rect key="frame" x="97" y="8" width="180" height="55"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Код подтверждения" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="zbG-1d-okP">
-                                        <rect key="frame" x="21" y="268" width="332" height="50"/>
-                                        <color key="backgroundColor" red="0.94509803920000002" green="0.95686274510000002" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2wM-ud-ZYO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" textContentType="username"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqE-oG-tNy">
-                                        <rect key="frame" x="168" y="328" width="39.5" height="21"/>
-                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yO-sd-X4E">
                                         <rect key="frame" x="21" y="365" width="332" height="41"/>
                                         <color key="backgroundColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -552,6 +530,28 @@
                                             <action selector="registerButtonTouched:" destination="gLV-N4-huz" eventType="touchUpInside" id="rKi-Xa-Zaf"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Телефон" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJN-cz-jqZ">
+                                        <rect key="frame" x="97" y="8" width="180" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Код подтверждения" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="zbG-1d-okP">
+                                        <rect key="frame" x="21" y="268" width="332" height="50"/>
+                                        <color key="backgroundColor" red="0.94509803920000002" green="0.95686274510000002" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2wM-ud-ZYO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" textContentType="username"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqE-oG-tNy">
+                                        <rect key="frame" x="167.5" y="326" width="39.5" height="21"/>
+                                        <color key="backgroundColor" red="1" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -566,9 +566,11 @@
                                     <constraint firstItem="lqE-oG-tNy" firstAttribute="centerX" secondItem="EVa-Xa-CY4" secondAttribute="centerX" id="SDl-lA-5dA"/>
                                     <constraint firstItem="8g5-3d-51B" firstAttribute="leading" secondItem="EVa-Xa-CY4" secondAttribute="leading" constant="21" id="bxf-N4-SES"/>
                                     <constraint firstItem="8yO-sd-X4E" firstAttribute="top" secondItem="zbG-1d-okP" secondAttribute="bottom" constant="47" id="ds0-Ro-mTL"/>
+                                    <constraint firstItem="lqE-oG-tNy" firstAttribute="top" secondItem="zbG-1d-okP" secondAttribute="bottom" constant="8" symbolic="YES" id="hMT-xM-Toi"/>
                                     <constraint firstItem="HAS-Sw-78i" firstAttribute="leading" secondItem="EVa-Xa-CY4" secondAttribute="leading" constant="21" id="ibb-24-ITt"/>
                                     <constraint firstAttribute="trailing" secondItem="8g5-3d-51B" secondAttribute="trailing" constant="21" id="nL7-TB-uX3"/>
                                     <constraint firstItem="zbG-1d-okP" firstAttribute="leading" secondItem="EVa-Xa-CY4" secondAttribute="leading" constant="21" id="niD-rt-6oA"/>
+                                    <constraint firstItem="lqE-oG-tNy" firstAttribute="centerX" secondItem="EVa-Xa-CY4" secondAttribute="centerX" id="p3D-wO-5i9"/>
                                     <constraint firstItem="HAS-Sw-78i" firstAttribute="top" secondItem="iJN-cz-jqZ" secondAttribute="bottom" constant="60" id="phZ-fI-Ipv"/>
                                     <constraint firstItem="zbG-1d-okP" firstAttribute="centerX" secondItem="EVa-Xa-CY4" secondAttribute="centerX" id="usf-h7-mom"/>
                                     <constraint firstItem="8g5-3d-51B" firstAttribute="top" secondItem="HAS-Sw-78i" secondAttribute="bottom" constant="27" id="w59-eV-qce"/>
