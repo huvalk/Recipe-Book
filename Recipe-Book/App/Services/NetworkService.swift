@@ -136,7 +136,7 @@ class NetworkService {
             
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
-                self.currentUser = try User(json: json)
+                SettingsService.userModel = try User(json: json)
             } catch {
                 statusCode = 600
                 print(error.localizedDescription)

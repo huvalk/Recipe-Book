@@ -44,7 +44,4 @@ class LoginPresenter {
             }
         }
     }
-    
-    //TODO возвращать ошибку от логина
-    
 }

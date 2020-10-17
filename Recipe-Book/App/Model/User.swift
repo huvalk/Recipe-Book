@@ -7,7 +7,21 @@
 
 import Foundation
 
-struct User {
+class User: NSObject, NSCoding {
+    func encode(with coder: NSCoder) {
+        coder.encode(id, forKey: "id")
+        coder.encode(login, forKey: "login")
+        coder.encode(sessionID, forKey: "sessionID")
+        coder.encode(phone, forKey: "phone")
+    }
+    
+    required init?(coder: NSCoder) {
+        id = coder.decodeObject(forKey: "id") as? Int
+        login = coder.decodeObject(forKey: "login") as? String
+        sessionID = coder.decodeObject(forKey: "sessionID") as? String
+        phone = coder.decodeObject(forKey: "phone") as? String
+    }
+    
     let id: Int?
     let login: String?
     let sessionID: String?
