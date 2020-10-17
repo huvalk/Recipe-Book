@@ -53,11 +53,23 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 115
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView()
+        
+        let headerLabel = UILabel(frame: CGRect(x: 16, y: 4, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        headerLabel.font = UIFont(name: "System", size: 18)
+        headerLabel.text = self.tableView(self.tableView, titleForHeaderInSection: section)
+        headerLabel.sizeToFit()
+        header.addSubview(headerLabel)
+        
+        return header
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -12,7 +12,10 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeTime: UILabel!
     @IBOutlet weak var ingridientCount: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var ingridientsTableView: IngridientsTableView!
+    @IBOutlet weak var stepsTableView: IngridientsTableView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet weak var recipeNameView: UIView!
     
     var recipe: Recipe!
     
@@ -23,23 +26,54 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         recipeTime.text = recipe?.time
         ingridientCount.text = String(recipe?.ingridients?.count ?? 0) + " ингридиентов"
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        initTables()
+        
+        let contentRect: CGRect = scrollView.subviews.reduce(into: .zero) { rect, view in
+            rect = rect.union(view.frame)
+        }
+        scrollView.contentSize = contentRect.size
+        
+        recipeNameView.layer.shadowOpacity = 0.2
+        recipeNameView.layer.shadowColor = UIColor.black.cgColor
+        recipeNameView.layer.shadowRadius = 2
+        recipeNameView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        recipeNameView.layer.masksToBounds = false
+    }
+    
+    func initTables() {
+        ingridientsTableView.delegate = self
+        ingridientsTableView.dataSource = self
+        ingridientsTableView.estimatedRowHeight = 24
+        ingridientsTableView.rowHeight = UITableView.automaticDimension
+        
+        stepsTableView.delegate = self
+        stepsTableView.dataSource = self
+        stepsTableView.estimatedRowHeight = 100
+        stepsTableView.rowHeight = UITableView.automaticDimension
+        stepsTableView.tableFooterView = UIView()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipe.ingridients?.count ?? 0
+        if tableView == ingridientsTableView {
+            return recipe.ingridients?.count ?? 0
+        }
+        return recipe.steps?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! IngridientTableViewCell
+        if tableView == ingridientsTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! IngridientTableViewCell
+            
+            cell.ingridientName?.text = recipe.ingridients?[indexPath.item]
+            
+            return cell
+        }
         
-        cell.ingridientName?.text = recipe.ingridients?[indexPath.item]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StepTableViewCell
+        
+        cell.stepNumber.text = "Шаг " + String(indexPath.item + 1)
+        cell.stepText.text = recipe.steps?[indexPath.item]
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 24
     }
 }

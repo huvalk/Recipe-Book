@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelfSizedTableView: UITableView {
+class IngridientsTableView: UITableView {
     
     override func reloadData() {
         super.reloadData()

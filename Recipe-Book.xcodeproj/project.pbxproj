@@ -30,8 +30,10 @@
 		CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E622539A849009B46A6 /* RecipesPresenter.swift */; };
 		CE458E662539A87B009B46A6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E652539A87B009B46A6 /* Recipe.swift */; };
 		CE458E6B2539D1B5009B46A6 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */; };
-		CED8ADC4253AFCEF002D94FB /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADC3253AFCEF002D94FB /* SelfSizedTableView.swift */; };
+		CED8ADC4253AFCEF002D94FB /* IngridientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADC3253AFCEF002D94FB /* IngridientsTableView.swift */; };
 		CED8ADC7253AFE91002D94FB /* IngridientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADC6253AFE91002D94FB /* IngridientTableViewCell.swift */; };
+		CED8ADCF253B1E69002D94FB /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADCE253B1E69002D94FB /* StepTableViewCell.swift */; };
+		CED8ADD3253B3487002D94FB /* StepsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADD2253B3487002D94FB /* StepsTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +62,10 @@
 		CE458E622539A849009B46A6 /* RecipesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
 		CE458E652539A87B009B46A6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		CED8ADC3253AFCEF002D94FB /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		CED8ADC3253AFCEF002D94FB /* IngridientsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsTableView.swift; sourceTree = "<group>"; };
 		CED8ADC6253AFE91002D94FB /* IngridientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientTableViewCell.swift; sourceTree = "<group>"; };
+		CED8ADCE253B1E69002D94FB /* StepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
+		CED8ADD2253B3487002D94FB /* StepsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,8 +298,10 @@
 			isa = PBXGroup;
 			children = (
 				CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */,
-				CED8ADC3253AFCEF002D94FB /* SelfSizedTableView.swift */,
+				CED8ADC3253AFCEF002D94FB /* IngridientsTableView.swift */,
 				CED8ADC6253AFE91002D94FB /* IngridientTableViewCell.swift */,
+				CED8ADD2253B3487002D94FB /* StepsTableView.swift */,
+				CED8ADCE253B1E69002D94FB /* StepTableViewCell.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -371,6 +377,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7527F41A25386D6100567122 /* LoginNetworkService.swift in Sources */,
+				CED8ADD3253B3487002D94FB /* StepsTableView.swift in Sources */,
+				CED8ADCF253B1E69002D94FB /* StepTableViewCell.swift in Sources */,
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
@@ -382,7 +390,7 @@
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
 				CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */,
 				CE458E6B2539D1B5009B46A6 /* RecipeViewController.swift in Sources */,
-				CED8ADC4253AFCEF002D94FB /* SelfSizedTableView.swift in Sources */,
+				CED8ADC4253AFCEF002D94FB /* IngridientsTableView.swift in Sources */,
 				CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */,
 				7527F3F8253799E500567122 /* User.swift in Sources */,
 				CE458E662539A87B009B46A6 /* Recipe.swift in Sources */,
