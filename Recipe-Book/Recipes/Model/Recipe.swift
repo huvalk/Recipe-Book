@@ -10,7 +10,7 @@ import Foundation
 struct Recipe {
     let name: String?
     let time: String?
-    let ingridientCount: String?
+    let ingridients: [String]?
 }
 
 typealias RecipeList = [Recipe]

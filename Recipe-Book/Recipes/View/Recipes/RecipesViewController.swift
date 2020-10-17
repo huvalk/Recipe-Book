@@ -47,7 +47,7 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         
         cell.recipeName?.text = self.recipes[indexPath.section][indexPath.item].name
         cell.recipeTime?.text = self.recipes[indexPath.section][indexPath.item].time
-        cell.ingridientCount?.text = self.recipes[indexPath.section][indexPath.item].ingridientCount
+        cell.ingridientCount?.text = String(self.recipes[indexPath.section][indexPath.item].ingridients?.count ?? 0) + " ингридиентов"
         
         return cell
     }
