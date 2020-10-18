@@ -108,7 +108,6 @@ extension RegistrationViewController: RegistrationDelegate {
     
     func registrationDidSucceed() {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-
     }
     
     func registrationDidFailed(message: String) {
