@@ -142,7 +142,7 @@ class NetworkService {
                 print(error.localizedDescription)
             }
             DispatchQueue.main.async {
-                completion(self.currentUser, statusCode)
+                completion(SettingsService.userModel, statusCode)
             }
             
             }.resume()

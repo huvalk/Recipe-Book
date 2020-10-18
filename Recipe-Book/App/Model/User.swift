@@ -9,28 +9,28 @@ import Foundation
 
 class User: NSObject, NSCoding {
     func encode(with coder: NSCoder) {
-        coder.encode(id, forKey: "id")
+        coder.encode(ID, forKey: "ID")
         coder.encode(login, forKey: "login")
-        coder.encode(sessionID, forKey: "sessionID")
+        coder.encode(session, forKey: "session")
         coder.encode(phone, forKey: "phone")
     }
     
     required init?(coder: NSCoder) {
-        id = coder.decodeObject(forKey: "id") as? Int
+        ID = coder.decodeObject(forKey: "ID") as? Int
         login = coder.decodeObject(forKey: "login") as? String
-        sessionID = coder.decodeObject(forKey: "sessionID") as? String
+        session = coder.decodeObject(forKey: "session") as? String
         phone = coder.decodeObject(forKey: "phone") as? String
     }
     
-    let id: Int?
+    let ID: Int?
     let login: String?
-    let sessionID: String?
+    let session: String?
     let phone: String?
     
     init?(dict: [String: AnyObject]) {
-        self.id = dict["id"] as? Int
+        self.ID = dict["ID"] as? Int
         self.login = dict["login"] as? String
-        self.sessionID = dict["sessionID"] as? String
+        self.session = dict["session"] as? String
         self.phone = dict["phone"] as? String
     }
     
@@ -39,9 +39,9 @@ class User: NSObject, NSCoding {
             throw JSONErrors.marshalJSONError
         }
         
-        self.id = dict["id"] as? Int
+        self.ID = dict["ID"] as? Int
         self.login = dict["login"] as? String
-        self.sessionID = dict["sessionID"] as? String
+        self.session = dict["session"] as? String
         self.phone = dict["phone"] as? String
     }
 }
