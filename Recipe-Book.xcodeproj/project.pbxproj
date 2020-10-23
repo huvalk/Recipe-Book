@@ -399,6 +399,10 @@
 			isa = PBXGroup;
 			children = (
 				75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CE458E4D2538CC43009B46A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
