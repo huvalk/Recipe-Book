@@ -13,13 +13,10 @@ class PhoneNetworkService {
     static func sendCode(phone: String, completion: @escaping(String?, Int) -> ()) {
         let path = "/phone/\(phone)/confirm"
         
-        NetworkService.shared.getRequest(rawUrl: path) { (json, statusCode)  in
+        NetworkService.shared.getRequest(rawUrl: path) { (responseData, statusCode)  in
             do {
-                guard let dict = json as? [String: AnyObject] else {
-                    throw JSONErrors.marshalJSONError
-                }
-                
-                completion(dict["code"] as? String, statusCode)
+                let sms = try JSONDecoder().decode(SmsCode.self, from: responseData)
+                completion(sms.code, statusCode)
             } catch {
                 print("Invalid login json")
             }

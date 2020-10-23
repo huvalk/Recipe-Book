@@ -12,11 +12,16 @@ class LaunchNetworkService {
     
     static func checkSession(session: String, completion: @escaping(Int) -> ()) {
         let path = "/session"
-        let parameters: [String: Any] = [
-            "session": session
-        ]
+        let parameters: Session = Session(session: session)
         
-        NetworkService.shared.postRequest(rawUrl: path, data: parameters) { (json, statusCode)  in
+        var jsonData = Data()
+        do {
+            jsonData = try JSONEncoder().encode(parameters)
+        } catch {
+            print("json serialization error")
+        }
+        
+        NetworkService.shared.postRequest(rawUrl: path, data: jsonData) { (json, statusCode)  in
             do {
                 completion(statusCode)
             } catch {

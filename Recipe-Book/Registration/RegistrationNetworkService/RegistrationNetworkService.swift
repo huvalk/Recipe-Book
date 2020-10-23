@@ -13,13 +13,17 @@ class RegistrationNetworkService {
     static func regiter(user: RegisterUser, completion: @escaping(Int) -> ()) {
         let path = "/users"
         
-        let parameters: [String: Any] = [
-            "login": user.login ?? "",
-            "password": user.password ?? "",
-            "phone": user.phone ?? ""
-        ]
+        // TODO переделать на модель
+        let parameters: RegisterUser = RegisterUser(login: user.login, password: user.password, phone: user.phone)
         
-        NetworkService.shared.postRequest(rawUrl: path, data: parameters) { (response, statusCode) in
+        var jsonData = Data()
+        do {
+            jsonData = try JSONEncoder().encode(parameters)
+        } catch {
+            print("json serialization error")
+        }
+        
+        NetworkService.shared.postRequest(rawUrl: path, data: jsonData) { (responseData, statusCode) in
             do {
                 completion(statusCode)
             } catch {

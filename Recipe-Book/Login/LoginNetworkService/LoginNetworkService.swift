@@ -13,12 +13,15 @@ class LoginNetworkService {
     static func login(user: LoginUser, completion: @escaping(User?, Int) -> ()) {
         let path = "/login"
         
-        let parameters: [String: Any] = [
-            "login": user.login ?? "",
-            "password": user.password ?? ""
-        ]
+        var data = Data()
+        do {
+            data = try JSONEncoder().encode(user)
+        } catch {
+            print("json serialization error")
+            return
+        }
         
-        NetworkService.shared.login(rawUrl: path, data: parameters) { (response, statusCode)  in
+        NetworkService.shared.login(rawUrl: path, data: data) { (response, statusCode)  in
             do {
                 completion(response, statusCode)
             } catch {

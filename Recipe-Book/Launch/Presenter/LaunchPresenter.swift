@@ -24,12 +24,12 @@ class LaunchPresenter {
     }
     
     func authTry() {
-        guard let user = SettingsService.userModel, let session = user.session else {
+        guard let user = SettingsService.userModel else {
             delegate.launchDidFailed()
             return
         }
         
-        LaunchNetworkService.checkSession(session: session) {statusCode in
+        LaunchNetworkService.checkSession(session: user.session) {statusCode in
             if (200...299) ~= statusCode {
                 self.delegate.launchDidSucceed()
             } else {

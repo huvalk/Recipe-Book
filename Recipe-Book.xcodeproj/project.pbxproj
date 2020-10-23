@@ -23,6 +23,12 @@
 		7527F424253888CA00567122 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F423253888CA00567122 /* LoginUser.swift */; };
 		7527F42725388C2300567122 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42625388C2300567122 /* RegisterUser.swift */; };
 		7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42F253A025900567122 /* RegistrationNetworkService.swift */; };
+		75994C542543072500275FC0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C532543072500275FC0 /* CheckBox.swift */; };
+		75994C5725430C1600275FC0 /* ShoppingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5625430C1600275FC0 /* ShoppingTable.swift */; };
+		75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5925430C3000275FC0 /* ShoppingCell.swift */; };
+		75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5C254310EA00275FC0 /* ShoppingViewController.swift */; };
+		75994C602543254400275FC0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5F2543254400275FC0 /* Session.swift */; };
+		75994C6325432B3700275FC0 /* SmsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C6225432B3700275FC0 /* SmsCode.swift */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
 		75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA483D253B336F00AEDA22 /* SettingsService.swift */; };
 		75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */; };
@@ -58,6 +64,12 @@
 		7527F423253888CA00567122 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		7527F42625388C2300567122 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
 		7527F42F253A025900567122 /* RegistrationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNetworkService.swift; sourceTree = "<group>"; };
+		75994C532543072500275FC0 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		75994C5625430C1600275FC0 /* ShoppingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTable.swift; sourceTree = "<group>"; };
+		75994C5925430C3000275FC0 /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
+		75994C5C254310EA00275FC0 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		75994C5F2543254400275FC0 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		75994C6225432B3700275FC0 /* SmsCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCode.swift; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		75DA483D253B336F00AEDA22 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +138,7 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
+				75994C4E254305E200275FC0 /* ShoppingList */,
 				75DA4850253C6C8D00AEDA22 /* Launch */,
 				7527F3FA2538393F00567122 /* App */,
 				75DA4841253B4A3700AEDA22 /* PhoneConfirmation */,
@@ -280,6 +293,49 @@
 			path = RegistrationNetworkService;
 			sourceTree = "<group>";
 		};
+		75994C4E254305E200275FC0 /* ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
+				75994C522543071500275FC0 /* Model */,
+				75994C512543070E00275FC0 /* View */,
+				75994C502543070200275FC0 /* Presenter */,
+				75994C4F254306E500275FC0 /* ShoppingDatabaseService */,
+			);
+			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		75994C4F254306E500275FC0 /* ShoppingDatabaseService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShoppingDatabaseService;
+			sourceTree = "<group>";
+		};
+		75994C502543070200275FC0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		75994C512543070E00275FC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75994C532543072500275FC0 /* CheckBox.swift */,
+				75994C5625430C1600275FC0 /* ShoppingTable.swift */,
+				75994C5925430C3000275FC0 /* ShoppingCell.swift */,
+				75994C5C254310EA00275FC0 /* ShoppingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		75994C522543071500275FC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		75DA4841253B4A3700AEDA22 /* PhoneConfirmation */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +350,7 @@
 		75DA4842253B4A5500AEDA22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				75994C6225432B3700275FC0 /* SmsCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -336,6 +393,7 @@
 		75DA4851253C6C9B00AEDA22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				75994C5F2543254400275FC0 /* Session.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +558,7 @@
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
+				75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */,
 				75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
@@ -507,12 +566,17 @@
 				75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */,
 				7527F41525386ADD00567122 /* NetworkService.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
+				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
 				CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */,
+				75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */,
 				75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */,
 				CE458E6B2539D1B5009B46A6 /* RecipeViewController.swift in Sources */,
 				CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */,
+				75994C602543254400275FC0 /* Session.swift in Sources */,
 				7527F3F8253799E500567122 /* User.swift in Sources */,
+				75994C5725430C1600275FC0 /* ShoppingTable.swift in Sources */,
+				75994C6325432B3700275FC0 /* SmsCode.swift in Sources */,
 				75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */,
 				CE458E662539A87B009B46A6 /* Recipe.swift in Sources */,
 				CE458E4F2538CC59009B46A6 /* RecipesViewController.swift in Sources */,
