@@ -356,6 +356,10 @@
 				75994C5625430C1600275FC0 /* ShoppingTable.swift */,
 				75994C5925430C3000275FC0 /* ShoppingCell.swift */,
 				75994C5C254310EA00275FC0 /* ShoppingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CE458E4C2538CC3B009B46A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
