@@ -43,6 +43,11 @@
 		CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E622539A849009B46A6 /* RecipesPresenter.swift */; };
 		CE458E662539A87B009B46A6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E652539A87B009B46A6 /* Recipe.swift */; };
 		CE458E6B2539D1B5009B46A6 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */; };
+		CE93A4E9254302A8001C8C88 /* RecipesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93A4E8254302A8001C8C88 /* RecipesNetworkService.swift */; };
+		CED8ADC4253AFCEF002D94FB /* IngridientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADC3253AFCEF002D94FB /* IngridientsTableView.swift */; };
+		CED8ADC7253AFE91002D94FB /* IngridientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADC6253AFE91002D94FB /* IngridientTableViewCell.swift */; };
+		CED8ADCF253B1E69002D94FB /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADCE253B1E69002D94FB /* StepTableViewCell.swift */; };
+		CED8ADD3253B3487002D94FB /* StepsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8ADD2253B3487002D94FB /* StepsTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +91,11 @@
 		CE458E622539A849009B46A6 /* RecipesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
 		CE458E652539A87B009B46A6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		CE93A4E8254302A8001C8C88 /* RecipesNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesNetworkService.swift; sourceTree = "<group>"; };
+		CED8ADC3253AFCEF002D94FB /* IngridientsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsTableView.swift; sourceTree = "<group>"; };
+		CED8ADC6253AFE91002D94FB /* IngridientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientTableViewCell.swift; sourceTree = "<group>"; };
+		CED8ADCE253B1E69002D94FB /* StepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
+		CED8ADD2253B3487002D94FB /* StepsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +150,8 @@
 			children = (
 				75994C4E254305E200275FC0 /* ShoppingList */,
 				75DA4850253C6C8D00AEDA22 /* Launch */,
+				7527F42A253A01DA00567122 /* Registration */,
+				CE458E4A2538CC2C009B46A6 /* Recipes */,
 				7527F3FA2538393F00567122 /* App */,
 				75DA4841253B4A3700AEDA22 /* PhoneConfirmation */,
 				7527F42A253A01DA00567122 /* Registration */,
@@ -281,6 +293,28 @@
 			isa = PBXGroup;
 			children = (
 				7527F40C25385CBE00567122 /* RegistrationViewController.swift */,
+			isa = PBXGroup;
+			children = (
+				7527F40C25385CBE00567122 /* RegistrationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7527F42E253A022F00567122 /* RegistrationNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				7527F42F253A025900567122 /* RegistrationNetworkService.swift */,
+			);
+			path = RegistrationNetworkService;
+			sourceTree = "<group>";
+		};
+		CE458E4A2538CC2C009B46A6 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				CE93A4E725430293001C8C88 /* Network */,
+				CE458E4D2538CC43009B46A6 /* Model */,
+				CE458E4C2538CC3B009B46A6 /* View */,
+				CE458E4B2538CC33009B46A6 /* Presenter */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,6 +359,11 @@
 				75994C5625430C1600275FC0 /* ShoppingTable.swift */,
 				75994C5925430C3000275FC0 /* ShoppingCell.swift */,
 				75994C5C254310EA00275FC0 /* ShoppingViewController.swift */,
+		CE458E4C2538CC3B009B46A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CED8ADC2253AFCD2002D94FB /* Recipe */,
+				CED8ADC1253AFCBF002D94FB /* Recipes */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,8 +398,12 @@
 			isa = PBXGroup;
 			children = (
 				75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */,
+		CE458E4D2538CC43009B46A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E652539A87B009B46A6 /* Recipe.swift */,
 			);
-			path = View;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		75DA4844253B4A6900AEDA22 /* Presenter */ = {
@@ -448,14 +491,33 @@
 				CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		CE458E4D2538CC43009B46A6 /* Model */ = {
+		CE93A4E725430293001C8C88 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				CE458E652539A87B009B46A6 /* Recipe.swift */,
+				CE93A4E8254302A8001C8C88 /* RecipesNetworkService.swift */,
 			);
-			path = Model;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CED8ADC1253AFCBF002D94FB /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */,
+				CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		CED8ADC2253AFCD2002D94FB /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */,
+				CED8ADC3253AFCEF002D94FB /* IngridientsTableView.swift */,
+				CED8ADC6253AFE91002D94FB /* IngridientTableViewCell.swift */,
+				CED8ADD2253B3487002D94FB /* StepsTableView.swift */,
+				CED8ADCE253B1E69002D94FB /* StepTableViewCell.swift */,
+			);
+			path = Recipe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,6 +617,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7527F41A25386D6100567122 /* LoginNetworkService.swift in Sources */,
+				CED8ADD3253B3487002D94FB /* StepsTableView.swift in Sources */,
+				CED8ADCF253B1E69002D94FB /* StepTableViewCell.swift in Sources */,
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
@@ -568,10 +632,12 @@
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
+				CE93A4E9254302A8001C8C88 /* RecipesNetworkService.swift in Sources */,
 				CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */,
 				75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */,
 				75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */,
 				CE458E6B2539D1B5009B46A6 /* RecipeViewController.swift in Sources */,
+				CED8ADC4253AFCEF002D94FB /* IngridientsTableView.swift in Sources */,
 				CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */,
 				75994C602543254400275FC0 /* Session.swift in Sources */,
 				7527F3F8253799E500567122 /* User.swift in Sources */,
@@ -581,6 +647,7 @@
 				CE458E662539A87B009B46A6 /* Recipe.swift in Sources */,
 				CE458E4F2538CC59009B46A6 /* RecipesViewController.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
+				CED8ADC7253AFE91002D94FB /* IngridientTableViewCell.swift in Sources */,
 				7527F421253884D000567122 /* UserResponse.swift in Sources */,
 				75DA484A253B4AF800AEDA22 /* PhonePresenter.swift in Sources */,
 				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,

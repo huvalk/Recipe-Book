@@ -8,9 +8,12 @@
 import Foundation
 
 struct Recipe {
-    let name: String?
-    let time: String?
-    let ingridientCount: String?
+    var id: Int
+    var author: Int
+    var name: String
+    var cookingTime: Int
+    let ingridients: [String]
+    let steps: [String]
 }
 
 typealias RecipeList = [Recipe]
