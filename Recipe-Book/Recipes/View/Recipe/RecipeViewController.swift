@@ -22,9 +22,9 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recipeName.text = recipe?.name
-        recipeTime.text = recipe?.time
-        ingridientCount.text = String(recipe?.ingridients?.count ?? 0) + " ингридиентов"
+        recipeName.text = recipe.name
+        recipeTime.text = String(recipe.cookingTime) + " мин"
+        ingridientCount.text = String(recipe?.ingridients.count ?? 0) + " ингридиентов"
         
         initTables()
         
@@ -55,16 +55,16 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == ingridientsTableView {
-            return recipe.ingridients?.count ?? 0
+            return recipe.ingridients.count ?? 0
         }
-        return recipe.steps?.count ?? 0
+        return recipe.steps.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == ingridientsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! IngridientTableViewCell
             
-            cell.ingridientName?.text = recipe.ingridients?[indexPath.item]
+            cell.ingridientName?.text = recipe.ingridients[indexPath.item]
             
             return cell
         }
@@ -72,7 +72,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! StepTableViewCell
         
         cell.stepNumber.text = "Шаг " + String(indexPath.item + 1)
-        cell.stepText.text = recipe.steps?[indexPath.item]
+        cell.stepText.text = recipe.steps[indexPath.item]
         
         return cell
     }

@@ -46,8 +46,8 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
         cell.recipeName?.text = self.recipes[indexPath.section][indexPath.item].name
-        cell.recipeTime?.text = self.recipes[indexPath.section][indexPath.item].time
-        cell.ingridientCount?.text = String(self.recipes[indexPath.section][indexPath.item].ingridients?.count ?? 0) + " ингридиентов"
+        cell.recipeTime?.text = String(self.recipes[indexPath.section][indexPath.item].cookingTime) + " мин"
+        cell.ingridientCount?.text = String(self.recipes[indexPath.section][indexPath.item].ingridients.count) + " ингридиентов"
         
         return cell
     }

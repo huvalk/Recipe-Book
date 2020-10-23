@@ -19,7 +19,7 @@ class RecipesPresenter {
     }
     
     func getRecipes() {
-        let recipes: [RecipeList] = mockRecipes
+        var recipes: [RecipeList] = [[], []]
         
         self.delegate.setRecipes(recipes: recipes)
     }
