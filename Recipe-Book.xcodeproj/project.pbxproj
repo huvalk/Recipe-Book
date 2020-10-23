@@ -156,7 +156,6 @@
 				75DA4841253B4A3700AEDA22 /* PhoneConfirmation */,
 				7527F42A253A01DA00567122 /* Registration */,
 				7527F3F32537997600567122 /* Login */,
-				CE458E4A2538CC2C009B46A6 /* Recipes */,
 				7527F3FE253839E800567122 /* Common */,
 			);
 			path = "Recipe-Book";
@@ -470,16 +469,6 @@
 			path = LaunchNetworkService;
 			sourceTree = "<group>";
 		};
-		CE458E4A2538CC2C009B46A6 /* Recipes */ = {
-			isa = PBXGroup;
-			children = (
-				CE458E4D2538CC43009B46A6 /* Model */,
-				CE458E4C2538CC3B009B46A6 /* View */,
-				CE458E4B2538CC33009B46A6 /* Presenter */,
-			);
-			path = Recipes;
-			sourceTree = "<group>";
-		};
 		CE458E4B2538CC33009B46A6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,14 +477,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		CE458E4C2538CC3B009B46A6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */,
-				CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */,
-				CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */,
-			);
-			path = View;
 		CE93A4E725430293001C8C88 /* Network */ = {
 			isa = PBXGroup;
 			children = (
