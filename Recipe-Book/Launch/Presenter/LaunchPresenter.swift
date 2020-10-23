@@ -13,7 +13,9 @@ protocol LaunchDelegate {
     func launchDidSucceed()
     func launchDidFailed()
 }
-
+// Protocols
+// LaunchViewOutput - LaunchPresenter
+// LaunchViewInput - LaunchViewController
 class LaunchPresenter {
     var delegate: LaunchDelegate
 

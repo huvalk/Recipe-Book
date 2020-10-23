@@ -1,5 +1,5 @@
-platform :ios, ‘13.6’
+platform :ios, '13.0'
 use_frameworks!
  
-target ‘Recipe-Book’ do
+target 'Recipe-Book' do
 end

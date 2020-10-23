@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// Should use User: Codable, Decodable
 class User: NSObject, NSCoding {
     func encode(with coder: NSCoder) {
         coder.encode(ID, forKey: "ID")
