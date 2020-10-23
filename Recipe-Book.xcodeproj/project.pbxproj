@@ -14,7 +14,6 @@
 		7518BCD92534BABD004DEA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7518BCD72534BABD004DEA06 /* LaunchScreen.storyboard */; };
 		7527F3F12537812800567122 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F3F02537812800567122 /* LoginPresenter.swift */; };
 		7527F3F8253799E500567122 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F3F7253799E500567122 /* User.swift */; };
-		7527F4062538540200567122 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F4052538540200567122 /* TestingViewController.swift */; };
 		7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F40C25385CBE00567122 /* RegistrationViewController.swift */; };
 		7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F40F25385CD300567122 /* RegistrationPresenter.swift */; };
 		7527F41525386ADD00567122 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F41425386ADD00567122 /* NetworkService.swift */; };
@@ -24,7 +23,21 @@
 		7527F424253888CA00567122 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F423253888CA00567122 /* LoginUser.swift */; };
 		7527F42725388C2300567122 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42625388C2300567122 /* RegisterUser.swift */; };
 		7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42F253A025900567122 /* RegistrationNetworkService.swift */; };
+		75994C542543072500275FC0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C532543072500275FC0 /* CheckBox.swift */; };
+		75994C5725430C1600275FC0 /* ShoppingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5625430C1600275FC0 /* ShoppingTable.swift */; };
+		75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5925430C3000275FC0 /* ShoppingCell.swift */; };
+		75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5C254310EA00275FC0 /* ShoppingViewController.swift */; };
+		75994C602543254400275FC0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5F2543254400275FC0 /* Session.swift */; };
+		75994C6325432B3700275FC0 /* SmsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C6225432B3700275FC0 /* SmsCode.swift */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
+		75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA483D253B336F00AEDA22 /* SettingsService.swift */; };
+		75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */; };
+		75DA484A253B4AF800AEDA22 /* PhonePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4849253B4AF800AEDA22 /* PhonePresenter.swift */; };
+		75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA484C253B4B0700AEDA22 /* PhoneNetworkService.swift */; };
+		75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4855253C6D7700AEDA22 /* LaunchViewController.swift */; };
+		75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */; };
+		75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */; };
+		C50A8560F00C4D28782A7241 /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
 		CE458E4F2538CC59009B46A6 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */; };
 		CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */; };
 		CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE458E622539A849009B46A6 /* RecipesPresenter.swift */; };
@@ -42,7 +55,6 @@
 		7518BCDA2534BABD004DEA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7527F3F02537812800567122 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		7527F3F7253799E500567122 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		7527F4052538540200567122 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		7527F40C25385CBE00567122 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		7527F40F25385CD300567122 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		7527F41425386ADD00567122 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -52,7 +64,23 @@
 		7527F423253888CA00567122 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		7527F42625388C2300567122 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
 		7527F42F253A025900567122 /* RegistrationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNetworkService.swift; sourceTree = "<group>"; };
+		75994C532543072500275FC0 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		75994C5625430C1600275FC0 /* ShoppingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTable.swift; sourceTree = "<group>"; };
+		75994C5925430C3000275FC0 /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
+		75994C5C254310EA00275FC0 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		75994C5F2543254400275FC0 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		75994C6225432B3700275FC0 /* SmsCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCode.swift; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		75DA483D253B336F00AEDA22 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		75DA4849253B4AF800AEDA22 /* PhonePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhonePresenter.swift; sourceTree = "<group>"; };
+		75DA484C253B4B0700AEDA22 /* PhoneNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNetworkService.swift; sourceTree = "<group>"; };
+		75DA4855253C6D7700AEDA22 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
+		75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkServices.swift; sourceTree = "<group>"; };
+		89B917C489D5646649889660 /* Pods-Recipe-Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.debug.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.debug.xcconfig"; sourceTree = "<group>"; };
+		AAC12EF1573FBEC2760C9237 /* Pods-Recipe-Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.release.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.release.xcconfig"; sourceTree = "<group>"; };
+		AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe_Book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE458E4E2538CC59009B46A6 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		CE458E522538CD57009B46A6 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		CE458E622539A849009B46A6 /* RecipesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
@@ -65,17 +93,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C50A8560F00C4D28782A7241 /* Pods_Recipe_Book.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		443F0C59F9ABA2DEA3455D3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		622AF23E3556F02238FAE17E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89B917C489D5646649889660 /* Pods-Recipe-Book.debug.xcconfig */,
+				AAC12EF1573FBEC2760C9237 /* Pods-Recipe-Book.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7518BCC02534BABA004DEA06 = {
 			isa = PBXGroup;
 			children = (
 				7518BCCB2534BABA004DEA06 /* Recipe-Book */,
 				7518BCCA2534BABA004DEA06 /* Products */,
+				622AF23E3556F02238FAE17E /* Pods */,
+				443F0C59F9ABA2DEA3455D3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,13 +138,14 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
+				75994C4E254305E200275FC0 /* ShoppingList */,
+				75DA4850253C6C8D00AEDA22 /* Launch */,
+				7527F3FA2538393F00567122 /* App */,
+				75DA4841253B4A3700AEDA22 /* PhoneConfirmation */,
 				7527F42A253A01DA00567122 /* Registration */,
+				7527F3F32537997600567122 /* Login */,
 				CE458E4A2538CC2C009B46A6 /* Recipes */,
 				7527F3FE253839E800567122 /* Common */,
-				7527F3FA2538393F00567122 /* App */,
-				7527F3F32537997600567122 /* Login */,
-				7527F3FE253839E800567122 /* Common */,
-				7527F4052538540200567122 /* TestingViewController.swift */,
 			);
 			path = "Recipe-Book";
 			sourceTree = "<group>";
@@ -131,7 +180,6 @@
 		7527F3F62537999200567122 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7527F3F7253799E500567122 /* User.swift */,
 				7527F420253884D000567122 /* UserResponse.swift */,
 				7527F423253888CA00567122 /* LoginUser.swift */,
 			);
@@ -144,7 +192,7 @@
 				7527F3FB2538394D00567122 /* Model */,
 				7527F3FD2538396000567122 /* View */,
 				7527F3FC2538395400567122 /* Presenter */,
-				7527F41225386AB900567122 /* NetworkService */,
+				7527F41225386AB900567122 /* Services */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -152,6 +200,7 @@
 		7527F3FB2538394D00567122 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7527F3F7253799E500567122 /* User.swift */,
 				7527F41D25387EE900567122 /* Error.swift */,
 			);
 			path = Model;
@@ -184,12 +233,13 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		7527F41225386AB900567122 /* NetworkService */ = {
+		7527F41225386AB900567122 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				7527F41425386ADD00567122 /* NetworkService.swift */,
+				75DA483D253B336F00AEDA22 /* SettingsService.swift */,
 			);
-			path = NetworkService;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		7527F41825386D3800567122 /* LoginNetworkService */ = {
@@ -203,10 +253,10 @@
 		7527F42A253A01DA00567122 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				7527F42E253A022F00567122 /* RegistrationNetworkService */,
+				7527F42B253A01E500567122 /* Model */,
 				7527F42D253A01F300567122 /* View */,
 				7527F42C253A01EC00567122 /* Presenter */,
-				7527F42B253A01E500567122 /* Model */,
+				7527F42E253A022F00567122 /* RegistrationNetworkService */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -227,6 +277,151 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		7527F42D253A01F300567122 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7527F40C25385CBE00567122 /* RegistrationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7527F42E253A022F00567122 /* RegistrationNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				7527F42F253A025900567122 /* RegistrationNetworkService.swift */,
+			);
+			path = RegistrationNetworkService;
+			sourceTree = "<group>";
+		};
+		75994C4E254305E200275FC0 /* ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
+				75994C522543071500275FC0 /* Model */,
+				75994C512543070E00275FC0 /* View */,
+				75994C502543070200275FC0 /* Presenter */,
+				75994C4F254306E500275FC0 /* ShoppingDatabaseService */,
+			);
+			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		75994C4F254306E500275FC0 /* ShoppingDatabaseService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShoppingDatabaseService;
+			sourceTree = "<group>";
+		};
+		75994C502543070200275FC0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		75994C512543070E00275FC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75994C532543072500275FC0 /* CheckBox.swift */,
+				75994C5625430C1600275FC0 /* ShoppingTable.swift */,
+				75994C5925430C3000275FC0 /* ShoppingCell.swift */,
+				75994C5C254310EA00275FC0 /* ShoppingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		75994C522543071500275FC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75DA4841253B4A3700AEDA22 /* PhoneConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				75DA4842253B4A5500AEDA22 /* Model */,
+				75DA4843253B4A6000AEDA22 /* View */,
+				75DA4844253B4A6900AEDA22 /* Presenter */,
+				75DA4845253B4A7600AEDA22 /* PhoneNetworkService */,
+			);
+			path = PhoneConfirmation;
+			sourceTree = "<group>";
+		};
+		75DA4842253B4A5500AEDA22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75994C6225432B3700275FC0 /* SmsCode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75DA4843253B4A6000AEDA22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		75DA4844253B4A6900AEDA22 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				75DA4849253B4AF800AEDA22 /* PhonePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		75DA4845253B4A7600AEDA22 /* PhoneNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				75DA484C253B4B0700AEDA22 /* PhoneNetworkService.swift */,
+			);
+			path = PhoneNetworkService;
+			sourceTree = "<group>";
+		};
+		75DA4850253C6C8D00AEDA22 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				75DA4851253C6C9B00AEDA22 /* Model */,
+				75DA4852253C6CA200AEDA22 /* View */,
+				75DA4853253C6CAD00AEDA22 /* Presenter */,
+				75DA485B253C6DA100AEDA22 /* LaunchNetworkService */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		75DA4851253C6C9B00AEDA22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75994C5F2543254400275FC0 /* Session.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75DA4852253C6CA200AEDA22 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75DA4855253C6D7700AEDA22 /* LaunchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		75DA4853253C6CAD00AEDA22 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		75DA485B253C6DA100AEDA22 /* LaunchNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */,
+			);
+			path = LaunchNetworkService;
+			sourceTree = "<group>";
+		};
 		CE458E4A2538CC2C009B46A6 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,14 +440,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		7527F42D253A01F300567122 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7527F40C25385CBE00567122 /* RegistrationViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		CE458E4C2538CC3B009B46A6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,14 +448,6 @@
 				CE458E6A2539D1B5009B46A6 /* RecipeViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		7527F42E253A022F00567122 /* RegistrationNetworkService */ = {
-			isa = PBXGroup;
-			children = (
-				7527F42F253A025900567122 /* RegistrationNetworkService.swift */,
-			);
-			path = RegistrationNetworkService;
 			sourceTree = "<group>";
 		};
 		CE458E4D2538CC43009B46A6 /* Model */ = {
@@ -286,6 +465,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7518BCDD2534BABD004DEA06 /* Build configuration list for PBXNativeTarget "Recipe-Book" */;
 			buildPhases = (
+				D2F3E2D49F1E6870D2D2577E /* [CP] Check Pods Manifest.lock */,
 				7518BCC52534BABA004DEA06 /* Sources */,
 				7518BCC62534BABA004DEA06 /* Frameworks */,
 				7518BCC72534BABA004DEA06 /* Resources */,
@@ -344,6 +524,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D2F3E2D49F1E6870D2D2577E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Recipe-Book-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7518BCC52534BABA004DEA06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -353,21 +558,33 @@
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
+				75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */,
+				75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
+				75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */,
+				75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */,
 				7527F41525386ADD00567122 /* NetworkService.swift in Sources */,
-				7527F4062538540200567122 /* TestingViewController.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
+				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
 				CE458E532538CD57009B46A6 /* RecipeTableViewCell.swift in Sources */,
+				75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */,
+				75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */,
 				CE458E6B2539D1B5009B46A6 /* RecipeViewController.swift in Sources */,
 				CE458E632539A849009B46A6 /* RecipesPresenter.swift in Sources */,
+				75994C602543254400275FC0 /* Session.swift in Sources */,
 				7527F3F8253799E500567122 /* User.swift in Sources */,
+				75994C5725430C1600275FC0 /* ShoppingTable.swift in Sources */,
+				75994C6325432B3700275FC0 /* SmsCode.swift in Sources */,
+				75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */,
 				CE458E662539A87B009B46A6 /* Recipe.swift in Sources */,
 				CE458E4F2538CC59009B46A6 /* RecipesViewController.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
 				7527F421253884D000567122 /* UserResponse.swift in Sources */,
+				75DA484A253B4AF800AEDA22 /* PhonePresenter.swift in Sources */,
 				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,
+				75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */,
 				7527F42725388C2300567122 /* RegisterUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -500,7 +717,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -512,13 +729,14 @@
 		};
 		7518BCDE2534BABD004DEA06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89B917C489D5646649889660 /* Pods-Recipe-Book.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DSM5M6VUK9;
 				INFOPLIST_FILE = "Recipe-Book/Common/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,13 +750,14 @@
 		};
 		7518BCDF2534BABD004DEA06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAC12EF1573FBEC2760C9237 /* Pods-Recipe-Book.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DSM5M6VUK9;
 				INFOPLIST_FILE = "Recipe-Book/Common/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

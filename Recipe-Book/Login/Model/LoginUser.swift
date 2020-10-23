@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct LoginUser {
-    var login: String?
-    var password: String?
-    var sessionID: String?
+struct LoginUser: Codable {
+    var login: String
+    var password: String
 }

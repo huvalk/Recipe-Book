@@ -25,7 +25,7 @@ class LoginPresenter {
     
     init(delegate: LoginDelegate) {
         self.delegate = delegate
-        self.modelUser = LoginUser(login: "", password: "", sessionID: "")
+        self.modelUser = LoginUser(login: "", password: "")
     }
     
     func login(login: String, password: String) {
@@ -44,7 +44,4 @@ class LoginPresenter {
             }
         }
     }
-    
-    //TODO возвращать ошибку от логина
-    
 }
