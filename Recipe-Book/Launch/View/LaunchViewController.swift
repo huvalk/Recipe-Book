@@ -36,9 +36,10 @@ extension LaunchViewController: LaunchDelegate {
     func launchDidSucceed() {
         print("main screen")
         // переход к главному экрану
-//        let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-//
-//        self.present(mainViewController, animated: true)
+        let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+
+        mainViewController.modalPresentationStyle = .fullScreen
+        self.present(mainViewController, animated: true)
     }
     
     func launchDidFailed() {

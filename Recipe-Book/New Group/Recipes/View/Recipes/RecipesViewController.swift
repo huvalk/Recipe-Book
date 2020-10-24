@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Cosmos
 
 class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -14,7 +13,7 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     
     var recipesPresenter: RecipesPresenter?
     
-    var recipes: [RecipeList] = [[], []]
+    var recipes: [RecipeList] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,6 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         self.recipesPresenter = RecipesPresenter(delegate: self)
         
         self.recipesPresenter?.getRecipes()
-        self.recipesPresenter?.getFavorites()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,9 +45,12 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
-        cell.recipeName?.text = self.recipes[indexPath.section][indexPath.item].title
+        // let item: Recipe = recipes[indexPath.section][indexPath.item]
+        // let model: SomeModel = SomeModel(with: item)
+        // should use cell.configure(with: model)
+        cell.recipeName?.text = self.recipes[indexPath.section][indexPath.item].name
         cell.recipeTime?.text = String(self.recipes[indexPath.section][indexPath.item].cookingTime) + " мин"
-        cell.ingridientCount?.text = String(self.recipes[indexPath.section][indexPath.item].ingredients.count) + " ингридиентов"
+        cell.ingridientCount?.text = String(self.recipes[indexPath.section][indexPath.item].ingridients.count) + " ингридиентов"
         
         return cell
     }
@@ -87,15 +88,8 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
 }
 
 extension RecipesViewContoller: RecipesDelegate {
-    
-    func setRecipes(recipes: RecipeList) {
-        self.recipes[1] = recipes
-        print(recipes)
-        self.tableView.reloadData()
-    }
-    
-    func setFavorites(favorites: RecipeList) {
-        self.recipes[0] = favorites
-        self.tableView.reloadData()
+    func setRecipes(recipes: [RecipeList]) {
+        self.recipes = recipes
+        // tableView.reloadData() - for reload data in table view after set data
     }
 }

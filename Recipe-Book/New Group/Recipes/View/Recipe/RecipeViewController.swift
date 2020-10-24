@@ -22,9 +22,9 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recipeName.text = recipe.title
-        recipeTime.text = String(recipe.cookingTime ?? 0) + " мин"
-        ingridientCount.text = String(recipe?.ingredients.count ?? 0) + " ингридиентов"
+        recipeName.text = recipe.name
+        recipeTime.text = String(recipe.cookingTime) + " мин"
+        ingridientCount.text = String(recipe?.ingridients.count ?? 0) + " ингридиентов"
         
         initTables()
         
@@ -55,7 +55,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == ingridientsTableView {
-            return recipe.ingredients.count ?? 0
+            return recipe.ingridients.count ?? 0
         }
         return recipe.steps.count ?? 0
     }
@@ -64,7 +64,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         if tableView == ingridientsTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! IngridientTableViewCell
             
-            cell.ingridientName?.text = recipe.ingredients[indexPath.item]
+            cell.ingridientName?.text = recipe.ingridients[indexPath.item]
             
             return cell
         }

@@ -29,7 +29,6 @@
 		75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5C254310EA00275FC0 /* ShoppingViewController.swift */; };
 		75994C602543254400275FC0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5F2543254400275FC0 /* Session.swift */; };
 		75994C6325432B3700275FC0 /* SmsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C6225432B3700275FC0 /* SmsCode.swift */; };
-		75994C672543590D00275FC0 /* Recipes in Resources */ = {isa = PBXBuildFile; fileRef = 75994C662543590D00275FC0 /* Recipes */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
 		75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA483D253B336F00AEDA22 /* SettingsService.swift */; };
 		75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */; };
@@ -39,6 +38,16 @@
 		75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */; };
 		75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */; };
 		C50A8560F00C4D28782A7241 /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
+		CE89A11125443412004553E4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11025443412004553E4 /* Recipe.swift */; };
+		CE89A11425443419004553E4 /* RecipesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11325443419004553E4 /* RecipesNetworkService.swift */; };
+		CE89A1172544341F004553E4 /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A1162544341F004553E4 /* RecipesPresenter.swift */; };
+		CE89A11E2544342D004553E4 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A1192544342C004553E4 /* RecipeViewController.swift */; };
+		CE89A11F2544342D004553E4 /* IngridientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11A2544342C004553E4 /* IngridientTableViewCell.swift */; };
+		CE89A1202544342D004553E4 /* IngridientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11B2544342D004553E4 /* IngridientsTableView.swift */; };
+		CE89A1212544342D004553E4 /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11C2544342D004553E4 /* StepTableViewCell.swift */; };
+		CE89A1222544342D004553E4 /* StepsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11D2544342D004553E4 /* StepsTableView.swift */; };
+		CE89A12625443436004553E4 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A12425443436004553E4 /* RecipesViewController.swift */; };
+		CE89A12725443436004553E4 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A12525443436004553E4 /* RecipeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +75,6 @@
 		75994C5C254310EA00275FC0 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		75994C5F2543254400275FC0 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		75994C6225432B3700275FC0 /* SmsCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCode.swift; sourceTree = "<group>"; };
-		75994C662543590D00275FC0 /* Recipes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Recipes; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		75DA483D253B336F00AEDA22 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +86,16 @@
 		89B917C489D5646649889660 /* Pods-Recipe-Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.debug.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.debug.xcconfig"; sourceTree = "<group>"; };
 		AAC12EF1573FBEC2760C9237 /* Pods-Recipe-Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.release.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.release.xcconfig"; sourceTree = "<group>"; };
 		AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe_Book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE89A11025443412004553E4 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		CE89A11325443419004553E4 /* RecipesNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesNetworkService.swift; sourceTree = "<group>"; };
+		CE89A1162544341F004553E4 /* RecipesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
+		CE89A1192544342C004553E4 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		CE89A11A2544342C004553E4 /* IngridientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngridientTableViewCell.swift; sourceTree = "<group>"; };
+		CE89A11B2544342D004553E4 /* IngridientsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngridientsTableView.swift; sourceTree = "<group>"; };
+		CE89A11C2544342D004553E4 /* StepTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
+		CE89A11D2544342D004553E4 /* StepsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsTableView.swift; sourceTree = "<group>"; };
+		CE89A12425443436004553E4 /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		CE89A12525443436004553E4 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +148,7 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
-				75994C662543590D00275FC0 /* Recipes */,
+				CE89A107254433CA004553E4 /* Recipes */,
 				75994C4E254305E200275FC0 /* ShoppingList */,
 				75DA4850253C6C8D00AEDA22 /* Launch */,
 				7527F3FA2538393F00567122 /* App */,
@@ -414,6 +432,71 @@
 			path = LaunchNetworkService;
 			sourceTree = "<group>";
 		};
+		CE89A107254433CA004553E4 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				CE89A10C254433EC004553E4 /* View */,
+				CE89A10B254433E6004553E4 /* Presenter */,
+				CE89A10A254433DE004553E4 /* Network */,
+				CE89A109254433D7004553E4 /* Model */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		CE89A109254433D7004553E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE89A11025443412004553E4 /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE89A10A254433DE004553E4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CE89A11325443419004553E4 /* RecipesNetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CE89A10B254433E6004553E4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE89A1162544341F004553E4 /* RecipesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE89A10C254433EC004553E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE89A10F25443401004553E4 /* Recipes */,
+				CE89A10D254433F2004553E4 /* Recipe */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE89A10D254433F2004553E4 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				CE89A11B2544342D004553E4 /* IngridientsTableView.swift */,
+				CE89A11A2544342C004553E4 /* IngridientTableViewCell.swift */,
+				CE89A1192544342C004553E4 /* RecipeViewController.swift */,
+				CE89A11D2544342D004553E4 /* StepsTableView.swift */,
+				CE89A11C2544342D004553E4 /* StepTableViewCell.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		CE89A10F25443401004553E4 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				CE89A12425443436004553E4 /* RecipesViewController.swift */,
+				CE89A12525443436004553E4 /* RecipeTableViewCell.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,6 +508,7 @@
 				7518BCC52534BABA004DEA06 /* Sources */,
 				7518BCC62534BABA004DEA06 /* Frameworks */,
 				7518BCC72534BABA004DEA06 /* Resources */,
+				AF969355B29A2CF55D43AED2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -474,7 +558,6 @@
 			files = (
 				7518BCD92534BABD004DEA06 /* LaunchScreen.storyboard in Resources */,
 				7518BCD62534BABD004DEA06 /* Assets.xcassets in Resources */,
-				75994C672543590D00275FC0 /* Recipes in Resources */,
 				7518BCD42534BABA004DEA06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +565,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AF969355B29A2CF55D43AED2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D2F3E2D49F1E6870D2D2577E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,11 +619,14 @@
 				75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
+				CE89A11F2544342D004553E4 /* IngridientTableViewCell.swift in Sources */,
 				75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */,
 				75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */,
 				7527F41525386ADD00567122 /* NetworkService.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
+				CE89A1172544341F004553E4 /* RecipesPresenter.swift in Sources */,
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
+				CE89A1222544342D004553E4 /* StepsTableView.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
 				75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */,
 				75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */,
@@ -531,11 +634,18 @@
 				7527F3F8253799E500567122 /* User.swift in Sources */,
 				75994C5725430C1600275FC0 /* ShoppingTable.swift in Sources */,
 				75994C6325432B3700275FC0 /* SmsCode.swift in Sources */,
+				CE89A11425443419004553E4 /* RecipesNetworkService.swift in Sources */,
 				75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
+				CE89A11E2544342D004553E4 /* RecipeViewController.swift in Sources */,
+				CE89A12725443436004553E4 /* RecipeTableViewCell.swift in Sources */,
 				7527F421253884D000567122 /* UserResponse.swift in Sources */,
+				CE89A12625443436004553E4 /* RecipesViewController.swift in Sources */,
+				CE89A11125443412004553E4 /* Recipe.swift in Sources */,
 				75DA484A253B4AF800AEDA22 /* PhonePresenter.swift in Sources */,
+				CE89A1212544342D004553E4 /* StepTableViewCell.swift in Sources */,
 				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,
+				CE89A1202544342D004553E4 /* IngridientsTableView.swift in Sources */,
 				75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */,
 				7527F42725388C2300567122 /* RegisterUser.swift in Sources */,
 			);
