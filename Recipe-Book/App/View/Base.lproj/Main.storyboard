@@ -351,7 +351,7 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="1dl-zk-dAc" firstAttribute="leading" secondItem="rC2-oZ-Qxc" secondAttribute="trailing" constant="8" id="4yc-lL-c2o"/>
+                                        <constraint firstItem="1dl-zk-dAc" firstAttribute="leading" secondItem="rC2-oZ-Qxc" secondAttribute="trailing" constant="4" id="4yc-lL-c2o"/>
                                         <constraint firstItem="DW9-7x-XeG" firstAttribute="leading" secondItem="kNT-p1-HJ4" secondAttribute="leading" constant="16" id="68P-fE-xDP"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="1dl-zk-dAc" secondAttribute="bottom" constant="8" id="A4S-H3-EHv"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="rC2-oZ-Qxc" secondAttribute="bottom" constant="8" id="CUA-aJ-Ym2"/>
@@ -365,7 +365,6 @@
                                         <constraint firstItem="MFN-m3-rxZ" firstAttribute="top" secondItem="mTF-Xl-ZUu" secondAttribute="bottom" constant="8" id="l9c-sr-Ppf"/>
                                         <constraint firstItem="rC2-oZ-Qxc" firstAttribute="leading" secondItem="DW9-7x-XeG" secondAttribute="trailing" constant="8" id="tX6-Wc-r6C"/>
                                         <constraint firstItem="mTF-Xl-ZUu" firstAttribute="top" secondItem="kNT-p1-HJ4" secondAttribute="topMargin" id="vJa-pV-bOO"/>
-                                        <constraint firstItem="1dl-zk-dAc" firstAttribute="leading" secondItem="rC2-oZ-Qxc" secondAttribute="trailing" constant="4" id="zAh-b7-xD9"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
