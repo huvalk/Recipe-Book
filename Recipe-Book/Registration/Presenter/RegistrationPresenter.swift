@@ -28,10 +28,13 @@ class RegistrationPresenter {
         self.modelUser = RegisterUser(login: "", password: "", phone: "")
     }
     
-    func register(login: String, password: String, phone: String) {
-        if login.isEmpty || password.isEmpty || phone.isEmpty {
+    func register(login: String, password: String, repeatPassword: String, phone: String) {
+        if login.isEmpty || password.isEmpty || repeatPassword.isEmpty || phone.isEmpty {
             self.delegate.registrationDidFailed(message: "Логин или пароль не верны")
             return
+        }
+        if repeatPassword != password {
+            self.delegate.registrationDidFailed(message: "Пароли не совпадают")
         }
         modelUser.login = login
         modelUser.password = password

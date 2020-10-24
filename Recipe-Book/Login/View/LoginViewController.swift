@@ -90,9 +90,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerButtonTouched(_ sender: Any) {
-        let registerViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        let phoneViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhoneViewController") as! PhoneViewController
         
-        self.present(registerViewController, animated: true)
+//        registerViewController.modalPresentationStyle = .fullScreen
+        self.present(phoneViewController, animated: true)
     }
     
     @IBAction func lostPswdButtonTouched(_ sender: Any) {
@@ -114,7 +115,9 @@ extension LoginViewController: LoginDelegate {
     }
     
     func loginDidSucceed() {
-        print("login succees")
+        let mainScreen = self.storyboard?.instantiateViewController(identifier: "RecipesViewContoller")
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = mainScreen
     }
     
     func loginDidFailed(message: String) {

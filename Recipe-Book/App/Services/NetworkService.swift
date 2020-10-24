@@ -17,7 +17,7 @@ class NetworkService {
     
     static let shared = NetworkService()
     
-    public func getRequest(rawUrl: String, completion: @escaping (Any, Int) -> ()) {
+    public func getRequest(rawUrl: String, completion: @escaping (Data, Int) -> ()) {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }
         
@@ -42,35 +42,21 @@ class NetworkService {
                 statusCode = 600
             }
             
-            var json: Any = 0
-            do {
-                json = try JSONSerialization.jsonObject(with: data, options: [])
-            } catch {
-                statusCode = 600
-                print(error.localizedDescription)
-            }
             DispatchQueue.main.async {
-                completion(json, statusCode)
+                completion(data, statusCode)
             }
             
         }.resume()
     }
     
-    public func postRequest(rawUrl: String, data: [String: Any], completion: @escaping (Any, Int) -> ()) {
+    public func postRequest(rawUrl: String, data: Data, completion: @escaping (Data, Int) -> ()) {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-            request.httpBody = jsonData
-        } catch {
-            print("JSON serialization error")
-            return
-        }
+        request.httpBody = data
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
@@ -88,64 +74,37 @@ class NetworkService {
                 statusCode = 600
             }
             
-            var json: Any = 0
-            do {
-                json = try JSONSerialization.jsonObject(with: data, options: [])
-            } catch {
-                statusCode = 600
-                print(error.localizedDescription)
-            }
             DispatchQueue.main.async {
-                completion(json, statusCode)
+                completion(data, statusCode)
             }
             
         }.resume()
     }
     
-    public func login(rawUrl: String, data: [String: Any], completion: @escaping (User?, Int) -> ()) {
+    public func login(rawUrl: String, data: Data, completion: @escaping (User?, Int) -> ()) {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = data
         
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-            request.httpBody = jsonData
-        } catch {
-            print("JSON serialization error")
-            return
-        }
-        
-        //TODO Доделать запросо на логин
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            guard let data = data else {
-                return
-            }
-            var statusCode: Int
-            if let response = response as? HTTPURLResponse {
-                statusCode = response.statusCode
-            } else {
-                statusCode = 600
-            }
-            
+        self.postRequest(rawUrl: rawUrl, data: data) { (responseData, statusCode) in
+            var newStatusCode = statusCode
             do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                self.currentUser = try User(json: json)
+                let user = try JSONDecoder().decode(User.self, from: responseData)
+                SettingsService.userModel = user
             } catch {
-                statusCode = 600
-                print(error.localizedDescription)
-            }
-            DispatchQueue.main.async {
-                completion(self.currentUser, statusCode)
+                print("json error in login")
+                newStatusCode += 1000
             }
             
-            }.resume()
-    
+            print(SettingsService.userModel)
+            
+            DispatchQueue.main.async {
+                completion(SettingsService.userModel, statusCode)
+            }
+        }
     }
 }

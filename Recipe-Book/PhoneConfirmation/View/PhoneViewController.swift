@@ -1,28 +1,27 @@
 //
-//  RegistrationViewController.swift
+//  PhoneViewController.swift
 //  Recipe-Book
 //
-//  Created by Сергей Куклин on 15.10.2020.
+//  Created by Сергей Куклин on 17.10.2020.
 //
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
-    @IBOutlet weak var registrationLabel: UILabel!
-    @IBOutlet weak var loginTextField: UITextField!
-    var phone: String?
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
+class PhoneViewController: UIViewController {
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var codeTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var shiftContainer: NSLayoutConstraint!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var codeButton: UIButton!
     
-    var registrationPresenter: RegistrationPresenter?
+    var phonePresenter: PhonePresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        self.registrationPresenter = RegistrationPresenter(delegate: self)
+        self.phonePresenter = PhonePresenter(delegate: self)
         initScreen()
         
         registerForKeyboardNotifications()
@@ -30,7 +29,8 @@ class RegistrationViewController: UIViewController {
     
 
     private func initScreen() {
-        registerButton.layer.cornerRadius = 15
+        confirmButton.layer.cornerRadius = 15
+        codeButton.layer.cornerRadius = 15
         errorLabel.layer.cornerRadius = 5
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
@@ -48,7 +48,7 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc private func keyboardWasShown(notification: Notification) {
-        registrationLabel.isHidden = true
+        phoneLabel.isHidden = true
         guard let info = notification.userInfo else {
             shiftContainer.constant = -100
             return
@@ -59,14 +59,14 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc private func keyboardWillBeHidden(notification: Notification) {
-        registrationLabel.isHidden = false
+        phoneLabel.isHidden = false
         
         animateShift(pos: 0, alpha: 1.0)
     }
     
     private func animateShift(pos: CGFloat, alpha: CGFloat) {
         UIView.animate(withDuration: 0.7, delay: 0, options: .curveLinear, animations: {
-            self.registrationLabel.alpha = alpha
+            self.phoneLabel.alpha = alpha
             self.shiftContainer.constant = pos
             self.view.layoutIfNeeded()
           }, completion: { finished in
@@ -83,13 +83,13 @@ class RegistrationViewController: UIViewController {
           })
     }
     
-    @IBAction func registerButtonTouched(_ sender: Any) {
-        self.registrationPresenter?.register(login: loginTextField.text?.trimmingCharacters(in: .whitespaces) ?? "", password: passwordTextField.text?.trimmingCharacters(in: .whitespaces) ?? "", repeatPassword: repeatPasswordTextField.text?.trimmingCharacters(in: .whitespaces) ?? "", phone: phone ?? "")
+    @IBAction func sendButtonTouched(_ sender: Any) {
+        self.phonePresenter?.sendCode(phone: phoneTextField.text ?? "")
     }
     
-//    @IBAction func loginButtonTouched(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
+    @IBAction func confirmButtonTouched(_ sender: Any) {
+        self.phonePresenter?.confirmPhone(code: codeTextField.text ?? "")
+    }
     
     deinit {
         print("dismiss")
@@ -97,7 +97,7 @@ class RegistrationViewController: UIViewController {
     }
 }
 
-extension RegistrationViewController: RegistrationDelegate {
+extension PhoneViewController: PhoneDelegate {
     func showProgress() {
         print("show progress")
     }
@@ -106,11 +106,14 @@ extension RegistrationViewController: RegistrationDelegate {
         print("hide progress")
     }
     
-    func registrationDidSucceed() {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    func phoneDidSucceed(phone: String) {
+        let registrationViewController = self.storyboard?.instantiateViewController(withIdentifier: "RegistrationViewController") as! RegistrationViewController
+        registrationViewController.phone = phone
+        
+        self.present(registrationViewController, animated: true)
     }
     
-    func registrationDidFailed(message: String) {
+    func phoneDidFailed(message: String) {
         errorLabel.text = message
         if errorLabel.alpha != 1.0 {
             animateErrorAppear(alpha: 1.0)

@@ -45,6 +45,9 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
+        // let item: Recipe = recipes[indexPath.section][indexPath.item]
+        // let model: SomeModel = SomeModel(with: item)
+        // should use cell.configure(with: model)
         cell.recipeName?.text = self.recipes[indexPath.section][indexPath.item].name
         cell.recipeTime?.text = String(self.recipes[indexPath.section][indexPath.item].cookingTime) + " мин"
         cell.ingridientCount?.text = String(self.recipes[indexPath.section][indexPath.item].ingridients.count) + " ингридиентов"
@@ -87,5 +90,6 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
 extension RecipesViewContoller: RecipesDelegate {
     func setRecipes(recipes: [RecipeList]) {
         self.recipes = recipes
+        // tableView.reloadData() - for reload data in table view after set data
     }
 }
