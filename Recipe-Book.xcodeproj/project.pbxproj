@@ -24,12 +24,27 @@
 		7527F42725388C2300567122 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42625388C2300567122 /* RegisterUser.swift */; };
 		7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42F253A025900567122 /* RegistrationNetworkService.swift */; };
 		75994C542543072500275FC0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C532543072500275FC0 /* CheckBox.swift */; };
-		75994C5725430C1600275FC0 /* ShoppingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5625430C1600275FC0 /* ShoppingTable.swift */; };
 		75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5925430C3000275FC0 /* ShoppingCell.swift */; };
 		75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5C254310EA00275FC0 /* ShoppingViewController.swift */; };
 		75994C602543254400275FC0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5F2543254400275FC0 /* Session.swift */; };
 		75994C6325432B3700275FC0 /* SmsCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C6225432B3700275FC0 /* SmsCode.swift */; };
-		75994C672543590D00275FC0 /* Recipes in Resources */ = {isa = PBXBuildFile; fileRef = 75994C662543590D00275FC0 /* Recipes */; };
+		75994C9B25438A8700275FC0 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C9A25438A8700275FC0 /* Product.swift */; };
+		75994C9E25438E9600275FC0 /* ShoppingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C9D25438E9600275FC0 /* ShoppingPresenter.swift */; };
+		75994CB625443A3200275FC0 /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CA525443A3200275FC0 /* RecipesPresenter.swift */; };
+		75994CB725443A3200275FC0 /* RecipePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CA625443A3200275FC0 /* RecipePresenter.swift */; };
+		75994CB925443A3200275FC0 /* RecipesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CA925443A3200275FC0 /* RecipesNetworkService.swift */; };
+		75994CBA25443A3200275FC0 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CAB25443A3200275FC0 /* Recipe.swift */; };
+		75994CBB25443A3200275FC0 /* StepsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CAE25443A3200275FC0 /* StepsTableView.swift */; };
+		75994CBC25443A3200275FC0 /* IngridientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CAF25443A3200275FC0 /* IngridientsTableView.swift */; };
+		75994CBD25443A3200275FC0 /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CB025443A3200275FC0 /* StepTableViewCell.swift */; };
+		75994CBE25443A3200275FC0 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CB125443A3200275FC0 /* RecipeViewController.swift */; };
+		75994CBF25443A3200275FC0 /* IngridientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CB225443A3200275FC0 /* IngridientTableViewCell.swift */; };
+		75994CC025443A3200275FC0 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CB425443A3200275FC0 /* RecipeTableViewCell.swift */; };
+		75994CC125443A3200275FC0 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CB525443A3200275FC0 /* RecipesViewController.swift */; };
+		75994CCB2544A2BB00275FC0 /* ProductCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CCA2544A2BB00275FC0 /* ProductCreatorViewController.swift */; };
+		75994CD22544EEC400275FC0 /* PanelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CD12544EEC400275FC0 /* PanelTransition.swift */; };
+		75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CD42544EFB800275FC0 /* PresentationController.swift */; };
+		75994CD82544F52200275FC0 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CD72544F52200275FC0 /* DimmPresentationController.swift */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
 		75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA483D253B336F00AEDA22 /* SettingsService.swift */; };
 		75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */; };
@@ -61,12 +76,27 @@
 		7527F42625388C2300567122 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
 		7527F42F253A025900567122 /* RegistrationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNetworkService.swift; sourceTree = "<group>"; };
 		75994C532543072500275FC0 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
-		75994C5625430C1600275FC0 /* ShoppingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTable.swift; sourceTree = "<group>"; };
 		75994C5925430C3000275FC0 /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
 		75994C5C254310EA00275FC0 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		75994C5F2543254400275FC0 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		75994C6225432B3700275FC0 /* SmsCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCode.swift; sourceTree = "<group>"; };
-		75994C662543590D00275FC0 /* Recipes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Recipes; sourceTree = "<group>"; };
+		75994C9A25438A8700275FC0 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		75994C9D25438E9600275FC0 /* ShoppingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingPresenter.swift; sourceTree = "<group>"; };
+		75994CA525443A3200275FC0 /* RecipesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
+		75994CA625443A3200275FC0 /* RecipePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipePresenter.swift; sourceTree = "<group>"; };
+		75994CA925443A3200275FC0 /* RecipesNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesNetworkService.swift; sourceTree = "<group>"; };
+		75994CAB25443A3200275FC0 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		75994CAE25443A3200275FC0 /* StepsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsTableView.swift; sourceTree = "<group>"; };
+		75994CAF25443A3200275FC0 /* IngridientsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngridientsTableView.swift; sourceTree = "<group>"; };
+		75994CB025443A3200275FC0 /* StepTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
+		75994CB125443A3200275FC0 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		75994CB225443A3200275FC0 /* IngridientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngridientTableViewCell.swift; sourceTree = "<group>"; };
+		75994CB425443A3200275FC0 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		75994CB525443A3200275FC0 /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		75994CCA2544A2BB00275FC0 /* ProductCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCreatorViewController.swift; sourceTree = "<group>"; };
+		75994CD12544EEC400275FC0 /* PanelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTransition.swift; sourceTree = "<group>"; };
+		75994CD42544EFB800275FC0 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		75994CD72544F52200275FC0 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		75DA483D253B336F00AEDA22 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -130,14 +160,14 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
-				75994C662543590D00275FC0 /* Recipes */,
+				75994CCF2544EDD600275FC0 /* ProductCreator */,
+				75994CA325443A3200275FC0 /* Recipes */,
 				75994C4E254305E200275FC0 /* ShoppingList */,
 				75DA4850253C6C8D00AEDA22 /* Launch */,
 				7527F3FA2538393F00567122 /* App */,
 				75DA4841253B4A3700AEDA22 /* PhoneConfirmation */,
 				7527F42A253A01DA00567122 /* Registration */,
 				7527F3F32537997600567122 /* Login */,
-				CE458E4A2538CC2C009B46A6 /* Recipes */,
 				7527F3FE253839E800567122 /* Common */,
 			);
 			path = "Recipe-Book";
@@ -307,6 +337,7 @@
 		75994C502543070200275FC0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				75994C9D25438E9600275FC0 /* ShoppingPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -315,7 +346,6 @@
 			isa = PBXGroup;
 			children = (
 				75994C532543072500275FC0 /* CheckBox.swift */,
-				75994C5625430C1600275FC0 /* ShoppingTable.swift */,
 				75994C5925430C3000275FC0 /* ShoppingCell.swift */,
 				75994C5C254310EA00275FC0 /* ShoppingViewController.swift */,
 			);
@@ -325,8 +355,94 @@
 		75994C522543071500275FC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				75994C9A25438A8700275FC0 /* Product.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		75994CA325443A3200275FC0 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				75994CA425443A3200275FC0 /* Presenter */,
+				75994CA825443A3200275FC0 /* Network */,
+				75994CAA25443A3200275FC0 /* Model */,
+				75994CAC25443A3200275FC0 /* View */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		75994CA425443A3200275FC0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				75994CA525443A3200275FC0 /* RecipesPresenter.swift */,
+				75994CA625443A3200275FC0 /* RecipePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		75994CA825443A3200275FC0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				75994CA925443A3200275FC0 /* RecipesNetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		75994CAA25443A3200275FC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				75994CAB25443A3200275FC0 /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75994CAC25443A3200275FC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75994CAD25443A3200275FC0 /* Recipe */,
+				75994CB325443A3200275FC0 /* Recipes */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		75994CAD25443A3200275FC0 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				75994CAE25443A3200275FC0 /* StepsTableView.swift */,
+				75994CAF25443A3200275FC0 /* IngridientsTableView.swift */,
+				75994CB025443A3200275FC0 /* StepTableViewCell.swift */,
+				75994CB125443A3200275FC0 /* RecipeViewController.swift */,
+				75994CB225443A3200275FC0 /* IngridientTableViewCell.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		75994CB325443A3200275FC0 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				75994CB425443A3200275FC0 /* RecipeTableViewCell.swift */,
+				75994CB525443A3200275FC0 /* RecipesViewController.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		75994CCF2544EDD600275FC0 /* ProductCreator */ = {
+			isa = PBXGroup;
+			children = (
+				75994CD02544EDE500275FC0 /* View */,
+			);
+			path = ProductCreator;
+			sourceTree = "<group>";
+		};
+		75994CD02544EDE500275FC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75994CCA2544A2BB00275FC0 /* ProductCreatorViewController.swift */,
+				75994CD12544EEC400275FC0 /* PanelTransition.swift */,
+				75994CD42544EFB800275FC0 /* PresentationController.swift */,
+				75994CD72544F52200275FC0 /* DimmPresentationController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		75DA4841253B4A3700AEDA22 /* PhoneConfirmation */ = {
@@ -475,7 +591,6 @@
 			files = (
 				7518BCD92534BABD004DEA06 /* LaunchScreen.storyboard in Resources */,
 				7518BCD62534BABD004DEA06 /* Assets.xcassets in Resources */,
-				75994C672543590D00275FC0 /* Recipes in Resources */,
 				7518BCD42534BABA004DEA06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,9 +627,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75994CC125443A3200275FC0 /* RecipesViewController.swift in Sources */,
+				75994CBE25443A3200275FC0 /* RecipeViewController.swift in Sources */,
+				75994CBC25443A3200275FC0 /* IngridientsTableView.swift in Sources */,
+				75994CBF25443A3200275FC0 /* IngridientTableViewCell.swift in Sources */,
 				7527F41A25386D6100567122 /* LoginNetworkService.swift in Sources */,
+				75994C9E25438E9600275FC0 /* ShoppingPresenter.swift in Sources */,
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
+				75994CBA25443A3200275FC0 /* Recipe.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
 				75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */,
 				75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */,
@@ -523,15 +644,25 @@
 				75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */,
 				75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */,
 				7527F41525386ADD00567122 /* NetworkService.swift in Sources */,
+				75994CB625443A3200275FC0 /* RecipesPresenter.swift in Sources */,
+				75994CBB25443A3200275FC0 /* StepsTableView.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
+				75994CB925443A3200275FC0 /* RecipesNetworkService.swift in Sources */,
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
+				75994CB725443A3200275FC0 /* RecipePresenter.swift in Sources */,
+				75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */,
+				75994C9B25438A8700275FC0 /* Product.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
 				75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */,
 				75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */,
+				75994CD82544F52200275FC0 /* DimmPresentationController.swift in Sources */,
 				75994C602543254400275FC0 /* Session.swift in Sources */,
 				7527F3F8253799E500567122 /* User.swift in Sources */,
-				75994C5725430C1600275FC0 /* ShoppingTable.swift in Sources */,
+				75994CBD25443A3200275FC0 /* StepTableViewCell.swift in Sources */,
+				75994CC025443A3200275FC0 /* RecipeTableViewCell.swift in Sources */,
 				75994C6325432B3700275FC0 /* SmsCode.swift in Sources */,
+				75994CD22544EEC400275FC0 /* PanelTransition.swift in Sources */,
+				75994CCB2544A2BB00275FC0 /* ProductCreatorViewController.swift in Sources */,
 				75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
 				7527F421253884D000567122 /* UserResponse.swift in Sources */,
@@ -694,7 +825,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "huvalk.Recipe-Book";
+				PRODUCT_BUNDLE_IDENTIFIER = huvalk.recipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -715,7 +846,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "huvalk.Recipe-Book";
+				PRODUCT_BUNDLE_IDENTIFIER = huvalk.recipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

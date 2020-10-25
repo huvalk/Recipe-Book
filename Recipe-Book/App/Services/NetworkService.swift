@@ -100,8 +100,6 @@ class NetworkService {
                 newStatusCode += 1000
             }
             
-            print(SettingsService.userModel)
-            
             DispatchQueue.main.async {
                 completion(SettingsService.userModel, statusCode)
             }
