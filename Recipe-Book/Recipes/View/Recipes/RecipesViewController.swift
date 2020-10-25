@@ -47,9 +47,19 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
-        cell.recipeName?.text = self.recipes[indexPath.section][indexPath.item].title
-        cell.recipeTime?.text = String(self.recipes[indexPath.section][indexPath.item].cookingTime) + " мин"
-        cell.ingridientCount?.text = String(self.recipes[indexPath.section][indexPath.item].ingredients.count) + " ингридиентов"
+        let recipe = self.recipes[indexPath.section][indexPath.item]
+        
+        cell.recipeName?.text = recipe.title
+        cell.recipeTime?.text = String(recipe.cookingTime) + " мин"
+        cell.ingridientCount?.text = String(recipe.ingredients.count) + " ингридиентов"
+        
+        cell.ratingView.rating = recipe.rating
+        cell.ratingView.settings.fillMode = .precise
+        cell.ratingView.settings.updateOnTouch = false
+        cell.ratingView.didTouchCosmos = { [weak self] rating in
+            self?.recipesPresenter?.vote(recipeId: recipe.id, stars: lround(rating), indexPath: indexPath)
+            self?.recipes[indexPath.section][indexPath.item].rating = rating
+        }
         
         return cell
     }
@@ -90,12 +100,17 @@ extension RecipesViewContoller: RecipesDelegate {
     
     func setRecipes(recipes: RecipeList) {
         self.recipes[1] = recipes
-        print(recipes)
         self.tableView.reloadData()
     }
     
     func setFavorites(favorites: RecipeList) {
         self.recipes[0] = favorites
         self.tableView.reloadData()
+    }
+    
+    func setRating(indexPath: IndexPath, rating: Double) {
+        self.recipes[indexPath.section][indexPath.item].rating = rating
+        
+        self.tableView.reloadRows(at: [IndexPath](arrayLiteral: indexPath), with: UITableView.RowAnimation.none)
     }
 }

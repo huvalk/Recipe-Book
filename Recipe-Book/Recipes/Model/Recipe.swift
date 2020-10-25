@@ -12,8 +12,14 @@ struct Recipe: Codable {
     var author: Int
     var title: String
     var cookingTime: Int
-    let ingredients: [String]
-    let steps: [String]
+    var rating: Double
+    var ingredients: [String]
+    var steps: [String]
 }
 
 typealias RecipeList = [Recipe]
+
+struct UserStars: Codable {
+    var userId: Int
+    var stars: Int
+}
