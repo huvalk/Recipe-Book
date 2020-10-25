@@ -9,6 +9,7 @@ import UIKit
 
 protocol ShoppingCellDelegate: NSObjectProtocol {
     func didTapEdit(index: IndexPath)
+    func didTapCheckBox(checked: Bool, index: IndexPath)
 }
 
 class ShoppingCell: UITableViewCell {

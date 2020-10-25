@@ -32,6 +32,11 @@ class PresentationController: UIPresentationController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    private func unregisterForKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     @objc private func keyboardWasShown(notification: Notification) {
         guard let containerView = containerView else {
             return
@@ -60,5 +65,9 @@ class PresentationController: UIPresentationController {
             containerView.setNeedsLayout()
             containerView.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    deinit {
+        unregisterForKeyboardNotifications()
     }
 }

@@ -31,6 +31,6 @@ struct Product {
     let id: Int
     let name: String
     var amountType: AmountType
-    var amount: Int
+    var amount: Double
     var bought: Bool
 }

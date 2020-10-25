@@ -45,12 +45,11 @@ extension ShoppingViewController: ShoppingDelegate {
 }
 
 extension ShoppingViewController: ShoppingCellDelegate {
+    func didTapCheckBox(checked: Bool, index: IndexPath) {
+        // изменять данные в базе
+    }
+    
     func didTapEdit(index: IndexPath) {
-//        let creatorViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductCreatorViewController") as! ProductCreatorViewController
-//        creatorViewController.setDefaultValue(product: productsToDisplay[index.row], index: index)
-//
-//        creatorViewController.target = self
-//        self.present(creatorViewController, animated: true)
         let creatorViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductCreatorViewController") as! ProductCreatorViewController
         creatorViewController.setDefaultValue(product: productsToDisplay[index.row], index: index)
         
@@ -64,6 +63,7 @@ extension ShoppingViewController: ShoppingCellDelegate {
 
 extension ShoppingViewController: DataTarget {
     func editFinished(row: Int, product: Product) {
+        // изменить данные в базе
         self.productsToDisplay[row] = product
         table.reloadData()
     }
@@ -90,6 +90,7 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // удалить строку и удалить запись из базы
         if editingStyle == .delete {
 //            tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {

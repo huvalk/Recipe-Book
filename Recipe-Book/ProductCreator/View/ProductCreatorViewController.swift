@@ -12,30 +12,37 @@ protocol DataTarget: NSObjectProtocol {
 }
 
 class ProductCreatorViewController: UIViewController {
-    @IBOutlet weak var nameField: UITextField! 
-    @IBOutlet weak var weightField: UITextField!
-    @IBOutlet weak var typePeaker: UIPickerView!
-
     enum Mode {
         case create
         case change
     }
     
+    @IBOutlet weak var nameField: UITextField! 
+    @IBOutlet weak var weightField: UITextField!
+    @IBOutlet weak var typePeaker: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    var index: IndexPath?
+    weak var target: DataTarget?
+    var product: Product?
     var mode: Mode = .create {
         willSet {
             nameField.isUserInteractionEnabled = newValue  == .create
         }
     }
-    var index: IndexPath?
-    weak var target: DataTarget?
-    var product: Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         typePeaker.dataSource = self
         typePeaker.delegate = self
+        initScreen()
         hideKeyboardWhenTappedAround()
+    }
+    
+    private func initScreen() {
+        self.saveButton.layer.cornerRadius = 5
+        self.weightField.keyboardType = UIKeyboardType.decimalPad
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,11 +78,11 @@ class ProductCreatorViewController: UIViewController {
     
     @IBAction func saveBtnTapped(_ sender: Any) {
         if var product = self.product {
-            product.amount = Int(self.weightField.text ?? "") ?? 0
+            product.amount = Double(self.weightField.text ?? "") ?? 0
             product.amountType = Product.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Product.AmountType.count
             target?.editFinished(row: index?.row ?? -1, product: product)
         } else {
-            let newProduct = Product(id: -1, name: self.nameField.text ?? "", amountType: Product.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Product.AmountType.count, amount: Int(self.weightField.text ?? "") ?? 0, bought: false)
+            let newProduct = Product(id: -1, name: self.nameField.text ?? "", amountType: Product.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Product.AmountType.count, amount: Double(self.weightField.text ?? "") ?? 0, bought: false)
             target?.editFinished(row: index?.row ?? -1, product: newProduct)
         }
         

@@ -45,6 +45,8 @@
 		75994CD22544EEC400275FC0 /* PanelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CD12544EEC400275FC0 /* PanelTransition.swift */; };
 		75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CD42544EFB800275FC0 /* PresentationController.swift */; };
 		75994CD82544F52200275FC0 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CD72544F52200275FC0 /* DimmPresentationController.swift */; };
+		75994CDB2545C0EB00275FC0 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CDA2545C0E900275FC0 /* PresentAnimation.swift */; };
+		75994CDE2545C10100275FC0 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CDD2545C10100275FC0 /* DismissAnimation.swift */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
 		75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA483D253B336F00AEDA22 /* SettingsService.swift */; };
 		75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */; };
@@ -97,6 +99,8 @@
 		75994CD12544EEC400275FC0 /* PanelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTransition.swift; sourceTree = "<group>"; };
 		75994CD42544EFB800275FC0 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		75994CD72544F52200275FC0 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
+		75994CDA2545C0E900275FC0 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
+		75994CDD2545C10100275FC0 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		75DA483D253B336F00AEDA22 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -441,6 +445,8 @@
 				75994CD12544EEC400275FC0 /* PanelTransition.swift */,
 				75994CD42544EFB800275FC0 /* PresentationController.swift */,
 				75994CD72544F52200275FC0 /* DimmPresentationController.swift */,
+				75994CDA2545C0E900275FC0 /* PresentAnimation.swift */,
+				75994CDD2545C10100275FC0 /* DismissAnimation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
 				75994CBA25443A3200275FC0 /* Recipe.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
+				75994CDB2545C0EB00275FC0 /* PresentAnimation.swift in Sources */,
 				75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */,
 				75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
@@ -652,6 +659,7 @@
 				75994CB725443A3200275FC0 /* RecipePresenter.swift in Sources */,
 				75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */,
 				75994C9B25438A8700275FC0 /* Product.swift in Sources */,
+				75994CDE2545C10100275FC0 /* DismissAnimation.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
 				75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */,
 				75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */,

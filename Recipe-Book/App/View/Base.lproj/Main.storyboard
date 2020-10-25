@@ -274,6 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="OQd-vR-i3L" kind="relationship" relationship="viewControllers" id="nZm-75-cGB"/>
@@ -651,7 +652,7 @@
             </objects>
             <point key="canvasLocation" x="4135" y="-653"/>
         </scene>
-        <!--Item-->
+        <!--Продукты-->
         <scene sceneID="6vi-6h-yJB">
             <objects>
                 <viewController id="lVb-SO-gCC" customClass="ShoppingViewController" customModule="Recipe_Book" customModuleProvider="target" sceneMemberID="viewController">
@@ -659,6 +660,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5cT-kn-Vel">
+                                <rect key="frame" x="0.0" y="57" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список покупок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-Ng-Czb">
+                                <rect key="frame" x="20" y="40" width="219.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VYm-sN-CeF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gG-9Z-iBD">
+                                <rect key="frame" x="372" y="40" width="22" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="NKL-3e-7lc"/>
+                                </constraints>
+                                <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button" image="trash" catalog="system"/>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v3P-1D-2Ie">
                                 <rect key="frame" x="0.0" y="101" width="414" height="712"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -676,6 +698,7 @@
                                                         <constraint firstAttribute="width" constant="28" id="aAf-y4-gPh"/>
                                                         <constraint firstAttribute="height" constant="28" id="lvr-xA-9Au"/>
                                                     </constraints>
+                                                    <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="B"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/2 фрукта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GD-sq-yDY">
@@ -690,6 +713,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="ZnB-zf-nCI"/>
                                                         <constraint firstAttribute="width" constant="25" id="mDK-Ra-31i"/>
                                                     </constraints>
+                                                    <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="Button" image="scalemass.fill" catalog="system"/>
                                                     <connections>
                                                         <action selector="editButtonTapped:" destination="JU1-mn-LQ9" eventType="touchUpInside" id="6T9-dz-4wZ"/>
@@ -726,26 +750,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5cT-kn-Vel">
-                                <rect key="frame" x="0.0" y="57" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Список покупок" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-Ng-Czb">
-                                <rect key="frame" x="20" y="40" width="219.5" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="VYm-sN-CeF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gG-9Z-iBD">
-                                <rect key="frame" x="372" y="40" width="22" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="NKL-3e-7lc"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="trash" catalog="system"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qdj-6E-wfv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -761,7 +765,7 @@
                             <constraint firstItem="Qdj-6E-wfv" firstAttribute="trailing" secondItem="2gG-9Z-iBD" secondAttribute="trailing" constant="20" id="sr0-5J-Zxl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="cart" catalog="system" id="fDh-Oj-H1C"/>
+                    <tabBarItem key="tabBarItem" title="Продукты" image="Cart" id="fDh-Oj-H1C"/>
                     <navigationItem key="navigationItem" id="eLI-aa-88T"/>
                     <connections>
                         <outlet property="table" destination="v3P-1D-2Ie" id="GFO-ry-DXv"/>
@@ -798,10 +802,14 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IE-2Q-qrN">
                                 <rect key="frame" x="20" y="254" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aN3-xZ-R5y"/>
                                 </constraints>
-                                <state key="normal" title="Сохранить"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Сохранить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="saveBtnTapped:" destination="tRI-sE-WrG" eventType="touchUpInside" id="IHP-Rr-wEE"/>
                                 </connections>
@@ -811,10 +819,14 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="21" id="qCi-WO-rfu"/>
                                 </constraints>
+                                <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button" image="chevron.compact.down" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="translatesAutoresizingMaskIntoConstraints" value="NO"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeBtnTapped:" destination="tRI-sE-WrG" eventType="touchUpInside" id="aek-Ud-rlg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yzL-t4-VTW"/>
@@ -838,6 +850,7 @@
                     </view>
                     <connections>
                         <outlet property="nameField" destination="iE9-zW-4vn" id="IR2-ma-M5n"/>
+                        <outlet property="saveButton" destination="0IE-2Q-qrN" id="VIa-Sc-K3k"/>
                         <outlet property="typePeaker" destination="qNI-AP-Jt1" id="pEl-E4-71J"/>
                         <outlet property="weightField" destination="YR0-M2-jhI" id="fTt-R1-pEj"/>
                     </connections>
@@ -969,7 +982,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="Cart" width="30" height="28"/>
         <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="clock" catalog="system" width="128" height="121"/>
