@@ -13,8 +13,8 @@ class PresentationController: UIPresentationController {
     override var frameOfPresentedViewInContainerView: CGRect {
         let bounds = containerView!.bounds
         // Захардкожен размер полей ввода
-        let halfHeight: CGFloat = 300
-        return CGRect(x: 0, y: halfHeight - additioanlHeight, width: bounds.width, height: bounds.height - halfHeight)
+        let height: CGFloat = 300
+        return CGRect(x: 0, y: bounds.height - height - additioanlHeight, width: bounds.width, height: height)
     }
     
     override func presentationTransitionWillBegin() {

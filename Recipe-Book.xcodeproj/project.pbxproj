@@ -47,6 +47,7 @@
 		75994CD82544F52200275FC0 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CD72544F52200275FC0 /* DimmPresentationController.swift */; };
 		75994CDB2545C0EB00275FC0 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CDA2545C0E900275FC0 /* PresentAnimation.swift */; };
 		75994CDE2545C10100275FC0 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CDD2545C10100275FC0 /* DismissAnimation.swift */; };
+		75994CE12547018700275FC0 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994CE02547018700275FC0 /* DataBaseService.swift */; };
 		75C430C62536C40B001C261E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C430C52536C40B001C261E /* LoginViewController.swift */; };
 		75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA483D253B336F00AEDA22 /* SettingsService.swift */; };
 		75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */; };
@@ -55,6 +56,7 @@
 		75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4855253C6D7700AEDA22 /* LaunchViewController.swift */; };
 		75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */; };
 		75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */; };
+		75F710C22559D5F000199184 /* ProductRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C12559D5F000199184 /* ProductRealm.swift */; };
 		C50A8560F00C4D28782A7241 /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,7 @@
 		75994CD72544F52200275FC0 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
 		75994CDA2545C0E900275FC0 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
 		75994CDD2545C10100275FC0 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
+		75994CE02547018700275FC0 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		75C430C52536C40B001C261E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		75DA483D253B336F00AEDA22 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		75DA4846253B4AD300AEDA22 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		75DA4855253C6D7700AEDA22 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
 		75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkServices.swift; sourceTree = "<group>"; };
+		75F710C12559D5F000199184 /* ProductRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRealm.swift; sourceTree = "<group>"; };
 		89B917C489D5646649889660 /* Pods-Recipe-Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.debug.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.debug.xcconfig"; sourceTree = "<group>"; };
 		AAC12EF1573FBEC2760C9237 /* Pods-Recipe-Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.release.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.release.xcconfig"; sourceTree = "<group>"; };
 		AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe_Book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +233,7 @@
 			children = (
 				7527F3F7253799E500567122 /* User.swift */,
 				7527F41D25387EE900567122 /* Error.swift */,
+				75F710C12559D5F000199184 /* ProductRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 			children = (
 				7527F41425386ADD00567122 /* NetworkService.swift */,
 				75DA483D253B336F00AEDA22 /* SettingsService.swift */,
+				75994CE02547018700275FC0 /* DataBaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -661,6 +667,7 @@
 				75994C9B25438A8700275FC0 /* Product.swift in Sources */,
 				75994CDE2545C10100275FC0 /* DismissAnimation.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
+				75994CE12547018700275FC0 /* DataBaseService.swift in Sources */,
 				75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */,
 				75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */,
 				75994CD82544F52200275FC0 /* DimmPresentationController.swift in Sources */,
@@ -678,6 +685,7 @@
 				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,
 				75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */,
 				7527F42725388C2300567122 /* RegisterUser.swift in Sources */,
+				75F710C22559D5F000199184 /* ProductRealm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkService {
+final class NetworkService {
     let host: String = "https://ios.hahao.ru/api"
     var currentUser: User?
     
