@@ -399,7 +399,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="k11-H5-SXW">
-                                <rect key="frame" x="0.0" y="-42" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="-88" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-we-mxV">
@@ -424,8 +424,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Название рецепта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ8-C4-2c0">
-                                                <rect key="frame" x="2" y="9" width="382" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название рецепта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ8-C4-2c0">
+                                                <rect key="frame" x="0.0" y="16" width="382" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Mbw-WK-NdP"/>
                                                 </constraints>
@@ -441,15 +441,21 @@
                                                     <constraint firstAttribute="height" constant="15" id="qX3-t7-KBk"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbk-uH-WN6" customClass="CosmosView" customModule="Cosmos">
+                                                <rect key="frame" x="131" y="54" width="120" height="20"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="cLH-Pt-3V9" secondAttribute="trailing" id="6ec-mw-XsI"/>
                                             <constraint firstItem="cLH-Pt-3V9" firstAttribute="width" secondItem="XO1-0F-MJB" secondAttribute="width" multiplier="1:2" id="9pu-Q2-MfN"/>
+                                            <constraint firstItem="Wbk-uH-WN6" firstAttribute="centerX" secondItem="XO1-0F-MJB" secondAttribute="centerX" id="Gv0-nd-Aoy"/>
                                             <constraint firstAttribute="bottom" secondItem="Wbv-sJ-cLB" secondAttribute="bottom" constant="16" id="Iqc-gQ-Q5e"/>
                                             <constraint firstItem="cLH-Pt-3V9" firstAttribute="leading" secondItem="Wbv-sJ-cLB" secondAttribute="trailing" constant="16" id="KDN-x8-wAW"/>
                                             <constraint firstAttribute="bottom" secondItem="RoM-24-VYi" secondAttribute="bottom" constant="16" id="MV3-sY-c9P"/>
                                             <constraint firstAttribute="height" constant="130" id="Mnt-GI-vOm"/>
+                                            <constraint firstItem="Wbk-uH-WN6" firstAttribute="top" secondItem="rJ8-C4-2c0" secondAttribute="bottom" constant="8" id="OYK-LS-mda"/>
                                             <constraint firstAttribute="bottom" secondItem="cLH-Pt-3V9" secondAttribute="bottom" constant="16" id="Xdb-8I-YPf"/>
                                             <constraint firstItem="Wbv-sJ-cLB" firstAttribute="leading" secondItem="RoM-24-VYi" secondAttribute="trailing" constant="4" id="Znu-IN-nGO"/>
                                             <constraint firstAttribute="trailing" secondItem="rJ8-C4-2c0" secondAttribute="trailing" id="fEX-eB-7ka"/>
@@ -468,7 +474,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xb7-XK-SC8" customClass="IngridientsTableView" customModule="Recipe_Book" customModuleProvider="target">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="xb7-XK-SC8" customClass="IngridientsTableView" customModule="Recipe_Book" customModuleProvider="target">
                                         <rect key="frame" x="16" y="425" width="382" height="100"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
@@ -512,15 +518,15 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uRb-bm-76B" customClass="StepsTableView" customModule="Recipe_Book" customModuleProvider="target">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="uRb-bm-76B" customClass="StepsTableView" customModule="Recipe_Book" customModuleProvider="target">
                                         <rect key="frame" x="16" y="561" width="382" height="200"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="MiN-3D-AZ2" customClass="StepTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="382" height="100"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="MiN-3D-AZ2" customClass="StepTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="382" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MiN-3D-AZ2" id="qeV-QL-bAr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Шаг 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1d-30-CQU">
@@ -557,33 +563,37 @@
                                 <viewLayoutGuide key="safeArea" id="35T-We-zR5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="uRb-bm-76B" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" constant="16" id="0MN-2n-CQd"/>
-                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="xb7-XK-SC8" secondAttribute="trailing" constant="16" id="3hg-3W-j82"/>
-                                    <constraint firstItem="XO1-0F-MJB" firstAttribute="top" secondItem="35T-We-zR5" secondAttribute="top" constant="240" id="4b0-95-afq"/>
-                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="eY9-we-mxV" secondAttribute="trailing" id="E1F-2Y-ETR"/>
-                                    <constraint firstItem="pYw-Nq-vT9" firstAttribute="top" secondItem="XO1-0F-MJB" secondAttribute="bottom" constant="16" id="Hvv-Pd-Usa"/>
-                                    <constraint firstItem="xb7-XK-SC8" firstAttribute="top" secondItem="pYw-Nq-vT9" secondAttribute="bottom" constant="8" id="Ifv-iZ-kwe"/>
-                                    <constraint firstItem="XO1-0F-MJB" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" constant="16" id="KsC-P8-TMy"/>
-                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="XO1-0F-MJB" secondAttribute="trailing" constant="16" id="MMI-1X-BwN"/>
-                                    <constraint firstItem="eY9-we-mxV" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" id="NIf-Wa-pQt"/>
-                                    <constraint firstItem="xb7-XK-SC8" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" constant="16" id="aPu-Qi-I8N"/>
-                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="pYw-Nq-vT9" secondAttribute="trailing" constant="16" id="akI-fi-y8o"/>
-                                    <constraint firstItem="uRb-bm-76B" firstAttribute="top" secondItem="xb7-XK-SC8" secondAttribute="bottom" constant="8" id="kc7-yQ-3Ur"/>
-                                    <constraint firstItem="pYw-Nq-vT9" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" constant="16" id="oz8-w6-saZ"/>
-                                    <constraint firstItem="eY9-we-mxV" firstAttribute="top" secondItem="35T-We-zR5" secondAttribute="top" id="qC6-dn-2Ip"/>
-                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="uRb-bm-76B" secondAttribute="trailing" constant="16" id="qSz-x8-VQ9"/>
+                                    <constraint firstItem="xb7-XK-SC8" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" constant="16" id="0cv-QT-M4X"/>
+                                    <constraint firstItem="35T-We-zR5" firstAttribute="bottom" secondItem="uRb-bm-76B" secondAttribute="bottom" constant="8" id="7DN-Sl-y6m"/>
+                                    <constraint firstItem="eY9-we-mxV" firstAttribute="top" secondItem="35T-We-zR5" secondAttribute="top" id="9P8-cC-G2c"/>
+                                    <constraint firstItem="pYw-Nq-vT9" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" constant="16" id="Aed-Yy-N1d"/>
+                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="XO1-0F-MJB" secondAttribute="trailing" constant="16" id="BPy-Vw-1kP"/>
+                                    <constraint firstItem="pYw-Nq-vT9" firstAttribute="top" secondItem="XO1-0F-MJB" secondAttribute="bottom" constant="16" id="C4t-aS-Pf4"/>
+                                    <constraint firstItem="XO1-0F-MJB" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" constant="16" id="FLj-NY-Bxc"/>
+                                    <constraint firstItem="eY9-we-mxV" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" id="G2u-W0-ul1"/>
+                                    <constraint firstItem="uRb-bm-76B" firstAttribute="top" secondItem="xb7-XK-SC8" secondAttribute="bottom" constant="16" id="Ggw-1p-ywD"/>
+                                    <constraint firstItem="xb7-XK-SC8" firstAttribute="top" secondItem="pYw-Nq-vT9" secondAttribute="bottom" constant="16" id="Heq-Mk-hTh"/>
+                                    <constraint firstItem="uRb-bm-76B" firstAttribute="leading" secondItem="35T-We-zR5" secondAttribute="leading" constant="16" id="LY9-dD-v2Z"/>
+                                    <constraint firstItem="XO1-0F-MJB" firstAttribute="top" secondItem="35T-We-zR5" secondAttribute="top" constant="240" id="OEq-Zj-InH"/>
+                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="uRb-bm-76B" secondAttribute="trailing" constant="16" id="TGA-Ul-dbx"/>
+                                    <constraint firstItem="eY9-we-mxV" firstAttribute="trailing" secondItem="35T-We-zR5" secondAttribute="trailing" id="TY1-01-geB"/>
+                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="xb7-XK-SC8" secondAttribute="trailing" constant="16" id="VJQ-dd-bdQ"/>
+                                    <constraint firstItem="35T-We-zR5" firstAttribute="trailing" secondItem="pYw-Nq-vT9" secondAttribute="trailing" constant="16" id="Z8E-aA-ssa"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1dN-Mp-kNm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <viewLayoutGuide key="contentLayoutGuide" id="HaZ-n2-BI8"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="6in-dB-9WN"/>
                     </scrollView>
                     <navigationItem key="navigationItem" id="e5E-VS-u3T"/>
                     <connections>
+                        <outlet property="backButton" destination="e5E-VS-u3T" id="eAt-kJ-Olp"/>
                         <outlet property="ingridientCount" destination="cLH-Pt-3V9" id="Xzh-ZI-TGc"/>
                         <outlet property="ingridientsTableView" destination="xb7-XK-SC8" id="PqH-ws-58p"/>
+                        <outlet property="ratingView" destination="Wbk-uH-WN6" id="IcU-YB-TyS"/>
+                        <outlet property="recipeBlock" destination="XO1-0F-MJB" id="FZg-gu-kz8"/>
                         <outlet property="recipeName" destination="rJ8-C4-2c0" id="M0E-F3-C6H"/>
                         <outlet property="recipeNameView" destination="XO1-0F-MJB" id="rin-n3-kh8"/>
                         <outlet property="recipeTime" destination="Wbv-sJ-cLB" id="RZr-NV-wyf"/>
@@ -593,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwz-LY-5qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6729" y="46"/>
+            <point key="canvasLocation" x="6728.985507246377" y="45.535714285714285"/>
         </scene>
         <!--Мои рецепты-->
         <scene sceneID="U7C-dV-NPt">
@@ -900,6 +910,9 @@
         <designable name="MFN-m3-rxZ">
             <size key="intrinsicContentSize" width="120" height="20"/>
         </designable>
+        <designable name="Wbk-uH-WN6">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
     </designables>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
@@ -912,6 +925,9 @@
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -23,6 +23,8 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         
         self.recipesPresenter?.getRecipes()
         self.recipesPresenter?.getFavorites()
+        
+        self.tableView.tableFooterView = nil
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,10 +58,6 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         cell.ratingView.rating = recipe.rating
         cell.ratingView.settings.fillMode = .precise
         cell.ratingView.settings.updateOnTouch = false
-        cell.ratingView.didTouchCosmos = { [weak self] rating in
-            self?.recipesPresenter?.vote(recipeId: recipe.id, stars: lround(rating), indexPath: indexPath)
-            self?.recipes[indexPath.section][indexPath.item].rating = rating
-        }
         
         return cell
     }
@@ -72,17 +70,17 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = UIView()
-        
-        let headerLabel = UILabel(frame: CGRect(x: 16, y: 4, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-        headerLabel.font = UIFont(name: "System", size: 18)
-        headerLabel.text = self.tableView(self.tableView, titleForHeaderInSection: section)
-        headerLabel.sizeToFit()
-        header.addSubview(headerLabel)
-        
-        return header
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let header = UIView()
+//
+//        let headerLabel = UILabel(frame: CGRect(x: 8, y: 8, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+//        headerLabel.font = UIFont(name: "System", size: 18)
+//        headerLabel.text = self.tableView(self.tableView, titleForHeaderInSection: section)
+//        headerLabel.sizeToFit()
+//        
+//        header.addSubview(headerLabel)
+//        return header
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -92,7 +90,15 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
             
             let destination = segue.destination as! RecipeViewController
             destination.recipe = recipe
+            destination.recipesViewController = self
+            destination.recipesIndexPath = indexPath
         }
+    }
+    
+    func setRating(indexPath: IndexPath, rating: Double) {
+        self.recipes[indexPath.section][indexPath.item].rating = rating
+        
+        self.tableView.reloadRows(at: [IndexPath](arrayLiteral: indexPath), with: UITableView.RowAnimation.none)
     }
 }
 
@@ -106,11 +112,5 @@ extension RecipesViewContoller: RecipesDelegate {
     func setFavorites(favorites: RecipeList) {
         self.recipes[0] = favorites
         self.tableView.reloadData()
-    }
-    
-    func setRating(indexPath: IndexPath, rating: Double) {
-        self.recipes[indexPath.section][indexPath.item].rating = rating
-        
-        self.tableView.reloadRows(at: [IndexPath](arrayLiteral: indexPath), with: UITableView.RowAnimation.none)
     }
 }
