@@ -8,7 +8,8 @@
 import UIKit
 
 protocol DataTarget: NSObjectProtocol {
-    func editFinished(row: Int, product: Product)
+    func editFinished(index: IndexPath, product: Product)
+    func createFinished(product: Product)
 }
 
 class ProductCreatorViewController: UIViewController {
@@ -78,12 +79,16 @@ class ProductCreatorViewController: UIViewController {
     
     @IBAction func saveBtnTapped(_ sender: Any) {
         if var product = self.product {
+            guard let index = self.index else {
+                return
+            }
+            
             product.amount = Double(self.weightField.text ?? "") ?? 0
             product.amountType = Product.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Product.AmountType.count
-            target?.editFinished(row: index?.row ?? -1, product: product)
+            target?.editFinished(index: index, product: product)
         } else {
-            let newProduct = Product(id: -1, name: self.nameField.text ?? "", amountType: Product.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Product.AmountType.count, amount: Double(self.weightField.text ?? "") ?? 0, bought: false)
-            target?.editFinished(row: index?.row ?? -1, product: newProduct)
+            let newProduct = Product(name: self.nameField.text ?? "", amountType: Product.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Product.AmountType.count, amount: Double(self.weightField.text ?? "") ?? 0, bought: false)
+            target?.createFinished(product: newProduct)
         }
         
         self.dismiss(animated: true, completion: nil)

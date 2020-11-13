@@ -6,26 +6,12 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class DataBaseService {
     static let shared = DataBaseService()
+    let realm = try! Realm()
     
     private init() {
-    }
-    
-    func addProducts(products: [Product]) -> ([Int], Error) {
-        
-    }
-    
-    func addProduct(products: Product) -> (Int, Error) {
-        
-    }
-    
-    func changeProduct(product: Product) -> Error {
-        
-    }
-    
-    func deleteProduct(id: Int) -> Error {
-        
     }
 }

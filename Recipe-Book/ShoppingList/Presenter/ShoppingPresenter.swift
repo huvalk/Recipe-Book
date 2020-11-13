@@ -16,13 +16,29 @@ class ShoppingPresenter {
     
     func getProducts() {
 //        delegate?.startLoad()
-        delegate?.updateProducts(products: [Product(id: 1, name: "Авакадо", amountType: Product.AmountType.count, amount: 2, bought: false), Product(id: 2, name: "Апельсин", amountType: Product.AmountType.gramm, amount: 550, bought: false), Product(id: 1, name: "Авакадо", amountType: Product.AmountType.count, amount: 2, bought: false), Product(id: 2, name: "Апельсин", amountType: Product.AmountType.gramm, amount: 550, bought: false), Product(id: 1, name: "Авакадо", amountType: Product.AmountType.count, amount: 2, bought: false), Product(id: 2, name: "Апельсин", amountType: Product.AmountType.gramm, amount: 550, bought: false), Product(id: 1, name: "Авакадо", amountType: Product.AmountType.count, amount: 2, bought: false), Product(id: 2, name: "Апельсин", amountType: Product.AmountType.gramm, amount: 550, bought: false), Product(id: 1, name: "Авакадо", amountType: Product.AmountType.count, amount: 2, bought: false), Product(id: 2, name: "Апельсин", amountType: Product.AmountType.gramm, amount: 550, bought: false), Product(id: 1, name: "Авакадо", amountType: Product.AmountType.count, amount: 2, bought: false), Product(id: 2, name: "Апельсин", amountType: Product.AmountType.gramm, amount: 550, bought: false)])
+        delegate?.updateProducts(ShoppingDatabaseService.getProducts())
+    }
+    
+    func deleteProduct(_ product: Product) {
+        _ = ShoppingDatabaseService.deleteProduct(product)
+    }
+    
+    func clearProducts() {
+        _ = ShoppingDatabaseService.clearProducts()
+    }
+    
+    func changeProduct(_ product: Product) {
+        _ = ShoppingDatabaseService.changeProduct(product)
+    }
+    
+    func addProduct(_ product: Product) {
+        _ = ShoppingDatabaseService.saveProduct(product)
     }
 }
 
 protocol ShoppingDelegate: NSObjectProtocol {
     func startLoad()
     func endLoad()
-    func updateProducts(products: [Product])
+    func updateProducts(_ product: [Product])
     func clearProducts()
 }

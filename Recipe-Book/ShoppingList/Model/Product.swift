@@ -28,6 +28,22 @@ struct Product {
         static let length = 5
     }
     
+    init(id: Int, name: String, amountType: Product.AmountType, amount: Double, bought: Bool) {
+        self.id = id
+        self.name = name
+        self.amountType = amountType
+        self.amount = amount
+        self.bought = bought
+    }
+    
+    init(name: String, amountType: Product.AmountType, amount: Double, bought: Bool) {
+        self.id = ShoppingDatabaseService.productNextId
+        self.name = name
+        self.amountType = amountType
+        self.amount = amount
+        self.bought = bought
+    }
+    
     let id: Int
     let name: String
     var amountType: AmountType

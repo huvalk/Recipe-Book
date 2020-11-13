@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -57,6 +57,8 @@
 		75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */; };
 		75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */; };
 		75F710C22559D5F000199184 /* ProductRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C12559D5F000199184 /* ProductRealm.swift */; };
+		75F710C92559E2A700199184 /* ProductListRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C82559E2A700199184 /* ProductListRealm.swift */; };
+		75F710CC2559F50300199184 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710CB2559F50300199184 /* DatabaseService.swift */; };
 		C50A8560F00C4D28782A7241 /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +115,8 @@
 		75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
 		75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkServices.swift; sourceTree = "<group>"; };
 		75F710C12559D5F000199184 /* ProductRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRealm.swift; sourceTree = "<group>"; };
+		75F710C82559E2A700199184 /* ProductListRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRealm.swift; sourceTree = "<group>"; };
+		75F710CB2559F50300199184 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		89B917C489D5646649889660 /* Pods-Recipe-Book.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.debug.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.debug.xcconfig"; sourceTree = "<group>"; };
 		AAC12EF1573FBEC2760C9237 /* Pods-Recipe-Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.release.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.release.xcconfig"; sourceTree = "<group>"; };
 		AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe_Book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,7 +237,7 @@
 			children = (
 				7527F3F7253799E500567122 /* User.swift */,
 				7527F41D25387EE900567122 /* Error.swift */,
-				75F710C12559D5F000199184 /* ProductRealm.swift */,
+				75F710C82559E2A700199184 /* ProductListRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +344,7 @@
 		75994C4F254306E500275FC0 /* ShoppingDatabaseService */ = {
 			isa = PBXGroup;
 			children = (
+				75F710CB2559F50300199184 /* DatabaseService.swift */,
 			);
 			path = ShoppingDatabaseService;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 		75994C522543071500275FC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				75F710C12559D5F000199184 /* ProductRealm.swift */,
 				75994C9A25438A8700275FC0 /* Product.swift */,
 			);
 			path = Model;
@@ -554,6 +560,7 @@
 				7518BCC52534BABA004DEA06 /* Sources */,
 				7518BCC62534BABA004DEA06 /* Frameworks */,
 				7518BCC72534BABA004DEA06 /* Resources */,
+				6D51A055AFB165713DF6916A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -610,6 +617,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6D51A055AFB165713DF6916A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D2F3E2D49F1E6870D2D2577E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -654,12 +678,14 @@
 				75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
+				75F710C92559E2A700199184 /* ProductListRealm.swift in Sources */,
 				75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */,
 				75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */,
 				7527F41525386ADD00567122 /* NetworkService.swift in Sources */,
 				75994CB625443A3200275FC0 /* RecipesPresenter.swift in Sources */,
 				75994CBB25443A3200275FC0 /* StepsTableView.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
+				75F710CC2559F50300199184 /* DatabaseService.swift in Sources */,
 				75994CB925443A3200275FC0 /* RecipesNetworkService.swift in Sources */,
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
 				75994CB725443A3200275FC0 /* RecipePresenter.swift in Sources */,

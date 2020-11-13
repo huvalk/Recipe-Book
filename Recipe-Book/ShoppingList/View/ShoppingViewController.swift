@@ -23,6 +23,23 @@ class ShoppingViewController: UIViewController {
         table.tableFooterView = UIView()
         presenter?.getProducts()
     }
+    
+    @IBAction func deleteBtnClicked(_ sender: Any) {
+        self.productsToDisplay.removeAll()
+        presenter?.clearProducts()
+        table.reloadData()
+    }
+    
+    @IBAction func addBtnClicked(_ sender: Any) {
+        let creatorViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductCreatorViewController") as! ProductCreatorViewController
+        
+        creatorViewController.transitioningDelegate = transition
+        creatorViewController.modalPresentationStyle = .custom
+        creatorViewController.target = self
+        
+        present(creatorViewController, animated: true)
+    }
+    
 }
 
 extension ShoppingViewController: ShoppingDelegate {
@@ -34,7 +51,7 @@ extension ShoppingViewController: ShoppingDelegate {
         
     }
     
-    func updateProducts(products: [Product]) {
+    func updateProducts(_ products: [Product]) {
         self.productsToDisplay = products
         table.reloadData()
     }
@@ -46,7 +63,11 @@ extension ShoppingViewController: ShoppingDelegate {
 
 extension ShoppingViewController: ShoppingCellDelegate {
     func didTapCheckBox(checked: Bool, index: IndexPath) {
-        // изменять данные в базе
+        var oldProduct = self.productsToDisplay[index.row]
+        oldProduct.bought = checked
+        self.productsToDisplay[index.row] = oldProduct
+        
+        presenter?.changeProduct(oldProduct)
     }
     
     func didTapEdit(index: IndexPath) {
@@ -62,10 +83,16 @@ extension ShoppingViewController: ShoppingCellDelegate {
 }
 
 extension ShoppingViewController: DataTarget {
-    func editFinished(row: Int, product: Product) {
-        // изменить данные в базе
-        self.productsToDisplay[row] = product
+    func createFinished(product: Product) {
+        self.productsToDisplay.append(product)
+        presenter?.addProduct(product)
         table.reloadData()
+    }
+    
+    func editFinished(index: IndexPath, product: Product) {
+        self.productsToDisplay[index.row] = product
+        presenter?.changeProduct(product)
+        table.reloadRows(at: [index], with: .top)
     }
 }
 
@@ -89,13 +116,18 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        // удалить строку и удалить запись из базы
-        if editingStyle == .delete {
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            print("insert \(indexPath.row)")
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+            -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+            let product = self.productsToDisplay[indexPath.row]
+            self.presenter?.deleteProduct(product)
+            self.productsToDisplay.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandler(true)
         }
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = UIColor(named: "PastelDarkRed")
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
     }
-    
 }
