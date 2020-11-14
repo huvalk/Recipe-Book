@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75049DCB255F414800A310A8 /* MainCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DCA255F414800A310A8 /* MainCreationViewController.swift */; };
+		75049DCF255F480800A310A8 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DCE255F480800A310A8 /* CustomSegmentControl.swift */; };
 		7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518BCCC2534BABA004DEA06 /* AppDelegate.swift */; };
 		7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */; };
 		7518BCD42534BABA004DEA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7518BCD22534BABA004DEA06 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75049DCA255F414800A310A8 /* MainCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCreationViewController.swift; sourceTree = "<group>"; };
+		75049DCE255F480800A310A8 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
 		7518BCC92534BABA004DEA06 /* Recipe-Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7518BCCC2534BABA004DEA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +155,47 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		75049DC0255F239500A310A8 /* RecipeCreation */ = {
+			isa = PBXGroup;
+			children = (
+				75049DC3255F242900A310A8 /* Model */,
+				75049DC2255F242400A310A8 /* View */,
+				75049DC1255F241A00A310A8 /* Presenter */,
+			);
+			path = RecipeCreation;
+			sourceTree = "<group>";
+		};
+		75049DC1255F241A00A310A8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		75049DC2255F242400A310A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75049DC9255F410A00A310A8 /* MainCreation */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		75049DC3255F242900A310A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		75049DC9255F410A00A310A8 /* MainCreation */ = {
+			isa = PBXGroup;
+			children = (
+				75049DCA255F414800A310A8 /* MainCreationViewController.swift */,
+				75049DCE255F480800A310A8 /* CustomSegmentControl.swift */,
+			);
+			path = MainCreation;
+			sourceTree = "<group>";
+		};
 		7518BCC02534BABA004DEA06 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +217,7 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
+				75049DC0255F239500A310A8 /* RecipeCreation */,
 				75994CCF2544EDD600275FC0 /* ProductCreator */,
 				75994CA325443A3200275FC0 /* Recipes */,
 				75994C4E254305E200275FC0 /* ShoppingList */,
@@ -666,6 +712,7 @@
 				75994CC125443A3200275FC0 /* RecipesViewController.swift in Sources */,
 				75994CBE25443A3200275FC0 /* RecipeViewController.swift in Sources */,
 				75994CBC25443A3200275FC0 /* IngridientsTableView.swift in Sources */,
+				75049DCF255F480800A310A8 /* CustomSegmentControl.swift in Sources */,
 				75994CBF25443A3200275FC0 /* IngridientTableViewCell.swift in Sources */,
 				7527F41A25386D6100567122 /* LoginNetworkService.swift in Sources */,
 				75994C9E25438E9600275FC0 /* ShoppingPresenter.swift in Sources */,
@@ -691,6 +738,7 @@
 				75994CB725443A3200275FC0 /* RecipePresenter.swift in Sources */,
 				75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */,
 				75994C9B25438A8700275FC0 /* Product.swift in Sources */,
+				75049DCB255F414800A310A8 /* MainCreationViewController.swift in Sources */,
 				75994CDE2545C10100275FC0 /* DismissAnimation.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
 				75994CE12547018700275FC0 /* DataBaseService.swift in Sources */,
