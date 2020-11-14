@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		75049DCB255F414800A310A8 /* MainCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DCA255F414800A310A8 /* MainCreationViewController.swift */; };
 		75049DCF255F480800A310A8 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DCE255F480800A310A8 /* CustomSegmentControl.swift */; };
+		75049DD3255FE8CE00A310A8 /* GeneralCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DD2255FE8CE00A310A8 /* GeneralCreationViewController.swift */; };
+		75049DD82560041D00A310A8 /* StepsCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DD72560041D00A310A8 /* StepsCreationViewController.swift */; };
+		75049DDC2560043300A310A8 /* IngredientsCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DDB2560043300A310A8 /* IngredientsCreationViewController.swift */; };
 		7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518BCCC2534BABA004DEA06 /* AppDelegate.swift */; };
 		7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */; };
 		7518BCD42534BABA004DEA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7518BCD22534BABA004DEA06 /* Main.storyboard */; };
@@ -67,6 +70,9 @@
 /* Begin PBXFileReference section */
 		75049DCA255F414800A310A8 /* MainCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCreationViewController.swift; sourceTree = "<group>"; };
 		75049DCE255F480800A310A8 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
+		75049DD2255FE8CE00A310A8 /* GeneralCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCreationViewController.swift; sourceTree = "<group>"; };
+		75049DD72560041D00A310A8 /* StepsCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCreationViewController.swift; sourceTree = "<group>"; };
+		75049DDB2560043300A310A8 /* IngredientsCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCreationViewController.swift; sourceTree = "<group>"; };
 		7518BCC92534BABA004DEA06 /* Recipe-Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7518BCCC2534BABA004DEA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7518BCCE2534BABA004DEA06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +181,9 @@
 		75049DC2255F242400A310A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				75049DD6256003F100A310A8 /* StepsCreation */,
+				75049DD5256003E300A310A8 /* IngredientsCreation */,
+				75049DD1255FE8A900A310A8 /* GeneralCreation */,
 				75049DC9255F410A00A310A8 /* MainCreation */,
 			);
 			path = View;
@@ -194,6 +203,30 @@
 				75049DCE255F480800A310A8 /* CustomSegmentControl.swift */,
 			);
 			path = MainCreation;
+			sourceTree = "<group>";
+		};
+		75049DD1255FE8A900A310A8 /* GeneralCreation */ = {
+			isa = PBXGroup;
+			children = (
+				75049DD2255FE8CE00A310A8 /* GeneralCreationViewController.swift */,
+			);
+			path = GeneralCreation;
+			sourceTree = "<group>";
+		};
+		75049DD5256003E300A310A8 /* IngredientsCreation */ = {
+			isa = PBXGroup;
+			children = (
+				75049DDB2560043300A310A8 /* IngredientsCreationViewController.swift */,
+			);
+			path = IngredientsCreation;
+			sourceTree = "<group>";
+		};
+		75049DD6256003F100A310A8 /* StepsCreation */ = {
+			isa = PBXGroup;
+			children = (
+				75049DD72560041D00A310A8 /* StepsCreationViewController.swift */,
+			);
+			path = StepsCreation;
 			sourceTree = "<group>";
 		};
 		7518BCC02534BABA004DEA06 = {
@@ -711,6 +744,7 @@
 			files = (
 				75994CC125443A3200275FC0 /* RecipesViewController.swift in Sources */,
 				75994CBE25443A3200275FC0 /* RecipeViewController.swift in Sources */,
+				75049DDC2560043300A310A8 /* IngredientsCreationViewController.swift in Sources */,
 				75994CBC25443A3200275FC0 /* IngridientsTableView.swift in Sources */,
 				75049DCF255F480800A310A8 /* CustomSegmentControl.swift in Sources */,
 				75994CBF25443A3200275FC0 /* IngridientTableViewCell.swift in Sources */,
@@ -737,6 +771,7 @@
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
 				75994CB725443A3200275FC0 /* RecipePresenter.swift in Sources */,
 				75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */,
+				75049DD82560041D00A310A8 /* StepsCreationViewController.swift in Sources */,
 				75994C9B25438A8700275FC0 /* Product.swift in Sources */,
 				75049DCB255F414800A310A8 /* MainCreationViewController.swift in Sources */,
 				75994CDE2545C10100275FC0 /* DismissAnimation.swift in Sources */,
@@ -749,6 +784,7 @@
 				7527F3F8253799E500567122 /* User.swift in Sources */,
 				75994CBD25443A3200275FC0 /* StepTableViewCell.swift in Sources */,
 				75994CC025443A3200275FC0 /* RecipeTableViewCell.swift in Sources */,
+				75049DD3255FE8CE00A310A8 /* GeneralCreationViewController.swift in Sources */,
 				75994C6325432B3700275FC0 /* SmsCode.swift in Sources */,
 				75994CD22544EEC400275FC0 /* PanelTransition.swift in Sources */,
 				75994CCB2544A2BB00275FC0 /* ProductCreatorViewController.swift in Sources */,

@@ -6,8 +6,8 @@
 //
 
 import UIKit
-protocol CustomSegmentedControlDelegate:class {
-    func change(to index:Int)
+protocol CustomSegmentedControlDelegate: class {
+    func segmentChanged(to index:Int)
 }
 
 class CustomSegmentedControl: UIView {
@@ -22,6 +22,7 @@ class CustomSegmentedControl: UIView {
     var selectorTextColor: UIColor = .red
     
     weak var delegate:CustomSegmentedControlDelegate?
+    weak var actionDelegate:CustomSegmentedControlDelegate?
     
     public private(set) var selectedIndex : Int = 0
     
@@ -78,9 +79,9 @@ class CustomSegmentedControl: UIView {
     @objc func buttonAction(sender:UIButton) {
         for (buttonIndex, btn) in buttons.enumerated() {
             btn.setTitleColor(textColor, for: .normal)
-            if btn == sender {
+            if btn == sender && selectedIndex != buttonIndex {
                 selectedIndex = buttonIndex
-                delegate?.change(to: selectedIndex)
+                delegate?.segmentChanged(to: selectedIndex)
                 let selectorWidth = selectorCalculateWidth(index: selectedIndex)
                 let selectorPosition = selectorCalculatePos(index: selectedIndex)
                 UIView.animate(withDuration: 0.2) {
