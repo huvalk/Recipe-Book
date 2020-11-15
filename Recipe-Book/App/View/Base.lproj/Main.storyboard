@@ -623,35 +623,6 @@
             <point key="canvasLocation" x="5044.927536231884" y="45.535714285714285"/>
         </scene>
         <!--Поиск-->
-        <scene sceneID="jsN-rY-wub">
-            <objects>
-                <tableViewController id="fGU-Wz-oDf" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JBg-qd-LlO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qzl-3T-JeW">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzl-3T-JeW" id="ynD-to-wsk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="fGU-Wz-oDf" id="gpP-jo-xNl"/>
-                            <outlet property="delegate" destination="fGU-Wz-oDf" id="unI-LT-enn"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Поиск" id="GKK-X9-fyw"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LUX-Gr-m0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5025" y="-653"/>
-        </scene>
-        <!--Поиск-->
         <scene sceneID="iLe-QW-U7X">
             <objects>
                 <navigationController id="OQd-vR-i3L" sceneMemberID="viewController">
@@ -661,12 +632,155 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="fGU-Wz-oDf" kind="relationship" relationship="rootViewController" id="EnE-oB-fC9"/>
+                        <segue destination="s3r-dL-qvX" kind="relationship" relationship="rootViewController" id="od5-Q9-7Hw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ero-Eu-SUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4135" y="-653"/>
+            <point key="canvasLocation" x="5025" y="-654"/>
+        </scene>
+        <!--Поиск-->
+        <scene sceneID="Txo-MB-CDH">
+            <objects>
+                <tableViewController id="s3r-dL-qvX" customClass="SearchViewController" customModule="Recipe_Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QZd-eo-BaY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Search Cell" rowHeight="170" id="0UE-gl-H4f" customClass="SearchTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="170"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0UE-gl-H4f" id="mLb-ag-PP8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что вы хотите  приготовить?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eL-BL-JMQ">
+                                            <rect key="frame" x="16" y="8" width="259" height="106"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="Rmp-dM-ott"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Найти рецепт" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0nc-8y-HeF">
+                                            <rect key="frame" x="16" y="122" width="382" height="40"/>
+                                            <color key="backgroundColor" red="0.94509803921568625" green="0.95686274509803915" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="qrZ-h8-coQ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3eL-BL-JMQ" firstAttribute="leading" secondItem="mLb-ag-PP8" secondAttribute="leading" constant="16" id="8ix-Bb-lNc"/>
+                                        <constraint firstAttribute="bottom" secondItem="0nc-8y-HeF" secondAttribute="bottom" constant="8" id="FAM-r5-ydH"/>
+                                        <constraint firstItem="3eL-BL-JMQ" firstAttribute="top" secondItem="mLb-ag-PP8" secondAttribute="top" constant="8" id="OEC-fG-rlJ"/>
+                                        <constraint firstItem="0nc-8y-HeF" firstAttribute="top" secondItem="3eL-BL-JMQ" secondAttribute="bottom" constant="8" id="S9W-Kq-oxL"/>
+                                        <constraint firstAttribute="trailing" secondItem="0nc-8y-HeF" secondAttribute="trailing" constant="16" id="fET-x2-TUm"/>
+                                        <constraint firstItem="0nc-8y-HeF" firstAttribute="leading" secondItem="mLb-ag-PP8" secondAttribute="leading" constant="16" id="rxX-lm-7ir"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="searchField" destination="0nc-8y-HeF" id="eXa-EO-fCs"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Recipe Cell" rowHeight="115" id="L7Y-z6-loo" customClass="RecipeTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="198" width="414" height="115"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L7Y-z6-loo" id="RY9-t3-ccP">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-FX-fgh">
+                                            <rect key="frame" x="16" y="7.5" width="100" height="100"/>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="GZ2-tT-i9I"/>
+                                                <constraint firstAttribute="width" constant="100" id="Res-pb-kCL"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-5f-44f">
+                                            <rect key="frame" x="124" y="11" width="125" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Iix-DI-zF6">
+                                            <rect key="frame" x="124" y="81.5" width="15" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="15" id="FsA-yJ-GCF"/>
+                                                <constraint firstAttribute="height" constant="15" id="Hdc-kb-W3q"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 ингридиентов" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edr-lW-ftX">
+                                            <rect key="frame" x="266" y="81.5" width="120" height="14.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="zeN-lk-VIR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 мин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4M-ey-zre">
+                                            <rect key="frame" x="143" y="81" width="100" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="BBy-Rg-fs3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-ej-8D6" customClass="CosmosView" customModule="Cosmos">
+                                            <rect key="frame" x="124" y="36" width="120" height="20"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="m4M-ey-zre" firstAttribute="leading" secondItem="Iix-DI-zF6" secondAttribute="trailing" constant="4" id="0iH-IG-Sxd"/>
+                                        <constraint firstItem="Iix-DI-zF6" firstAttribute="leading" secondItem="Vja-FX-fgh" secondAttribute="trailing" constant="8" id="G9E-1X-AR2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Iix-DI-zF6" secondAttribute="bottom" constant="8" id="Oq1-o7-l5X"/>
+                                        <constraint firstAttribute="bottom" secondItem="Vja-FX-fgh" secondAttribute="bottom" constant="7.5" id="Qne-ZU-aEo"/>
+                                        <constraint firstItem="GfN-ej-8D6" firstAttribute="leading" secondItem="SmQ-5f-44f" secondAttribute="leading" id="XvR-qQ-PKf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="edr-lW-ftX" secondAttribute="bottom" constant="8" id="YjO-cB-5Jc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="edr-lW-ftX" secondAttribute="trailing" constant="8" id="eJF-ZZ-d4f"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="m4M-ey-zre" secondAttribute="bottom" constant="8" id="kYE-me-RJu"/>
+                                        <constraint firstItem="SmQ-5f-44f" firstAttribute="leading" secondItem="Vja-FX-fgh" secondAttribute="trailing" constant="8" id="mC7-Vc-QOI"/>
+                                        <constraint firstItem="Vja-FX-fgh" firstAttribute="leading" secondItem="RY9-t3-ccP" secondAttribute="leading" constant="16" id="nCy-AM-BbC"/>
+                                        <constraint firstItem="Vja-FX-fgh" firstAttribute="top" secondItem="RY9-t3-ccP" secondAttribute="top" constant="7.5" id="pkQ-Yo-xQB"/>
+                                        <constraint firstItem="Vja-FX-fgh" firstAttribute="leading" secondItem="RY9-t3-ccP" secondAttribute="leading" constant="16" id="sS4-ZA-ocm"/>
+                                        <constraint firstItem="GfN-ej-8D6" firstAttribute="top" secondItem="SmQ-5f-44f" secondAttribute="bottom" constant="8" id="wYY-7c-LKw"/>
+                                        <constraint firstItem="SmQ-5f-44f" firstAttribute="top" secondItem="RY9-t3-ccP" secondAttribute="topMargin" id="xR5-wW-scI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ingridientCount" destination="edr-lW-ftX" id="0I6-6O-sZM"/>
+                                    <outlet property="ratingView" destination="GfN-ej-8D6" id="UeH-of-IHy"/>
+                                    <outlet property="recipeName" destination="SmQ-5f-44f" id="dts-Gt-lPi"/>
+                                    <outlet property="recipeTime" destination="m4M-ey-zre" id="rZb-2E-Zv2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s3r-dL-qvX" id="0fV-s6-yyV"/>
+                            <outlet property="delegate" destination="s3r-dL-qvX" id="iMn-qo-YVT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Поиск" id="fxF-0L-hEM"/>
+                    <connections>
+                        <outlet property="tableView" destination="QZd-eo-BaY" id="ruI-gF-Dap"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIg-o3-PRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5935" y="-654"/>
         </scene>
         <!--Список покупок-->
         <scene sceneID="H6Q-2r-L1x">
@@ -907,6 +1021,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="GfN-ej-8D6">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
         <designable name="MFN-m3-rxZ">
             <size key="intrinsicContentSize" width="120" height="20"/>
         </designable>
