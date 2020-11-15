@@ -41,15 +41,14 @@
 		CE1C5EF22559477500ACF568 /* RecipePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C5EF12559477500ACF568 /* RecipePresenter.swift */; };
 		CE41865125603DFD00B6F7FC /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41865025603DFD00B6F7FC /* SearchPresenter.swift */; };
 		CE41865425603F0E00B6F7FC /* SearchNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41865325603F0E00B6F7FC /* SearchNetworkService.swift */; };
+		CE481584256123DD003976C1 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A1192544342C004553E4 /* RecipeViewController.swift */; };
+		CE48159025612A1B003976C1 /* RecipeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48158F25612A1B003976C1 /* RecipeInfoTableViewCell.swift */; };
 		CE56EBFF25601D6800512BA0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56EBFE25601D6800512BA0 /* SearchViewController.swift */; };
 		CE89A11125443412004553E4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11025443412004553E4 /* Recipe.swift */; };
 		CE89A11425443419004553E4 /* RecipesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11325443419004553E4 /* RecipesNetworkService.swift */; };
 		CE89A1172544341F004553E4 /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A1162544341F004553E4 /* RecipesPresenter.swift */; };
-		CE89A11E2544342D004553E4 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A1192544342C004553E4 /* RecipeViewController.swift */; };
-		CE89A11F2544342D004553E4 /* IngridientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11A2544342C004553E4 /* IngridientTableViewCell.swift */; };
-		CE89A1202544342D004553E4 /* IngridientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11B2544342D004553E4 /* IngridientsTableView.swift */; };
+		CE89A11F2544342D004553E4 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11A2544342C004553E4 /* IngredientTableViewCell.swift */; };
 		CE89A1212544342D004553E4 /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11C2544342D004553E4 /* StepTableViewCell.swift */; };
-		CE89A1222544342D004553E4 /* StepsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A11D2544342D004553E4 /* StepsTableView.swift */; };
 		CE89A12625443436004553E4 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A12425443436004553E4 /* RecipesViewController.swift */; };
 		CE89A12725443436004553E4 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A12525443436004553E4 /* RecipeTableViewCell.swift */; };
 		CEAE965A2561088F00591FEE /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE96592561088F00591FEE /* SearchTableViewCell.swift */; };
@@ -94,15 +93,14 @@
 		CE1C5EF12559477500ACF568 /* RecipePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePresenter.swift; sourceTree = "<group>"; };
 		CE41865025603DFD00B6F7FC /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		CE41865325603F0E00B6F7FC /* SearchNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkService.swift; sourceTree = "<group>"; };
+		CE48158F25612A1B003976C1 /* RecipeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CE56EBFE25601D6800512BA0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE89A11025443412004553E4 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		CE89A11325443419004553E4 /* RecipesNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesNetworkService.swift; sourceTree = "<group>"; };
 		CE89A1162544341F004553E4 /* RecipesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
 		CE89A1192544342C004553E4 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		CE89A11A2544342C004553E4 /* IngridientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngridientTableViewCell.swift; sourceTree = "<group>"; };
-		CE89A11B2544342D004553E4 /* IngridientsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngridientsTableView.swift; sourceTree = "<group>"; };
+		CE89A11A2544342C004553E4 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		CE89A11C2544342D004553E4 /* StepTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
-		CE89A11D2544342D004553E4 /* StepsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsTableView.swift; sourceTree = "<group>"; };
 		CE89A12425443436004553E4 /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		CE89A12525443436004553E4 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		CEAE96592561088F00591FEE /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -534,11 +532,10 @@
 		CE89A10D254433F2004553E4 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				CE89A11B2544342D004553E4 /* IngridientsTableView.swift */,
-				CE89A11A2544342C004553E4 /* IngridientTableViewCell.swift */,
+				CE89A11A2544342C004553E4 /* IngredientTableViewCell.swift */,
 				CE89A1192544342C004553E4 /* RecipeViewController.swift */,
-				CE89A11D2544342D004553E4 /* StepsTableView.swift */,
 				CE89A11C2544342D004553E4 /* StepTableViewCell.swift */,
+				CE48158F25612A1B003976C1 /* RecipeInfoTableViewCell.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -668,6 +665,8 @@
 			files = (
 				7527F41A25386D6100567122 /* LoginNetworkService.swift in Sources */,
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
+				CE48159025612A1B003976C1 /* RecipeInfoTableViewCell.swift in Sources */,
+				CE481584256123DD003976C1 /* RecipeViewController.swift in Sources */,
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
 				CE1C5EF22559477500ACF568 /* RecipePresenter.swift in Sources */,
@@ -676,14 +675,13 @@
 				75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
-				CE89A11F2544342D004553E4 /* IngridientTableViewCell.swift in Sources */,
+				CE89A11F2544342D004553E4 /* IngredientTableViewCell.swift in Sources */,
 				75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */,
 				75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */,
 				7527F41525386ADD00567122 /* NetworkService.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
 				CE89A1172544341F004553E4 /* RecipesPresenter.swift in Sources */,
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
-				CE89A1222544342D004553E4 /* StepsTableView.swift in Sources */,
 				7527F424253888CA00567122 /* LoginUser.swift in Sources */,
 				75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */,
 				75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */,
@@ -697,7 +695,6 @@
 				CE89A11425443419004553E4 /* RecipesNetworkService.swift in Sources */,
 				75DA483E253B336F00AEDA22 /* SettingsService.swift in Sources */,
 				7518BCCF2534BABA004DEA06 /* SceneDelegate.swift in Sources */,
-				CE89A11E2544342D004553E4 /* RecipeViewController.swift in Sources */,
 				CE89A12725443436004553E4 /* RecipeTableViewCell.swift in Sources */,
 				7527F421253884D000567122 /* UserResponse.swift in Sources */,
 				CE89A12625443436004553E4 /* RecipesViewController.swift in Sources */,
@@ -705,7 +702,6 @@
 				75DA484A253B4AF800AEDA22 /* PhonePresenter.swift in Sources */,
 				CE89A1212544342D004553E4 /* StepTableViewCell.swift in Sources */,
 				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,
-				CE89A1202544342D004553E4 /* IngridientsTableView.swift in Sources */,
 				75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */,
 				7527F42725388C2300567122 /* RegisterUser.swift in Sources */,
 			);

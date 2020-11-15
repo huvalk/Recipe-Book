@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IngridientsTableView: UITableView {
+class IngredientsTableView: UITableView {
     
     override func reloadData() {
         super.reloadData()

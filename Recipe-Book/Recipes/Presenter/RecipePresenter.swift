@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RecipeDelegate {
-    func setRating(rating: Double, indexPath: IndexPath)
+    func setRating(rating: Double)
 }
 
 class RecipePresenter {
@@ -18,12 +18,12 @@ class RecipePresenter {
         self.delegate = delegate
     }
     
-    func vote(recipeId: Int, stars: Int, indexPath: IndexPath) {
+    func vote(recipeId: Int, stars: Int) {
         let userStars: UserStars = UserStars(userId: 1, stars: stars)
         
         RecipesNetworkService.vote(recipeId: recipeId, userStars: userStars) { (rating, statusCode) in
             if (200...299) ~= statusCode {
-                self.delegate.setRating(rating: rating, indexPath: indexPath)
+                self.delegate.setRating(rating: rating)
             } else {
                 print("status code: \(statusCode)")
             }

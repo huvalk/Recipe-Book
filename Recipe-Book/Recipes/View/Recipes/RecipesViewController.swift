@@ -13,7 +13,6 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var tableView: UITableView!
     
     var recipesPresenter: RecipesPresenter?
-    
     var recipes: [RecipeList] = [[], []]
     
     override func viewDidLoad() {
@@ -70,18 +69,6 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = UIView()
-//
-//        let headerLabel = UILabel(frame: CGRect(x: 8, y: 8, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-//        headerLabel.font = UIFont(name: "System", size: 18)
-//        headerLabel.text = self.tableView(self.tableView, titleForHeaderInSection: section)
-//        headerLabel.sizeToFit()
-//        
-//        header.addSubview(headerLabel)
-//        return header
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -90,8 +77,6 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
             
             let destination = segue.destination as! RecipeViewController
             destination.recipe = recipe
-            destination.recipesViewController = self
-            destination.recipesIndexPath = indexPath
         }
     }
     

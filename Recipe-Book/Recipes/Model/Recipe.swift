@@ -23,3 +23,5 @@ struct UserStars: Codable {
     var userId: Int
     var stars: Int
 }
+
+var emptyRecipe = Recipe(id: 0, author: 0, title: "", cookingTime: 0, rating: 0, ingredients: [], steps: [])

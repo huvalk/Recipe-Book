@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IngridientTableViewCell: UITableViewCell {
+class IngredientTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var ingridientName: UILabel!
+    @IBOutlet weak var ingredientName: UILabel!
 }
