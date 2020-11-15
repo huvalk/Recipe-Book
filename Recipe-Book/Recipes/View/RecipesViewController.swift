@@ -49,14 +49,7 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
         let recipe = self.recipes[indexPath.section][indexPath.item]
-        
-        cell.recipeName?.text = recipe.title
-        cell.recipeTime?.text = String(recipe.cookingTime) + " мин"
-        cell.ingridientCount?.text = String(recipe.ingredients.count) + " ингридиентов"
-        
-        cell.ratingView.rating = recipe.rating
-        cell.ratingView.settings.fillMode = .precise
-        cell.ratingView.settings.updateOnTouch = false
+        cell.configure(recipe: recipe)
         
         return cell
     }

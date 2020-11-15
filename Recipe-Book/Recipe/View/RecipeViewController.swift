@@ -13,7 +13,6 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var tableView: UITableView!
 
     var recipe: Recipe?
-    
     var recipePresenter: RecipePresenter?
     
     override func viewDidLoad() {
@@ -50,14 +49,13 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Ingredient Cell") as! IngredientTableViewCell
             
-            cell.ingredientName?.text = recipe?.ingredients[indexPath.item]
+            cell.configure(name: recipe?.ingredients[indexPath.item] ?? "")
             
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Step Cell") as! StepTableViewCell
             
-            cell.stepNumber.text = "Шаг " + String(indexPath.item + 1)
-            cell.stepText.text = recipe?.steps[indexPath.item]
+            cell.configure(number: indexPath.item + 1, text: recipe?.steps[indexPath.item] ?? "")
             
             return cell
         default:

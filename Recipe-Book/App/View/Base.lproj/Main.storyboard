@@ -623,7 +623,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Search Cell" rowHeight="170" id="0UE-gl-H4f" customClass="SearchTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Search Cell" rowHeight="170" id="0UE-gl-H4f" customClass="SearchTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0UE-gl-H4f" id="mLb-ag-PP8">
@@ -740,6 +740,7 @@
                                     <outlet property="ratingView" destination="GfN-ej-8D6" id="UeH-of-IHy"/>
                                     <outlet property="recipeName" destination="SmQ-5f-44f" id="dts-Gt-lPi"/>
                                     <outlet property="recipeTime" destination="m4M-ey-zre" id="rZb-2E-Zv2"/>
+                                    <segue destination="uBI-ux-Ed9" kind="show" identifier="showDetail" id="Sz5-AJ-Bx0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1006,6 +1007,9 @@
             <size key="intrinsicContentSize" width="120" height="20"/>
         </designable>
     </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="Sz5-AJ-Bx0"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>

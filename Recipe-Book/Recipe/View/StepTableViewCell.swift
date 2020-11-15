@@ -11,4 +11,9 @@ class StepTableViewCell: UITableViewCell {
     
     @IBOutlet weak var stepNumber: UILabel!
     @IBOutlet weak var stepText: UILabel!
+    
+    func configure(number: Int, text: String) {
+        self.stepNumber.text = String(number)
+        self.stepText.text = text
+    }
 }

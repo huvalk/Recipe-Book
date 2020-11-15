@@ -14,11 +14,11 @@ class SearchTableViewCell: UITableViewCell, UITextFieldDelegate {
     var searchPresenter: SearchPresenter?
     
     func configure() {
-        searchField.delegate = self
+        self.searchField.delegate = self
     }
         
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchPresenter?.findRecipes(text: textField.text ?? "")
+        self.searchPresenter?.findRecipes(text: textField.text ?? "")
         return true
     }
 }

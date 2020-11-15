@@ -19,8 +19,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.hideKeyboardWhenTappedAround()
         
-        searchPresenter = SearchPresenter(delegate: self)
-        searchPresenter?.findRecipes(text: "")
+        self.searchPresenter = SearchPresenter(delegate: self)
+        self.searchPresenter?.findRecipes(text: "")
     }
         
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,18 +51,22 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = tableView.dequeueReusableCell(withIdentifier: "Recipe Cell") as! RecipeTableViewCell
             
             let recipe = self.recipes[indexPath.item]
-            
-            cell.recipeName?.text = recipe.title
-            cell.recipeTime?.text = String(recipe.cookingTime) + " мин"
-            cell.ingridientCount?.text = String(recipe.ingredients.count) + " ингридиентов"
-            
-            cell.ratingView.rating = recipe.rating
-            cell.ratingView.settings.fillMode = .precise
-            cell.ratingView.settings.updateOnTouch = false
+            cell.configure(recipe: recipe)
             
             return cell
         default:
             return UITableViewCell()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let recipe = recipes[indexPath.item]
+            
+            let destination = segue.destination as! RecipeViewController
+            destination.recipe = recipe
         }
     }
 }

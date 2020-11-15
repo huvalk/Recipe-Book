@@ -10,4 +10,8 @@ import UIKit
 class IngredientTableViewCell: UITableViewCell {
     
     @IBOutlet weak var ingredientName: UILabel!
+    
+    func configure(name: String) {
+        self.ingredientName.text = name
+    }
 }

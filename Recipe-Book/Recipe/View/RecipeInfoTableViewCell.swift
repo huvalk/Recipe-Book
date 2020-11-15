@@ -26,7 +26,6 @@ class RecipeInfoTableViewCell: UITableViewCell {
         
         self.recipeRating.rating = recipe.rating
         self.recipeRating.settings.fillMode = .precise
-        self.recipeRating.settings.updateOnTouch = false
         self.recipeRating.didTouchCosmos = { [weak self] rating in
             self?.recipePresenter?.vote(recipeId: recipe.id, stars: lround(rating))
         }

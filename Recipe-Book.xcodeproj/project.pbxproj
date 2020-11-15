@@ -39,6 +39,7 @@
 		75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */; };
 		C50A8560F00C4D28782A7241 /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
 		CE1C5EF22559477500ACF568 /* RecipePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C5EF12559477500ACF568 /* RecipePresenter.swift */; };
+		CE2FF6D2256186C1002CFA17 /* RecipeNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF6D1256186C1002CFA17 /* RecipeNetworkService.swift */; };
 		CE41865125603DFD00B6F7FC /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41865025603DFD00B6F7FC /* SearchPresenter.swift */; };
 		CE41865425603F0E00B6F7FC /* SearchNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41865325603F0E00B6F7FC /* SearchNetworkService.swift */; };
 		CE481584256123DD003976C1 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A1192544342C004553E4 /* RecipeViewController.swift */; };
@@ -91,6 +92,7 @@
 		AAC12EF1573FBEC2760C9237 /* Pods-Recipe-Book.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipe-Book.release.xcconfig"; path = "Target Support Files/Pods-Recipe-Book/Pods-Recipe-Book.release.xcconfig"; sourceTree = "<group>"; };
 		AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe_Book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1C5EF12559477500ACF568 /* RecipePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePresenter.swift; sourceTree = "<group>"; };
+		CE2FF6D1256186C1002CFA17 /* RecipeNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNetworkService.swift; sourceTree = "<group>"; };
 		CE41865025603DFD00B6F7FC /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		CE41865325603F0E00B6F7FC /* SearchNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkService.swift; sourceTree = "<group>"; };
 		CE48158F25612A1B003976C1 /* RecipeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		7518BCCB2534BABA004DEA06 /* Recipe-Book */ = {
 			isa = PBXGroup;
 			children = (
+				CE2FF6CC25618643002CFA17 /* Recipe */,
 				CE1C5EF52559682500ACF568 /* Search */,
 				CE89A107254433CA004553E4 /* Recipes */,
 				75994C4E254305E200275FC0 /* ShoppingList */,
@@ -446,7 +449,6 @@
 			children = (
 				CE1C5EF92559684B00ACF568 /* Network */,
 				CE1C5EF82559684200ACF568 /* Presenter */,
-				CE1C5EF72559683A00ACF568 /* Model */,
 				CE1C5EF62559683200ACF568 /* View */,
 			);
 			path = Search;
@@ -461,13 +463,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		CE1C5EF72559683A00ACF568 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CE1C5EF82559684200ACF568 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +475,43 @@
 			isa = PBXGroup;
 			children = (
 				CE41865325603F0E00B6F7FC /* SearchNetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CE2FF6CC25618643002CFA17 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				CE2FF6D025618667002CFA17 /* Network */,
+				CE2FF6CF25618661002CFA17 /* Presenter */,
+				CE2FF6CE2561864E002CFA17 /* View */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		CE2FF6CE2561864E002CFA17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE89A11A2544342C004553E4 /* IngredientTableViewCell.swift */,
+				CE89A1192544342C004553E4 /* RecipeViewController.swift */,
+				CE89A11C2544342D004553E4 /* StepTableViewCell.swift */,
+				CE48158F25612A1B003976C1 /* RecipeInfoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE2FF6CF25618661002CFA17 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE1C5EF12559477500ACF568 /* RecipePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE2FF6D025618667002CFA17 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CE2FF6D1256186C1002CFA17 /* RecipeNetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -515,7 +547,6 @@
 			isa = PBXGroup;
 			children = (
 				CE89A1162544341F004553E4 /* RecipesPresenter.swift */,
-				CE1C5EF12559477500ACF568 /* RecipePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -523,30 +554,10 @@
 		CE89A10C254433EC004553E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE89A10F25443401004553E4 /* Recipes */,
-				CE89A10D254433F2004553E4 /* Recipe */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CE89A10D254433F2004553E4 /* Recipe */ = {
-			isa = PBXGroup;
-			children = (
-				CE89A11A2544342C004553E4 /* IngredientTableViewCell.swift */,
-				CE89A1192544342C004553E4 /* RecipeViewController.swift */,
-				CE89A11C2544342D004553E4 /* StepTableViewCell.swift */,
-				CE48158F25612A1B003976C1 /* RecipeInfoTableViewCell.swift */,
-			);
-			path = Recipe;
-			sourceTree = "<group>";
-		};
-		CE89A10F25443401004553E4 /* Recipes */ = {
-			isa = PBXGroup;
-			children = (
 				CE89A12425443436004553E4 /* RecipesViewController.swift */,
 				CE89A12525443436004553E4 /* RecipeTableViewCell.swift */,
 			);
-			path = Recipes;
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -673,6 +684,7 @@
 				75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */,
 				CE41865425603F0E00B6F7FC /* SearchNetworkService.swift in Sources */,
 				75DA484D253B4B0700AEDA22 /* PhoneNetworkService.swift in Sources */,
+				CE2FF6D2256186C1002CFA17 /* RecipeNetworkService.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
 				CE89A11F2544342D004553E4 /* IngredientTableViewCell.swift in Sources */,
