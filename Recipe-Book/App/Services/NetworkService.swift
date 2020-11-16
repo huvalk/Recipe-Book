@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkService {
+final class NetworkService {
     let host: String = "https://ios.hahao.ru/api"
     var currentUser: User?
     
@@ -99,8 +99,6 @@ class NetworkService {
                 print("json error in login")
                 newStatusCode += 1000
             }
-            
-            print(SettingsService.userModel)
             
             DispatchQueue.main.async {
                 completion(SettingsService.userModel, statusCode)
