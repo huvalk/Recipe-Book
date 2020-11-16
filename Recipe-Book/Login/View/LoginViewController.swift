@@ -115,7 +115,7 @@ extension LoginViewController: LoginDelegate {
     }
     
     func loginDidSucceed() {
-        let mainScreen = self.storyboard?.instantiateViewController(identifier: "RecipesViewContoller")
+        let mainScreen = self.storyboard?.instantiateViewController(identifier: "TabBarController")
         let appDelegate = UIApplication.shared.delegate
         appDelegate?.window??.rootViewController = mainScreen
     }
