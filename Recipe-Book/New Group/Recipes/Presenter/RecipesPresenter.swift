@@ -8,8 +8,7 @@
 import Foundation
 
 protocol RecipesDelegate {
-    func setRecipes(recipes: RecipeList)
-    func setFavorites(favorites: RecipeList)
+    func setRecipes(recipes: [RecipeList])
 }
 
 class RecipesPresenter {
@@ -20,22 +19,22 @@ class RecipesPresenter {
     }
     
     func getRecipes() {
+        var recipes: [RecipeList] = [[], []]
+        
+        print("in presenter")
+        
         RecipesNetworkService.getRecipes(userId: 1) { (recipes, statusCode) in
             if (200...299) ~= statusCode {
-                self.delegate.setRecipes(recipes: recipes)
+                self.recipes[0] = recipes
             } else {
                 print("status code: \(statusCode)")
             }
         }
-    }
-    
-    func getFavorites() {
-        RecipesNetworkService.getFavorites(userId: 1) { (favorites, statusCode) in
-            if (200...299) ~= statusCode {
-                self.delegate.setFavorites(favorites: favorites)
-            } else {
-                print("status code: \(statusCode)")
-            }
-        }
+        
+        recipes[0] = [
+            Recipe(id: 1, author: 1, name: "Рецепт 1", cookingTime: 30, ingridients: [], steps: [])
+        ]
+        
+        self.delegate.setRecipes(recipes: recipes)
     }
 }

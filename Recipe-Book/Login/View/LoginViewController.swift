@@ -115,11 +115,9 @@ extension LoginViewController: LoginDelegate {
     }
     
     func loginDidSucceed() {
-        let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-
-        mainViewController.modalPresentationStyle = .fullScreen
-        self.present(mainViewController, animated: true)
-
+        let mainScreen = self.storyboard?.instantiateViewController(identifier: "TabBarController")
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = mainScreen
     }
     
     func loginDidFailed(message: String) {
