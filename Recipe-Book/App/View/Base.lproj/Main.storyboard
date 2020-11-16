@@ -1189,17 +1189,6 @@
             <point key="canvasLocation" x="2921.739130434783" y="742.63392857142856"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="GfN-ej-8D6">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-        <designable name="MFN-m3-rxZ">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-        <designable name="iFe-XY-jum">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="Sz5-AJ-Bx0"/>
     </inferredMetricsTieBreakers>
@@ -1214,16 +1203,16 @@
         <image name="scalemass.fill" catalog="system" width="128" height="119"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="PastelDarkGreen">
-            <color red="0.60316318270000002" green="0.65007722379999999" blue="0.45375818010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.6029999852180481" green="0.64999997615814209" blue="0.45399999618530273" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PastelDarkRed">
-            <color red="0.49411764705882355" green="0.14509803921568626" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49399998784065247" green="0.14499999582767487" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PastelGreen">
-            <color red="0.67450980392156867" green="0.74117647058823533" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.67500001192092896" green="0.74099999666213989" blue="0.4309999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TransperentGreen">
-            <color red="0.95663291220000002" green="0.96529799699999996" blue="0.9360852838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9570000171661377" green="0.9649999737739563" blue="0.93599998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
