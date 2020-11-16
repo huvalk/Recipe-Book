@@ -7,13 +7,21 @@
 
 import Foundation
 
-struct Recipe {
+struct Recipe: Codable {
     var id: Int
     var author: Int
-    var name: String
+    var title: String
     var cookingTime: Int
-    let ingridients: [String]
-    let steps: [String]
+    var rating: Double
+    var ingredients: [String]
+    var steps: [String]
 }
 
 typealias RecipeList = [Recipe]
+
+struct UserStars: Codable {
+    var userId: Int
+    var stars: Int
+}
+
+var emptyRecipe = Recipe(id: 0, author: 0, title: "", cookingTime: 0, rating: 0, ingredients: [], steps: [])
