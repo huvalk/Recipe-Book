@@ -24,6 +24,17 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         self.recipesPresenter?.getFavorites()
         
         self.tableView.tableFooterView = nil
+        
+        let refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+    }
+    
+    @objc func reloadData(refreshControl: UIRefreshControl) {
+        self.recipesPresenter?.getRecipes()
+        self.recipesPresenter?.getFavorites()
+        
+        refreshControl.endRefreshing()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,12 +82,6 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
             let destination = segue.destination as! RecipeViewController
             destination.recipe = recipe
         }
-    }
-    
-    func setRating(indexPath: IndexPath, rating: Double) {
-        self.recipes[indexPath.section][indexPath.item].rating = rating
-        
-        self.tableView.reloadRows(at: [IndexPath](arrayLiteral: indexPath), with: UITableView.RowAnimation.none)
     }
 }
 

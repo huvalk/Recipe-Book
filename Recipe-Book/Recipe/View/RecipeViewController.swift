@@ -44,6 +44,7 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
             let cell = tableView.dequeueReusableCell(withIdentifier: "Recipe Info Cell") as! RecipeInfoTableViewCell
             
             cell.configure(recipe: recipe ?? emptyRecipe)
+            cell.recipePresenter = self.recipePresenter
             
             return cell
         case 1:

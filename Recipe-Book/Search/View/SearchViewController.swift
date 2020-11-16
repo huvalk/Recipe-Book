@@ -21,6 +21,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.searchPresenter = SearchPresenter(delegate: self)
         self.searchPresenter?.findRecipes(text: "")
+        
+        let refreshControl = UIRefreshControl()
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+    }
+    
+    @objc func reloadData(refreshControl: UIRefreshControl) {
+        self.searchPresenter?.findRecipes(text: "")
+        
+        refreshControl.endRefreshing()
     }
         
     func numberOfSections(in tableView: UITableView) -> Int {

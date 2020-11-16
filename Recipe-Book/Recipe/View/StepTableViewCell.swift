@@ -13,7 +13,7 @@ class StepTableViewCell: UITableViewCell {
     @IBOutlet weak var stepText: UILabel!
     
     func configure(number: Int, text: String) {
-        self.stepNumber.text = String(number)
+        self.stepNumber.text = "Шаг " + String(number)
         self.stepText.text = text
     }
 }
