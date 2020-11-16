@@ -345,7 +345,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFN-m3-rxZ" customClass="CosmosView" customModule="Cosmos">
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFN-m3-rxZ" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="124" y="36" width="120" height="20"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
@@ -373,6 +373,31 @@
                                     <outlet property="recipeName" destination="mTF-Xl-ZUu" id="pkH-n1-RZ3"/>
                                     <outlet property="recipeTime" destination="1dl-zk-dAc" id="8kJ-D7-5Y0"/>
                                     <segue destination="uBI-ux-Ed9" kind="show" identifier="showDetail" id="f92-I2-M7F"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Error Cell" id="bi2-QX-WwG" customClass="ErrorTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="170.5" width="414" height="39"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bi2-QX-WwG" id="42l-95-Uk8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет элементов" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruu-R1-DYf">
+                                            <rect key="frame" x="20" y="11" width="374" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ruu-R1-DYf" firstAttribute="top" secondItem="42l-95-Uk8" secondAttribute="topMargin" id="5AE-Ki-o0a"/>
+                                        <constraint firstItem="ruu-R1-DYf" firstAttribute="bottom" secondItem="42l-95-Uk8" secondAttribute="bottomMargin" id="AYe-ZX-P04"/>
+                                        <constraint firstItem="ruu-R1-DYf" firstAttribute="leading" secondItem="42l-95-Uk8" secondAttribute="leadingMargin" id="fZy-JM-jWg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ruu-R1-DYf" secondAttribute="trailing" id="l7F-ya-gU4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="errorText" destination="ruu-R1-DYf" id="jih-6T-RFR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -445,7 +470,7 @@
                                                         <constraint firstAttribute="height" constant="15" id="ihz-ah-9KU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFe-XY-jum" customClass="CosmosView" customModule="Cosmos">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFe-XY-jum" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="131" y="54" width="120" height="20"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
@@ -718,7 +743,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-ej-8D6" customClass="CosmosView" customModule="Cosmos">
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-ej-8D6" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="124" y="36" width="120" height="20"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
@@ -746,6 +771,31 @@
                                     <outlet property="recipeName" destination="SmQ-5f-44f" id="dts-Gt-lPi"/>
                                     <outlet property="recipeTime" destination="m4M-ey-zre" id="rZb-2E-Zv2"/>
                                     <segue destination="uBI-ux-Ed9" kind="show" identifier="showDetail" id="Sz5-AJ-Bx0"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Error Cell" id="dV7-lY-sYJ" customClass="ErrorTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="313" width="414" height="39"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dV7-lY-sYJ" id="tkN-Fr-AcI">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="39"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет элементов" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6f-2f-zkg">
+                                            <rect key="frame" x="20" y="11" width="374" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="S6f-2f-zkg" firstAttribute="top" secondItem="tkN-Fr-AcI" secondAttribute="topMargin" id="TzL-0T-oyn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="S6f-2f-zkg" secondAttribute="trailing" id="f6y-0Q-Gly"/>
+                                        <constraint firstItem="S6f-2f-zkg" firstAttribute="bottom" secondItem="tkN-Fr-AcI" secondAttribute="bottomMargin" id="hJc-7y-tIO"/>
+                                        <constraint firstItem="S6f-2f-zkg" firstAttribute="leading" secondItem="tkN-Fr-AcI" secondAttribute="leadingMargin" id="mer-OE-Yyg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="errorText" destination="S6f-2f-zkg" id="5YU-84-Uis"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1001,17 +1051,6 @@
             <point key="canvasLocation" x="4135" y="743"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="GfN-ej-8D6">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-        <designable name="MFN-m3-rxZ">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-        <designable name="iFe-XY-jum">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="Sz5-AJ-Bx0"/>
     </inferredMetricsTieBreakers>

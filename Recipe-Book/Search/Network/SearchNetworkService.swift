@@ -10,7 +10,8 @@ import Foundation
 class SearchNetworkService {
     
     static func findRecipes(text: String, completion: @escaping(RecipeList, Int) -> ()) {
-        let path = "/search?text=\(text)"
+        let textEncoded = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let path = "/search?text=\(textEncoded ?? "")"
         
         NetworkService.shared.getRequest(rawUrl: path) { (responseData, statusCode) in
             do {

@@ -16,7 +16,7 @@ class SearchTableViewCell: UITableViewCell, UITextFieldDelegate {
     func configure() {
         self.searchField.delegate = self
     }
-        
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.searchPresenter?.findRecipes(text: textField.text ?? "")
         return true

@@ -53,10 +53,24 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes[section].count
+        let count = recipes[section].count
+        
+        return (count == 0) ? 1 : count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if recipes[indexPath.section].count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Error Cell") as! ErrorTableViewCell
+            
+            if indexPath.section == 0 {
+                cell.configure(text: "Вы еще не добавляли рецепты в избранное")
+            } else {
+                cell.configure(text: "Вы еще не создавали авторские рецепты")
+            }
+
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
         let recipe = self.recipes[indexPath.section][indexPath.item]
@@ -65,9 +79,9 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 115
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 115
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

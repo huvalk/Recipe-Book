@@ -42,7 +42,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         case 0:
             return 1
         case 1:
-            return recipes.count
+            return (recipes.count == 0) ? 1 : recipes.count
         default:
             return 0
         }
@@ -58,6 +58,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             
             return cell
         case 1:
+            if recipes.count == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Error Cell") as! ErrorTableViewCell
+                
+                cell.configure(text: "Рецепты не найдены")
+                
+                return cell
+            }
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "Recipe Cell") as! RecipeTableViewCell
             
             let recipe = self.recipes[indexPath.item]

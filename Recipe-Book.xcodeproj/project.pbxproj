@@ -40,6 +40,7 @@
 		C50A8560F00C4D28782A7241 /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
 		CE1C5EF22559477500ACF568 /* RecipePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C5EF12559477500ACF568 /* RecipePresenter.swift */; };
 		CE2FF6D2256186C1002CFA17 /* RecipeNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF6D1256186C1002CFA17 /* RecipeNetworkService.swift */; };
+		CE2FF6D72562580D002CFA17 /* ErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF6D62562580D002CFA17 /* ErrorTableViewCell.swift */; };
 		CE41865125603DFD00B6F7FC /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41865025603DFD00B6F7FC /* SearchPresenter.swift */; };
 		CE41865425603F0E00B6F7FC /* SearchNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41865325603F0E00B6F7FC /* SearchNetworkService.swift */; };
 		CE481584256123DD003976C1 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89A1192544342C004553E4 /* RecipeViewController.swift */; };
@@ -93,6 +94,7 @@
 		AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipe_Book.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1C5EF12559477500ACF568 /* RecipePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePresenter.swift; sourceTree = "<group>"; };
 		CE2FF6D1256186C1002CFA17 /* RecipeNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNetworkService.swift; sourceTree = "<group>"; };
+		CE2FF6D62562580D002CFA17 /* ErrorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTableViewCell.swift; sourceTree = "<group>"; };
 		CE41865025603DFD00B6F7FC /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		CE41865325603F0E00B6F7FC /* SearchNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkService.swift; sourceTree = "<group>"; };
 		CE48158F25612A1B003976C1 /* RecipeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 			children = (
 				CE89A12425443436004553E4 /* RecipesViewController.swift */,
 				CE89A12525443436004553E4 /* RecipeTableViewCell.swift */,
+				CE2FF6D62562580D002CFA17 /* ErrorTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				7527F41A25386D6100567122 /* LoginNetworkService.swift in Sources */,
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
 				CE48159025612A1B003976C1 /* RecipeInfoTableViewCell.swift in Sources */,
+				CE2FF6D72562580D002CFA17 /* ErrorTableViewCell.swift in Sources */,
 				CE481584256123DD003976C1 /* RecipeViewController.swift in Sources */,
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
