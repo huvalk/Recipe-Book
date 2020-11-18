@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		298EF6129DAAC2463D9BF17D /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
 		75049DCB255F414800A310A8 /* MainCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DCA255F414800A310A8 /* MainCreationViewController.swift */; };
 		75049DCF255F480800A310A8 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DCE255F480800A310A8 /* CustomSegmentControl.swift */; };
 		75049DD3255FE8CE00A310A8 /* GeneralCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75049DD2255FE8CE00A310A8 /* GeneralCreationViewController.swift */; };
@@ -29,6 +28,9 @@
 		7527F424253888CA00567122 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F423253888CA00567122 /* LoginUser.swift */; };
 		7527F42725388C2300567122 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42625388C2300567122 /* RegisterUser.swift */; };
 		7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42F253A025900567122 /* RegistrationNetworkService.swift */; };
+		75596E55256583CA0007DCEA /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75596E54256583CA0007DCEA /* ImageCell.swift */; };
+		75596E58256584140007DCEA /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75596E57256584140007DCEA /* InputCell.swift */; };
+		75596E5B256584320007DCEA /* PickTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75596E5A256584320007DCEA /* PickTimeCell.swift */; };
 		75994C542543072500275FC0 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C532543072500275FC0 /* CheckBox.swift */; };
 		75994C5A25430C3000275FC0 /* ShoppingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5925430C3000275FC0 /* ShoppingCell.swift */; };
 		75994C5D254310EA00275FC0 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75994C5C254310EA00275FC0 /* ShoppingViewController.swift */; };
@@ -54,6 +56,7 @@
 		75F710C22559D5F000199184 /* ProductRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C12559D5F000199184 /* ProductRealm.swift */; };
 		75F710C92559E2A700199184 /* ProductListRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C82559E2A700199184 /* ProductListRealm.swift */; };
 		75F710CC2559F50300199184 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710CB2559F50300199184 /* DatabaseService.swift */; };
+		79AF5E58E515AF386B458C67 /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
 		CE1C5EF22559477500ACF568 /* RecipePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1C5EF12559477500ACF568 /* RecipePresenter.swift */; };
 		CE2FF6D2256186C1002CFA17 /* RecipeNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF6D1256186C1002CFA17 /* RecipeNetworkService.swift */; };
 		CE2FF6D72562580D002CFA17 /* ErrorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2FF6D62562580D002CFA17 /* ErrorTableViewCell.swift */; };
@@ -96,6 +99,9 @@
 		7527F423253888CA00567122 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		7527F42625388C2300567122 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
 		7527F42F253A025900567122 /* RegistrationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNetworkService.swift; sourceTree = "<group>"; };
+		75596E54256583CA0007DCEA /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		75596E57256584140007DCEA /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
+		75596E5A256584320007DCEA /* PickTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickTimeCell.swift; sourceTree = "<group>"; };
 		75994C532543072500275FC0 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		75994C5925430C3000275FC0 /* ShoppingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCell.swift; sourceTree = "<group>"; };
 		75994C5C254310EA00275FC0 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				298EF6129DAAC2463D9BF17D /* Pods_Recipe_Book.framework in Frameworks */,
+				79AF5E58E515AF386B458C67 /* Pods_Recipe_Book.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				75049DD2255FE8CE00A310A8 /* GeneralCreationViewController.swift */,
+				75596E54256583CA0007DCEA /* ImageCell.swift */,
+				75596E57256584140007DCEA /* InputCell.swift */,
+				75596E5A256584320007DCEA /* PickTimeCell.swift */,
 			);
 			path = GeneralCreation;
 			sourceTree = "<group>";
@@ -815,7 +824,6 @@
 			files = (
 				75049DDC2560043300A310A8 /* IngredientsCreationViewController.swift in Sources */,
 				75049DCF255F480800A310A8 /* CustomSegmentControl.swift in Sources */,
-				75994CBF25443A3200275FC0 /* IngridientTableViewCell.swift in Sources */,
 				7527F41A25386D6100567122 /* LoginNetworkService.swift in Sources */,
 				75994C9E25438E9600275FC0 /* ShoppingPresenter.swift in Sources */,
 				7527F3F12537812800567122 /* LoginPresenter.swift in Sources */,
@@ -842,7 +850,9 @@
 				CE89A1172544341F004553E4 /* RecipesPresenter.swift in Sources */,
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
 				75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */,
+				75596E58256584140007DCEA /* InputCell.swift in Sources */,
 				75049DD82560041D00A310A8 /* StepsCreationViewController.swift in Sources */,
+				75596E55256583CA0007DCEA /* ImageCell.swift in Sources */,
 				75994C9B25438A8700275FC0 /* Product.swift in Sources */,
 				75049DCB255F414800A310A8 /* MainCreationViewController.swift in Sources */,
 				75994CDE2545C10100275FC0 /* DismissAnimation.swift in Sources */,
@@ -857,6 +867,7 @@
 				7527F3F8253799E500567122 /* User.swift in Sources */,
 				75049DD3255FE8CE00A310A8 /* GeneralCreationViewController.swift in Sources */,
 				75994C6325432B3700275FC0 /* SmsCode.swift in Sources */,
+				75596E5B256584320007DCEA /* PickTimeCell.swift in Sources */,
 				75994CD22544EEC400275FC0 /* PanelTransition.swift in Sources */,
 				75994CCB2544A2BB00275FC0 /* ProductCreatorViewController.swift in Sources */,
 				CEAE965A2561088F00591FEE /* SearchTableViewCell.swift in Sources */,

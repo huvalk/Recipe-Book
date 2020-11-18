@@ -7,27 +7,6 @@
 
 import UIKit
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
-extension UIFont {
-    func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
-        return NSString(string: string).boundingRect(with: CGSize(width: width, height: Double.greatestFiniteMagnitude),
-                                                     options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                                     attributes: [NSAttributedString.Key.font: self],
-        context: nil).size
-    }
-}
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
