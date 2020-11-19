@@ -28,6 +28,8 @@
 		7527F424253888CA00567122 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F423253888CA00567122 /* LoginUser.swift */; };
 		7527F42725388C2300567122 /* RegisterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42625388C2300567122 /* RegisterUser.swift */; };
 		7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7527F42F253A025900567122 /* RegistrationNetworkService.swift */; };
+		753F75AD2566D980008AD7B9 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753F75AC2566D980008AD7B9 /* IngredientCell.swift */; };
+		753F75B02566E41E008AD7B9 /* AddNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753F75AF2566E41E008AD7B9 /* AddNewCell.swift */; };
 		75596E55256583CA0007DCEA /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75596E54256583CA0007DCEA /* ImageCell.swift */; };
 		75596E58256584140007DCEA /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75596E57256584140007DCEA /* InputCell.swift */; };
 		75596E5B256584320007DCEA /* PickTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75596E5A256584320007DCEA /* PickTimeCell.swift */; };
@@ -53,6 +55,7 @@
 		75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4855253C6D7700AEDA22 /* LaunchViewController.swift */; };
 		75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */; };
 		75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */; };
+		75EF1F442566F1C10094AC90 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF1F432566F1C10094AC90 /* Ingredient.swift */; };
 		75F710C22559D5F000199184 /* ProductRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C12559D5F000199184 /* ProductRealm.swift */; };
 		75F710C92559E2A700199184 /* ProductListRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C82559E2A700199184 /* ProductListRealm.swift */; };
 		75F710CC2559F50300199184 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710CB2559F50300199184 /* DatabaseService.swift */; };
@@ -99,6 +102,8 @@
 		7527F423253888CA00567122 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		7527F42625388C2300567122 /* RegisterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUser.swift; sourceTree = "<group>"; };
 		7527F42F253A025900567122 /* RegistrationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationNetworkService.swift; sourceTree = "<group>"; };
+		753F75AC2566D980008AD7B9 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		753F75AF2566E41E008AD7B9 /* AddNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCell.swift; sourceTree = "<group>"; };
 		75596E54256583CA0007DCEA /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		75596E57256584140007DCEA /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		75596E5A256584320007DCEA /* PickTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickTimeCell.swift; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 		75DA4855253C6D7700AEDA22 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
 		75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkServices.swift; sourceTree = "<group>"; };
+		75EF1F432566F1C10094AC90 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		75F710C12559D5F000199184 /* ProductRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRealm.swift; sourceTree = "<group>"; };
 		75F710C82559E2A700199184 /* ProductListRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRealm.swift; sourceTree = "<group>"; };
 		75F710CB2559F50300199184 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		75049DC3255F242900A310A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				75EF1F432566F1C10094AC90 /* Ingredient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				75049DDB2560043300A310A8 /* IngredientsCreationViewController.swift */,
+				753F75AC2566D980008AD7B9 /* IngredientCell.swift */,
+				753F75AF2566E41E008AD7B9 /* AddNewCell.swift */,
 			);
 			path = IngredientsCreation;
 			sourceTree = "<group>";
@@ -842,15 +851,18 @@
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
 				75F710C92559E2A700199184 /* ProductListRealm.swift in Sources */,
 				CE89A11F2544342D004553E4 /* IngredientTableViewCell.swift in Sources */,
+				753F75AD2566D980008AD7B9 /* IngredientCell.swift in Sources */,
 				75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */,
 				75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */,
 				7527F41525386ADD00567122 /* NetworkService.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
 				75F710CC2559F50300199184 /* DatabaseService.swift in Sources */,
 				CE89A1172544341F004553E4 /* RecipesPresenter.swift in Sources */,
+				75EF1F442566F1C10094AC90 /* Ingredient.swift in Sources */,
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
 				75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */,
 				75596E58256584140007DCEA /* InputCell.swift in Sources */,
+				753F75B02566E41E008AD7B9 /* AddNewCell.swift in Sources */,
 				75049DD82560041D00A310A8 /* StepsCreationViewController.swift in Sources */,
 				75596E55256583CA0007DCEA /* ImageCell.swift in Sources */,
 				75994C9B25438A8700275FC0 /* Product.swift in Sources */,

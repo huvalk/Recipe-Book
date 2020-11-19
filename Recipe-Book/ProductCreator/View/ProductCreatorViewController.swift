@@ -8,8 +8,18 @@
 import UIKit
 
 protocol DataTarget: NSObjectProtocol {
-    func editFinished(index: IndexPath, product: Product)
-    func createFinished(product: Product)
+    func editFinished(index: IndexPath, ingredient: Ingredient)
+    func createFinished(ingredient: Ingredient)
+}
+
+extension DataTarget {
+    func editFinished(index: IndexPath, ingredient: Ingredient) {
+        debugPrint("default implementation of protocol func")
+    }
+    
+    func createFinished(ingredient: Ingredient) {
+        debugPrint("default implementation of protocol func")
+    }
 }
 
 class ProductCreatorViewController: UIViewController {
@@ -24,8 +34,8 @@ class ProductCreatorViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     var index: IndexPath?
-    weak var target: DataTarget?
-    var product: Product?
+    weak var dataTarget: DataTarget?
+    var ingredient: Ingredient?
     var mode: Mode = .create {
         willSet {
             nameField.isUserInteractionEnabled = newValue  == .create
@@ -49,22 +59,22 @@ class ProductCreatorViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let product = product {
+        if let ingredient = ingredient {
             self.mode = .change
             
             UIView.transition(with: self.nameField,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                            self?.nameField.text = product.name
+                            self?.nameField.text = ingredient.name
                      }, completion: nil)
             UIView.transition(with: self.weightField,
                           duration: 0.25,
                            options: .transitionCrossDissolve,
                         animations: { [weak self] in
-                            self?.weightField.text = "\(product.amount)"
+                            self?.weightField.text = "\(ingredient.amount)"
                      }, completion: nil)
-            self.typePeaker.selectRow(product.amountType.rawValue, inComponent: 0, animated: true)
+            self.typePeaker.selectRow(ingredient.amountType.rawValue, inComponent: 0, animated: true)
             
             self.weightField.becomeFirstResponder()
         } else {
@@ -72,23 +82,23 @@ class ProductCreatorViewController: UIViewController {
         }
     }
     
-    func setDefaultValue(product: Product, index: IndexPath) {
-        self.product = product
+    func setDefaultValue(ingredient: Ingredient, index: IndexPath) {
+        self.ingredient = ingredient
         self.index = index
     }
     
     @IBAction func saveBtnTapped(_ sender: Any) {
-        if var product = self.product {
+        if let ingredient = self.ingredient {
             guard let index = self.index else {
                 return
             }
             
-            product.amount = Double(self.weightField.text ?? "") ?? 0
-            product.amountType = Product.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Product.AmountType.count
-            target?.editFinished(index: index, product: product)
+            ingredient.amount = Double(self.weightField.text ?? "") ?? 0
+            ingredient.amountType = Ingredient.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Ingredient.AmountType.count
+            dataTarget?.editFinished(index: index, ingredient: ingredient)
         } else {
-            let newProduct = Product(name: self.nameField.text ?? "", amountType: Product.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Product.AmountType.count, amount: Double(self.weightField.text ?? "") ?? 0, bought: false)
-            target?.createFinished(product: newProduct)
+            let newIngredient = Ingredient(name: self.nameField.text ?? "", amountType: Ingredient.AmountType(rawValue: self.typePeaker.selectedRow(inComponent: 0)) ?? Ingredient.AmountType.count, amount: Double(self.weightField.text ?? "") ?? 0, bought: false)
+            dataTarget?.createFinished(ingredient: newIngredient)
         }
         
         self.dismiss(animated: true, completion: nil)
@@ -105,11 +115,11 @@ extension ProductCreatorViewController: UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        Product.AmountType.length
+        Ingredient.AmountType.length
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let type = Product.AmountType(rawValue: row)
+        let type = Ingredient.AmountType(rawValue: row)
         return type?.string ?? "err"
     }
 }

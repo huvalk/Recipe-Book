@@ -11,7 +11,7 @@ import PinLayout
 protocol TableViewControllerPresenter: class {
     func showViewController(_ controller: UIViewController, animated: Bool, completion: (() -> ())?)
     
-    func dismissTop()
+    func imageSelected(image: UIImage?)
 }
 
 class ImageCell: UITableViewCell {
@@ -74,6 +74,10 @@ class ImageCell: UITableViewCell {
     func configure() {
         setNeedsLayout()
     }
+    
+    func getData() -> UIImage {
+        return photoView.image ?? UIImage(named: "Food")!
+    }
 }
 
 extension ImageCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -134,6 +138,6 @@ extension ImageCell: UIImagePickerControllerDelegate, UINavigationControllerDele
             photoView.image = originalImage
         }
         
-        self.presenter?.dismissTop()
+        self.presenter?.imageSelected(image: photoView.image)
     }
 }

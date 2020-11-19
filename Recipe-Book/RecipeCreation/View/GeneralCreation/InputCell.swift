@@ -57,4 +57,8 @@ class InputCell: UITableViewCell {
         
         label.text = title
     }
+    
+    func getData() -> String {
+        return field.text ?? ""
+    }
 }

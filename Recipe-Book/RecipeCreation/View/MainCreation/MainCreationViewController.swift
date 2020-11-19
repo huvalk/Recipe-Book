@@ -16,9 +16,16 @@ class MainCreationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationController()
         configureSegmentControll()
         configureChildControllers()
         self.generalViewController.view.isHidden = false
+    }
+    
+    private func setupNavigationController() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .black
     }
     
     private func configureSegmentControll() {
@@ -50,6 +57,12 @@ class MainCreationViewController: UIViewController {
         controller.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         controller.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         controller.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+    }
+    
+    @IBAction func saveButtonClicked(_ sender: Any) {
+        let data = self.generalViewController.getData()
+        
+        print(data.name)
     }
 }
 

@@ -46,6 +46,10 @@ class PickTimeCell: UITableViewCell {
     func configure(with title: String) {
         setNeedsLayout()
     }
+    
+    func getData() -> Int {
+        return picker.selectedRow(inComponent: 0) * 60 + picker.selectedRow(inComponent: 2)
+    }
 }
 
 extension PickTimeCell: UIPickerViewDataSource, UIPickerViewDelegate {

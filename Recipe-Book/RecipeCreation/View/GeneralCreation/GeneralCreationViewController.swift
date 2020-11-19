@@ -8,19 +8,14 @@
 import UIKit
 import PinLayout
 
-protocol GeneralDelegate: class {
-    func saveGeneral(info: String)
-}
-
 class GeneralCreationViewController: UIViewController {
     private let tableView = UITableView()
-    
-    weak var delegate: GeneralDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+        hideKeyboardWhenTappedAround()
     }
     
     private func setup() {
@@ -33,6 +28,7 @@ class GeneralCreationViewController: UIViewController {
         tableView.register(ImageCell.self, forCellReuseIdentifier: "ImageCell")
         tableView.register(InputCell.self, forCellReuseIdentifier: "InputCell")
         tableView.register(PickTimeCell.self, forCellReuseIdentifier: "PickTimeCell")
+        tableView.allowsSelection = false
         
         view.addSubview(tableView)
         self.tableView.pin
@@ -73,6 +69,16 @@ class GeneralCreationViewController: UIViewController {
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0);
         tableView.contentInset = contentInsets
         tableView.scrollIndicatorInsets = tableView.contentInset
+    }
+    
+    func getData() -> (image: UIImage, name: String, time: Int) {
+        let imageCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! ImageCell
+
+        let inputCell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! InputCell
+
+        let pickTimeCell = tableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! PickTimeCell
+
+        return (imageCell.getData(), inputCell.getData(), pickTimeCell.getData())
     }
 }
 
@@ -125,7 +131,7 @@ extension GeneralCreationViewController: TableViewControllerPresenter {
         self.present(controller, animated: animated, completion: nil)
     }
     
-    func dismissTop() {
+    func imageSelected(image: UIImage?) {
         self.dismiss(animated: true, completion: nil)
     }
 }
