@@ -24,6 +24,7 @@ class GeneralCreationViewController: UIViewController {
     }
     
     private func setup() {
+        registerForKeyboardNotifications()
         self.view.backgroundColor = .orange
         tableView.separatorStyle = .none
         tableView.dataSource = self
@@ -54,11 +55,24 @@ class GeneralCreationViewController: UIViewController {
     }
     
     @objc private func keyboardWasShown(notification: Notification) {
-
+        guard let info = notification.userInfo else {
+            return
+        }
+        guard let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size else {
+            return
+        }
+        
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0);
+        tableView.contentInset = contentInsets
+        
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 2), at: .top, animated: true)
+        tableView.scrollIndicatorInsets = tableView.contentInset
     }
     
     @objc private func keyboardWillBeHidden(notification: Notification) {
-
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0);
+        tableView.contentInset = contentInsets
+        tableView.scrollIndicatorInsets = tableView.contentInset
     }
 }
 
@@ -68,9 +82,9 @@ extension GeneralCreationViewController: UITableViewDataSource, UITableViewDeleg
         case 0:
             return self.view.frame.width + 20
         case 1:
-            return 120
+            return 50
         case 2:
-            return 120
+            return 80
         default:
             return 20
         }
@@ -93,6 +107,7 @@ extension GeneralCreationViewController: UITableViewDataSource, UITableViewDeleg
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputCell") as! InputCell
+            cell.configure(with: "Название")
             
             return cell
         case 2:
