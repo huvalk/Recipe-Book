@@ -90,6 +90,10 @@ extension IngredientsCreationViewController: UITableViewDataSource, UITableViewD
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
     }
+    
+    func getData() -> [Ingredient] {
+        return ingredients
+    }
 }
 
 extension IngredientsCreationViewController: AddNewCellDelegate {

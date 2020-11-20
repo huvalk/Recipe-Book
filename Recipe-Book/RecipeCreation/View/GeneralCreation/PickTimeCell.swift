@@ -10,6 +10,8 @@ import PinLayout
 
 class PickTimeCell: UITableViewCell {
     let picker = UIPickerView()
+    let container = UIView()
+    let ll = UITextField()
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -24,23 +26,30 @@ class PickTimeCell: UITableViewCell {
     private func setup() {
         picker.dataSource = self
         picker.delegate = self
-        
-        [picker].forEach { contentView.addSubview($0) }
+        ll.placeholder = "12"
+        [container, ll].forEach { contentView.addSubview($0) }
+        container.addSubview(picker)
+        container.backgroundColor = .black
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         
-//        label.pin
-//            .top(5)
-//            .left(20)
-//            .sizeToFit()
-        
         picker.pin
             .top()
-            .left(45)
-            .right(45)
             .bottom()
+            .left()
+            .right()
+        
+        container.pin
+            .top()
+            .left()
+            .right()
+            .bottom()
+        
+        ll.pin
+            .below(of: container, aligned: .center)
+            .sizeToFit()
     }
 
     func configure(with title: String) {

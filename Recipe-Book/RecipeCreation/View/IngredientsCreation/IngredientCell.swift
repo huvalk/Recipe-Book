@@ -37,10 +37,12 @@ class IngredientCell: UITableViewCell {
         nameLabel.textColor = .black
         weightLabel.font = UIFont.systemFont(ofSize: 12)
         weightLabel.textColor = .gray
+        
+        let scaleImage = UIImage(named: "Scales")!
         editButton.addTarget(self, action: #selector(IngredientCell.editCell(sender:)), for: .touchUpInside)
-        editButton.setImage(UIImage(named: "scalemass.fill"), for: .normal)
+        editButton.setImage(scaleImage, for: .normal)
+        editButton.imageView?.contentMode = .scaleAspectFit
         editButton.tintColor = UIColor(named: "PastelDarkGreen")
-        editButton.backgroundColor = .red
         
         
         [numberLabel, nameLabel, weightLabel, editButton].forEach { contentView.addSubview($0) }
@@ -57,18 +59,18 @@ class IngredientCell: UITableViewCell {
         editButton.pin
             .vCenter()
             .right(20)
-            .sizeToFit()
+            .size(22)
         
         nameLabel.pin
             .top(5)
             .right(of: numberLabel)
-            .marginLeft(15)
+            .marginLeft(20)
             .sizeToFit()
         
         weightLabel.pin
             .bottom(5)
             .right(of: numberLabel)
-            .marginLeft(15)
+            .marginLeft(20)
             .sizeToFit()
     }
 
@@ -76,7 +78,7 @@ class IngredientCell: UITableViewCell {
                    ingredient: Ingredient,
                    table: InredientCellDelegate) {
         tableViewController = table
-        numberLabel.text = "\(number)"
+        numberLabel.text = "\(number)."
         nameLabel.text = ingredient.name
         weightLabel.text = "\(ingredient.amount) \(ingredient.amountType.string)"
         

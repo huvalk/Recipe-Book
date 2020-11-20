@@ -61,7 +61,7 @@ class GeneralCreationViewController: UIViewController {
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0);
         tableView.contentInset = contentInsets
         
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 2), at: .top, animated: true)
+        tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: .top, animated: true)
         tableView.scrollIndicatorInsets = tableView.contentInset
     }
     
@@ -74,9 +74,9 @@ class GeneralCreationViewController: UIViewController {
     func getData() -> (image: UIImage, name: String, time: Int) {
         let imageCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! ImageCell
 
-        let inputCell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! InputCell
+        let inputCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! InputCell
 
-        let pickTimeCell = tableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! PickTimeCell
+        let pickTimeCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! PickTimeCell
 
         return (imageCell.getData(), inputCell.getData(), pickTimeCell.getData())
     }
@@ -84,28 +84,28 @@ class GeneralCreationViewController: UIViewController {
 
 extension GeneralCreationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
+        switch indexPath.row {
         case 0:
             return self.view.frame.width + 20
         case 1:
             return 50
         case 2:
-            return 80
+            return 120
         default:
             return 20
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        3
+        1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
+        switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! ImageCell
             cell.presenter = self

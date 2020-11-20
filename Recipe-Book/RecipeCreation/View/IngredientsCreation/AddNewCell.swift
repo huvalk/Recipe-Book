@@ -29,8 +29,10 @@ class AddNewCell: UITableViewCell {
 
     private func setup() {
         addButton.addTarget(self, action: #selector(AddNewCell.addNew(sender:)), for: .touchUpInside)
-        addButton.backgroundColor = .black
-        addButton.setImage(UIImage(named: "plus"), for: .normal)
+        let addImage = UIImage(named: "Plus")!
+        addButton.imageView?.contentMode = .scaleAspectFit
+        addButton.setImage(addImage, for: .normal)
+        
         addButton.tintColor = UIColor(named: "PastelDarkGreen")
         
         
@@ -47,7 +49,7 @@ class AddNewCell: UITableViewCell {
         addButton.pin
             .vCenter()
             .hCenter()
-            .sizeToFit()
+            .size(22)
     }
 
     func configure(product: Product) {
