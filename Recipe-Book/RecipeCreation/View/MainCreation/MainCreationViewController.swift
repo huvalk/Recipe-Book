@@ -18,6 +18,7 @@ class MainCreationViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        hideKeyboardWhenTappedAround()
         self.generalViewController.view.isHidden = false
     }
     
@@ -27,13 +28,13 @@ class MainCreationViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .black
         
         setupSegmentControll()
-        setupConstraints()
         [generalViewController,
          stepsViewController,
          ingredientsViewController].forEach {
             self.addChild($0)
             self.view.addSubview($0.view)
             $0.didMove(toParent: self)
+            setupConstraints(controller: $0)
          }
     }
     
@@ -47,12 +48,12 @@ class MainCreationViewController: UIViewController {
         self.segmentChanged(to: 0)
     }
     
-    private func setupConstraints() {
-        generalViewController.view.pin
-            .bottom()
-            .top(120)
-            .left()
-            .right()
+    private func setupConstraints(controller: UIViewController) {
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        controller.view.topAnchor.constraint(equalTo: pageSegmentedControll.bottomAnchor, constant: 5).isActive = true
+        controller.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        controller.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+        controller.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {

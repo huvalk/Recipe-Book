@@ -56,6 +56,9 @@
 		75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */; };
 		75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */; };
 		75EF1F442566F1C10094AC90 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF1F432566F1C10094AC90 /* Ingredient.swift */; };
+		75EF1F47256823FD0094AC90 /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF1F46256823FD0094AC90 /* StepCell.swift */; };
+		75EF1F4B25686BD40094AC90 /* HeaderStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF1F4A25686BD40094AC90 /* HeaderStepCell.swift */; };
+		75EF1F4E25688B250094AC90 /* StepsCreationViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF1F4D25688B240094AC90 /* StepsCreationViewLayout.swift */; };
 		75F710C22559D5F000199184 /* ProductRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C12559D5F000199184 /* ProductRealm.swift */; };
 		75F710C92559E2A700199184 /* ProductListRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710C82559E2A700199184 /* ProductListRealm.swift */; };
 		75F710CC2559F50300199184 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F710CB2559F50300199184 /* DatabaseService.swift */; };
@@ -130,6 +133,9 @@
 		75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
 		75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchNetworkServices.swift; sourceTree = "<group>"; };
 		75EF1F432566F1C10094AC90 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		75EF1F46256823FD0094AC90 /* StepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCell.swift; sourceTree = "<group>"; };
+		75EF1F4A25686BD40094AC90 /* HeaderStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStepCell.swift; sourceTree = "<group>"; };
+		75EF1F4D25688B240094AC90 /* StepsCreationViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsCreationViewLayout.swift; sourceTree = "<group>"; };
 		75F710C12559D5F000199184 /* ProductRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRealm.swift; sourceTree = "<group>"; };
 		75F710C82559E2A700199184 /* ProductListRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRealm.swift; sourceTree = "<group>"; };
 		75F710CB2559F50300199184 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -253,6 +259,9 @@
 			isa = PBXGroup;
 			children = (
 				75049DD72560041D00A310A8 /* StepsCreationViewController.swift */,
+				75EF1F46256823FD0094AC90 /* StepCell.swift */,
+				75EF1F4A25686BD40094AC90 /* HeaderStepCell.swift */,
+				75EF1F4D25688B240094AC90 /* StepsCreationViewLayout.swift */,
 			);
 			path = StepsCreation;
 			sourceTree = "<group>";
@@ -840,6 +849,7 @@
 				CE2FF6D72562580D002CFA17 /* ErrorTableViewCell.swift in Sources */,
 				CE481584256123DD003976C1 /* RecipeViewController.swift in Sources */,
 				7527F41025385CD300567122 /* RegistrationPresenter.swift in Sources */,
+				75EF1F47256823FD0094AC90 /* StepCell.swift in Sources */,
 				7527F41E25387EE900567122 /* Error.swift in Sources */,
 				75994CDB2545C0EB00275FC0 /* PresentAnimation.swift in Sources */,
 				CE1C5EF22559477500ACF568 /* RecipePresenter.swift in Sources */,
@@ -861,6 +871,7 @@
 				75EF1F442566F1C10094AC90 /* Ingredient.swift in Sources */,
 				75994C542543072500275FC0 /* CheckBox.swift in Sources */,
 				75994CD52544EFB800275FC0 /* PresentationController.swift in Sources */,
+				75EF1F4B25686BD40094AC90 /* HeaderStepCell.swift in Sources */,
 				75596E58256584140007DCEA /* InputCell.swift in Sources */,
 				753F75B02566E41E008AD7B9 /* AddNewCell.swift in Sources */,
 				75049DD82560041D00A310A8 /* StepsCreationViewController.swift in Sources */,
@@ -894,6 +905,7 @@
 				CE89A1212544342D004553E4 /* StepTableViewCell.swift in Sources */,
 				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,
 				75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */,
+				75EF1F4E25688B250094AC90 /* StepsCreationViewLayout.swift in Sources */,
 				7527F42725388C2300567122 /* RegisterUser.swift in Sources */,
 				75F710C22559D5F000199184 /* ProductRealm.swift in Sources */,
 			);

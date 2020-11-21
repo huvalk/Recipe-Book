@@ -30,13 +30,12 @@ class IngredientsCreationViewController: UIViewController {
         tableView.allowsSelection = false
         
         view.addSubview(tableView)
-        self.tableView.pin
-            .top()
-            .bottom()
-            .left()
-            .right()
         
-        tableView.frame = view.frame
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 0).isActive = true
+        self.view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 0).isActive = true
+        self.view.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 0).isActive = true
+        self.view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 0).isActive = true
     }
 }
 
