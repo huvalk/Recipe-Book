@@ -92,8 +92,6 @@ class StepsCreationViewLayout: UICollectionViewLayout {
         attributes.transform = CGAffineTransform(translationX: translationDirection * translation, y: 0)
         return attributes
     }
-
-    // MARK: - Private Methods
     
     private func findClosestAttributes(toXPosition xPosition: CGFloat) -> UICollectionViewLayoutAttributes? {
         guard let collectionView = collectionView else { return nil }

@@ -9,14 +9,12 @@ import UIKit
 
 class StepsCreationViewController: UIViewController {
     let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = StepsCreationViewLayout()
         let screen = UIScreen.main.bounds.size
         let cellWidth = screen.width * 0.7
         let cellHeight = CGFloat(200)
         
-        layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        layout.sectionFootersPinToVisibleBounds = false
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = UIColor(named: "TransperentGreen")
         return cv
@@ -39,11 +37,11 @@ class StepsCreationViewController: UIViewController {
         
         view.addSubview(collectionView)
         
-        self.bottomConstraint = self.view.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0)
+        self.bottomConstraint = self.view.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 0)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 0).isActive = true
         self.bottomConstraint?.isActive = true
+        self.view.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0).isActive = true
         self.view.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor, constant: 0).isActive = true
         self.view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor, constant: 0).isActive = true
     }
@@ -104,20 +102,6 @@ extension StepsCreationViewController: UICollectionViewDelegateFlowLayout, UICol
 }
 
 extension StepsCreationViewController: UIScrollViewDelegate, UICollectionViewDelegate {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        
-        let cellWidth = layout.itemSize.width + layout.minimumInteritemSpacing
-        
-        let oldOffset = targetContentOffset.pointee
-        let index = (oldOffset.x + scrollView.contentInset.left) / cellWidth
-        let roundedIndex = round(index)
-        
-        let newOffset = CGPoint(x: roundedIndex * cellWidth - scrollView.contentInset.left - layout.minimumLineSpacing, y: scrollView.contentInset.left)
-        
-        targetContentOffset.pointee = newOffset
-    }
-    
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         scrollingFinish("scrollViewDidEndScrollingAnimation")
     }
