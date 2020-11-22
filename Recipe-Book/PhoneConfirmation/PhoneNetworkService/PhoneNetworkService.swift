@@ -15,6 +15,7 @@ class PhoneNetworkService {
         
         NetworkService.shared.getRequest(rawUrl: path) { (responseData, statusCode)  in
             do {
+                // TODO не возвращает код
                 let sms = try JSONDecoder().decode(SmsCode.self, from: responseData)
                 completion(sms.code, statusCode)
             } catch {
