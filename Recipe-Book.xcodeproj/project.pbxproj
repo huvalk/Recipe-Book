@@ -55,6 +55,7 @@
 		75DA4856253C6D7700AEDA22 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4855253C6D7700AEDA22 /* LaunchViewController.swift */; };
 		75DA4859253C6D9500AEDA22 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA4858253C6D9500AEDA22 /* LaunchPresenter.swift */; };
 		75DA485D253C6F1600AEDA22 /* LaunchNetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA485C253C6F1600AEDA22 /* LaunchNetworkServices.swift */; };
+		C50A8560F00C4D28782A7241 /* Pods_Recipe_Book.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB258C25EB123DAC95441FE9 /* Pods_Recipe_Book.framework */; };
 		75EF1F442566F1C10094AC90 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF1F432566F1C10094AC90 /* Ingredient.swift */; };
 		75EF1F47256823FD0094AC90 /* StepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF1F46256823FD0094AC90 /* StepCell.swift */; };
 		75EF1F4B25686BD40094AC90 /* HeaderStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EF1F4A25686BD40094AC90 /* HeaderStepCell.swift */; };
@@ -859,6 +860,7 @@
 				CE2FF6D2256186C1002CFA17 /* RecipeNetworkService.swift in Sources */,
 				75C430C62536C40B001C261E /* LoginViewController.swift in Sources */,
 				7518BCCD2534BABA004DEA06 /* AppDelegate.swift in Sources */,
+				CE89A11F2544342D004553E4 /* IngredientTableViewCell.swift in Sources */,
 				75F710C92559E2A700199184 /* ProductListRealm.swift in Sources */,
 				CE89A11F2544342D004553E4 /* IngredientTableViewCell.swift in Sources */,
 				753F75AD2566D980008AD7B9 /* IngredientCell.swift in Sources */,
@@ -866,6 +868,7 @@
 				75DA4847253B4AD300AEDA22 /* PhoneViewController.swift in Sources */,
 				7527F41525386ADD00567122 /* NetworkService.swift in Sources */,
 				7527F40D25385CBE00567122 /* RegistrationViewController.swift in Sources */,
+				CE89A1172544341F004553E4 /* RecipesPresenter.swift in Sources */,
 				75F710CC2559F50300199184 /* DatabaseService.swift in Sources */,
 				CE89A1172544341F004553E4 /* RecipesPresenter.swift in Sources */,
 				75EF1F442566F1C10094AC90 /* Ingredient.swift in Sources */,
