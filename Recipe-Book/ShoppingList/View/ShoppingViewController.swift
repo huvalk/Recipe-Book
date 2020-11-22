@@ -18,10 +18,18 @@ class ShoppingViewController: UIViewController {
         super.viewDidLoad()
         self.presenter = ShoppingPresenter(delegate: self)
         
+        setupNavigationController()
         table.dataSource = self
         table.delegate = self
         table.tableFooterView = UIView()
+        table.allowsSelection = false
         presenter?.getProducts()
+    }
+    
+    private func setupNavigationController() {
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .black
     }
     
     @IBAction func deleteBtnClicked(_ sender: Any) {
@@ -35,7 +43,7 @@ class ShoppingViewController: UIViewController {
         
         creatorViewController.transitioningDelegate = transition
         creatorViewController.modalPresentationStyle = .custom
-        creatorViewController.target = self
+        creatorViewController.dataTarget = self
         
         present(creatorViewController, animated: true)
     }
@@ -63,7 +71,7 @@ extension ShoppingViewController: ShoppingDelegate {
 
 extension ShoppingViewController: ShoppingCellDelegate {
     func didTapCheckBox(checked: Bool, index: IndexPath) {
-        var oldProduct = self.productsToDisplay[index.row]
+        let oldProduct = self.productsToDisplay[index.row]
         oldProduct.bought = checked
         self.productsToDisplay[index.row] = oldProduct
         
@@ -72,11 +80,11 @@ extension ShoppingViewController: ShoppingCellDelegate {
     
     func didTapEdit(index: IndexPath) {
         let creatorViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductCreatorViewController") as! ProductCreatorViewController
-        creatorViewController.setDefaultValue(product: productsToDisplay[index.row], index: index)
+        creatorViewController.setDefaultValue(ingredient: productsToDisplay[index.row], index: index)
         
         creatorViewController.transitioningDelegate = transition
         creatorViewController.modalPresentationStyle = .custom
-        creatorViewController.target = self
+        creatorViewController.dataTarget = self
         
         present(creatorViewController, animated: true)
     }

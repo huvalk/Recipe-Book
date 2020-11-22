@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PinLayout
 
 class MainCreationViewController: UIViewController {
     @IBOutlet weak var pageSegmentedControll: CustomSegmentedControl!
@@ -16,12 +17,28 @@ class MainCreationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureSegmentControll()
-        configureChildControllers()
+        setup()
+        hideKeyboardWhenTappedAround()
         self.generalViewController.view.isHidden = false
     }
     
-    private func configureSegmentControll() {
+    private func setup() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .black
+        
+        setupSegmentControll()
+        [generalViewController,
+         stepsViewController,
+         ingredientsViewController].forEach {
+            self.addChild($0)
+            self.view.addSubview($0.view)
+            $0.didMove(toParent: self)
+            setupConstraints(controller: $0)
+         }
+    }
+    
+    private func setupSegmentControll() {
         pageSegmentedControll.setButtonTitles(buttonTitles: ["Общее", "Ингредиенты", "Шаги"])
         pageSegmentedControll.backgroundColor = .clear
         pageSegmentedControll.selectorViewColor = UIColor(named: "PastelDarkGreen") ?? .black
@@ -31,25 +48,18 @@ class MainCreationViewController: UIViewController {
         self.segmentChanged(to: 0)
     }
     
-    private func configureChildControllers() {
-        configureChild(controller: generalViewController)
-        configureChild(controller: ingredientsViewController)
-        configureChild(controller: stepsViewController)
-    }
-    
-    private func configureChild(controller: UIViewController) {
-        addChild(controller)
-        view.addSubview(controller.view)
-        controller.didMove(toParent: self)
-        setConstraints(controller: controller)
-    }
-    
-    private func setConstraints(controller: UIViewController) {
+    private func setupConstraints(controller: UIViewController) {
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         controller.view.topAnchor.constraint(equalTo: pageSegmentedControll.bottomAnchor, constant: 5).isActive = true
-        controller.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        controller.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         controller.view.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         controller.view.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+    }
+    
+    @IBAction func saveButtonClicked(_ sender: Any) {
+        let data = self.generalViewController.getData()
+        
+        print(data.name)
     }
 }
 
