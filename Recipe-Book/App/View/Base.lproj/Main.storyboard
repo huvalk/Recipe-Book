@@ -275,10 +275,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="OQd-vR-i3L" kind="relationship" relationship="viewControllers" id="nZm-75-cGB"/>
                         <segue destination="c5v-x0-hYj" kind="relationship" relationship="viewControllers" id="lAs-Qf-vvq"/>
+                        <segue destination="d89-Wo-PBb" kind="relationship" relationship="viewControllers" id="tnQ-f5-7Ye"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHL-Mu-8y2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -301,9 +303,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DW9-7x-XeG">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Food" translatesAutoresizingMaskIntoConstraints="NO" id="DW9-7x-XeG">
                                             <rect key="frame" x="16" y="7.5" width="100" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="XPT-Tz-kr7"/>
                                                 <constraint firstAttribute="height" constant="100" id="fK9-yY-L8C"/>
@@ -322,6 +324,7 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rC2-oZ-Qxc">
                                             <rect key="frame" x="124" y="81.5" width="15" height="14"/>
+                                            <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="15" id="cgd-HR-EHt"/>
                                                 <constraint firstAttribute="height" constant="15" id="s0D-JC-HVo"/>
@@ -406,7 +409,14 @@
                             <outlet property="delegate" destination="hdJ-GI-9bn" id="htu-Hz-qQJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Мои рецепты" leftItemsSupplementBackButton="YES" id="uJb-FQ-fzJ"/>
+                    <navigationItem key="navigationItem" title="Мои рецепты" leftItemsSupplementBackButton="YES" id="uJb-FQ-fzJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="o02-nI-E1c">
+                            <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="MD2-J2-HyC" kind="show" id="teT-Wn-jTp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ePX-6z-NnL" id="ooi-hY-Ube"/>
                     </connections>
@@ -431,9 +441,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDL-RB-sBj">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Food" translatesAutoresizingMaskIntoConstraints="NO" id="CDL-RB-sBj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
-                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="290" id="283-vW-J5n"/>
                                             </constraints>
@@ -603,7 +613,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OT-ne-tUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6805.7971014492759" y="45.535714285714285"/>
+            <point key="canvasLocation" x="6806" y="-654"/>
         </scene>
         <!--Мои рецепты-->
         <scene sceneID="U7C-dV-NPt">
@@ -613,6 +623,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7mQ-Pr-A2k">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="hdJ-GI-9bn" kind="relationship" relationship="rootViewController" id="UbD-MF-nB3"/>
@@ -649,7 +660,7 @@
                     <navigationItem key="navigationItem" title="Новый рецепт" id="uKl-lX-0UG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="DuD-cs-lW7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
-                                <rect key="frame" x="52" y="0.0" width="342" height="44"/>
+                                <rect key="frame" x="56" y="0.0" width="338" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="9Qp-Dn-blc"/>
@@ -670,7 +681,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3w-MJ-SmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4768.115942028986" y="-654.24107142857144"/>
+            <point key="canvasLocation" x="6806" y="46"/>
         </scene>
         <!--Поиск-->
         <scene sceneID="iLe-QW-U7X">
@@ -680,6 +691,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lp8-f2-bQm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="s3r-dL-qvX" kind="relationship" relationship="rootViewController" id="od5-Q9-7Hw"/>
@@ -749,9 +761,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-FX-fgh">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Food" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-FX-fgh">
                                             <rect key="frame" x="16" y="7.5" width="100" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="GZ2-tT-i9I"/>
                                                 <constraint firstAttribute="width" constant="100" id="Res-pb-kCL"/>
@@ -770,6 +782,7 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Iix-DI-zF6">
                                             <rect key="frame" x="124" y="81.5" width="15" height="14"/>
+                                            <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="15" id="FsA-yJ-GCF"/>
                                                 <constraint firstAttribute="height" constant="15" id="Hdc-kb-W3q"/>
@@ -875,7 +888,7 @@
                                 <rect key="frame" x="0.0" y="57" width="414" height="44"/>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v3P-1D-2Ie">
-                                <rect key="frame" x="0.0" y="83" width="414" height="779"/>
+                                <rect key="frame" x="0.0" y="83" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCell" rowHeight="62" id="JU1-mn-LQ9" customClass="ShoppingCell" customModule="Recipe_Book" customModuleProvider="target">
@@ -1196,25 +1209,6 @@
             </objects>
             <point key="canvasLocation" x="2921.739130434783" y="742.63392857142856"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="lXP-Zw-cly">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRL-YV-aaQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RQ3-2J-niu"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j0f-9X-yNz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MD2-J2-HyC" kind="relationship" relationship="rootViewController" id="7cm-9Q-BAO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EvO-Ds-ndC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3858" y="-654"/>
-        </scene>
         <!--Продукты-->
         <scene sceneID="Xor-Up-KJ2">
             <objects>
@@ -1251,6 +1245,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cart" width="30" height="28"/>
+        <image name="Food" width="384" height="384"/>
         <image name="Save" width="28" height="28"/>
         <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
@@ -1266,14 +1261,11 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -25,7 +25,7 @@ class MainCreationViewController: UIViewController {
     private func setup() {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = UIColor(named: "PastelDarkGreen") ?? .black
         
         setupSegmentControll()
         [generalViewController,
