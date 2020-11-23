@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var lostPswdButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
+    let spinner = UIActivityIndicatorView(style: .large)
     
     var loginPresenter: LoginPresenter?
     
@@ -36,6 +37,12 @@ class LoginViewController: UIViewController {
         errorLabel.layer.cornerRadius = 5
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
+        
+        view.addSubview(spinner)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    
     }
     
     private func registerForKeyboardNotifications() {
@@ -107,17 +114,18 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginDelegate {
     func showProgress() {
-        print("show progress")
+        spinner.startAnimating()
     }
     
     func hideProgress() {
-        print("hide progress")
+        spinner.stopAnimating()
     }
     
     func loginDidSucceed() {
-        let mainScreen = self.storyboard?.instantiateViewController(identifier: "TabBarController")
-        let appDelegate = UIApplication.shared.delegate
-        appDelegate?.window??.rootViewController = mainScreen
+        let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+
+        mainViewController.modalPresentationStyle = .fullScreen
+        self.present(mainViewController, animated: true)
     }
     
     func loginDidFailed(message: String) {

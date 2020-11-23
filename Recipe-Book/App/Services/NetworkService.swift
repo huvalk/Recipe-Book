@@ -101,7 +101,7 @@ final class NetworkService {
             }
             
             DispatchQueue.main.async {
-                completion(SettingsService.userModel, statusCode)
+                completion(SettingsService.userModel, newStatusCode)
             }
         }
     }
