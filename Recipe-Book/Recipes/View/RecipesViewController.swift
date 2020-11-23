@@ -29,7 +29,7 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
     }
-    
+        
     @objc func reloadData(refreshControl: UIRefreshControl) {
         self.recipesPresenter?.getRecipes()
         self.recipesPresenter?.getFavorites()

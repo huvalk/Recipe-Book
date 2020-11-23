@@ -407,7 +407,13 @@
                             <outlet property="delegate" destination="hdJ-GI-9bn" id="htu-Hz-qQJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Мои рецепты" leftItemsSupplementBackButton="YES" id="uJb-FQ-fzJ"/>
+                    <navigationItem key="navigationItem" title="Мои рецепты" leftItemsSupplementBackButton="YES" id="uJb-FQ-fzJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="o02-nI-E1c">
+                            <connections>
+                                <segue destination="MD2-J2-HyC" kind="show" id="teT-Wn-jTp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ePX-6z-NnL" id="ooi-hY-Ube"/>
                     </connections>
@@ -604,7 +610,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OT-ne-tUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6805.7971014492759" y="45.535714285714285"/>
+            <point key="canvasLocation" x="6806" y="-654"/>
         </scene>
         <!--Мои рецепты-->
         <scene sceneID="U7C-dV-NPt">
@@ -650,7 +656,7 @@
                     <navigationItem key="navigationItem" title="Новый рецепт" id="uKl-lX-0UG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="DuD-cs-lW7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
-                                <rect key="frame" x="52" y="0.0" width="342" height="44"/>
+                                <rect key="frame" x="56" y="0.0" width="338" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="9Qp-Dn-blc"/>
@@ -671,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3w-MJ-SmO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4768.115942028986" y="-654.24107142857144"/>
+            <point key="canvasLocation" x="6806" y="46"/>
         </scene>
         <!--Поиск-->
         <scene sceneID="iLe-QW-U7X">
@@ -1197,25 +1203,6 @@
             </objects>
             <point key="canvasLocation" x="2921.739130434783" y="742.63392857142856"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="lXP-Zw-cly">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRL-YV-aaQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RQ3-2J-niu"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j0f-9X-yNz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MD2-J2-HyC" kind="relationship" relationship="rootViewController" id="7cm-9Q-BAO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EvO-Ds-ndC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3858" y="-654"/>
-        </scene>
         <!--Продукты-->
         <scene sceneID="Xor-Up-KJ2">
             <objects>
@@ -1248,7 +1235,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Sz5-AJ-Bx0"/>
+        <segue reference="f92-I2-M7F"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cart" width="30" height="28"/>
