@@ -91,15 +91,18 @@ extension ShoppingViewController: ShoppingCellDelegate {
 }
 
 extension ShoppingViewController: DataTarget {
-    func createFinished(product: Product) {
+    func createFinished(ingredient: Ingredient) {
+        let product = Product(ingredient: ingredient)
         self.productsToDisplay.append(product)
         presenter?.addProduct(product)
         table.reloadData()
     }
     
-    func editFinished(index: IndexPath, product: Product) {
-        self.productsToDisplay[index.row] = product
-        presenter?.changeProduct(product)
+    func editFinished(index: IndexPath, ingredient: Ingredient) {
+        let oldProduct = self.productsToDisplay[index.row]
+        let newProduct = Product(id: oldProduct.id, ingredient: ingredient)
+        presenter?.changeProduct(newProduct)
+        self.productsToDisplay[index.row] = newProduct
         table.reloadRows(at: [index], with: .top)
     }
 }

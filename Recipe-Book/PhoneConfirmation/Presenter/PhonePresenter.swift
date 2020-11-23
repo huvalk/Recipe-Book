@@ -12,6 +12,7 @@ protocol PhoneDelegate {
     func hideProgress()
     func phoneDidSucceed(phone: String)
     func phoneDidFailed(message: String)
+    func showMessage(message: String)
 }
 
 class PhonePresenter {
@@ -29,12 +30,15 @@ class PhonePresenter {
             return
         }
         
-        PhoneNetworkService.sendCode(phone: phone) { (response, statusCode) in
+        delegate.showProgress()
+        PhoneNetworkService.sendCode(phone: phone) { [weak self] (response, statusCode) in
+            self?.delegate.hideProgress()
             if response != nil && (200...299) ~= statusCode {
-                self.code = response
-                self.phone = phone
+                self?.code = response
+                self?.phone = phone
+                self?.delegate.showMessage(message: "Код отправлен")
             } else {
-                self.delegate.phoneDidFailed(message: "Something wrong. \(statusCode)")
+                self?.delegate.phoneDidFailed(message: "Something wrong. \(statusCode)")
             }
         }
     }
@@ -45,7 +49,6 @@ class PhonePresenter {
             return
         }
         
-        // TODO код получать от сервера
         if code == self.code {
             self.delegate.phoneDidSucceed(phone: phone ?? "")
         } else {

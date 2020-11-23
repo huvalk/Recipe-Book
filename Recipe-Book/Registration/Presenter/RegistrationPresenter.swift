@@ -40,11 +40,13 @@ class RegistrationPresenter {
         modelUser.password = password
         modelUser.phone = phone
         
-        RegistrationNetworkService.regiter(user: modelUser) { (statusCode) in
+        delegate.showProgress()
+        RegistrationNetworkService.regiter(user: modelUser) { [weak self] (statusCode) in
+            self?.delegate.hideProgress()
             if (200...299) ~= statusCode {
-                self.delegate.registrationDidSucceed()
+                self?.delegate.registrationDidSucceed()
             } else {
-                self.delegate.registrationDidFailed(message: "Something wrong. \(statusCode)")
+                self?.delegate.registrationDidFailed(message: "Something wrong. \(statusCode)")
             }
         }
     }

@@ -36,11 +36,13 @@ class LoginPresenter {
         modelUser.login = login
         modelUser.password = password
         
-        LoginNetworkService.login(user: modelUser) { (response, statusCode) in
+        delegate.showProgress()
+        LoginNetworkService.login(user: modelUser) { [weak self] (response, statusCode) in
+            self?.delegate.hideProgress()
             if response != nil && (200...299) ~= statusCode {
-                self.delegate.loginDidSucceed()
+                self?.delegate.loginDidSucceed()
             } else {
-                self.delegate.loginDidFailed(message: "Something wrong. \(statusCode)")
+                self?.delegate.loginDidFailed(message: "Something wrong. \(statusCode)")
             }
         }
     }

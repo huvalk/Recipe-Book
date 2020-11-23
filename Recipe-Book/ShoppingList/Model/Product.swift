@@ -18,5 +18,15 @@ class Product: Ingredient {
         super.init(name: name, amountType: amountType, amount: amount, bought: bought)
     }
     
+    init(ingredient: Ingredient) {
+        self.id = ShoppingDatabaseService.productNextId
+        super.init(name: ingredient.name, amountType: ingredient.amountType, amount: ingredient.amount, bought: ingredient.bought)
+    }
+    
+    init(id: Int, ingredient: Ingredient) {
+        self.id = id
+        super.init(name: ingredient.name, amountType: ingredient.amountType, amount: ingredient.amount, bought: ingredient.bought)
+    }
+    
     let id: Int
 }
