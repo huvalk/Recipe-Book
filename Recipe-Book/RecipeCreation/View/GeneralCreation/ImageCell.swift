@@ -46,7 +46,7 @@ class ImageCell: UITableViewCell {
         photoButton.layer.cornerRadius = 5.0
         photoButton.addTarget(self, action: #selector(ImageCell.makePhoto(sender:)), for: .touchUpInside)
         
-        photoView.backgroundColor = .lightGray
+        photoView.backgroundColor = .systemGray5
         photoView.image = UIImage(named: "Food")
 
         
