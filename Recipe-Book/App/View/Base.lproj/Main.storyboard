@@ -275,6 +275,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="OQd-vR-i3L" kind="relationship" relationship="viewControllers" id="nZm-75-cGB"/>
@@ -323,6 +324,7 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rC2-oZ-Qxc">
                                             <rect key="frame" x="124" y="81.5" width="15" height="14"/>
+                                            <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="15" id="cgd-HR-EHt"/>
                                                 <constraint firstAttribute="height" constant="15" id="s0D-JC-HVo"/>
@@ -409,6 +411,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Мои рецепты" leftItemsSupplementBackButton="YES" id="uJb-FQ-fzJ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="o02-nI-E1c">
+                            <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="MD2-J2-HyC" kind="show" id="teT-Wn-jTp"/>
                             </connections>
@@ -620,6 +623,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7mQ-Pr-A2k">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="hdJ-GI-9bn" kind="relationship" relationship="rootViewController" id="UbD-MF-nB3"/>
@@ -687,6 +691,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lp8-f2-bQm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="s3r-dL-qvX" kind="relationship" relationship="rootViewController" id="od5-Q9-7Hw"/>
@@ -777,6 +782,7 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Iix-DI-zF6">
                                             <rect key="frame" x="124" y="81.5" width="15" height="14"/>
+                                            <color key="tintColor" red="0.61568627450000002" green="0.69411764710000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="15" id="FsA-yJ-GCF"/>
                                                 <constraint firstAttribute="height" constant="15" id="Hdc-kb-W3q"/>
@@ -1235,7 +1241,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="f92-I2-M7F"/>
+        <segue reference="Sz5-AJ-Bx0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cart" width="30" height="28"/>

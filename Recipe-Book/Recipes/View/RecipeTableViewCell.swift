@@ -18,7 +18,7 @@ class RecipeTableViewCell: UITableViewCell {
     func configure(recipe: Recipe) {
         self.recipeName?.text = recipe.title
         self.recipeTime?.text = String(recipe.cookingTime) + " мин"
-        self.ingridientCount?.text = String(recipe.ingredients.count) + " ингридиентов"
+        self.ingridientCount?.text = String(recipe.ingredients.count) + " ингредиентов"
         
         self.ratingView.rating = recipe.rating
         self.ratingView.settings.fillMode = .precise
