@@ -15,6 +15,7 @@ class PhoneViewController: UIViewController {
     @IBOutlet weak var shiftContainer: NSLayoutConstraint!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var codeButton: UIButton!
+    let spinner = UIActivityIndicatorView(style: .large)
     
     var phonePresenter: PhonePresenter?
     
@@ -34,6 +35,11 @@ class PhoneViewController: UIViewController {
         errorLabel.layer.cornerRadius = 5
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
+        
+        view.addSubview(spinner)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     private func registerForKeyboardNotifications() {
@@ -99,11 +105,11 @@ class PhoneViewController: UIViewController {
 
 extension PhoneViewController: PhoneDelegate {
     func showProgress() {
-        print("show progress")
+        spinner.startAnimating()
     }
     
     func hideProgress() {
-        print("hide progress")
+        spinner.stopAnimating()
     }
     
     func phoneDidSucceed(phone: String) {
@@ -113,7 +119,18 @@ extension PhoneViewController: PhoneDelegate {
         self.present(registrationViewController, animated: true)
     }
     
+    func showMessage(message: String) {
+        errorLabel.backgroundColor = UIColor(named: "TrasperentGreen")
+        errorLabel.textColor = .black
+        errorLabel.text = message
+        if errorLabel.alpha != 1.0 {
+            animateErrorAppear(alpha: 1.0)
+        }
+    }
+    
     func phoneDidFailed(message: String) {
+        errorLabel.backgroundColor = UIColor(named: "PastelDarkRed")
+        errorLabel.textColor = .white
         errorLabel.text = message
         if errorLabel.alpha != 1.0 {
             animateErrorAppear(alpha: 1.0)

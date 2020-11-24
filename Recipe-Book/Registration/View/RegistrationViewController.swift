@@ -16,6 +16,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var shiftContainer: NSLayoutConstraint!
     @IBOutlet weak var registerButton: UIButton!
+    let spinner = UIActivityIndicatorView(style: .large)
     
     var registrationPresenter: RegistrationPresenter?
     
@@ -34,6 +35,11 @@ class RegistrationViewController: UIViewController {
         errorLabel.layer.cornerRadius = 5
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
+        
+        view.addSubview(spinner)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     private func registerForKeyboardNotifications() {
@@ -99,11 +105,11 @@ class RegistrationViewController: UIViewController {
 
 extension RegistrationViewController: RegistrationDelegate {
     func showProgress() {
-        print("show progress")
+        spinner.startAnimating()
     }
     
     func hideProgress() {
-        print("hide progress")
+        spinner.stopAnimating()
     }
     
     func registrationDidSucceed() {
