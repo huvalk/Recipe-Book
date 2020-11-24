@@ -21,6 +21,11 @@ final class NetworkService {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }
         
+        let session_id = SettingsService.userModel.session
+        let cookieHeaderField = ["Set-Cookie": "session_id=\(session_id)"]
+        let cookies = HTTPCookie.cookies(withResponseHeaderFields: cookieHeaderField, for: url)
+        HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: url)
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
@@ -52,6 +57,11 @@ final class NetworkService {
     public func postRequest(rawUrl: String, data: Data, completion: @escaping (Data, Int) -> ()) {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }
+        
+        let session_id = SettingsService.userModel.session
+        let cookieHeaderField = ["Set-Cookie": "session_id=\(session_id)"]
+        let cookies = HTTPCookie.cookies(withResponseHeaderFields: cookieHeaderField, for: url)
+        HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: url)
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
