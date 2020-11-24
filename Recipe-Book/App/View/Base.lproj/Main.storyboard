@@ -659,7 +659,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Новый рецепт" id="uKl-lX-0UG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="DuD-cs-lW7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
                                 <rect key="frame" x="56" y="0.0" width="338" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -754,7 +754,7 @@
                                     <outlet property="searchField" destination="0nc-8y-HeF" id="eXa-EO-fCs"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Recipe Cell" rowHeight="115" id="L7Y-z6-loo" customClass="RecipeTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Recipe Cell" rowHeight="115" id="L7Y-z6-loo" customClass="SearchRecipeTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="198" width="414" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L7Y-z6-loo" id="RY9-t3-ccP">
@@ -810,14 +810,27 @@
                                             <rect key="frame" x="124" y="36" width="120" height="20"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZU-O2-6Os">
+                                            <rect key="frame" x="366" y="11" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="5an-zJ-rp2"/>
+                                                <constraint firstAttribute="width" constant="20" id="Wsg-9s-HrS"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="Heart"/>
+                                            <connections>
+                                                <action selector="likeButtonPressed:" destination="L7Y-z6-loo" eventType="touchUpInside" id="7yX-HN-QWF"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="m4M-ey-zre" firstAttribute="leading" secondItem="Iix-DI-zF6" secondAttribute="trailing" constant="4" id="0iH-IG-Sxd"/>
                                         <constraint firstItem="Iix-DI-zF6" firstAttribute="leading" secondItem="Vja-FX-fgh" secondAttribute="trailing" constant="8" id="G9E-1X-AR2"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Iix-DI-zF6" secondAttribute="bottom" constant="8" id="Oq1-o7-l5X"/>
+                                        <constraint firstItem="EZU-O2-6Os" firstAttribute="top" secondItem="SmQ-5f-44f" secondAttribute="top" id="PUt-8J-RpC"/>
                                         <constraint firstAttribute="bottom" secondItem="Vja-FX-fgh" secondAttribute="bottom" constant="7.5" id="Qne-ZU-aEo"/>
                                         <constraint firstItem="GfN-ej-8D6" firstAttribute="leading" secondItem="SmQ-5f-44f" secondAttribute="leading" id="XvR-qQ-PKf"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="edr-lW-ftX" secondAttribute="bottom" constant="8" id="YjO-cB-5Jc"/>
+                                        <constraint firstItem="EZU-O2-6Os" firstAttribute="trailing" secondItem="edr-lW-ftX" secondAttribute="trailing" id="Zvl-Pl-owW"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="edr-lW-ftX" secondAttribute="trailing" constant="8" id="eJF-ZZ-d4f"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="m4M-ey-zre" secondAttribute="bottom" constant="8" id="kYE-me-RJu"/>
                                         <constraint firstItem="SmQ-5f-44f" firstAttribute="leading" secondItem="Vja-FX-fgh" secondAttribute="trailing" constant="8" id="mC7-Vc-QOI"/>
@@ -830,6 +843,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="ingridientCount" destination="edr-lW-ftX" id="0I6-6O-sZM"/>
+                                    <outlet property="likeButton" destination="EZU-O2-6Os" id="67E-dk-b36"/>
                                     <outlet property="ratingView" destination="GfN-ej-8D6" id="UeH-of-IHy"/>
                                     <outlet property="recipeName" destination="SmQ-5f-44f" id="dts-Gt-lPi"/>
                                     <outlet property="recipeTime" destination="m4M-ey-zre" id="rZb-2E-Zv2"/>
@@ -1246,6 +1260,7 @@
     <resources>
         <image name="Cart" width="30" height="28"/>
         <image name="Food" width="384" height="384"/>
+        <image name="Heart" width="18" height="16"/>
         <image name="Save" width="28" height="28"/>
         <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>

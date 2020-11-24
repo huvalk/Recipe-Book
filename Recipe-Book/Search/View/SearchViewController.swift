@@ -66,7 +66,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 return cell
             }
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Recipe Cell") as! RecipeTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Recipe Cell") as! SearchRecipeTableViewCell
             
             let recipe = self.recipes[indexPath.item]
             cell.configure(recipe: recipe)

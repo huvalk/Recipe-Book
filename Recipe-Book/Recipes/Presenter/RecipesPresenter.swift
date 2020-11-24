@@ -24,7 +24,7 @@ class RecipesPresenter {
             if (200...299) ~= statusCode {
                 self.delegate.setRecipes(recipes: recipes)
             } else {
-                print("status code: \(statusCode)")
+                print("get recipes: code \(statusCode)")
             }
         }
     }
@@ -34,7 +34,7 @@ class RecipesPresenter {
             if (200...299) ~= statusCode {
                 self.delegate.setFavorites(favorites: favorites)
             } else {
-                print("status code: \(statusCode)")
+                print("get favorites: code \(statusCode)")
             }
         }
     }
