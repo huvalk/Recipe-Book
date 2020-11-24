@@ -15,6 +15,7 @@ struct Recipe: Codable {
     var rating: Double
     var ingredients: [String]
     var steps: [String]
+    var isFavorites: Bool
 }
 
 typealias RecipeList = [Recipe]
@@ -24,4 +25,4 @@ struct UserStars: Codable {
     var stars: Int
 }
 
-var emptyRecipe = Recipe(id: 0, author: 0, title: "", cookingTime: 0, rating: 0, ingredients: [], steps: [])
+var emptyRecipe = Recipe(id: 0, author: 0, title: "", cookingTime: 0, rating: 0, ingredients: [], steps: [], isFavorites: false)

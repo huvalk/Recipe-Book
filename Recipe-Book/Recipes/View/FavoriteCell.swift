@@ -8,14 +8,24 @@
 import UIKit
 import Cosmos
 
-class RecipeTableViewCell: UITableViewCell {
+class FavoriteCell: UITableViewCell {
     
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeTime: UILabel!
     @IBOutlet weak var ingridientCount: UILabel!
     @IBOutlet weak var ratingView: CosmosView!
     
+    var recipesPresenter: RecipesPresenter?
+    var indexPath: IndexPath?
+    var recipeId: Int = 0
+    
+    @IBAction func likeButtonPressed(_ sender: Any) {
+        self.recipesPresenter?.deleteFromFavorites(recipeId: self.recipeId, indexPath: self.indexPath!)
+    }
+    
     func configure(recipe: Recipe) {
+        self.recipeId = recipe.id
+        
         self.recipeName?.text = recipe.title
         self.recipeTime?.text = String(recipe.cookingTime) + " мин"
         self.ingridientCount?.text = String(recipe.ingredients.count) + " ингредиентов"

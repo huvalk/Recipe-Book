@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct UserId: Encodable {
-    var id: Int
-}
-
 class RecipesNetworkService {
     
     static func getRecipes(userId: Int, completion: @escaping(RecipeList, Int) -> ()) {
@@ -26,8 +22,8 @@ class RecipesNetworkService {
         }
     }
     
-    static func getFavorites(userId: Int, completion: @escaping(RecipeList, Int) -> ()) {
-        let path = "/users/\(userId)/favorites"
+    static func getFavorites(completion: @escaping(RecipeList, Int) -> ()) {
+        let path = "/favorites"
         
         NetworkService.shared.getRequest(rawUrl: path) { (responseData, statusCode) in
             do {
@@ -39,18 +35,10 @@ class RecipesNetworkService {
         }
     }
     
-    static func addToFavorites(userId: Int, recipeId: Int, completion: @escaping(Int) -> ()) {
+    static func addToFavorites(recipeId: Int, completion: @escaping(Int) -> ()) {
         let path = "/favorites/\(recipeId)/add"
         
-        let data = UserId(id: 1)
-        var jsonData = Data()
-        do {
-            jsonData = try JSONEncoder().encode(data)
-        } catch {
-            print(error)
-        }
-        
-        NetworkService.shared.postRequest(rawUrl: path, data: jsonData) { (responseData, statusCode) in
+        NetworkService.shared.postRequest(rawUrl: path, data: Data()) { (responseData, statusCode) in
             do {
                 completion(statusCode)
             } catch {
@@ -59,18 +47,10 @@ class RecipesNetworkService {
         }
     }
     
-    static func deleteFromFavorites(userId: Int, recipeId: Int, completion: @escaping(Int) -> ()) {
+    static func deleteFromFavorites(recipeId: Int, completion: @escaping(Int) -> ()) {
         let path = "/favorites/\(recipeId)/delete"
         
-        let data = UserId(id: 1)
-        var jsonData = Data()
-        do {
-            jsonData = try JSONEncoder().encode(data)
-        } catch {
-            print(error)
-        }
-        
-        NetworkService.shared.postRequest(rawUrl: path, data: jsonData) { (responseData, statusCode) in
+        NetworkService.shared.postRequest(rawUrl: path, data: Data()) { (responseData, statusCode) in
             do {
                 completion(statusCode)
             } catch {

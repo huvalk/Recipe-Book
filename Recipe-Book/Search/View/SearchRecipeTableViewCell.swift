@@ -17,9 +17,14 @@ class SearchRecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     
     var searchCellPresenter: SearchCellPresenter?
+    var isFavorite: Bool = false
     
     @IBAction func likeButtonPressed(_ sender: Any) {
-        self.searchCellPresenter?.addToFavorites()
+        if !isFavorite {
+            self.searchCellPresenter?.addToFavorites()
+        } else {
+            self.searchCellPresenter?.deleteFromFavorites()
+        }
     }
     
     func configure(recipe: Recipe) {
@@ -32,11 +37,24 @@ class SearchRecipeTableViewCell: UITableViewCell {
         self.ratingView.rating = recipe.rating
         self.ratingView.settings.fillMode = .precise
         self.ratingView.settings.updateOnTouch = false
+        
+        self.isFavorite = recipe.isFavorites
+        if self.isFavorite {
+            self.fillHeart()
+        } else {
+            self.unfillHeart()
+        }
     }
 }
 
 extension SearchRecipeTableViewCell: SearchCellDelegate {
     func fillHeart() {
         self.likeButton.setImage(UIImage(named: "HeartFilled"), for: .normal)
+        self.isFavorite = true
+    }
+    
+    func unfillHeart() {
+        self.likeButton.setImage(UIImage(named: "Heart"), for: .normal)
+        self.isFavorite = false
     }
 }

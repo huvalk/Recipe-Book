@@ -9,6 +9,7 @@ import Foundation
 
 protocol SearchCellDelegate {
     func fillHeart()
+    func unfillHeart()
 }
 
 class SearchCellPresenter {
@@ -21,7 +22,7 @@ class SearchCellPresenter {
     }
     
     func addToFavorites() {
-        RecipesNetworkService.addToFavorites(userId: 1, recipeId: self.recipeId) { (statusCode) in
+        RecipesNetworkService.addToFavorites(recipeId: self.recipeId) { (statusCode) in
             if (200...299) ~= statusCode {
                 self.delegate.fillHeart()
             } else {
@@ -31,9 +32,9 @@ class SearchCellPresenter {
     }
     
     func deleteFromFavorites() {
-        RecipesNetworkService.deleteFromFavorites(userId: 1, recipeId: self.recipeId) { (statusCode) in
+        RecipesNetworkService.deleteFromFavorites(recipeId: self.recipeId) { (statusCode) in
             if (200...299) ~= statusCode {
-                print("delete from favorites: success")
+                self.delegate.unfillHeart()
             } else {
                 print("delete from favorites: code \(statusCode)")
             }
