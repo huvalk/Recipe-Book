@@ -603,6 +603,23 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc3-eR-sIH">
+                                            <rect key="frame" x="354" y="11" width="40" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="65e-s7-Tji"/>
+                                                <constraint firstAttribute="width" constant="40" id="Rdz-lC-gfK"/>
+                                            </constraints>
+                                            <state key="normal" image="Heart"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="likeButtonPressed:" destination="uIZ-mL-ixw" eventType="touchUpInside" id="SKo-UV-seR"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="h6t-GF-OeM" firstAttribute="top" secondItem="yy0-u2-kuY" secondAttribute="top" constant="240" id="4HS-IK-Cmh"/>
@@ -611,11 +628,14 @@
                                         <constraint firstAttribute="bottom" secondItem="h6t-GF-OeM" secondAttribute="bottom" constant="8" id="C7n-4c-UGW"/>
                                         <constraint firstItem="CDL-RB-sBj" firstAttribute="leading" secondItem="yy0-u2-kuY" secondAttribute="leading" id="DMZ-9j-PTB"/>
                                         <constraint firstItem="CDL-RB-sBj" firstAttribute="top" secondItem="yy0-u2-kuY" secondAttribute="top" id="KZ0-Xr-wgL"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="oc3-eR-sIH" secondAttribute="trailing" id="ObU-o2-goy"/>
+                                        <constraint firstItem="oc3-eR-sIH" firstAttribute="top" secondItem="yy0-u2-kuY" secondAttribute="topMargin" id="arq-9f-azD"/>
                                         <constraint firstItem="h6t-GF-OeM" firstAttribute="leading" secondItem="yy0-u2-kuY" secondAttribute="leading" constant="16" id="de6-5S-T25"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="ingredientsCount" destination="xUY-fv-W4H" id="3Ym-ta-iwV"/>
+                                    <outlet property="likeButton" destination="oc3-eR-sIH" id="5qp-2i-pS1"/>
                                     <outlet property="recipeBlock" destination="h6t-GF-OeM" id="HCt-AE-3v2"/>
                                     <outlet property="recipeImage" destination="CDL-RB-sBj" id="qVj-CN-jZZ"/>
                                     <outlet property="recipeName" destination="Koo-Pe-Rrz" id="3BL-aT-5eO"/>
@@ -709,7 +729,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OT-ne-tUn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6806" y="-654"/>
+            <point key="canvasLocation" x="6805.7971014492759" y="-654.24107142857144"/>
         </scene>
         <!--Мои рецепты-->
         <scene sceneID="U7C-dV-NPt">
@@ -1340,7 +1360,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f92-I2-M7F"/>
+        <segue reference="Sz5-AJ-Bx0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cart" width="30" height="28"/>

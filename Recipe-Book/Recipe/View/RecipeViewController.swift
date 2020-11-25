@@ -11,7 +11,7 @@ import Cosmos
 class RecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
-
+    
     var recipe: Recipe?
     var recipePresenter: RecipePresenter?
     

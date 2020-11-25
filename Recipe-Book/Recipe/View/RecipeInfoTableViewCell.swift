@@ -16,10 +16,19 @@ class RecipeInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeRating: CosmosView!
     @IBOutlet weak var recipeTime: UILabel!
     @IBOutlet weak var ingredientsCount: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
+    
+    @IBAction func likeButtonPressed(_ sender: Any) {
+        self.recipeInfoCellPresenter?.deleteFromFavorites()
+    }
     
     var recipePresenter: RecipePresenter?
+    var recipeInfoCellPresenter: RecipeInfoCellPresenter?
+    var isFavorite: Bool = false
     
     func configure(recipe: Recipe) {
+        self.recipeInfoCellPresenter = RecipeInfoCellPresenter(delegate: self, recipeId: recipe.id)
+        
         self.recipeName.text = recipe.title
         self.recipeTime.text = String(recipe.cookingTime) + " мин"
         self.ingredientsCount.text = String(recipe.ingredients.count) + " ингредиентов"
@@ -35,9 +44,28 @@ class RecipeInfoTableViewCell: UITableViewCell {
         self.recipeBlock.layer.shadowRadius = 2
         self.recipeBlock.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.recipeBlock.layer.masksToBounds = false
+        
+        self.isFavorite = recipe.isFavorites
+        if recipe.isFavorites {
+            self.fillHeart()
+        } else {
+            self.unfillHeart()
+        }
     }
     
     func setRating(rating: Double) {
         self.recipeRating.rating = rating
     }
 }
+
+extension RecipeInfoTableViewCell: RecipeInfoCellDelegate {
+    
+    func fillHeart() {
+        self.likeButton.setImage(UIImage(named: "HeartFilled"), for: .normal)
+        self.isFavorite = true
+    }
+    
+    func unfillHeart() {
+        self.likeButton.setImage(UIImage(named: "Heart"), for: .normal)
+        self.isFavorite = false
+    }}

@@ -82,6 +82,7 @@
 		CEE0FBEA256D02F90060C7AA /* SearchRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0FBE9256D02F90060C7AA /* SearchRecipeTableViewCell.swift */; };
 		CEE0FBED256D29C00060C7AA /* SearchCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0FBEC256D29C00060C7AA /* SearchCellPresenter.swift */; };
 		CEE0FBF0256D6E740060C7AA /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0FBEF256D6E740060C7AA /* FavoriteCell.swift */; };
+		CEE0FBFD256D817D0060C7AA /* RecipeInfoCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0FBFC256D817D0060C7AA /* RecipeInfoCellPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +165,7 @@
 		CEE0FBE9256D02F90060C7AA /* SearchRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		CEE0FBEC256D29C00060C7AA /* SearchCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellPresenter.swift; sourceTree = "<group>"; };
 		CEE0FBEF256D6E740060C7AA /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		CEE0FBFC256D817D0060C7AA /* RecipeInfoCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInfoCellPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -677,6 +679,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1C5EF12559477500ACF568 /* RecipePresenter.swift */,
+				CEE0FBFC256D817D0060C7AA /* RecipeInfoCellPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -915,6 +918,7 @@
 				7527F421253884D000567122 /* UserResponse.swift in Sources */,
 				CE89A12625443436004553E4 /* RecipesViewController.swift in Sources */,
 				CE89A11125443412004553E4 /* Recipe.swift in Sources */,
+				CEE0FBFD256D817D0060C7AA /* RecipeInfoCellPresenter.swift in Sources */,
 				75DA484A253B4AF800AEDA22 /* PhonePresenter.swift in Sources */,
 				CE89A1212544342D004553E4 /* StepTableViewCell.swift in Sources */,
 				7527F430253A025900567122 /* RegistrationNetworkService.swift in Sources */,
