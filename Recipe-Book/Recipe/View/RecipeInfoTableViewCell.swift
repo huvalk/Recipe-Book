@@ -53,6 +53,11 @@ class RecipeInfoTableViewCell: UITableViewCell {
         }
     }
     
+    func hideLike() {
+        print("hide")
+        self.likeButton.isHidden = true
+    }
+    
     func setRating(rating: Double) {
         self.recipeRating.rating = rating
     }

@@ -103,13 +103,17 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier?.starts(with: "show") == true {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
             let recipe = recipes[indexPath.section][indexPath.item]
             
             let destination = segue.destination as! RecipeViewController
             destination.recipe = recipe
+            
+            if segue.identifier == "showMyRecipe" {
+                destination.showLike = false
+            }
         }
     }
 }

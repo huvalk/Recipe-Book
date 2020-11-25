@@ -471,6 +471,7 @@
                                     <outlet property="ratingView" destination="ssd-IO-xC2" id="G5Y-1m-Klm"/>
                                     <outlet property="recipeName" destination="6Dt-JE-jFu" id="1d4-Rh-kR4"/>
                                     <outlet property="recipeTime" destination="Lmu-OP-AHa" id="fDz-oV-JXO"/>
+                                    <segue destination="uBI-ux-Ed9" kind="show" identifier="showMyRecipe" id="Pwe-2M-n62"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Error Cell" id="bi2-QX-WwG" customClass="ErrorTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
@@ -775,7 +776,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Новый рецепт" id="uKl-lX-0UG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="DuD-cs-lW7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
                                 <rect key="frame" x="56" y="0.0" width="338" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -1360,7 +1361,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sz5-AJ-Bx0"/>
+        <segue reference="Pwe-2M-n62"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cart" width="30" height="28"/>
