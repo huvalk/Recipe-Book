@@ -14,6 +14,6 @@ class StepTableViewCell: UITableViewCell {
     
     func configure(number: Int, text: String) {
         self.stepNumber.text = "Шаг " + String(number)
-        self.stepText.text = text
+        self.stepText.text = text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
