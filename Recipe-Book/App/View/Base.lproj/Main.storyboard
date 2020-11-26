@@ -317,7 +317,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTF-Xl-ZUu">
-                                            <rect key="frame" x="124" y="11" width="125" height="17"/>
+                                            <rect key="frame" x="124" y="11" width="234" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -373,6 +373,7 @@
                                         <constraint firstItem="eXO-cY-VPy" firstAttribute="top" secondItem="mTF-Xl-ZUu" secondAttribute="top" id="AWJ-7R-ln5"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="rC2-oZ-Qxc" secondAttribute="bottom" constant="8" id="CUA-aJ-Ym2"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="AUl-e6-UoR" secondAttribute="bottom" constant="8" id="OIT-UY-ZYk"/>
+                                        <constraint firstItem="eXO-cY-VPy" firstAttribute="leading" secondItem="mTF-Xl-ZUu" secondAttribute="trailing" constant="8" id="S3I-uV-MU5"/>
                                         <constraint firstAttribute="bottom" secondItem="DW9-7x-XeG" secondAttribute="bottom" constant="7.5" id="WIW-YO-9SG"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="AUl-e6-UoR" secondAttribute="trailing" constant="8" id="YiB-ZF-1Ju"/>
                                         <constraint firstItem="mTF-Xl-ZUu" firstAttribute="leading" secondItem="DW9-7x-XeG" secondAttribute="trailing" constant="8" id="a7T-HX-jsF"/>
@@ -413,7 +414,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название рецепта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dt-JE-jFu">
-                                            <rect key="frame" x="124" y="11" width="125" height="17"/>
+                                            <rect key="frame" x="124" y="11" width="262" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -455,6 +456,7 @@
                                         <constraint firstItem="Us3-4s-zCO" firstAttribute="leading" secondItem="iMq-S8-DjE" secondAttribute="leading" constant="16" id="7E5-HQ-AFq"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="scq-y7-70k" secondAttribute="bottom" constant="8" id="EBU-sl-N0U"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ha9-gT-9Ar" secondAttribute="trailing" constant="8" id="FYJ-oQ-ee3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6Dt-JE-jFu" secondAttribute="trailing" constant="8" id="POi-4F-XdZ"/>
                                         <constraint firstItem="6Dt-JE-jFu" firstAttribute="leading" secondItem="Us3-4s-zCO" secondAttribute="trailing" constant="8" id="Q9a-CI-xQ4"/>
                                         <constraint firstItem="Us3-4s-zCO" firstAttribute="leading" secondItem="iMq-S8-DjE" secondAttribute="leading" constant="16" id="WPP-bM-c44"/>
                                         <constraint firstAttribute="bottom" secondItem="Us3-4s-zCO" secondAttribute="bottom" constant="7.5" id="Z3k-WG-glk"/>
@@ -667,8 +669,8 @@
                                                 <constraint firstAttribute="width" constant="8" id="nf9-1K-oO1"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ингридиент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TV8-ol-RJp">
-                                            <rect key="frame" x="32" y="0.0" width="72" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ингредиент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TV8-ol-RJp">
+                                            <rect key="frame" x="32" y="0.0" width="71" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="6Gr-uV-wp7"/>
                                             </constraints>
@@ -1384,7 +1386,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Sz5-AJ-Bx0"/>
+        <segue reference="Pwe-2M-n62"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cart" width="30" height="28"/>
