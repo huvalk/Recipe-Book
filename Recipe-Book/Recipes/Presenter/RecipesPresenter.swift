@@ -21,9 +21,17 @@ class RecipesPresenter {
     }
     
     func getRecipes() {
+        self.delegate.setRecipes(recipes: MyRecipeDatabaseService.getMyRecipes())
+    }
+    
+    func updateRecipes() {
         RecipesNetworkService.getRecipes(userId: 1) { (recipes, statusCode) in
             if (200...299) ~= statusCode {
-                self.delegate.setRecipes(recipes: recipes)
+                MyRecipeDatabaseService.clearMyRecipes()
+                
+                for recipe in recipes {
+                    MyRecipeDatabaseService.saveMyRecipe(recipe)
+                }
             } else {
                 print("get recipes: code \(statusCode)")
             }

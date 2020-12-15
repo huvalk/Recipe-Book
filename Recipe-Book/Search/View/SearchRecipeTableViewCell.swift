@@ -28,7 +28,7 @@ class SearchRecipeTableViewCell: UITableViewCell {
     }
     
     func configure(recipe: Recipe) {
-        self.searchCellPresenter = SearchCellPresenter(delegate: self, recipeId: recipe.id)
+        self.searchCellPresenter = SearchCellPresenter(delegate: self, recipe: recipe)
         
         self.recipeName?.text = recipe.title
         self.recipeTime?.text = String(recipe.cookingTime) + " мин"

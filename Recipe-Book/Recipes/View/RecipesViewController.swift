@@ -31,6 +31,7 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     }
     
     @objc func reloadData(refreshControl: UIRefreshControl) {
+        self.recipesPresenter?.updateRecipes()
         self.recipesPresenter?.getRecipes()
         
         self.recipesPresenter?.updateFavorites()
