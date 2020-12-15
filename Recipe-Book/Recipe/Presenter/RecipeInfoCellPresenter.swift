@@ -14,30 +14,30 @@ protocol RecipeInfoCellDelegate {
 
 class RecipeInfoCellPresenter {
     var delegate: RecipeInfoCellDelegate
-    var recipeId: Int
+    var recipe: Recipe
     
-    init(delegate: RecipeInfoCellDelegate, recipeId: Int) {
+    init(delegate: RecipeInfoCellDelegate, recipe: Recipe) {
         self.delegate = delegate
-        self.recipeId = recipeId
+        self.recipe = recipe
     }
     
     func addToFavorites() {
-        RecipesNetworkService.addToFavorites(recipeId: self.recipeId) { (statusCode) in
-            if (200...299) ~= statusCode {
-                self.delegate.fillHeart()
-            } else {
-                print("add to favorites: code \(statusCode)")
-            }
+        RecipesNetworkService.addToFavorites(recipeId: self.recipe.id) { (statusCode) in
+            print("add to favorites: code \(statusCode)")
+        }
+        
+        if FavoriteDatabaseService.saveFavorite(recipe) != nil {
+            self.delegate.fillHeart()
         }
     }
     
     func deleteFromFavorites() {
-        RecipesNetworkService.deleteFromFavorites(recipeId: self.recipeId) { (statusCode) in
-            if (200...299) ~= statusCode {
-                self.delegate.unfillHeart()
-            } else {
-                print("delete from favorites: code \(statusCode)")
-            }
+        RecipesNetworkService.deleteFromFavorites(recipeId: recipe.id) { (statusCode) in
+            print("delete from favorites: code \(statusCode)")
+        }
+        
+        if FavoriteDatabaseService.deleteFavorite(recipe.id) {
+            self.delegate.unfillHeart()
         }
     }
 }

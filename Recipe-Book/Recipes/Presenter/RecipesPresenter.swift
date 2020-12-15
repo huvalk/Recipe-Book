@@ -21,7 +21,6 @@ class RecipesPresenter {
     }
     
     func getRecipes() {
-        print(SettingsService.userModel)
         RecipesNetworkService.getRecipes(userId: 1) { (recipes, statusCode) in
             if (200...299) ~= statusCode {
                 self.delegate.setRecipes(recipes: recipes)
@@ -32,9 +31,17 @@ class RecipesPresenter {
     }
     
     func getFavorites() {
+        self.delegate.setFavorites(favorites: FavoriteDatabaseService.getFavorites())
+    }
+    
+    func updateFavorites() {
         RecipesNetworkService.getFavorites() { (favorites, statusCode) in
             if (200...299) ~= statusCode {
-                self.delegate.setFavorites(favorites: favorites)
+                FavoriteDatabaseService.clearFavorites()
+                
+                for favorite in favorites {
+                    FavoriteDatabaseService.saveFavorite(favorite)
+                }
             } else {
                 print("get favorites: code \(statusCode)")
             }
@@ -43,11 +50,11 @@ class RecipesPresenter {
     
     func deleteFromFavorites(recipeId: Int, indexPath: IndexPath) {
         RecipesNetworkService.deleteFromFavorites(recipeId: recipeId) { (statusCode) in
-            if (200...299) ~= statusCode {
-                self.delegate.deleteCell(recipeId: recipeId, indexPath: indexPath)
-            } else {
-                print("delete from favorites: code \(statusCode)")
-            }
+            print("delete from favorites: code \(statusCode)")
+        }
+        
+        if FavoriteDatabaseService.deleteFavorite(recipeId) {
+            self.delegate.deleteCell(recipeId: recipeId, indexPath: indexPath)
         }
     }
 }

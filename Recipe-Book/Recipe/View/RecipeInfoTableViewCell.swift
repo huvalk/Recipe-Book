@@ -19,7 +19,11 @@ class RecipeInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     
     @IBAction func likeButtonPressed(_ sender: Any) {
-        self.recipeInfoCellPresenter?.deleteFromFavorites()
+        if isFavorite {
+            self.recipeInfoCellPresenter?.deleteFromFavorites()
+        } else {
+            self.recipeInfoCellPresenter?.addToFavorites()
+        }
     }
     
     var recipePresenter: RecipePresenter?
@@ -27,7 +31,7 @@ class RecipeInfoTableViewCell: UITableViewCell {
     var isFavorite: Bool = false
     
     func configure(recipe: Recipe) {
-        self.recipeInfoCellPresenter = RecipeInfoCellPresenter(delegate: self, recipeId: recipe.id)
+        self.recipeInfoCellPresenter = RecipeInfoCellPresenter(delegate: self, recipe: recipe)
         
         self.recipeName.text = recipe.title
         self.recipeTime.text = String(recipe.cookingTime) + " мин"
