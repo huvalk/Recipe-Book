@@ -10,6 +10,7 @@ import Foundation
 protocol RecipesDelegate {
     func setRecipes(recipes: RecipeList)
     func setFavorites(favorites: RecipeList)
+    func deleteCell(recipeId: Int, indexPath: IndexPath)
 }
 
 class RecipesPresenter {
@@ -20,22 +21,48 @@ class RecipesPresenter {
     }
     
     func getRecipes() {
+        self.delegate.setRecipes(recipes: MyRecipeDatabaseService.getMyRecipes())
+    }
+    
+    func updateRecipes() {
         RecipesNetworkService.getRecipes(userId: 1) { (recipes, statusCode) in
             if (200...299) ~= statusCode {
-                self.delegate.setRecipes(recipes: recipes)
+                MyRecipeDatabaseService.clearMyRecipes()
+                
+                for recipe in recipes {
+                    MyRecipeDatabaseService.saveMyRecipe(recipe)
+                }
             } else {
-                print("status code: \(statusCode)")
+                print("get recipes: code \(statusCode)")
             }
         }
     }
     
     func getFavorites() {
-        RecipesNetworkService.getFavorites(userId: 1) { (favorites, statusCode) in
+        self.delegate.setFavorites(favorites: FavoriteDatabaseService.getFavorites())
+    }
+    
+    func updateFavorites() {
+        RecipesNetworkService.getFavorites() { (favorites, statusCode) in
             if (200...299) ~= statusCode {
-                self.delegate.setFavorites(favorites: favorites)
+                FavoriteDatabaseService.clearFavorites()
+                
+                for favorite in favorites {
+                    FavoriteDatabaseService.saveFavorite(favorite)
+                }
             } else {
-                print("status code: \(statusCode)")
+                print("get favorites: code \(statusCode)")
             }
+        }
+    }
+    
+    func deleteFromFavorites(recipeId: Int, indexPath: IndexPath) {
+        RecipesNetworkService.deleteFromFavorites(recipeId: recipeId) { (statusCode) in
+            print("delete from favorites: code \(statusCode)")
+        }
+        
+        if FavoriteDatabaseService.deleteFavorite(recipeId) {
+            self.delegate.deleteCell(recipeId: recipeId, indexPath: indexPath)
         }
     }
 }

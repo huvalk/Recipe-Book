@@ -29,9 +29,12 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
     }
-        
+    
     @objc func reloadData(refreshControl: UIRefreshControl) {
+        self.recipesPresenter?.updateRecipes()
         self.recipesPresenter?.getRecipes()
+        
+        self.recipesPresenter?.updateFavorites()
         self.recipesPresenter?.getFavorites()
         
         refreshControl.endRefreshing()
@@ -71,30 +74,49 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
-        
-        let recipe = self.recipes[indexPath.section][indexPath.item]
-        cell.configure(recipe: recipe)
-        
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Favorite Cell") as! FavoriteCell
+            
+            let recipe = self.recipes[indexPath.section][indexPath.item]
+            cell.configure(recipe: recipe)
+            cell.recipesPresenter = self.recipesPresenter
+            cell.indexPath = indexPath
+            
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "My Recipe Cell") as! RecipeTableViewCell
+            
+            let recipe = self.recipes[indexPath.section][indexPath.item]
+            cell.configure(recipe: recipe)
+            
+            return cell
+
+        default:
+            return UITableViewCell()
+        }
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 115
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier?.starts(with: "show") == true {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             
             let recipe = recipes[indexPath.section][indexPath.item]
             
             let destination = segue.destination as! RecipeViewController
             destination.recipe = recipe
+            
+            if segue.identifier == "showMyRecipe" {
+                destination.showLike = false
+            }
         }
     }
 }
@@ -108,6 +130,13 @@ extension RecipesViewContoller: RecipesDelegate {
     
     func setFavorites(favorites: RecipeList) {
         self.recipes[0] = favorites
+        self.tableView.reloadData()
+    }
+    
+    func deleteCell(recipeId: Int, indexPath: IndexPath) {
+        if let index = self.recipes[0].firstIndex(where: {$0.id == recipeId}) {
+            self.recipes[0].remove(at: index)
+        }
         self.tableView.reloadData()
     }
 }

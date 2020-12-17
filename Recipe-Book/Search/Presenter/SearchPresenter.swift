@@ -8,7 +8,8 @@
 import Foundation
 
 protocol SearchDelegate {
-    func setRecipes(recipes: RecipeList)
+    func setRecipes(searchResult: SearchResult)
+    func addRecipes(searchResult: SearchResult)
 }
 
 class SearchPresenter {
@@ -18,10 +19,14 @@ class SearchPresenter {
         self.delegate = delegate
     }
     
-    func findRecipes(text: String) {
-        SearchNetworkService.findRecipes(text: text) { (recipes, statusCode) in
+    func findRecipes(text: String, page: Int) {
+        SearchNetworkService.findRecipes(text: text, page: page) { (searchResult, statusCode) in
             if (200...299) ~= statusCode {
-                self.delegate.setRecipes(recipes: recipes)
+                if page == 1 {
+                    self.delegate.setRecipes(searchResult: searchResult)
+                } else {
+                    self.delegate.addRecipes(searchResult: searchResult)
+                }
             } else {
                 print("status code: \(statusCode)")
             }

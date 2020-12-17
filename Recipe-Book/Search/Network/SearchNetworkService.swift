@@ -9,14 +9,14 @@ import Foundation
 
 class SearchNetworkService {
     
-    static func findRecipes(text: String, completion: @escaping(RecipeList, Int) -> ()) {
+    static func findRecipes(text: String, page: Int, completion: @escaping(SearchResult, Int) -> ()) {
         let textEncoded = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let path = "/search?text=\(textEncoded ?? "")"
+        let path = "/search?text=\(textEncoded ?? "")&page=\(page)"
         
         NetworkService.shared.getRequest(rawUrl: path) { (responseData, statusCode) in
             do {
-                let recipes = try JSONDecoder().decode(RecipeList.self, from: responseData)
-                completion(recipes, statusCode)
+                let searchResult = try JSONDecoder().decode(SearchResult.self, from: responseData)
+                completion(searchResult, statusCode)
             } catch {
                 print(error)
             }

@@ -7,12 +7,17 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SearchViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var searchPresenter: SearchPresenter?
     var recipes: RecipeList = []
+    var pageNumber: Int = 1
+    var hasNextPage: Bool = true
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,61 +25,33 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         self.hideKeyboardWhenTappedAround()
         
         self.searchPresenter = SearchPresenter(delegate: self)
-        self.searchPresenter?.findRecipes(text: "")
+        self.searchPresenter?.findRecipes(text: "", page: pageNumber)
         
         let refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+
+        self.searchBar.delegate = self
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+
+        if (offsetY > contentHeight - scrollView.frame.size.height - 20) && hasNextPage {
+            self.pageNumber += 1
+
+            self.searchPresenter?.findRecipes(text: "", page: pageNumber)
+        }
     }
     
     @objc func reloadData(refreshControl: UIRefreshControl) {
-        self.searchPresenter?.findRecipes(text: "")
+        self.pageNumber = 1
+        self.hasNextPage = true
+        
+        self.searchPresenter?.findRecipes(text: "", page: 1)
         
         refreshControl.endRefreshing()
-    }
-        
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        case 1:
-            return (recipes.count == 0) ? 1 : recipes.count
-        default:
-            return 0
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Search Cell") as! SearchTableViewCell
-            
-            cell.configure()
-            cell.searchPresenter = searchPresenter
-            
-            return cell
-        case 1:
-            if recipes.count == 0 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "Error Cell") as! ErrorTableViewCell
-                
-                cell.configure(text: "Рецепты не найдены")
-                
-                return cell
-            }
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Recipe Cell") as! RecipeTableViewCell
-            
-            let recipe = self.recipes[indexPath.item]
-            cell.configure(recipe: recipe)
-            
-            return cell
-        default:
-            return UITableViewCell()
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,10 +66,80 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
 }
 
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return (recipes.count == 0) ? 1 : recipes.count
+        case 1:
+            return (recipes.count != 0 && hasNextPage) ? 1 : 0
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            if recipes.count == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Error Cell") as! ErrorTableViewCell
+                
+                cell.configure(text: "Рецепты не найдены")
+                
+                return cell
+            }
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Recipe Cell") as! SearchRecipeTableViewCell
+            
+            let recipe = self.recipes[indexPath.item]
+            cell.configure(recipe: recipe)
+            
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Loading Cell") ?? UITableViewCell()
+            
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.pageNumber = 1
+        
+        self.searchPresenter?.findRecipes(text: searchText, page: 1)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.becomeFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
+}
+
 extension SearchViewController: SearchDelegate {
     
-    func setRecipes(recipes: RecipeList) {
-        self.recipes = recipes
+    func setRecipes(searchResult: SearchResult) {
+        self.recipes = searchResult.recipes
+        self.hasNextPage = searchResult.hasNextPage
+        
+        self.tableView.reloadData()
+    }
+    
+    func addRecipes(searchResult: SearchResult) {
+        self.recipes += searchResult.recipes
+        self.hasNextPage = searchResult.hasNextPage
+        
         self.tableView.reloadData()
     }
 }

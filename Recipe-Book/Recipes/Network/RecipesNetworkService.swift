@@ -22,8 +22,8 @@ class RecipesNetworkService {
         }
     }
     
-    static func getFavorites(userId: Int, completion: @escaping(RecipeList, Int) -> ()) {
-        let path = "/users/\(userId)/favorites"
+    static func getFavorites(completion: @escaping(RecipeList, Int) -> ()) {
+        let path = "/favorites"
         
         NetworkService.shared.getRequest(rawUrl: path) { (responseData, statusCode) in
             do {
@@ -34,4 +34,29 @@ class RecipesNetworkService {
             }
         }
     }
+    
+    static func addToFavorites(recipeId: Int, completion: @escaping(Int) -> ()) {
+        let path = "/favorites/\(recipeId)/add"
+        
+        NetworkService.shared.postRequest(rawUrl: path, data: Data()) { (responseData, statusCode) in
+            do {
+                completion(statusCode)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    static func deleteFromFavorites(recipeId: Int, completion: @escaping(Int) -> ()) {
+        let path = "/favorites/\(recipeId)/delete"
+        
+        NetworkService.shared.postRequest(rawUrl: path, data: Data()) { (responseData, statusCode) in
+            do {
+                completion(statusCode)
+            } catch {
+                print(error)
+            }
+        }
+    }
+
 }
