@@ -8,9 +8,14 @@
 import UIKit
 import PinLayout
 
+protocol NameDelegate: class {
+    func finishedName(range: NSRange, changes: String)
+}
+
 class InputCell: UITableViewCell {
     let label = UILabel()
     let field = UITextField()
+    weak var nameDelegate: NameDelegate?
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -40,11 +45,6 @@ class InputCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-//        label.pin
-//            .top(5)
-//            .left(20)
-//            .sizeToFit()
-        
         field.pin
             .bottom(5)
             .height(40)
@@ -60,5 +60,13 @@ class InputCell: UITableViewCell {
     
     func getData() -> String {
         return field.text ?? ""
+    }
+}
+
+extension InputCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        self.nameDelegate?.finishedName(range: range, changes: string)
+            
+        return true
     }
 }

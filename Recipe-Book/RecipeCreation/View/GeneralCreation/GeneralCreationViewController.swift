@@ -10,6 +10,9 @@ import PinLayout
 
 class GeneralCreationViewController: UIViewController {
     private let tableView = UITableView()
+    private var image: UIImage? = UIImage(named: "Food")
+    private var name: String?
+    private var time: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,13 +73,7 @@ class GeneralCreationViewController: UIViewController {
     }
     
     func getData() -> (image: UIImage, name: String, time: Int) {
-        let imageCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! ImageCell
-
-        let inputCell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! InputCell
-
-        let pickTimeCell = tableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! PickTimeCell
-
-        return (imageCell.getData(), inputCell.getData(), pickTimeCell.getData())
+        return (image ?? UIImage(named: "Food")!, name ?? "", time ?? 0)
     }
 }
 
@@ -88,7 +85,7 @@ extension GeneralCreationViewController: UITableViewDataSource, UITableViewDeleg
         case 1:
             return 50
         case 2:
-            return 80
+            return 150
         default:
             return 20
         }
@@ -107,15 +104,18 @@ extension GeneralCreationViewController: UITableViewDataSource, UITableViewDeleg
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageCell") as! ImageCell
             cell.presenter = self
+            cell.configure(image: self.image ?? UIImage(named: "Food")!)
             
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputCell") as! InputCell
+            cell.nameDelegate = self
             cell.configure(with: "Название")
             
             return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PickTimeCell") as! PickTimeCell
+            cell.timeDelegate = self
             
             return cell
         default:
@@ -131,5 +131,20 @@ extension GeneralCreationViewController: TableViewControllerPresenter {
     
     func imageSelected(image: UIImage?) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension GeneralCreationViewController: NameDelegate {
+    func finishedName(range: NSRange, changes: String) {
+        let name = self.name as NSString?
+        
+        name?.replacingCharacters(in: range, with: changes)
+        self.name = name as String? ?? ""
+    }
+}
+
+extension GeneralCreationViewController: TimeDelegate {
+    func timePicked(time: Int) {
+        self.time = time
     }
 }

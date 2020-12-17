@@ -7,7 +7,6 @@
 
 import Foundation
 
-// TODO Сделать рефактор! Убрать дублирвоание, сделать наследование
 class Ingredient {
     enum AmountType: Int {
         case count = 0

@@ -57,9 +57,11 @@ class MainCreationViewController: UIViewController {
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
-        let data = self.generalViewController.getData()
+        let general = self.generalViewController.getData()
+        let ingredients = self.ingredientsViewController.getData()
+        let steps = self.stepsViewController.getData()
         
-        print(data.name)
+        
     }
 }
 

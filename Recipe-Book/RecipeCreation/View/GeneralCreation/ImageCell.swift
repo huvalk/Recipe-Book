@@ -71,7 +71,7 @@ class ImageCell: UITableViewCell {
             .width(50)
     }
 
-    func configure() {
+    func configure(image: UIImage) {
         setNeedsLayout()
     }
     
