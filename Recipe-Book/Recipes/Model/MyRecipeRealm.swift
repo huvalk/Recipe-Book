@@ -10,6 +10,7 @@ import RealmSwift
 
 class MyRecipeRealm: Object {
     @objc dynamic var id: Int = 0
+    @objc dynamic var realmId = 0
     @objc dynamic var author: Int = 0
     @objc dynamic var title: String = ""
     @objc dynamic var cookingTime: Int = 0
