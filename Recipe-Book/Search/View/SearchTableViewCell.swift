@@ -7,18 +7,20 @@
 
 import UIKit
 
-class SearchTableViewCell: UITableViewCell, UITextFieldDelegate {
+class SearchTableViewCell: UITableViewCell, UITextFieldDelegate, UISearchBarDelegate {
     
-    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var searchPresenter: SearchPresenter?
+    var controller: SearchViewController?
     
     func configure() {
-        self.searchField.delegate = self
+        searchBar.delegate = self
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.searchPresenter?.findRecipes(text: textField.text ?? "")
-        return true
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        controller?.pageNumber = 1
+        
+        self.searchPresenter?.findRecipes(text: searchText, page: 1)
     }
 }

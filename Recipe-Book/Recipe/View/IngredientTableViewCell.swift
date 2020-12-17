@@ -12,6 +12,6 @@ class IngredientTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientName: UILabel!
     
     func configure(name: String) {
-        self.ingredientName.text = name
+        self.ingredientName.text = (name.first?.uppercased() ?? "") + name.dropFirst()
     }
 }

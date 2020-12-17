@@ -11,9 +11,10 @@ import Cosmos
 class RecipeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
-
+    
     var recipe: Recipe?
     var recipePresenter: RecipePresenter?
+    var showLike: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,10 @@ class RecipeViewController: UIViewController, UITableViewDataSource, UITableView
             
             cell.configure(recipe: recipe ?? emptyRecipe)
             cell.recipePresenter = self.recipePresenter
+            
+            if !showLike {
+                cell.hideLike()
+            }
             
             return cell
         case 1:
