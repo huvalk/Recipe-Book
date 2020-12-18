@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol PhoneDelegate {
+protocol PhoneDelegate: class {
     func showProgress()
     func hideProgress()
     func phoneDidSucceed(phone: String)
@@ -16,7 +16,7 @@ protocol PhoneDelegate {
 }
 
 class PhonePresenter {
-    var delegate: PhoneDelegate
+    weak var delegate: PhoneDelegate?
     var phone: String? = "123123123"
     var code: String? = "1111"
 
@@ -26,33 +26,42 @@ class PhonePresenter {
     
     func sendCode(phone: String) {
         if phone.isEmpty {
-            self.delegate.phoneDidFailed(message: "Введите телефон")
+            self.delegate?.phoneDidFailed(message: "Введите телефон")
             return
         }
         
-        delegate.showProgress()
-        PhoneNetworkService.sendCode(phone: phone) { [weak self] (response, statusCode) in
-            self?.delegate.hideProgress()
+        delegate?.showProgress()
+        PhoneNetworkService.sendCode(phone: phone) {
+            [weak self] (response, statusCode) in
+            guard let selfPointer = self else {
+                fatalError("No self to finish")
+            }
+            guard let delegatePointer = selfPointer.delegate else {
+                fatalError("No delegate to finish")
+            }
+            
+            
+            delegatePointer.hideProgress()
             if response != nil && (200...299) ~= statusCode {
-                self?.code = response
-                self?.phone = phone
-                self?.delegate.showMessage(message: "Код отправлен")
+                selfPointer.code = response
+                selfPointer.phone = phone
+                delegatePointer.showMessage(message: "Код отправлен")
             } else {
-                self?.delegate.phoneDidFailed(message: "Something wrong. \(statusCode)")
+                delegatePointer.phoneDidFailed(message: "Something wrong. \(statusCode)")
             }
         }
     }
     
     func confirmPhone(code: String) {
         if code.isEmpty {
-            self.delegate.phoneDidFailed(message: "Введите код")
+            self.delegate?.phoneDidFailed(message: "Введите код")
             return
         }
         
         if code == self.code {
-            self.delegate.phoneDidSucceed(phone: phone ?? "")
+            self.delegate?.phoneDidSucceed(phone: phone ?? "")
         } else {
-            self.delegate.phoneDidFailed(message: "Код не совпадает")
+            self.delegate?.phoneDidFailed(message: "Код не совпадает")
         }
     }
 }

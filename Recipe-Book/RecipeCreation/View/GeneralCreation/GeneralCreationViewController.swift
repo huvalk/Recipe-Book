@@ -55,7 +55,8 @@ class GeneralCreationViewController: UIViewController {
         guard let info = notification.userInfo else {
             return
         }
-        guard let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size else {
+        guard let keyboardSize = info[UIResponder.keyboardFrameEndUserInfoKey]
+                as? CGRect else {
             return
         }
         
@@ -72,8 +73,8 @@ class GeneralCreationViewController: UIViewController {
         tableView.scrollIndicatorInsets = tableView.contentInset
     }
     
-    func getData() -> (image: UIImage, name: String, time: Int) {
-        return (image ?? UIImage(named: "Food")!, name ?? "", time ?? 0)
+    func getData() -> (image: Data, name: String, time: Int) {
+        return (image!.pngData()!, name ?? "", time ?? 0)
     }
 }
 
@@ -136,10 +137,9 @@ extension GeneralCreationViewController: TableViewControllerPresenter {
 
 extension GeneralCreationViewController: NameDelegate {
     func finishedName(range: NSRange, changes: String) {
-        let name = self.name as NSString?
-        
-        name?.replacingCharacters(in: range, with: changes)
-        self.name = name as String? ?? ""
+        let text = (name as NSString?) ?? ""
+        let updatedString = text.replacingCharacters(in: range, with: changes)
+        self.name = updatedString as! String
     }
 }
 

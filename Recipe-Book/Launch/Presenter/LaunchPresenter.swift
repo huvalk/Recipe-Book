@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol LaunchDelegate {
+protocol LaunchDelegate: class {
     func showProgress()
     func hideProgress()
     func launchDidSucceed()
@@ -17,7 +17,7 @@ protocol LaunchDelegate {
 // LaunchViewOutput - LaunchPresenter
 // LaunchViewInput - LaunchViewController
 class LaunchPresenter {
-    var delegate: LaunchDelegate
+    weak var delegate: LaunchDelegate?
 
     init(delegate: LaunchDelegate) {
         self.delegate = delegate
@@ -25,15 +25,23 @@ class LaunchPresenter {
     
     func authTry() {
         guard let user = SettingsService.userModel else {
-            delegate.launchDidFailed()
+            self.delegate?.launchDidFailed()
             return
         }
         
-        LaunchNetworkService.checkSession(session: user.session) {statusCode in
-            if (200...299) ~= statusCode {
-                self.delegate.launchDidSucceed()
+        LaunchNetworkService.checkSession(session: user.session) {
+            [weak self] statusCode in
+            guard let selfPointer = self else {
+                fatalError("No self to finish")
+            }
+            guard let delegatePointer = selfPointer.delegate else {
+                fatalError("No delegate to finish")
+            }
+            
+            if (200...299) ~= statusCode || statusCode == -1000 {
+                delegatePointer.launchDidSucceed()
             } else {
-                self.delegate.launchDidFailed()
+                delegatePointer.launchDidFailed()
             }
         }
     }

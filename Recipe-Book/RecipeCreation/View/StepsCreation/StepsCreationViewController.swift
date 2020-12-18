@@ -112,10 +112,10 @@ extension StepsCreationViewController: UICollectionViewDelegateFlowLayout, UICol
 
 extension StepsCreationViewController: StepDelegate {
     func finishedEditing(index: Int, range: NSRange, changes: String) {
-        let text = steps[index] as NSString?
+        let text = steps[index]
         
-        text?.replacingCharacters(in: range, with: changes)
-        steps[index] = text as String? ?? ""
+        let updatedString = (text as NSString?)?.replacingCharacters(in: range, with: changes)
+        steps[index] = updatedString as! String
     }
     
     func removeStepClicked(index: Int) {

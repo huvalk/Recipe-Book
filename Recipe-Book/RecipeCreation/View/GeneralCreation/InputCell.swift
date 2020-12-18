@@ -38,6 +38,7 @@ class InputCell: UITableViewCell {
         field.returnKeyType = UIReturnKeyType.done
         field.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         field.placeholder = "Название"
+        field.delegate = self
         
         [field].forEach { contentView.addSubview($0) }
     }
@@ -59,13 +60,16 @@ class InputCell: UITableViewCell {
     }
     
     func getData() -> String {
-        return field.text ?? ""
+        var text = field.text ?? "Мой рецепт"
+        if text.isEmpty {
+            text = "Мой рецепт"
+        }
+        return text
     }
 }
 
 extension InputCell: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        self.nameDelegate?.finishedName(range: range, changes: string)
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {        self.nameDelegate?.finishedName(range: range, changes: string)
             
         return true
     }

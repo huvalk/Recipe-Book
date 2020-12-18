@@ -46,8 +46,11 @@ class PresentationController: UIPresentationController {
             return
         }
         
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        self.additioanlHeight = keyboardSize?.height ?? 100
+        guard let keyboardSize = info[UIResponder.keyboardFrameEndUserInfoKey]
+                as? CGRect else {
+            return
+        }
+        self.additioanlHeight = keyboardSize.height
 
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
             containerView.setNeedsLayout()

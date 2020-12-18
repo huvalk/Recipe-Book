@@ -10,12 +10,15 @@ import PinLayout
 
 class MainCreationViewController: UIViewController {
     @IBOutlet weak var pageSegmentedControll: CustomSegmentedControl!
-    let generalViewController = GeneralCreationViewController()
-    let stepsViewController = StepsCreationViewController()
-    let ingredientsViewController = IngredientsCreationViewController()
+    lazy var generalViewController = GeneralCreationViewController()
+    lazy var stepsViewController = StepsCreationViewController()
+    lazy var ingredientsViewController = IngredientsCreationViewController()
+    private var presenter: MainCreationPresenter?
+    let spinner = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = MainCreationPresenter(delegate: self)
         
         setup()
         hideKeyboardWhenTappedAround()
@@ -36,6 +39,11 @@ class MainCreationViewController: UIViewController {
             $0.didMove(toParent: self)
             setupConstraints(controller: $0)
          }
+        
+        self.view.addSubview(spinner)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     private func setupSegmentControll() {
@@ -61,7 +69,30 @@ class MainCreationViewController: UIViewController {
         let ingredients = self.ingredientsViewController.getData()
         let steps = self.stepsViewController.getData()
         
+        var formatedIngredients: [String] = []
+        for ingredient in ingredients {
+            formatedIngredients.append("\(ingredient.name) \(ingredient.amountType) \(ingredient.amountType.string)")
+        }
         
+        self.presenter?.saveRecipe(image: general.image, name: general.name, timeToCook: general.time, ingredients: formatedIngredients, steps: steps)
+    }
+}
+
+extension MainCreationViewController: MainCreationDelegate {
+    func startLoad() {
+        self.spinner.startAnimating()
+    }
+    
+    func endLoad() {
+        self.spinner.stopAnimating()
+    }
+    
+    func loadSucceed() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func loadFailed() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

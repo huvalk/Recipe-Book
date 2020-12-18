@@ -59,8 +59,12 @@ class RegistrationViewController: UIViewController {
             shiftContainer.constant = -100
             return
         }
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let constant = -(keyboardSize?.height ?? 100) * 3 / 5
+        guard let keyboardSize = info[UIResponder.keyboardFrameEndUserInfoKey]
+                as? CGRect else {
+            return
+        }
+        
+        let constant = -keyboardSize.height * 3 / 5
         animateShift(pos: constant, alpha: 0.0)
     }
     

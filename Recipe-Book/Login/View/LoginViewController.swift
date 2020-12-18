@@ -62,8 +62,12 @@ class LoginViewController: UIViewController {
             shiftConstraint.constant = -100
             return
         }
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let constant = -(keyboardSize?.height ?? 100) * 2 / 3
+        guard let keyboardSize = info[UIResponder.keyboardFrameEndUserInfoKey]
+                as? CGRect else {
+            return
+        }
+        
+        let constant = -keyboardSize.height * 2 / 3
         animateShift(pos: constant, alpha: 0.0)
     }
     
@@ -104,7 +108,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func lostPswdButtonTouched(_ sender: Any) {
-        
+        let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+
+        mainViewController.modalPresentationStyle = .fullScreen
+        self.present(mainViewController, animated: true)
     }
     
     deinit {
