@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol LoginDelegate {
+protocol LoginDelegate: class {
     func showProgress()
     func hideProgress()
     func loginDidSucceed()
@@ -15,7 +15,7 @@ protocol LoginDelegate {
 }
 
 class LoginPresenter {
-    var delegate: LoginDelegate
+    weak var delegate: LoginDelegate?
     var modelUser: LoginUser
     
     init(delegate: LoginDelegate, model: LoginUser) {
@@ -30,19 +30,27 @@ class LoginPresenter {
     
     func login(login: String, password: String) {
         if login.isEmpty || password.isEmpty {
-            self.delegate.loginDidFailed(message: "Логин или пароль не верны")
+            self.delegate?.loginDidFailed(message: "Логин или пароль не верны")
             return
         }
         modelUser.login = login
         modelUser.password = password
         
-        delegate.showProgress()
-        LoginNetworkService.login(user: modelUser) { [weak self] (response, statusCode) in
-            self?.delegate.hideProgress()
+        delegate?.showProgress()
+        LoginNetworkService.login(user: modelUser) {
+            [weak self] (response, statusCode) in
+            guard let selfPointer = self else {
+                fatalError("No self to finish")
+            }
+            guard let delegatePointer = selfPointer.delegate else {
+                fatalError("No delegate to finish")
+            }
+            
+            delegatePointer.hideProgress()
             if response != nil && (200...299) ~= statusCode {
-                self?.delegate.loginDidSucceed()
+                delegatePointer.loginDidSucceed()
             } else {
-                self?.delegate.loginDidFailed(message: "Something wrong. \(statusCode)")
+                delegatePointer.loginDidFailed(message: "Something wrong. \(statusCode)")
             }
         }
     }

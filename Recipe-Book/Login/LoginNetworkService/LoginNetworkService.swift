@@ -23,6 +23,7 @@ class LoginNetworkService {
         
         NetworkService.shared.login(rawUrl: path, data: data) { (response, statusCode)  in
             do {
+                NetworkService.shared.uploadLocalRecipes()
                 completion(response, statusCode)
             } catch {
                 print("Invalid login json")

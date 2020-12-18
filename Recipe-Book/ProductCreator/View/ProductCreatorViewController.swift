@@ -52,6 +52,9 @@ class ProductCreatorViewController: UIViewController {
     }
     
     private func initScreen() {
+        nameField.delegate = self
+        weightField.delegate = self
+        
         self.saveButton.layer.cornerRadius = 5
         self.weightField.keyboardType = UIKeyboardType.decimalPad
     }
@@ -106,6 +109,13 @@ class ProductCreatorViewController: UIViewController {
     
     @IBAction func closeBtnTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProductCreatorViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

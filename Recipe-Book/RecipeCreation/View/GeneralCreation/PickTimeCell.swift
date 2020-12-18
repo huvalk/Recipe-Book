@@ -8,8 +8,16 @@
 import UIKit
 import PinLayout
 
+protocol TimeDelegate: class {
+    func timePicked(time: Int)
+}
+
 class PickTimeCell: UITableViewCell {
+    let timeToCookLabel = UILabel()
     let picker = UIPickerView()
+    weak var timeDelegate: TimeDelegate?
+    private var minute = 0
+    private var hours = 0
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -24,17 +32,31 @@ class PickTimeCell: UITableViewCell {
     private func setup() {
         picker.dataSource = self
         picker.delegate = self
+        picker.backgroundColor = UIColor(named: "TransperentGreen")
+        picker.layer.cornerRadius = 15.0
+        timeToCookLabel.textColor = .black
+        timeToCookLabel.font = UIFont.systemFont(ofSize: 16)
+        timeToCookLabel.text = "Время на готовку"
+
+        timeToCookLabel.textAlignment = NSTextAlignment.center;
         
-        [picker].forEach { contentView.addSubview($0) }
+        [picker, timeToCookLabel].forEach { contentView.addSubview($0) }
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        let timeToCookSize = timeToCookLabel.font.sizeOfString(string: timeToCookLabel.text!, constrainedToWidth: 0.0)
         
-        picker.pin
-            .vCenter()
+        timeToCookLabel.pin
+            .top(15.0)
             .hCenter()
-            .height(80)
+            .height(timeToCookSize.height + 14.0)
+            .width(timeToCookSize.width + 20.0)
+        picker.pin
+            .below(of: timeToCookLabel)
+            .hCenter()
+            .marginTop(-30.0)
+            .height(88)
             .right(45)
     }
 
@@ -72,5 +94,18 @@ extension PickTimeCell: UIPickerViewDataSource, UIPickerViewDelegate {
         default:
             return ":"
         }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch component {
+        case 0:
+            hours = row * 60
+        case 2:
+            minute = row
+        default:
+            return
+        }
+        
+        self.timeDelegate?.timePicked(time: hours + minute)
     }
 }

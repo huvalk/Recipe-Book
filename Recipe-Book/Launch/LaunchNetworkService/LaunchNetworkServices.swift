@@ -23,6 +23,13 @@ class LaunchNetworkService {
         
         NetworkService.shared.postRequest(rawUrl: path, data: jsonData) { (json, statusCode)  in
             do {
+                if (200...299) ~= statusCode {
+                    let user = try JSONDecoder().decode(User.self, from: json)
+                    SettingsService.userModel = user
+                    
+                    NetworkService.shared.uploadLocalRecipes()
+                }
+
                 completion(statusCode)
             } catch {
                 print("Invalid login json")

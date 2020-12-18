@@ -36,6 +36,9 @@ class PhoneViewController: UIViewController {
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
         
+        phoneTextField.delegate = self
+        codeTextField.delegate = self
+        
         view.addSubview(spinner)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -55,12 +58,17 @@ class PhoneViewController: UIViewController {
     
     @objc private func keyboardWasShown(notification: Notification) {
         phoneLabel.isHidden = true
+        
         guard let info = notification.userInfo else {
             shiftContainer.constant = -100
             return
         }
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let constant = -(keyboardSize?.height ?? 100) * 3 / 5
+        guard let keyboardSize = info[UIResponder.keyboardFrameEndUserInfoKey]
+                as? CGRect else {
+            return
+        }
+        
+        let constant = -keyboardSize.height * 3 / 5
         animateShift(pos: constant, alpha: 0.0)
     }
     
@@ -100,6 +108,13 @@ class PhoneViewController: UIViewController {
     deinit {
         print("dismiss")
         unregisterForKeyboardNotifications()
+    }
+}
+
+extension PhoneViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
