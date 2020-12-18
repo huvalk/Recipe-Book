@@ -17,8 +17,8 @@ class StepsCreationViewLayout: UICollectionViewLayout {
     // MARK: - Private Properties
     private var cachedItemsAttributes: [IndexPath: UICollectionViewLayoutAttributes] = [:]
     open var itemSize = CGSize(width: 150, height: 100)
-    private let spacing: CGFloat = 5
-    private let spacingWhenFocused: CGFloat = 10
+    private let spacing: CGFloat = 35
+    private let spacingWhenFocused: CGFloat = 35
 
     private var continuousFocusedIndex: CGFloat {
         guard let collectionView = collectionView else { return 0 }
@@ -75,7 +75,8 @@ class StepsCreationViewLayout: UICollectionViewLayout {
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         guard let collectionView = collectionView else { return nil }
         attributes.frame.size = itemSize
-        attributes.frame.origin.y = (collectionView.bounds.height - itemSize.height) / 2
+//        attributes.frame.origin.y = (collectionView.bounds.height - itemSize.height) / 2
+        attributes.frame.origin.y = 10
         attributes.frame.origin.x = CGFloat(indexPath.item) * (itemSize.width + spacing)
         return attributes
     }

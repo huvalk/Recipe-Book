@@ -8,9 +8,14 @@
 import UIKit
 import PinLayout
 
+protocol NameDelegate: class {
+    func finishedName(range: NSRange, changes: String)
+}
+
 class InputCell: UITableViewCell {
     let label = UILabel()
     let field = UITextField()
+    weak var nameDelegate: NameDelegate?
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -33,17 +38,13 @@ class InputCell: UITableViewCell {
         field.returnKeyType = UIReturnKeyType.done
         field.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         field.placeholder = "Название"
+        field.delegate = self
         
         [field].forEach { contentView.addSubview($0) }
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-//        label.pin
-//            .top(5)
-//            .left(20)
-//            .sizeToFit()
         
         field.pin
             .bottom(5)
@@ -59,6 +60,22 @@ class InputCell: UITableViewCell {
     }
     
     func getData() -> String {
-        return field.text ?? ""
+        var text = field.text ?? "Мой рецепт"
+        if text.isEmpty {
+            text = "Мой рецепт"
+        }
+        return text
+    }
+}
+
+extension InputCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {        self.nameDelegate?.finishedName(range: range, changes: string)
+            
+        return true
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

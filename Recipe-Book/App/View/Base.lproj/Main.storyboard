@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNI-aP-axp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNI-aP-axp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -79,9 +79,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbN-vT-Shr">
-                                        <rect key="frame" x="205" y="340" width="150" height="36"/>
+                                        <rect key="frame" x="294" y="340" width="61" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Забыли пароль?">
+                                        <state key="normal" title="Позже">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -348,7 +348,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFN-m3-rxZ" customClass="CosmosView" customModule="Cosmos">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFN-m3-rxZ" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="124" y="36" width="120" height="20"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
@@ -445,7 +445,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ssd-IO-xC2" customClass="CosmosView" customModule="Cosmos">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssd-IO-xC2" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="124" y="36" width="120" height="20"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
@@ -576,7 +576,7 @@
                                                         <constraint firstAttribute="height" constant="15" id="ihz-ah-9KU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFe-XY-jum" customClass="CosmosView" customModule="Cosmos">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFe-XY-jum" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="131" y="35.5" width="120" height="20"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -786,7 +786,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Новый рецепт" id="uKl-lX-0UG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="DuD-cs-lW7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
                                 <rect key="frame" x="56" y="0.0" width="338" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -966,7 +966,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-ej-8D6" customClass="CosmosView" customModule="Cosmos">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-ej-8D6" customClass="CosmosView" customModule="Cosmos">
                                             <rect key="frame" x="124" y="36" width="120" height="20"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
@@ -1106,14 +1106,14 @@
                                                         <action selector="boughtClickedWithSender:" destination="JU1-mn-LQ9" eventType="touchUpInside" id="7CE-ii-oLv"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KET-8V-raD">
-                                                    <rect key="frame" x="369" y="20" width="25" height="22"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KET-8V-raD">
+                                                    <rect key="frame" x="369" y="20" width="22" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="ZnB-zf-nCI"/>
                                                         <constraint firstAttribute="width" constant="25" id="mDK-Ra-31i"/>
                                                     </constraints>
                                                     <color key="tintColor" name="PastelDarkGreen"/>
-                                                    <state key="normal" image="scalemass.fill" catalog="system"/>
+                                                    <state key="normal" image="Scales"/>
                                                     <connections>
                                                         <action selector="editButtonTapped:" destination="JU1-mn-LQ9" eventType="touchUpInside" id="6T9-dz-4wZ"/>
                                                     </connections>
@@ -1172,10 +1172,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="PastelDarkGreen"/>
                                 <state key="normal" image="trash" catalog="system"/>
+                                <connections>
+                                    <action selector="deleteBtnClicked:" destination="lVb-SO-gCC" eventType="touchUpInside" id="WBW-JG-sDc"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="deleteBtnClicked:" destination="lVb-SO-gCC" id="C25-jG-CiP"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Zah-Rv-bOo">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jde-2z-iaM">
@@ -1219,7 +1219,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YR0-M2-jhI">
                                 <rect key="frame" x="20" y="172" width="249" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iE9-zW-4vn">
                                 <rect key="frame" x="20" y="90" width="374" height="34"/>
@@ -1303,7 +1303,7 @@
                                             <constraint firstAttribute="height" constant="50" id="30C-da-Dzk"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" textContentType="tel"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8g5-3d-51B">
                                         <rect key="frame" x="21" y="200" width="332" height="41"/>
@@ -1348,7 +1348,7 @@
                                             <constraint firstAttribute="height" constant="50" id="2wM-ud-ZYO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="one-time-code"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" textContentType="one-time-code"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqE-oG-tNy">
                                         <rect key="frame" x="167.5" y="326" width="39.5" height="21"/>
@@ -1426,6 +1426,20 @@
             <point key="canvasLocation" x="5043" y="743"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="GfN-ej-8D6">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+        <designable name="MFN-m3-rxZ">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+        <designable name="iFe-XY-jum">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+        <designable name="ssd-IO-xC2">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="Sz5-AJ-Bx0"/>
     </inferredMetricsTieBreakers>
@@ -1435,13 +1449,13 @@
         <image name="Heart" width="18" height="16"/>
         <image name="HeartFilled" width="18" height="16"/>
         <image name="Save" width="28" height="28"/>
+        <image name="Scales" width="288" height="288"/>
         <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="scalemass.fill" catalog="system" width="128" height="119"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="PastelDarkGreen">
             <color red="0.60392156862745094" green="0.65098039215686276" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

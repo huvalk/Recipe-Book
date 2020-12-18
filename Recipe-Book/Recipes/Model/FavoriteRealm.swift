@@ -14,6 +14,7 @@ class FavoriteRealm: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var cookingTime: Int = 0
     @objc dynamic var rating: Double = 0
+    @objc dynamic var photo: String = ""
     let ingredients: List<String> = List<String>()
     let steps: List<String> = List<String>()
     
@@ -25,6 +26,7 @@ class FavoriteRealm: Object {
         favorite.title = recipe.title
         favorite.cookingTime = recipe.cookingTime
         favorite.rating = recipe.rating
+        favorite.photo = recipe.photo
         for ingredient in recipe.ingredients {
             favorite.ingredients.append(ingredient)
         }
@@ -36,6 +38,6 @@ class FavoriteRealm: Object {
     }
     
     func toRecipe() -> Recipe {
-        return Recipe(id: self.id, author: self.author, title: self.title, cookingTime: self.cookingTime, rating: self.rating, ingredients: Array(self.ingredients), steps: Array(self.steps), isFavorites: true)
+        return Recipe(id: self.id, author: self.author, title: self.title, cookingTime: self.cookingTime, rating: self.rating, ingredients: Array(self.ingredients), steps: Array(self.steps), isFavorites: true, photo: self.photo)
     }
 }
