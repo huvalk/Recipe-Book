@@ -36,6 +36,10 @@ class RegistrationViewController: UIViewController {
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
         
+        passwordTextField.delegate = self
+        loginTextField.delegate = self
+        repeatPasswordTextField.delegate = self
+        
         view.addSubview(spinner)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -104,6 +108,13 @@ class RegistrationViewController: UIViewController {
     deinit {
         print("dismiss")
         unregisterForKeyboardNotifications()
+    }
+}
+
+extension RegistrationViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

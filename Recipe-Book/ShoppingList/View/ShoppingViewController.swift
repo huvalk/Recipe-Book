@@ -35,7 +35,10 @@ class ShoppingViewController: UIViewController {
     @IBAction func deleteBtnClicked(_ sender: Any) {
         self.productsToDisplay.removeAll()
         presenter?.clearProducts()
-        table.reloadData()
+        
+        UIView.transition(with: table, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.table.reloadData()
+        }, completion: nil)
     }
     
     @IBAction func addBtnClicked(_ sender: Any) {
@@ -47,7 +50,6 @@ class ShoppingViewController: UIViewController {
         
         present(creatorViewController, animated: true)
     }
-    
 }
 
 extension ShoppingViewController: ShoppingDelegate {
@@ -61,7 +63,9 @@ extension ShoppingViewController: ShoppingDelegate {
     
     func updateProducts(_ products: [Product]) {
         self.productsToDisplay = products
-        table.reloadData()
+        UIView.transition(with: table, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.table.reloadData()
+        }, completion: nil)
     }
     
     func clearProducts() {
@@ -95,7 +99,9 @@ extension ShoppingViewController: DataTarget {
         let product = Product(ingredient: ingredient)
         self.productsToDisplay.append(product)
         presenter?.addProduct(product)
-        table.reloadData()
+        UIView.transition(with: table, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.table.reloadData()
+        }, completion: nil)
     }
     
     func editFinished(index: IndexPath, ingredient: Ingredient) {

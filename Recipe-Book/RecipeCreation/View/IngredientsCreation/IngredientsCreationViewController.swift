@@ -125,7 +125,9 @@ extension IngredientsCreationViewController: InredientCellDelegate {
 extension IngredientsCreationViewController: DataTarget {
     func createFinished(ingredient: Ingredient) {
         self.ingredients.append(ingredient)
-        tableView.reloadData()
+        UIView.transition(with: tableView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.tableView.reloadData()
+        }, completion: nil)
     }
     
     func editFinished(index: IndexPath, ingredient: Ingredient) {

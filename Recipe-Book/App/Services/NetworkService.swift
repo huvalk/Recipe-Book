@@ -41,7 +41,6 @@ final class NetworkService {
                         DispatchQueue.main.async {
                             _ = CreationDatabaseService.updateRecipeInfo(realmId: realmId, id: savedRecipe.id, author: savedRecipe.author, photoUrl: savedRecipe.photo)
                         }
-                        
                     }
                 }
             }

@@ -38,11 +38,13 @@ class LoginViewController: UIViewController {
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
         
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+        
         view.addSubview(spinner)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    
     }
     
     private func registerForKeyboardNotifications() {
@@ -116,6 +118,13 @@ class LoginViewController: UIViewController {
     
     deinit {
         unregisterForKeyboardNotifications()
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

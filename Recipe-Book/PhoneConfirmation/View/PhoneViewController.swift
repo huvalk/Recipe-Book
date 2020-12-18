@@ -36,6 +36,9 @@ class PhoneViewController: UIViewController {
         errorLabel.layer.masksToBounds = true
         errorLabel.alpha = 0.0
         
+        phoneTextField.delegate = self
+        codeTextField.delegate = self
+        
         view.addSubview(spinner)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -105,6 +108,13 @@ class PhoneViewController: UIViewController {
     deinit {
         print("dismiss")
         unregisterForKeyboardNotifications()
+    }
+}
+
+extension PhoneViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
