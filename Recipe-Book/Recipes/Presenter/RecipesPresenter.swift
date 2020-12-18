@@ -25,7 +25,10 @@ class RecipesPresenter {
     }
     
     func updateRecipes() {
-        RecipesNetworkService.getRecipes(userId: 1) { (recipes, statusCode) in
+        let userId = SettingsService.userModel.ID
+        print("userId: \(userId)")
+        
+        RecipesNetworkService.getRecipes(userId: userId) { (recipes, statusCode) in
             if (200...299) ~= statusCode {
                 MyRecipeDatabaseService.clearMyRecipes()
                 

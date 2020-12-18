@@ -131,6 +131,7 @@ extension GeneralCreationViewController: TableViewControllerPresenter {
     }
     
     func imageSelected(image: UIImage?) {
+        self.image = image
         self.dismiss(animated: true, completion: nil)
     }
 }
