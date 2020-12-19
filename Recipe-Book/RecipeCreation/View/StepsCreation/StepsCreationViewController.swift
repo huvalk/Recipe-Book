@@ -16,7 +16,7 @@ class StepsCreationViewController: UIViewController {
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor(named: "TransperentGreen")
+        cv.backgroundColor = .clear
         return cv
     }()
     
@@ -41,7 +41,7 @@ class StepsCreationViewController: UIViewController {
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.bottomConstraint?.isActive = true
-        self.view.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0).isActive = true
+        self.view.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 5).isActive = true
         self.view.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor, constant: 0).isActive = true
         self.view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor, constant: 0).isActive = true
     }
