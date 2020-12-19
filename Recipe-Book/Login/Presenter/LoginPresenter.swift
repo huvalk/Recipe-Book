@@ -12,6 +12,7 @@ protocol LoginDelegate: class {
     func hideProgress()
     func loginDidSucceed()
     func loginDidFailed(message: String)
+    func showMessage(message: String)
 }
 
 class LoginPresenter {
@@ -51,6 +52,33 @@ class LoginPresenter {
                 delegatePointer.loginDidSucceed()
             } else {
                 delegatePointer.loginDidFailed(message: "Something wrong. \(statusCode)")
+            }
+        }
+    }
+    
+    func forgotPassword(login: String) {
+        if login.isEmpty {
+            self.delegate?.loginDidFailed(message: "Введите логин")
+            return
+        }
+        modelUser.login = login
+        modelUser.password = ""
+        
+        delegate?.showProgress()
+        LoginNetworkService.forgotPassword(user: modelUser) {
+            [weak self] (statusCode) in
+            guard let selfPointer = self else {
+                fatalError("No self to finish")
+            }
+            guard let delegatePointer = selfPointer.delegate else {
+                fatalError("No delegate to finish")
+            }
+            
+            delegatePointer.hideProgress()
+            if (200...299) ~= statusCode {
+                delegatePointer.showMessage(message: "Введите пароль из смс")
+            } else {
+                delegatePointer.loginDidFailed(message: "Пользователь не найден")
             }
         }
     }

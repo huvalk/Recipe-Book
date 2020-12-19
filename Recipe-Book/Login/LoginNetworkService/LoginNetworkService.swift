@@ -17,7 +17,7 @@ class LoginNetworkService {
         do {
             data = try JSONEncoder().encode(user)
         } catch {
-            print("json serialization error")
+            debugPrint("json serialization error")
             return
         }
         
@@ -26,7 +26,27 @@ class LoginNetworkService {
                 NetworkService.shared.uploadLocalRecipes()
                 completion(response, statusCode)
             } catch {
-                print("Invalid login json")
+                debugPrint("Invalid login json")
+            }
+        }
+    }
+    
+    static func forgotPassword(user: LoginUser, completion: @escaping(Int) -> ()) {
+        let path = "/login/restore"
+        
+        var data = Data()
+        do {
+            data = try JSONEncoder().encode(user)
+        } catch {
+            debugPrint("json serialization error")
+            return
+        }
+        
+        NetworkService.shared.postRequest(rawUrl: path, data: data) { (response, statusCode)  in
+            do {
+                completion(statusCode)
+            } catch {
+                debugPrint("Invalid login json")
             }
         }
     }

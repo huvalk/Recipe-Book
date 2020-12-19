@@ -85,7 +85,7 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="lostPswdButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9L-7e-x0T"/>
+                                            <action selector="skipPswdButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jTV-jH-zKP"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вход" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBv-5g-pQc">
@@ -124,6 +124,16 @@
                                     <constraint firstItem="IBv-5g-pQc" firstAttribute="top" secondItem="xOA-9u-Ki8" secondAttribute="top" id="xne-uA-xCk"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEr-QY-6aM">
+                                <rect key="frame" x="149" y="774" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Забыли пароль?">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="lostPswdButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DOM-Sg-G3o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
