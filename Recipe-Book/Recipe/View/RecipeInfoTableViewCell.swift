@@ -55,6 +55,12 @@ class RecipeInfoTableViewCell: UITableViewCell {
         } else {
             self.unfillHeart()
         }
+        
+        if recipe.photo != "default" {
+            print(recipe.photo)
+            let imageUrl = URL(string: recipe.photo)
+            self.recipeImage.kf.setImage(with: imageUrl)
+        }
     }
     
     func hideLike() {
