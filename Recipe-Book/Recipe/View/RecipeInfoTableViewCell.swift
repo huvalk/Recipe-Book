@@ -26,11 +26,41 @@ class RecipeInfoTableViewCell: UITableViewCell {
         }
     }
     
+    @IBAction func toListButtonPressed(_ sender: Any) {
+        for ingredient in recipe.ingredients {
+            let ingredientArray = ingredient.components(separatedBy: " - ")
+            let name = ingredientArray[0]
+            let amountArray = ingredientArray[1].components(separatedBy: " ")
+            let amount = Double(amountArray[0]) ?? 0
+            
+            let amountType: Ingredient.AmountType
+            switch amountArray[1] {
+            case "кг":
+                amountType = Ingredient.AmountType.kgramm
+            case "г":
+                amountType = Ingredient.AmountType.gramm
+            case "л":
+                amountType = Ingredient.AmountType.litr
+            case "мл":
+                amountType = Ingredient.AmountType.mlitr
+            default:
+                amountType = Ingredient.AmountType.count
+            }
+            
+            let product = Product(name: name, amountType: amountType, amount: amount, bought: false)
+            
+            ShoppingDatabaseService.saveProduct(product)
+        }
+    }
+    
     var recipePresenter: RecipePresenter?
     var recipeInfoCellPresenter: RecipeInfoCellPresenter?
     var isFavorite: Bool = false
+    var recipe: Recipe = emptyRecipe
     
     func configure(recipe: Recipe) {
+        self.recipe = recipe
+        
         self.recipeInfoCellPresenter = RecipeInfoCellPresenter(delegate: self, recipe: recipe)
         
         self.recipeName.text = recipe.title
