@@ -28,6 +28,12 @@ class ShoppingViewController: UIViewController {
         presenter?.getProducts()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        presenter?.getProducts()
+    }
+    
     private func setupNavigationController() {
 //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 //        navigationController?.navigationBar.shadowImage = UIImage()
