@@ -126,7 +126,11 @@ extension StepsCreationViewController: StepDelegate {
         self.steps.remove(at: index)
         self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
         
-        UIView.transition(with: collectionView, duration: 0.5, options: .transitionCrossDissolve, animations: {self.collectionView.reloadData()}, completion: nil)
+        self.collectionView.reloadData()
+        self.collectionView.performBatchUpdates({ [weak self] in
+            let visibleItems = self?.collectionView.indexPathsForVisibleItems ?? []
+            self?.collectionView.reloadItems(at: visibleItems)
+        }, completion: nil)
     }
     
     func addStepClicked(index: Int) {
@@ -137,25 +141,5 @@ extension StepsCreationViewController: StepDelegate {
         }, completion: nil)
         
         self.collectionView.scrollToItem(at: IndexPath(row: index + 1, section: 0), at: .centeredHorizontally, animated: true)
-    }
-}
-
-extension StepsCreationViewController: UIScrollViewDelegate, UICollectionViewDelegate {
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        scrollingFinish("scrollViewDidEndScrollingAnimation")
-    }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        scrollingFinish("scrollViewDidEndDecelerating")
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            scrollingFinish("scrollViewDidEndDragging")
-        }
-    }
-
-    func scrollingFinish(_ string: String) -> Void {
-        print("Scroll Finished! " + string)
     }
 }

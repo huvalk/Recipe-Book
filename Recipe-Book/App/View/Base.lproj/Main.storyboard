@@ -1106,49 +1106,51 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsR-dH-sRm">
-                                                    <rect key="frame" x="20" y="17" width="28" height="28"/>
+                                                    <rect key="frame" x="20" y="11" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="28" id="aAf-y4-gPh"/>
-                                                        <constraint firstAttribute="height" constant="28" id="lvr-xA-9Au"/>
+                                                        <constraint firstAttribute="width" constant="40" id="aAf-y4-gPh"/>
+                                                        <constraint firstAttribute="height" constant="40" id="lvr-xA-9Au"/>
                                                     </constraints>
                                                     <color key="tintColor" name="PastelDarkGreen"/>
+                                                    <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                                     <connections>
                                                         <action selector="boughtClickedWithSender:" destination="JU1-mn-LQ9" eventType="touchUpInside" id="7CE-ii-oLv"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KET-8V-raD">
-                                                    <rect key="frame" x="369" y="20" width="22" height="22"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KET-8V-raD">
+                                                    <rect key="frame" x="351" y="11" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="ZnB-zf-nCI"/>
-                                                        <constraint firstAttribute="width" constant="25" id="mDK-Ra-31i"/>
+                                                        <constraint firstAttribute="height" constant="40" id="ZnB-zf-nCI"/>
+                                                        <constraint firstAttribute="width" constant="40" id="mDK-Ra-31i"/>
                                                     </constraints>
                                                     <color key="tintColor" name="PastelDarkGreen"/>
+                                                    <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                                     <state key="normal" image="Scales"/>
                                                     <connections>
                                                         <action selector="editButtonTapped:" destination="JU1-mn-LQ9" eventType="touchUpInside" id="6T9-dz-4wZ"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Авокадо" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcw-fo-1j5">
-                                                    <rect key="frame" x="56" y="11" width="57" height="17"/>
+                                                    <rect key="frame" x="68" y="11" width="57" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/2 фрукта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4GD-sq-yDY">
-                                                    <rect key="frame" x="56" y="36" width="61.5" height="14.5"/>
+                                                    <rect key="frame" x="68" y="36" width="61.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4GD-sq-yDY" firstAttribute="leading" secondItem="vsR-dH-sRm" secondAttribute="trailing" constant="8" symbolic="YES" id="4rX-wo-mWW"/>
+                                                <constraint firstItem="4GD-sq-yDY" firstAttribute="leading" secondItem="vsR-dH-sRm" secondAttribute="trailing" constant="8" id="4rX-wo-mWW"/>
                                                 <constraint firstItem="KET-8V-raD" firstAttribute="centerY" secondItem="bnt-qc-Fx9" secondAttribute="centerY" id="6Iq-jx-WJf"/>
-                                                <constraint firstItem="KET-8V-raD" firstAttribute="trailing" secondItem="bnt-qc-Fx9" secondAttribute="trailingMargin" id="71P-hL-eCN"/>
+                                                <constraint firstItem="KET-8V-raD" firstAttribute="trailing" secondItem="bnt-qc-Fx9" secondAttribute="trailingMargin" constant="-3" id="71P-hL-eCN"/>
                                                 <constraint firstItem="vsR-dH-sRm" firstAttribute="leading" secondItem="bnt-qc-Fx9" secondAttribute="leadingMargin" id="HAP-AA-Nca"/>
-                                                <constraint firstItem="vsR-dH-sRm" firstAttribute="centerY" secondItem="bnt-qc-Fx9" secondAttribute="centerY" id="aCU-hK-REV"/>
+                                                <constraint firstItem="vsR-dH-sRm" firstAttribute="top" secondItem="gcw-fo-1j5" secondAttribute="top" id="JNr-nW-dE8"/>
                                                 <constraint firstItem="4GD-sq-yDY" firstAttribute="top" secondItem="gcw-fo-1j5" secondAttribute="bottom" constant="8" symbolic="YES" id="czv-nv-8xb"/>
-                                                <constraint firstItem="gcw-fo-1j5" firstAttribute="leading" secondItem="vsR-dH-sRm" secondAttribute="trailing" constant="8" symbolic="YES" id="sfa-yc-ZC5"/>
+                                                <constraint firstItem="gcw-fo-1j5" firstAttribute="leading" secondItem="vsR-dH-sRm" secondAttribute="trailing" constant="8" id="sfa-yc-ZC5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="4GD-sq-yDY" secondAttribute="bottom" constant="0.5" id="wbv-3V-QFt"/>
                                                 <constraint firstItem="vsR-dH-sRm" firstAttribute="leading" secondItem="bnt-qc-Fx9" secondAttribute="leadingMargin" id="zOR-gJ-Or6"/>
                                                 <constraint firstItem="gcw-fo-1j5" firstAttribute="top" secondItem="bnt-qc-Fx9" secondAttribute="topMargin" id="zZj-Gf-sRN"/>
@@ -1178,7 +1180,7 @@
                     <navigationItem key="navigationItem" title="Продукты" id="eLI-aa-88T">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="z5e-Xs-Bhq">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="klf-Ix-Gl1">
-                                <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                <rect key="frame" x="20" y="2" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="PastelDarkGreen"/>
                                 <state key="normal" image="trash" catalog="system"/>
@@ -1187,20 +1189,8 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Zah-Rv-bOo">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jde-2z-iaM">
-                                <rect key="frame" x="372" y="11" width="22" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="YCu-d5-yoO"/>
-                                    <constraint firstAttribute="height" constant="22" id="wZg-CU-kJo"/>
-                                </constraints>
-                                <color key="tintColor" name="PastelDarkGreen"/>
-                                <state key="normal" image="plus" catalog="system"/>
-                                <connections>
-                                    <action selector="addBtnClicked:" destination="lVb-SO-gCC" eventType="touchUpInside" id="TPe-gu-v1M"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Zah-Rv-bOo">
+                            <color key="tintColor" name="PastelDarkGreen"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1251,12 +1241,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Am8-kr-oF5">
-                                <rect key="frame" x="196.5" y="44" width="21" height="46"/>
+                                <rect key="frame" x="36" y="44" width="342" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="21" id="qCi-WO-rfu"/>
+                                    <constraint firstAttribute="width" constant="342" id="qCi-WO-rfu"/>
                                 </constraints>
                                 <color key="tintColor" name="PastelDarkGreen"/>
-                                <state key="normal" title="Button" image="chevron.compact.down" catalog="system"/>
+                                <state key="normal" image="chevron.compact.down" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="translatesAutoresizingMaskIntoConstraints" value="NO"/>
                                 </userDefinedRuntimeAttributes>
@@ -1451,7 +1441,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Sz5-AJ-Bx0"/>
+        <segue reference="f92-I2-M7F"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Cart" width="30" height="28"/>
@@ -1465,7 +1455,6 @@
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="PastelDarkGreen">
             <color red="0.60392156862745094" green="0.65098039215686276" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
