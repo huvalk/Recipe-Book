@@ -15,12 +15,15 @@ class SearchViewController: UIViewController {
     var searchPresenter: SearchPresenter?
     var recipes: RecipeList = []
     var pageNumber: Int = 1
-    var hasNextPage: Bool = true
+    var hasNextPage: Bool = false
+    var isSearching: Bool = false
     
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.allowsSelection = true
         
         self.hideKeyboardWhenTappedAround()
         
@@ -34,14 +37,17 @@ class SearchViewController: UIViewController {
         self.searchBar.delegate = self
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
 
         if (offsetY > contentHeight - scrollView.frame.size.height - 20) && hasNextPage {
-            self.pageNumber += 1
-
-            self.searchPresenter?.findRecipes(text: "", page: pageNumber)
+            if !self.isSearching {
+                self.isSearching = true
+                
+                self.pageNumber += 1
+                self.searchPresenter?.findRecipes(text: "", page: pageNumber)
+            }
         }
     }
     
@@ -55,11 +61,12 @@ class SearchViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("in prepare")
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            
+
             let recipe = recipes[indexPath.item]
-            
+
             let destination = segue.destination as! RecipeViewController
             destination.recipe = recipe
         }
@@ -77,7 +84,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return (recipes.count == 0) ? 1 : recipes.count
         case 1:
-            return (recipes.count != 0 && hasNextPage) ? 1 : 0
+            return hasNextPage ? 1 : 0
         default:
             return 0
         }
@@ -131,6 +138,7 @@ extension SearchViewController: SearchDelegate {
     
     func setRecipes(searchResult: SearchResult) {
         self.recipes = searchResult.recipes
+        print(self.recipes.count)
         self.hasNextPage = searchResult.hasNextPage
         
         self.tableView.reloadData()
@@ -140,6 +148,13 @@ extension SearchViewController: SearchDelegate {
         self.recipes += searchResult.recipes
         self.hasNextPage = searchResult.hasNextPage
         
+        self.tableView.reloadData()
+        isSearching = false
+    }
+    
+    func endSearching() {
+        self.isSearching = false
+        self.hasNextPage = false
         self.tableView.reloadData()
     }
 }
