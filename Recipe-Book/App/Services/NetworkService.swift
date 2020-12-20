@@ -137,6 +137,51 @@ final class NetworkService {
         }.resume()
     }
     
+    public func deleteRequest(rawUrl: String, completion: @escaping (Data, Int) -> ()) {
+        let urlString = self.host + rawUrl
+        guard let url = URL(string: urlString) else { return }
+        
+        if let user = SettingsService.userModel {
+            let session_id = user.session
+            let cookieHeaderField = ["Set-Cookie": "session_id=\(session_id)"]
+            let cookies = HTTPCookie.cookies(withResponseHeaderFields: cookieHeaderField, for: url)
+            HTTPCookieStorage.shared.setCookies(cookies, for: url, mainDocumentURL: url)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        let session = URLSession.shared
+        
+        session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                DispatchQueue.main.async {
+                    completion(Data(), -1000)
+                }
+                return
+            }
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(Data(), -1000)
+                }
+                return
+            }
+            
+            var statusCode: Int
+            if let response = response as? HTTPURLResponse {
+                statusCode = response.statusCode
+            } else {
+                statusCode = 600
+            }
+            
+            DispatchQueue.main.async {
+                completion(data, statusCode)
+            }
+            
+        }.resume()
+    }
+    
     public func login(rawUrl: String, data: Data, completion: @escaping (User?, Int) -> ()) {
         let urlString = self.host + rawUrl
         guard let url = URL(string: urlString) else { return }

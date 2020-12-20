@@ -73,7 +73,7 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
             if indexPath.section == 0 {
                 cell.configure(text: "Вы еще не добавляли рецепты в избранное")
             } else {
-                cell.configure(text: "Вы еще не создавали авторские рецепты")
+                cell.configure(text: "Вы еще не создавали рецепты")
             }
 
             return cell
@@ -110,6 +110,14 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let recipeId = self.recipes[indexPath.section][indexPath.item].id
+            
+            self.recipesPresenter?.deleteRecipe(id: recipeId)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier?.starts(with: "show") == true {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -138,9 +146,12 @@ extension RecipesViewContoller: RecipesDelegate {
         self.tableView.reloadData()
     }
     
-    func deleteCell(recipeId: Int, indexPath: IndexPath) {
+    func deleteCell(recipeId: Int) {
         if let index = self.recipes[0].firstIndex(where: {$0.id == recipeId}) {
             self.recipes[0].remove(at: index)
+        }
+        if let index = self.recipes[1].firstIndex(where: {$0.id == recipeId}) {
+            self.recipes[1].remove(at: index)
         }
         self.tableView.reloadData()
     }

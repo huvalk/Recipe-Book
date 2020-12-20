@@ -22,6 +22,14 @@ class RecipesNetworkService {
         }
     }
     
+    static func deleteRecipe(id: Int, userId: Int, completion: @escaping(Int) -> ()) {
+        let path = "/recipe/\(id)"
+        
+        NetworkService.shared.deleteRequest(rawUrl: path) { (responseData, statusCode) in
+            completion(statusCode)
+        }
+    }
+    
     static func getFavorites(completion: @escaping(RecipeList, Int) -> ()) {
         let path = "/favorites"
         

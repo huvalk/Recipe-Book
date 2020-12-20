@@ -96,7 +96,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             if recipes.count == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "Error Cell") as! ErrorTableViewCell
                 
-                cell.configure(text: "Рецепты не найдены")
+                cell.configure(text: "Не найдено")
                 
                 return cell
             }
@@ -114,6 +114,14 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
 
