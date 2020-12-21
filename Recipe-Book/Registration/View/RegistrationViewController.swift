@@ -28,7 +28,6 @@ class RegistrationViewController: UIViewController {
         
         registerForKeyboardNotifications()
     }
-    
 
     private func initScreen() {
         registerButton.layer.cornerRadius = 15
@@ -47,7 +46,6 @@ class RegistrationViewController: UIViewController {
     }
 
     private func registerForKeyboardNotifications() {
-        //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -83,30 +81,21 @@ class RegistrationViewController: UIViewController {
             self.registrationLabel.alpha = alpha
             self.shiftContainer.constant = pos
             self.view.layoutIfNeeded()
-          }, completion: { finished in
-            print("Animation shift completed")
-          })
+          }, completion: nil)
     }
     
     private func animateErrorAppear(alpha: CGFloat) {
         UIView.animate(withDuration: 0.7, delay: 0, options: .curveLinear, animations: {
             self.errorLabel.alpha = alpha
             self.view.layoutIfNeeded()
-          }, completion: { finished in
-            print("Animation error completed")
-          })
+          }, completion: nil)
     }
     
     @IBAction func registerButtonTouched(_ sender: Any) {
         self.registrationPresenter?.register(login: loginTextField.text?.trimmingCharacters(in: .whitespaces) ?? "", password: passwordTextField.text?.trimmingCharacters(in: .whitespaces) ?? "", repeatPassword: repeatPasswordTextField.text?.trimmingCharacters(in: .whitespaces) ?? "", phone: phone ?? "")
     }
     
-//    @IBAction func loginButtonTouched(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
-    
     deinit {
-        print("dismiss")
         unregisterForKeyboardNotifications()
     }
 }
@@ -115,6 +104,10 @@ extension RegistrationViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return string != " "
     }
 }
 

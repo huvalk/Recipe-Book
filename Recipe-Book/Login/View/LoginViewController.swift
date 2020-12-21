@@ -48,7 +48,6 @@ class LoginViewController: UIViewController {
     }
     
     private func registerForKeyboardNotifications() {
-        //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -84,18 +83,14 @@ class LoginViewController: UIViewController {
             self.loginLabel.alpha = alpha
             self.shiftConstraint.constant = pos
             self.view.layoutIfNeeded()
-          }, completion: { finished in
-            print("Animation shift completed")
-          })
+          }, completion: nil)
     }
     
     private func animateErrorAppear(alpha: CGFloat) {
         UIView.animate(withDuration: 0.7, delay: 0, options: .curveLinear, animations: {
             self.errorLabel.alpha = alpha
             self.view.layoutIfNeeded()
-          }, completion: { finished in
-            print("Animation error completed")
-          })
+          }, completion: nil)
     }
     
     @IBAction func loginButtonTouched(_ sender: Any) {
@@ -105,11 +100,14 @@ class LoginViewController: UIViewController {
     @IBAction func registerButtonTouched(_ sender: Any) {
         let phoneViewController = self.storyboard?.instantiateViewController(withIdentifier: "PhoneViewController") as! PhoneViewController
         
-//        registerViewController.modalPresentationStyle = .fullScreen
         self.present(phoneViewController, animated: true)
     }
     
     @IBAction func lostPswdButtonTouched(_ sender: Any) {
+        self.loginPresenter?.forgotPassword(login: loginTextField.text ?? "")
+    }
+    
+    @IBAction func skipPswdButtonTouched(_ sender: Any) {
         let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
 
         mainViewController.modalPresentationStyle = .fullScreen
@@ -125,6 +123,10 @@ extension LoginViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return string != " "
     }
 }
 
@@ -145,6 +147,17 @@ extension LoginViewController: LoginDelegate {
     }
     
     func loginDidFailed(message: String) {
+        errorLabel.backgroundColor = UIColor(named: "PastelDarkRed")
+        errorLabel.textColor = .white
+        errorLabel.text = message
+        if errorLabel.alpha != 1.0 {
+            animateErrorAppear(alpha: 1.0)
+        }
+    }
+    
+    func showMessage(message: String) {
+        errorLabel.backgroundColor = UIColor(named: "TransperentGreen")
+        errorLabel.textColor = .black
         errorLabel.text = message
         if errorLabel.alpha != 1.0 {
             animateErrorAppear(alpha: 1.0)

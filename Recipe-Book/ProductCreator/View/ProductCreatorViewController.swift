@@ -49,6 +49,16 @@ class ProductCreatorViewController: UIViewController {
         typePeaker.delegate = self
         initScreen()
         hideKeyboardWhenTappedAround()
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
+    }
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        if gesture.direction == .down {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     private func initScreen() {

@@ -49,7 +49,9 @@ class AddNewCell: UITableViewCell {
         addButton.pin
             .vCenter()
             .hCenter()
-            .size(22)
+            .height(20)
+            .width(360)
+            .marginHorizontal(320)
     }
 
     func configure(product: Product) {

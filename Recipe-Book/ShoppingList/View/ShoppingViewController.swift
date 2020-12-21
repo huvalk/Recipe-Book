@@ -17,6 +17,8 @@ class ShoppingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = ShoppingPresenter(delegate: self)
+        table.separatorStyle = .none
+        table.register(AddNewCell.self, forCellReuseIdentifier: "AddNewCell")
         
         setupNavigationController()
         table.dataSource = self
@@ -27,7 +29,9 @@ class ShoppingViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.presenter?.getProducts()
+        super.viewDidAppear(animated)
+        
+        presenter?.getProducts()
     }
     
     private func setupNavigationController() {
@@ -118,19 +122,41 @@ extension ShoppingViewController: DataTarget {
 }
 
 extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productsToDisplay.count
+        switch section {
+        case 0:
+            return productsToDisplay.count
+        case 1:
+            return 1
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = table.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ShoppingCell else {
+        switch indexPath.section {
+        case 0:
+            guard let cell = table.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ShoppingCell else {
+                return UITableViewCell()
+            }
+            
+            let prodactData = productsToDisplay[indexPath.row]
+            cell.configure(data: prodactData, delegate: self)
+            
+            return cell
+            
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewCell", for: indexPath) as! AddNewCell
+            cell.addDelegate = self
+            
+            return cell
+        default:
             return UITableViewCell()
         }
-        
-        let prodactData = productsToDisplay[indexPath.row]
-        cell.configure(data: prodactData, delegate: self)
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -150,5 +176,18 @@ extension ShoppingViewController: UITableViewDataSource, UITableViewDelegate {
         deleteAction.backgroundColor = UIColor(named: "PastelDarkRed")
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
+    }
+}
+
+extension ShoppingViewController: AddNewCellDelegate {
+    func didTapAdd() {
+        let mainView = UIStoryboard(name: "Main", bundle: nil)
+        let creatorViewController = mainView.instantiateViewController(withIdentifier: "ProductCreatorViewController") as! ProductCreatorViewController
+        
+        creatorViewController.transitioningDelegate = transition
+        creatorViewController.modalPresentationStyle = .custom
+        creatorViewController.dataTarget = self
+        
+        present(creatorViewController, animated: true)
     }
 }

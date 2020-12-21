@@ -8,32 +8,34 @@
 import UIKit
 import PinLayout
 
-class MainCreationViewController: UIViewController {
+final class MainCreationViewController: UIViewController {
     @IBOutlet weak var pageSegmentedControll: CustomSegmentedControl!
-    lazy var generalViewController = GeneralCreationViewController()
-    lazy var stepsViewController = StepsCreationViewController()
-    lazy var ingredientsViewController = IngredientsCreationViewController()
+    lazy var generalViewController: GeneralCreationViewController = {
+        return GeneralCreationViewController()
+    }()
+    lazy var stepsViewController: StepsCreationViewController = {
+        return StepsCreationViewController()
+    }()
+    lazy var ingredientsViewController: IngredientsCreationViewController = {
+        return IngredientsCreationViewController()
+    }()
+    var pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     private var presenter: MainCreationPresenter?
     let spinner = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = MainCreationPresenter(delegate: self)
+        self.pageViewController.dataSource = self
+        self.pageViewController.delegate = self
         
         setup()
         hideKeyboardWhenTappedAround()
-        self.generalViewController.view.isHidden = false
     }
     
     private func setup() {
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = UIColor(named: "PastelDarkGreen") ?? .black
-        
         setupSegmentControll()
-        [generalViewController,
-         stepsViewController,
-         ingredientsViewController].forEach {
+        [pageViewController].forEach {
             self.addChild($0)
             self.view.addSubview($0.view)
             $0.didMove(toParent: self)
@@ -71,10 +73,59 @@ class MainCreationViewController: UIViewController {
         
         var formatedIngredients: [String] = []
         for ingredient in ingredients {
-            formatedIngredients.append("\(ingredient.name) \(ingredient.amountType) \(ingredient.amountType.string)")
+            formatedIngredients.append("\(ingredient.name) - \(ingredient.amount) \(ingredient.amountType.string)")
         }
         
         self.presenter?.saveRecipe(image: general.image, name: general.name, timeToCook: general.time, ingredients: formatedIngredients, steps: steps)
+    }
+}
+
+extension MainCreationViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        switch pageSegmentedControll.selectedIndex {
+        case 0:
+            return nil
+        case 1:
+            return generalViewController
+        case 2:
+            return ingredientsViewController
+        default:
+            return nil
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        switch pageSegmentedControll.selectedIndex {
+        case 0:
+            return ingredientsViewController
+        case 1:
+            return stepsViewController
+        case 2:
+            return nil
+        default:
+            return nil
+        }
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed == false {
+            return
+        }
+        
+        guard let currentPage = self.pageViewController.viewControllers?[0] else {
+            return
+        }
+        
+        switch currentPage {
+        case self.generalViewController:
+            self.pageSegmentedControll.setIndex(index: 0)
+        case self.ingredientsViewController:
+            self.pageSegmentedControll.setIndex(index: 1)
+        case self.stepsViewController:
+            self.pageSegmentedControll.setIndex(index: 2)
+        default:
+            return
+        }
     }
 }
 
@@ -100,17 +151,18 @@ extension MainCreationViewController: CustomSegmentedControlDelegate {
     func segmentChanged(to index: Int) {
         switch index {
         case 0:
-            self.generalViewController.view.isHidden = false
-            self.ingredientsViewController.view.isHidden = true
-            self.stepsViewController.view.isHidden = true
+            self.pageViewController.setViewControllers([self.generalViewController], direction: .reverse, animated: true, completion: nil)
         case 1:
-            self.generalViewController.view.isHidden = true
-            self.ingredientsViewController.view.isHidden = false
-            self.stepsViewController.view.isHidden = true
+            guard let currentPage = self.pageViewController.viewControllers?[0] else {
+                return
+            }
+            var animationDirection = UIPageViewController.NavigationDirection.forward
+            if currentPage == self.stepsViewController {
+                animationDirection = UIPageViewController.NavigationDirection.reverse
+            }
+            self.pageViewController.setViewControllers([self.ingredientsViewController], direction: animationDirection, animated: true, completion: nil)
         case 2:
-            self.generalViewController.view.isHidden = true
-            self.ingredientsViewController.view.isHidden = true
-            self.stepsViewController.view.isHidden = false
+            self.pageViewController.setViewControllers([self.stepsViewController], direction: .forward, animated: true, completion: nil)
         default:
             return
         }

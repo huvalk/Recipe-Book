@@ -41,7 +41,7 @@ class ImageCell: UITableViewCell {
         photoButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         photoButton.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
         photoButton.layer.shadowOpacity = 0.8
-        photoButton.layer.shadowRadius = 0.0
+        photoButton.layer.shadowRadius = 1.0
         photoButton.layer.masksToBounds = false
         photoButton.layer.cornerRadius = 5.0
         photoButton.addTarget(self, action: #selector(ImageCell.makePhoto(sender:)), for: .touchUpInside)
