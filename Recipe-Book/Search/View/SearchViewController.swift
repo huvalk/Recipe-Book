@@ -29,39 +29,25 @@ class SearchViewController: UIViewController {
         
         self.searchPresenter = SearchPresenter(delegate: self)
         self.searchPresenter?.findRecipes(text: "", page: pageNumber)
-        
-        let refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
 
         self.searchBar.delegate = self
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-
-        if (offsetY > contentHeight - scrollView.frame.size.height - 20) && hasNextPage {
-            if !self.isSearching {
-                self.isSearching = true
-                
-                self.pageNumber += 1
-                self.searchPresenter?.findRecipes(text: "", page: pageNumber)
-            }
-        }
-    }
-    
-    @objc func reloadData(refreshControl: UIRefreshControl) {
-        self.pageNumber = 1
-        self.hasNextPage = true
-        
-        self.searchPresenter?.findRecipes(text: "", page: 1)
-        
-        refreshControl.endRefreshing()
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let offsetY = scrollView.contentOffset.y
+//        let contentHeight = scrollView.contentSize.height
+//
+//        if (offsetY > contentHeight - scrollView.frame.size.height - 20) && hasNextPage {
+//            if !self.isSearching {
+//                self.isSearching = true
+//
+//                self.pageNumber += 1
+//                self.searchPresenter?.findRecipes(text: "", page: pageNumber)
+//            }
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("in prepare")
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
 
@@ -117,11 +103,16 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("in didSelectRowAt")
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("in didDeselectRowAt")
+    }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return false
     }
 }
 
@@ -133,13 +124,13 @@ extension SearchViewController: UISearchBarDelegate {
         self.searchPresenter?.findRecipes(text: searchText, page: 1)
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.searchBar.becomeFirstResponder()
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.resignFirstResponder()
-    }
+//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        self.searchBar.becomeFirstResponder()
+//    }
+//
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        self.searchBar.resignFirstResponder()
+//    }
 }
 
 extension SearchViewController: SearchDelegate {
