@@ -17,10 +17,10 @@ class Ingredient {
         
         static let mapper: [AmountType: String] = [
             .count: "шт.",
-            .gramm: "гр.",
-            .kgramm: "кг.",
-            .litr: "л.",
-            .mlitr: "мл."
+            .gramm: "г",
+            .kgramm: "кг",
+            .litr: "л",
+            .mlitr: "мл"
         ]
         var string: String {
             return AmountType.mapper[self]!

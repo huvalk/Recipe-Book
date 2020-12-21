@@ -10,7 +10,7 @@ import Foundation
 protocol RecipesDelegate {
     func setRecipes(recipes: RecipeList)
     func setFavorites(favorites: RecipeList)
-    func deleteCell(recipeId: Int, indexPath: IndexPath)
+    func deleteCell(recipeId: Int)
 }
 
 class RecipesPresenter {
@@ -25,7 +25,9 @@ class RecipesPresenter {
     }
     
     func updateRecipes() {
-        RecipesNetworkService.getRecipes(userId: 1) { (recipes, statusCode) in
+        let userId = SettingsService.userModel.ID
+        
+        RecipesNetworkService.getRecipes(userId: userId) { (recipes, statusCode) in
             if (200...299) ~= statusCode {
                 MyRecipeDatabaseService.clearMyRecipes()
                 
@@ -34,6 +36,20 @@ class RecipesPresenter {
                 }
             } else {
                 print("get recipes: code \(statusCode)")
+            }
+        }
+    }
+    
+    func deleteRecipe(id: Int) {
+        let userId = SettingsService.userModel.ID
+        
+        RecipesNetworkService.deleteRecipe(id: id, userId: userId) { (statusCode) in
+            if (200...299) ~= statusCode {
+                if MyRecipeDatabaseService.deleteMyRecipe(id) {
+                    self.delegate.deleteCell(recipeId: id)
+                }
+            } else {
+                print("delete recipe: code \(statusCode)")
             }
         }
     }
@@ -62,7 +78,7 @@ class RecipesPresenter {
         }
         
         if FavoriteDatabaseService.deleteFavorite(recipeId) {
-            self.delegate.deleteCell(recipeId: recipeId, indexPath: indexPath)
+            self.delegate.deleteCell(recipeId: recipeId)
         }
     }
 }
