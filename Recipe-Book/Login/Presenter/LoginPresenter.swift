@@ -50,10 +50,6 @@ class LoginPresenter {
             delegatePointer.hideProgress()
             if response != nil && (200...299) ~= statusCode {
                 delegatePointer.loginDidSucceed()
-<<<<<<< HEAD
-            } else {
-                delegatePointer.loginDidFailed(message: "Something wrong. \(statusCode)")
-=======
             } else {
                 delegatePointer.loginDidFailed(message: "Something wrong. \(statusCode)")
             }
@@ -83,7 +79,6 @@ class LoginPresenter {
                 delegatePointer.showMessage(message: "Введите пароль из смс")
             } else {
                 delegatePointer.loginDidFailed(message: "Пользователь не найден")
->>>>>>> dev
             }
         }
     }
