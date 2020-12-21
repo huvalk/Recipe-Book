@@ -34,8 +34,6 @@ final class MainCreationViewController: UIViewController {
     }
     
     private func setup() {
-        navigationController?.navigationBar.tintColor = UIColor(named: "PastelDarkGreen") ?? .black
-        
         setupSegmentControll()
         [pageViewController].forEach {
             self.addChild($0)
@@ -75,7 +73,7 @@ final class MainCreationViewController: UIViewController {
         
         var formatedIngredients: [String] = []
         for ingredient in ingredients {
-            formatedIngredients.append("\(ingredient.name) \(ingredient.amountType) \(ingredient.amountType.string)")
+            formatedIngredients.append("\(ingredient.name) - \(ingredient.amount) \(ingredient.amountType.string)")
         }
         
         self.presenter?.saveRecipe(image: general.image, name: general.name, timeToCook: general.time, ingredients: formatedIngredients, steps: steps)

@@ -770,7 +770,7 @@
             </objects>
             <point key="canvasLocation" x="5044.927536231884" y="45.535714285714285"/>
         </scene>
-        <!--Новый рецепт-->
+        <!--Main Creation View Controller-->
         <scene sceneID="aCf-wI-OoY">
             <objects>
                 <viewController restorationIdentifier="MainCreationViewController" storyboardIdentifier="MainCreationViewController" id="MD2-J2-HyC" customClass="MainCreationViewController" customModule="Recipe_Book" customModuleProvider="target" sceneMemberID="viewController">
@@ -794,9 +794,9 @@
                             <constraint firstItem="puo-zJ-UiH" firstAttribute="leading" secondItem="n0w-N8-zll" secondAttribute="leading" constant="20" id="wkn-bc-CSU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Новый рецепт" id="uKl-lX-0UG">
+                    <navigationItem key="navigationItem" id="uKl-lX-0UG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="DuD-cs-lW7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
                                 <rect key="frame" x="56" y="0.0" width="338" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
