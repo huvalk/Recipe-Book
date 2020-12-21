@@ -27,7 +27,6 @@ class PhoneViewController: UIViewController {
         
         registerForKeyboardNotifications()
     }
-    
 
     private func initScreen() {
         confirmButton.layer.cornerRadius = 15
@@ -46,7 +45,6 @@ class PhoneViewController: UIViewController {
     }
 
     private func registerForKeyboardNotifications() {
-        //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -83,18 +81,14 @@ class PhoneViewController: UIViewController {
             self.phoneLabel.alpha = alpha
             self.shiftContainer.constant = pos
             self.view.layoutIfNeeded()
-          }, completion: { finished in
-            print("Animation shift completed")
-          })
+          }, completion: nil)
     }
     
     private func animateErrorAppear(alpha: CGFloat) {
         UIView.animate(withDuration: 0.7, delay: 0, options: .curveLinear, animations: {
             self.errorLabel.alpha = alpha
             self.view.layoutIfNeeded()
-          }, completion: { finished in
-            print("Animation error completed")
-          })
+          }, completion: nil)
     }
     
     @IBAction func sendButtonTouched(_ sender: Any) {
@@ -106,7 +100,6 @@ class PhoneViewController: UIViewController {
     }
     
     deinit {
-        print("dismiss")
         unregisterForKeyboardNotifications()
     }
 }
@@ -115,6 +108,10 @@ extension PhoneViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return string != " "
     }
 }
 

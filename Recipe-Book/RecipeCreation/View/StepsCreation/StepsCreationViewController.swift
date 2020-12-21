@@ -16,7 +16,7 @@ class StepsCreationViewController: UIViewController {
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor(named: "TransperentGreen")
+        cv.backgroundColor = .clear
         return cv
     }()
     
@@ -41,7 +41,7 @@ class StepsCreationViewController: UIViewController {
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.bottomConstraint?.isActive = true
-        self.view.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0).isActive = true
+        self.view.topAnchor.constraint(equalTo: collectionView.topAnchor, constant: 5).isActive = true
         self.view.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor, constant: 0).isActive = true
         self.view.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor, constant: 0).isActive = true
     }
@@ -126,7 +126,11 @@ extension StepsCreationViewController: StepDelegate {
         self.steps.remove(at: index)
         self.collectionView.deleteItems(at: [IndexPath(item: index, section: 0)])
         
-        UIView.transition(with: collectionView, duration: 0.5, options: .transitionCrossDissolve, animations: {self.collectionView.reloadData()}, completion: nil)
+        self.collectionView.reloadData()
+        self.collectionView.performBatchUpdates({ [weak self] in
+            let visibleItems = self?.collectionView.indexPathsForVisibleItems ?? []
+            self?.collectionView.reloadItems(at: visibleItems)
+        }, completion: nil)
     }
     
     func addStepClicked(index: Int) {
@@ -137,25 +141,5 @@ extension StepsCreationViewController: StepDelegate {
         }, completion: nil)
         
         self.collectionView.scrollToItem(at: IndexPath(row: index + 1, section: 0), at: .centeredHorizontally, animated: true)
-    }
-}
-
-extension StepsCreationViewController: UIScrollViewDelegate, UICollectionViewDelegate {
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        scrollingFinish("scrollViewDidEndScrollingAnimation")
-    }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        scrollingFinish("scrollViewDidEndDecelerating")
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            scrollingFinish("scrollViewDidEndDragging")
-        }
-    }
-
-    func scrollingFinish(_ string: String) -> Void {
-        print("Scroll Finished! " + string)
     }
 }
