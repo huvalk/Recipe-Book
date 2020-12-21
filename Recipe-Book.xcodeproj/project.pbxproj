@@ -235,7 +235,6 @@
 				75049DD6256003F100A310A8 /* StepsCreation */,
 				75049DD5256003E300A310A8 /* IngredientsCreation */,
 				75049DD1255FE8A900A310A8 /* GeneralCreation */,
-				75049DC9255F410A00A310A8 /* MainCreation */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				75049DDB2560043300A310A8 /* IngredientsCreationViewController.swift */,
+				75049DC9255F410A00A310A8 /* MainCreation */,
 				753F75AC2566D980008AD7B9 /* IngredientCell.swift */,
 				753F75AF2566E41E008AD7B9 /* AddNewCell.swift */,
 			);

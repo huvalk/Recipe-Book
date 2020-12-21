@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNI-aP-axp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cNI-aP-axp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -799,7 +799,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Новый рецепт" id="uKl-lX-0UG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="DuD-cs-lW7">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="lwP-tH-69D">
                                 <rect key="frame" x="56" y="0.0" width="338" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -840,55 +840,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ero-Eu-SUd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5043" y="-654"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="7ju-JT-K6F">
-            <objects>
-                <viewController id="guJ-9D-2H0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="g0x-ho-d3b">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сортировать" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ja-w0-Pfk">
-                                <rect key="frame" x="16" y="60" width="382" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZX7-M1-D5S">
-                                <rect key="frame" x="16" y="89" width="382" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="KZI-Q1-19e"/>
-                                </constraints>
-                                <state key="normal" title="По рейтингу"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HZ-aS-ZSe">
-                                <rect key="frame" x="16" y="113" width="382" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="LxM-Lk-h9G"/>
-                                </constraints>
-                                <state key="normal" title="По времени готовки"/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="97z-re-Xm3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                        <constraints>
-                            <constraint firstItem="97z-re-Xm3" firstAttribute="trailing" secondItem="ZX7-M1-D5S" secondAttribute="trailing" constant="16" id="4oM-ss-Xxa"/>
-                            <constraint firstItem="ZX7-M1-D5S" firstAttribute="top" secondItem="3ja-w0-Pfk" secondAttribute="bottom" constant="8" id="Gce-NF-Avn"/>
-                            <constraint firstItem="3ja-w0-Pfk" firstAttribute="leading" secondItem="97z-re-Xm3" secondAttribute="leading" constant="16" id="Oq1-1b-eeD"/>
-                            <constraint firstItem="2HZ-aS-ZSe" firstAttribute="leading" secondItem="g0x-ho-d3b" secondAttribute="leading" constant="16" id="QMv-q8-7Kb"/>
-                            <constraint firstItem="97z-re-Xm3" firstAttribute="trailing" secondItem="2HZ-aS-ZSe" secondAttribute="trailing" constant="16" id="hOC-d3-clW"/>
-                            <constraint firstItem="ZX7-M1-D5S" firstAttribute="leading" secondItem="97z-re-Xm3" secondAttribute="leading" constant="16" id="ilV-Wt-JJN"/>
-                            <constraint firstItem="2HZ-aS-ZSe" firstAttribute="top" secondItem="ZX7-M1-D5S" secondAttribute="bottom" constant="4" id="jyA-rk-I73"/>
-                            <constraint firstItem="3ja-w0-Pfk" firstAttribute="top" secondItem="97z-re-Xm3" secondAttribute="top" constant="16" id="leg-OZ-bEE"/>
-                            <constraint firstItem="97z-re-Xm3" firstAttribute="trailing" secondItem="3ja-w0-Pfk" secondAttribute="trailing" constant="16" id="vIX-uN-hlf"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="49T-XP-G5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5934.7826086956529" y="-1355.3571428571429"/>
         </scene>
         <!--Поиск-->
         <scene sceneID="Txo-MB-CDH">
