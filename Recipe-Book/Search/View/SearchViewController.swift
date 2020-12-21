@@ -25,27 +25,29 @@ class SearchViewController: UIViewController {
         
         self.tableView.allowsSelection = true
         
-        self.hideKeyboardWhenTappedAround()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+
         self.searchPresenter = SearchPresenter(delegate: self)
         self.searchPresenter?.findRecipes(text: "", page: pageNumber)
 
         self.searchBar.delegate = self
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offsetY = scrollView.contentOffset.y
-//        let contentHeight = scrollView.contentSize.height
-//
-//        if (offsetY > contentHeight - scrollView.frame.size.height - 20) && hasNextPage {
-//            if !self.isSearching {
-//                self.isSearching = true
-//
-//                self.pageNumber += 1
-//                self.searchPresenter?.findRecipes(text: "", page: pageNumber)
-//            }
-//        }
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+
+        if (offsetY > contentHeight - scrollView.frame.size.height - 20) && hasNextPage {
+            if !self.isSearching {
+                self.isSearching = true
+
+                self.pageNumber += 1
+                self.searchPresenter?.findRecipes(text: "", page: pageNumber)
+            }
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -124,13 +126,13 @@ extension SearchViewController: UISearchBarDelegate {
         self.searchPresenter?.findRecipes(text: searchText, page: 1)
     }
     
-//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        self.searchBar.becomeFirstResponder()
-//    }
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        self.searchBar.resignFirstResponder()
-//    }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.becomeFirstResponder()
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
 }
 
 extension SearchViewController: SearchDelegate {
