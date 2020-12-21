@@ -7,6 +7,7 @@
 
 import UIKit
 import Cosmos
+import Kingfisher
 
 class SearchRecipeTableViewCell: UITableViewCell {
     
@@ -15,6 +16,7 @@ class SearchRecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var ingridientCount: UILabel!
     @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var recipeImage: UIImageView!
     
     var searchCellPresenter: SearchCellPresenter?
     var isFavorite: Bool = false
@@ -37,6 +39,11 @@ class SearchRecipeTableViewCell: UITableViewCell {
         self.ratingView.rating = recipe.rating
         self.ratingView.settings.fillMode = .precise
         self.ratingView.settings.updateOnTouch = false
+        
+        if recipe.photo != "default" {
+            let imageUrl = URL(string: recipe.photo)
+            self.recipeImage.kf.setImage(with: imageUrl)
+        }
         
         self.isFavorite = recipe.isFavorites
         if self.isFavorite {

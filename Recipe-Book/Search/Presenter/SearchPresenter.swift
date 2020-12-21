@@ -10,6 +10,7 @@ import Foundation
 protocol SearchDelegate {
     func setRecipes(searchResult: SearchResult)
     func addRecipes(searchResult: SearchResult)
+    func endSearching()
 }
 
 class SearchPresenter {
@@ -28,6 +29,7 @@ class SearchPresenter {
                     self.delegate.addRecipes(searchResult: searchResult)
                 }
             } else {
+                self.delegate.endSearching()
                 print("status code: \(statusCode)")
             }
         }

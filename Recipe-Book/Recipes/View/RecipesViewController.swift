@@ -8,7 +8,7 @@
 import UIKit
 import Cosmos
 
-class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RecipesViewContoller: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
@@ -24,21 +24,30 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
         self.recipesPresenter?.getFavorites()
         
         self.tableView.tableFooterView = nil
-        
-        let refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
     }
     
-    @objc func reloadData(refreshControl: UIRefreshControl) {
-        self.recipesPresenter?.updateRecipes()
+    override func viewDidAppear(_ animated: Bool) {
         self.recipesPresenter?.getRecipes()
-        
-        self.recipesPresenter?.updateFavorites()
         self.recipesPresenter?.getFavorites()
-        
-        refreshControl.endRefreshing()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier?.starts(with: "show") == true {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let recipe = recipes[indexPath.section][indexPath.item]
+            
+            let destination = segue.destination as! RecipeViewController
+            destination.recipe = recipe
+            
+            if segue.identifier == "showMyRecipe" {
+                destination.showLike = false
+            }
+        }
+    }
+}
+
+extension RecipesViewContoller: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -68,7 +77,7 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
             if indexPath.section == 0 {
                 cell.configure(text: "Вы еще не добавляли рецепты в избранное")
             } else {
-                cell.configure(text: "Вы еще не создавали авторские рецепты")
+                cell.configure(text: "Вы еще не создавали рецепты")
             }
 
             return cell
@@ -102,22 +111,30 @@ class RecipesViewContoller: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if indexPath.section == 1 {
+            return true
+        }
+        
+        return false
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier?.starts(with: "show") == true {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let recipeId = self.recipes[indexPath.section][indexPath.item].id
             
-            let recipe = recipes[indexPath.section][indexPath.item]
-            
-            let destination = segue.destination as! RecipeViewController
-            destination.recipe = recipe
-            
-            if segue.identifier == "showMyRecipe" {
-                destination.showLike = false
-            }
+            self.recipesPresenter?.deleteRecipe(id: recipeId)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+            completionHandler(true)
+        }
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = .systemRed
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
     }
 }
 
@@ -133,9 +150,12 @@ extension RecipesViewContoller: RecipesDelegate {
         self.tableView.reloadData()
     }
     
-    func deleteCell(recipeId: Int, indexPath: IndexPath) {
+    func deleteCell(recipeId: Int) {
         if let index = self.recipes[0].firstIndex(where: {$0.id == recipeId}) {
             self.recipes[0].remove(at: index)
+        }
+        if let index = self.recipes[1].firstIndex(where: {$0.id == recipeId}) {
+            self.recipes[1].remove(at: index)
         }
         self.tableView.reloadData()
     }
