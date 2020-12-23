@@ -20,8 +20,8 @@ class RecipesViewContoller: UIViewController {
         
         self.recipesPresenter = RecipesPresenter(delegate: self)
         
-        self.recipesPresenter?.getRecipes()
-        self.recipesPresenter?.getFavorites()
+        self.recipesPresenter?.updateRecipes()
+        self.recipesPresenter?.updateFavorites()
         
         self.tableView.tableFooterView = nil
     }
