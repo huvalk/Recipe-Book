@@ -20,8 +20,8 @@ class RecipesViewContoller: UIViewController {
         
         self.recipesPresenter = RecipesPresenter(delegate: self)
         
-        self.recipesPresenter?.getRecipes()
-        self.recipesPresenter?.getFavorites()
+        self.recipesPresenter?.updateRecipes()
+        self.recipesPresenter?.updateFavorites()
         
         self.tableView.tableFooterView = nil
     }
@@ -118,12 +118,17 @@ extension RecipesViewContoller: UITableViewDataSource, UITableViewDelegate {
         return false
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, _) in
             let recipeId = self.recipes[indexPath.section][indexPath.item].id
             
             self.recipesPresenter?.deleteRecipe(id: recipeId)
         }
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = .systemRed
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

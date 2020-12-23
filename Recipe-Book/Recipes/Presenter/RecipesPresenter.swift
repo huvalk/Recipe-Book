@@ -34,6 +34,8 @@ class RecipesPresenter {
                 for recipe in recipes {
                     MyRecipeDatabaseService.saveMyRecipe(recipe)
                 }
+                
+                self.delegate.setRecipes(recipes: MyRecipeDatabaseService.getMyRecipes())
             } else {
                 print("get recipes: code \(statusCode)")
             }
@@ -66,6 +68,8 @@ class RecipesPresenter {
                 for favorite in favorites {
                     FavoriteDatabaseService.saveFavorite(favorite)
                 }
+                
+                self.delegate.setFavorites(favorites: FavoriteDatabaseService.getFavorites())
             } else {
                 print("get favorites: code \(statusCode)")
             }

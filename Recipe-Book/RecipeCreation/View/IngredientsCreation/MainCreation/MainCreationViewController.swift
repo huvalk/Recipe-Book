@@ -26,6 +26,7 @@ final class MainCreationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter = MainCreationPresenter(delegate: self)
+
         self.pageViewController.dataSource = self
         self.pageViewController.delegate = self
         
