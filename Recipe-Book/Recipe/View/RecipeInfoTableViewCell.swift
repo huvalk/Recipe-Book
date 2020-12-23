@@ -97,8 +97,6 @@ class RecipeInfoTableViewCell: UITableViewCell {
             let imageUrl = URL(string: recipe.photo)
             self.recipeImage.kf.setImage(with: imageUrl)
         }
-        
-        
     }
     
     func hideLike() {
