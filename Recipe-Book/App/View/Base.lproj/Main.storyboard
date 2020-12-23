@@ -642,9 +642,17 @@
                                             <color key="highlightedColor" red="0.23921568627450979" green="0.24313725490196078" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lx2-rP-gyt">
-                                            <rect key="frame" x="131" y="380" width="30" height="28"/>
-                                            <color key="tintColor" red="0.94509803921568625" green="0.95686274509803915" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="131" y="383.5" width="22" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ZgF-uT-6cE"/>
+                                                <constraint firstAttribute="width" constant="22" id="iaP-p6-ZvY"/>
+                                            </constraints>
                                             <state key="normal" image="Cart"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="toListButtonPressed:" destination="uIZ-mL-ixw" eventType="touchUpInside" id="GTH-58-SXY"/>
                                             </connections>
@@ -674,6 +682,7 @@
                                     <outlet property="recipeName" destination="Koo-Pe-Rrz" id="3BL-aT-5eO"/>
                                     <outlet property="recipeRating" destination="iFe-XY-jum" id="yZk-eI-iXN"/>
                                     <outlet property="recipeTime" destination="rC2-9I-p5I" id="Yll-Dz-bb1"/>
+                                    <outlet property="toCartButton" destination="lx2-rP-gyt" id="PZd-gY-ztt"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ingredient Cell" rowHeight="24" id="KRp-tf-Kqy" customClass="IngredientTableViewCell" customModule="Recipe_Book" customModuleProvider="target">
