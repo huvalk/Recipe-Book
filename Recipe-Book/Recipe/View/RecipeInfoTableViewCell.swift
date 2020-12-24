@@ -85,11 +85,15 @@ class RecipeInfoTableViewCell: UITableViewCell {
         self.recipeBlock.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.recipeBlock.layer.masksToBounds = false
         
-        self.isFavorite = recipe.isFavorites
-        if recipe.isFavorites {
-            self.fillHeart()
+        if SettingsService.userModel == nil {
+            self.likeButton.isHidden = true
         } else {
-            self.unfillHeart()
+            self.isFavorite = recipe.isFavorites
+            if recipe.isFavorites {
+                self.fillHeart()
+            } else {
+                self.unfillHeart()
+            }
         }
         
         if recipe.photo != "default" {

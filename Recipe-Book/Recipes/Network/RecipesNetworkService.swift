@@ -9,8 +9,8 @@ import Foundation
 
 class RecipesNetworkService {
     
-    static func getRecipes(userId: Int, completion: @escaping(RecipeList, Int) -> ()) {
-        let path = "/users/\(userId)/recipes"
+    static func getRecipes(completion: @escaping(RecipeList, Int) -> ()) {
+        let path = "/recipe"
         
         NetworkService.shared.getRequest(rawUrl: path) { (responseData, statusCode) in
             do {

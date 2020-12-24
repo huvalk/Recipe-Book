@@ -45,11 +45,15 @@ class SearchRecipeTableViewCell: UITableViewCell {
             self.recipeImage.kf.setImage(with: imageUrl)
         }
         
-        self.isFavorite = recipe.isFavorites
-        if self.isFavorite {
-            self.fillHeart()
+        if SettingsService.userModel == nil {
+            self.likeButton.isHidden = true
         } else {
-            self.unfillHeart()
+            self.isFavorite = recipe.isFavorites
+            if self.isFavorite {
+                self.fillHeart()
+            } else {
+                self.unfillHeart()
+            }
         }
     }
 }

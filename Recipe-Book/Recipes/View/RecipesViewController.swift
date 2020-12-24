@@ -20,15 +20,19 @@ class RecipesViewContoller: UIViewController {
         
         self.recipesPresenter = RecipesPresenter(delegate: self)
         
-        self.recipesPresenter?.updateRecipes()
-        self.recipesPresenter?.updateFavorites()
+        if SettingsService.userModel != nil {
+            self.recipesPresenter?.updateRecipes()
+            self.recipesPresenter?.updateFavorites()
+        }
         
         self.tableView.tableFooterView = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.recipesPresenter?.getRecipes()
-        self.recipesPresenter?.getFavorites()
+        if SettingsService.userModel != nil {
+            self.recipesPresenter?.getRecipes()
+            self.recipesPresenter?.getFavorites()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
