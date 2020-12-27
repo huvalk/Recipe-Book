@@ -17,13 +17,25 @@
                     <view key="view" contentMode="scaleToFill" id="BEa-gb-yrs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loader" translatesAutoresizingMaskIntoConstraints="NO" id="mSc-gQ-gMX">
+                                <rect key="frame" x="0.0" y="-6" width="414" height="902"/>
+                                <color key="backgroundColor" red="0.61026197670000004" green="0.69479709860000005" blue="0.34891110660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OdD-Lc-QRV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mSc-gQ-gMX" firstAttribute="top" secondItem="OdD-Lc-QRV" secondAttribute="top" constant="-50" id="2Q3-tS-mny"/>
+                            <constraint firstItem="OdD-Lc-QRV" firstAttribute="bottom" secondItem="mSc-gQ-gMX" secondAttribute="bottom" constant="-34" id="H2w-LR-akq"/>
+                            <constraint firstItem="mSc-gQ-gMX" firstAttribute="leading" secondItem="OdD-Lc-QRV" secondAttribute="leading" id="oUX-qO-jbM"/>
+                            <constraint firstItem="OdD-Lc-QRV" firstAttribute="trailing" secondItem="mSc-gQ-gMX" secondAttribute="trailing" id="vhh-zH-61w"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaE-Gf-LJE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2104" y="46"/>
+            <point key="canvasLocation" x="2102.898550724638" y="45.535714285714285"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1421,6 +1433,7 @@
         <image name="Food" width="384" height="384"/>
         <image name="Heart" width="18" height="16"/>
         <image name="HeartFilled" width="18" height="16"/>
+        <image name="Loader" width="595" height="790"/>
         <image name="Save" width="28" height="28"/>
         <image name="Scales" width="288" height="288"/>
         <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
