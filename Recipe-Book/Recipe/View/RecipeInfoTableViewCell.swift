@@ -17,6 +17,7 @@ class RecipeInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeTime: UILabel!
     @IBOutlet weak var ingredientsCount: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var toCartButton: UIButton!
     
     @IBAction func likeButtonPressed(_ sender: Any) {
         if isFavorite {
@@ -27,6 +28,11 @@ class RecipeInfoTableViewCell: UITableViewCell {
     }
     
     @IBAction func toListButtonPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: [], animations: {
+            self.toCartButton.backgroundColor = .lightGray
+            self.toCartButton.backgroundColor = .none
+        }, completion: nil)
+        
         for ingredient in recipe.ingredients {
             let ingredientArray = ingredient.components(separatedBy: " - ")
             let name = ingredientArray[0]
@@ -79,11 +85,15 @@ class RecipeInfoTableViewCell: UITableViewCell {
         self.recipeBlock.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.recipeBlock.layer.masksToBounds = false
         
-        self.isFavorite = recipe.isFavorites
-        if recipe.isFavorites {
-            self.fillHeart()
+        if SettingsService.userModel == nil {
+            self.likeButton.isHidden = true
         } else {
-            self.unfillHeart()
+            self.isFavorite = recipe.isFavorites
+            if recipe.isFavorites {
+                self.fillHeart()
+            } else {
+                self.unfillHeart()
+            }
         }
         
         if recipe.photo != "default" {

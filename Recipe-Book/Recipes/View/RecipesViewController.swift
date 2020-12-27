@@ -20,15 +20,19 @@ class RecipesViewContoller: UIViewController {
         
         self.recipesPresenter = RecipesPresenter(delegate: self)
         
-        self.recipesPresenter?.getRecipes()
-        self.recipesPresenter?.getFavorites()
+        if SettingsService.userModel != nil {
+            self.recipesPresenter?.updateRecipes()
+            self.recipesPresenter?.updateFavorites()
+        }
         
         self.tableView.tableFooterView = nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.recipesPresenter?.getRecipes()
-        self.recipesPresenter?.getFavorites()
+        if SettingsService.userModel != nil {
+            self.recipesPresenter?.getRecipes()
+            self.recipesPresenter?.getFavorites()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -118,17 +122,11 @@ extension RecipesViewContoller: UITableViewDataSource, UITableViewDelegate {
         return false
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, _) in
             let recipeId = self.recipes[indexPath.section][indexPath.item].id
             
             self.recipesPresenter?.deleteRecipe(id: recipeId)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-            completionHandler(true)
         }
         deleteAction.image = UIImage(systemName: "trash")
         deleteAction.backgroundColor = .systemRed

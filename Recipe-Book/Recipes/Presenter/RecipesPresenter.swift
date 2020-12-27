@@ -25,15 +25,15 @@ class RecipesPresenter {
     }
     
     func updateRecipes() {
-        let userId = SettingsService.userModel.ID
-        
-        RecipesNetworkService.getRecipes(userId: userId) { (recipes, statusCode) in
+        RecipesNetworkService.getRecipes() { (recipes, statusCode) in
             if (200...299) ~= statusCode {
                 MyRecipeDatabaseService.clearMyRecipes()
                 
                 for recipe in recipes {
                     MyRecipeDatabaseService.saveMyRecipe(recipe)
                 }
+                
+                self.delegate.setRecipes(recipes: MyRecipeDatabaseService.getMyRecipes())
             } else {
                 print("get recipes: code \(statusCode)")
             }
@@ -66,6 +66,8 @@ class RecipesPresenter {
                 for favorite in favorites {
                     FavoriteDatabaseService.saveFavorite(favorite)
                 }
+                
+                self.delegate.setFavorites(favorites: FavoriteDatabaseService.getFavorites())
             } else {
                 print("get favorites: code \(statusCode)")
             }
