@@ -46,6 +46,8 @@ class PhonePresenter {
                 selfPointer.code = response
                 selfPointer.phone = phone
                 delegatePointer.showMessage(message: "Код отправлен")
+            } else if statusCode == 409 {
+                delegatePointer.phoneDidFailed(message: "Телефон занят")
             } else {
                 delegatePointer.phoneDidFailed(message: "Something wrong. \(statusCode)")
             }

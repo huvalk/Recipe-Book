@@ -45,6 +45,8 @@ class RegistrationPresenter {
             self?.delegate.hideProgress()
             if (200...299) ~= statusCode {
                 self?.delegate.registrationDidSucceed()
+            } else if statusCode == 409 {
+                self?.delegate.registrationDidFailed(message: "Имя занято")
             } else {
                 self?.delegate.registrationDidFailed(message: "Something wrong. \(statusCode)")
             }
