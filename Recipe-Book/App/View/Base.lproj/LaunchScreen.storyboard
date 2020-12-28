@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loader" translatesAutoresizingMaskIntoConstraints="NO" id="aVF-Fr-r63">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="53" width="414" height="790"/>
                                 <color key="backgroundColor" red="0.61026197670000004" green="0.69479709860000005" blue="0.34891110660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.61018443109999998" green="0.69893074040000003" blue="0.32667213680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aVF-Fr-r63" secondAttribute="bottom" constant="-34" id="31L-5n-kOh"/>
-                            <constraint firstItem="aVF-Fr-r63" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9mX-Bv-bqT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aVF-Fr-r63" secondAttribute="trailing" id="RBr-zJ-pO6"/>
-                            <constraint firstItem="aVF-Fr-r63" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="UUd-iL-Js1"/>
+                            <constraint firstItem="aVF-Fr-r63" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0oA-3Z-DMw"/>
+                            <constraint firstItem="aVF-Fr-r63" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Mde-kh-4c2"/>
+                            <constraint firstItem="aVF-Fr-r63" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rGO-7b-Szp"/>
+                            <constraint firstItem="aVF-Fr-r63" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uTW-qK-3Dc"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,8 +38,5 @@
     </scenes>
     <resources>
         <image name="Loader" width="595" height="790"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

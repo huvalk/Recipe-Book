@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loader" translatesAutoresizingMaskIntoConstraints="NO" id="mSc-gQ-gMX">
-                                <rect key="frame" x="0.0" y="-6" width="414" height="902"/>
+                                <rect key="frame" x="0.0" y="53" width="414" height="790"/>
                                 <color key="backgroundColor" red="0.61026197670000004" green="0.69479709860000005" blue="0.34891110660000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OdD-Lc-QRV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.61018443109999998" green="0.69893074040000003" blue="0.32667213680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mSc-gQ-gMX" firstAttribute="top" secondItem="OdD-Lc-QRV" secondAttribute="top" constant="-50" id="2Q3-tS-mny"/>
-                            <constraint firstItem="OdD-Lc-QRV" firstAttribute="bottom" secondItem="mSc-gQ-gMX" secondAttribute="bottom" constant="-34" id="H2w-LR-akq"/>
-                            <constraint firstItem="mSc-gQ-gMX" firstAttribute="leading" secondItem="OdD-Lc-QRV" secondAttribute="leading" id="oUX-qO-jbM"/>
-                            <constraint firstItem="OdD-Lc-QRV" firstAttribute="trailing" secondItem="mSc-gQ-gMX" secondAttribute="trailing" id="vhh-zH-61w"/>
+                            <constraint firstItem="mSc-gQ-gMX" firstAttribute="leading" secondItem="BEa-gb-yrs" secondAttribute="leading" id="0kC-sa-yzr"/>
+                            <constraint firstItem="mSc-gQ-gMX" firstAttribute="centerX" secondItem="BEa-gb-yrs" secondAttribute="centerX" id="Jrk-w3-iD4"/>
+                            <constraint firstItem="mSc-gQ-gMX" firstAttribute="centerY" secondItem="BEa-gb-yrs" secondAttribute="centerY" id="Rhr-Sh-Tmu"/>
+                            <constraint firstAttribute="trailing" secondItem="mSc-gQ-gMX" secondAttribute="trailing" id="UBe-Sc-3Zu"/>
                         </constraints>
                     </view>
                 </viewController>
