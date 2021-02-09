@@ -19,7 +19,7 @@ class PhoneNetworkService {
                 let sms = try JSONDecoder().decode(SmsCode.self, from: responseData)
                 completion(sms.code, statusCode)
             } catch {
-                print("Invalid login json")
+                completion("", statusCode)
             }
         }
     }

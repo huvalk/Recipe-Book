@@ -136,9 +136,11 @@
                                     <constraint firstItem="IBv-5g-pQc" firstAttribute="top" secondItem="xOA-9u-Ki8" secondAttribute="top" id="xne-uA-xCk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEr-QY-6aM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEr-QY-6aM">
                                 <rect key="frame" x="149" y="774" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="l0x-4B-mY1"/>
+                                </constraints>
                                 <state key="normal" title="Забыли пароль?">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -151,11 +153,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3lR-xl-w7g" secondAttribute="bottom" constant="36" id="7zf-PW-I0X"/>
+                            <constraint firstItem="kEr-QY-6aM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B7t-VR-t1z"/>
                             <constraint firstItem="xOA-9u-Ki8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C59-nR-vUa"/>
                             <constraint firstItem="xOA-9u-Ki8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fg7-3a-RhZ"/>
                             <constraint firstItem="xOA-9u-Ki8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P2o-rB-RZ7"/>
                             <constraint firstItem="xOA-9u-Ki8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TCE-ee-BU9"/>
                             <constraint firstItem="3lR-xl-w7g" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oB8-gZ-cMF"/>
+                            <constraint firstItem="3lR-xl-w7g" firstAttribute="top" secondItem="kEr-QY-6aM" secondAttribute="bottom" constant="-8" id="zjX-aS-jYL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ms9-CG-6ol"/>
@@ -1333,7 +1337,7 @@
                                             <constraint firstAttribute="height" constant="50" id="2wM-ud-ZYO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" textContentType="one-time-code"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="one-time-code"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqE-oG-tNy">
                                         <rect key="frame" x="167.5" y="326" width="39.5" height="21"/>
